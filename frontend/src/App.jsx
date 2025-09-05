@@ -1,9 +1,12 @@
-export default function App() {
+import React from 'react';
+import XO from './components/Multiplayer/XO';
+
+const App = () => {
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        ✅ Tailwind is Working!
-      </h1>
+    <div>
+      <XO />
     </div>
-  );
+  )
 }
+
+export default App;
