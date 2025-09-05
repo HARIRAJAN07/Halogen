@@ -1,5 +1,7 @@
 import ChooseSorM from "./components/chooseSorM";
 import SelectMode from "./components/SinglePlayer/selectMode";
+import SelectSubject from "./components/SinglePlayer/selectSubject";
+import TopicSelection from "./components/SinglePlayer/TopicSelection";
 
 export default function App() {
   return (
@@ -9,8 +11,10 @@ export default function App() {
     //   </h1>
     // </div>
     <>
-    <ChooseSorM />
+    {/* <ChooseSorM /> */}
     {/* <SelectMode /> */}
+    {/* <SelectSubject /> */}
+    <TopicSelection />
     </>
   );
 }
