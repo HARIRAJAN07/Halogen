@@ -1,4 +1,5 @@
 import ChooseSorM from "./components/chooseSorM";
+import SaveTheGirl from "./components/SinglePlayer/SaveTheGirl";
 import SelectMode from "./components/SinglePlayer/selectMode";
 import SelectSubject from "./components/SinglePlayer/selectSubject";
 import TopicSelection from "./components/SinglePlayer/TopicSelection";
@@ -14,7 +15,8 @@ export default function App() {
     {/* <ChooseSorM /> */}
     {/* <SelectMode /> */}
     {/* <SelectSubject /> */}
-    <TopicSelection />
+    {/* <TopicSelection /> */}
+    <SaveTheGirl />
     </>
   );
 }
