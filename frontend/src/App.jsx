@@ -1,22 +1,12 @@
-import ChooseSorM from "./components/chooseSorM";
-import SaveTheGirl from "./components/SinglePlayer/SaveTheGirl";
-import SelectMode from "./components/SinglePlayer/selectMode";
-import SelectSubject from "./components/SinglePlayer/selectSubject";
-import TopicSelection from "./components/SinglePlayer/TopicSelection";
+import React from 'react';
+import XO from './components/Multiplayer/XO';
 
-export default function App() {
+const App = () => {
   return (
-    // <div className="flex h-screen items-center justify-center bg-gray-100">
-    //   <h1 className="text-4xl font-bold text-blue-600">
-    //     ✅ Tailwind is Working!
-    //   </h1>
-    // </div>
-    <>
-    {/* <ChooseSorM /> */}
-    {/* <SelectMode /> */}
-    {/* <SelectSubject /> */}
-    {/* <TopicSelection /> */}
-    <SaveTheGirl />
-    </>
-  );
+    <div>
+      <XO />
+    </div>
+  )
 }
+
+export default App;
