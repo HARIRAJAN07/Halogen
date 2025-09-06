@@ -19,7 +19,7 @@ function ProgressBar({ value, max = 100 }) {
   );
 }
 
-export default function Leaderboard() {
+export default function ScienceGamifiedDashboard() {
   const [studentLeaders] = useState([
     { id: 1, name: "Monica", school: "XYZ School", score: 980 },
     { id: 2, name: "Joey", school: "ABC School", score: 940 },

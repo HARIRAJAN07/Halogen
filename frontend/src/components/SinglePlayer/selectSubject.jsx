@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import router hook
 import scienceGif from "../../assets/science.gif";
 import mathGif from "../../assets/math.gif";
 import socialGif from "../../assets/social.gif";
@@ -16,6 +17,7 @@ const subjects = [
 const SubjectSelection = () => {
   const [flipped, setFlipped] = useState({});
   const [language, setLanguage] = useState("en");
+  const navigate = useNavigate(); // ✅ hook for navigation
 
   const toggleFlip = (subjectName) => {
     setFlipped((prev) => ({
@@ -87,19 +89,22 @@ const SubjectSelection = () => {
                     : `${subject.ta} கொண்டு தொடர கீழே கிளிக் செய்யவும்.`}
                 </p>
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    alert(
-                      `You selected ${
-                        language === "en" ? subject.en : subject.ta
-                      }`
-                    );
-                  }}
-                  className="px-6 py-2 sm:px-8 sm:py-3 bg-white font-bold rounded-full shadow-md hover:bg-gray-100 transition-all transform hover:scale-105 2xl:text-xl"
-                  style={{ color: "#2c2c2c" }}
-                >
-                  {language === "en" ? "Choose Topic" : "பாடத்தைத் தேர்ந்தெடுக்கவும்"}
-                </button>
+  onClick={(e) => {
+    e.stopPropagation();
+    // ✅ Suppose you already know classId (can be passed via props or state)
+    const classId = "class10"; // example: replace with dynamic id later
+
+    // ✅ Navigate correctly to dashboard route with subject
+    navigate(`/single/${classId}/${subject.en.toLowerCase()}`, {
+      state: { subject: subject.en }, // optional, extra data
+    });
+  }}
+  className="px-6 py-2 sm:px-8 sm:py-3 bg-white font-bold rounded-full shadow-md hover:bg-gray-100 transition-all transform hover:scale-105 2xl:text-xl"
+  style={{ color: "#2c2c2c" }}
+>
+  {language === "en" ? "Choose Topic" : "பாடத்தைத் தேர்ந்தெடுக்கவும்"}
+</button>
+
               </div>
             </div>
           </div>

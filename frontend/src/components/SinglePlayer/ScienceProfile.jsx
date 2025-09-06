@@ -30,7 +30,7 @@ function Badge({ title, subtitle, icon }) {
   );
 }
 
-export default function Profile({ profile = null }) {
+export default function ScienceProfile({ profile = null }) {
   const demo = {
     name: "Aanya R.",
     school: "St. Mary's",

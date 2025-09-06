@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import bg from "../assets/bg.jpg";
 import single from "../assets/single.png";
 import multi from "../assets/multi.png";
+import { useNavigate } from "react-router-dom";
 
 const translations = {
   en: {
@@ -26,8 +27,9 @@ const translations = {
   },
 };
 
-const FlipCard = ({ frontText, backText, image, proceedText }) => {
+const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -40,7 +42,7 @@ const FlipCard = ({ frontText, backText, image, proceedText }) => {
       onClick={() => setFlipped(!flipped)}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-700`}
+        className="relative w-full h-full transition-transform duration-700"
         style={{
           transformStyle: "preserve-3d",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -79,6 +81,10 @@ const FlipCard = ({ frontText, backText, image, proceedText }) => {
             {backText}
           </p>
           <button
+            onClick={(e) => {
+              e.stopPropagation(); // prevent flip on button click
+              navigate(navigateTo);
+            }}
             className="px-[10%] py-[5%] rounded-xl shadow-lg"
             style={{
               background: "linear-gradient(135deg, #7164B4, #8F9FE4)",
@@ -96,7 +102,6 @@ const FlipCard = ({ frontText, backText, image, proceedText }) => {
 
 const ChooseSorM = () => {
   const [lang, setLang] = useState("en");
-
   const t = translations[lang];
 
   return (
@@ -121,17 +126,22 @@ const ChooseSorM = () => {
         className="flex justify-center items-center"
         style={{ width: "80%", height: "70%", gap: "10%" }}
       >
+        {/* Single Player → Subject Selection */}
         <FlipCard
           frontText={t.singleFront}
           backText={t.singleBack}
           image={single}
           proceedText={t.proceed}
+          navigateTo="/single"
         />
+
+        {/* Multi Player → XO Game */}
         <FlipCard
           frontText={t.multiFront}
           backText={t.multiBack}
           image={multi}
           proceedText={t.proceed}
+          navigateTo="/multi"
         />
       </div>
     </div>

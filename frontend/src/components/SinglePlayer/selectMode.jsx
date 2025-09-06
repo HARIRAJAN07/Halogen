@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom"; // ✅ import navigation + params
 import bg from "../../assets/bg.jpg";
 import match from "../../assets/match.png";
 import surprise from "../../assets/surprise.png";
@@ -27,8 +28,10 @@ const translations = {
   },
 };
 
-const FlipCard = ({ frontText, backText, image, proceedText }) => {
+const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
+  const navigate = useNavigate();
+  const { classId, subject } = useParams(); // ✅ get params from route
 
   return (
     <div
@@ -80,6 +83,10 @@ const FlipCard = ({ frontText, backText, image, proceedText }) => {
             {backText}
           </p>
           <button
+            onClick={(e) => {
+              e.stopPropagation(); // ✅ prevent flipping again
+              navigate(`/single/${classId}/${subject}${navigateTo}`);
+            }}
             className="px-[10%] py-[5%] rounded-xl shadow-lg"
             style={{
               background: "linear-gradient(135deg, #7164B4, #8F9FE4)",
@@ -119,19 +126,24 @@ const SelectMode = () => {
       {/* Cards */}
       <div
         className="flex justify-center items-center"
-        style={{ width: "80%", height: "70%", gap: "10%" , textAlign:"center" }}
+        style={{ width: "80%", height: "70%", gap: "10%", textAlign: "center" }}
       >
+        {/* Surprise Game → /game */}
         <FlipCard
           frontText={t.surpriseFront}
           backText={t.surpriseBack}
           image={surprise}
           proceedText={t.proceed}
+          navigateTo="/game"
         />
+
+        {/* Match Game → /match */}
         <FlipCard
           frontText={t.matchFront}
           backText={t.matchBack}
           image={match}
           proceedText={t.proceed}
+          navigateTo="/match"
         />
       </div>
     </div>
