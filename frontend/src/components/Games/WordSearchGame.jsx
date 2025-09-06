@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import socialData from '../data/social.json';
 
-const GRID_SIZE = 9;
+const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;
 const REQUIRED_TO_UNLOCK = 20;
 const QUESTIONS_PER_LEVEL = 3;
@@ -81,7 +81,7 @@ function arrayFromStr(s) {
   if (/^[A-Za-z0-9]+$/.test(s)) {
     return s.split('');
   }
-  
+
   const graphemes = [];
   for (let i = 0; i < s.length; i++) {
     const char = s[i];
@@ -239,19 +239,19 @@ export default function WordSearchGame() {
   // This will translate the questions when language changes but maintain progress
   const LEVELS = useMemo(() => {
     if (initialLevels.length === 0) return [[], [], []];
-    
+
     return initialLevels.map(level => {
       return level.map(questionObj => {
         // For each question, find its translation in the current language
-        const levelKey = level === initialLevels[0] ? "easy" : 
+        const levelKey = level === initialLevels[0] ? "easy" :
                          level === initialLevels[1] ? "medium" : "hard";
-        
+
         // Find the matching question in the JSON data using the original English text
         const allQuestions = socialData.grade6?.[levelKey] || [];
-        const translatedQuestion = allQuestions.find(q => 
+        const translatedQuestion = allQuestions.find(q =>
           q.q.en === questionObj.originalQ
         );
-        
+
         return {
           q: translatedQuestion?.q[language] || questionObj.q,
           a: translatedQuestion?.a[language] || questionObj.a,
@@ -279,6 +279,12 @@ export default function WordSearchGame() {
   const [showFinalCompletionModal, setShowFinalCompletionModal] = useState(false);
   const [confettiRunning, setConfettiRunning] = useState(false);
 
+  // Dragging states
+  const [isDragging, setIsDragging] = useState(false);
+  const startPosRef = useRef(null); // Stores the starting cell of the drag
+  const currentPathRef = useRef([]); // Stores the path of the current drag
+
+
   const levelQuestions = LEVELS[levelIndex] || [];
   const currentObj = levelQuestions[qIndex] || null;
   const currentAnswerArr = arrayFromStr(currentObj?.a || "");
@@ -303,11 +309,11 @@ export default function WordSearchGame() {
       }
       return;
     }
-    
+
     const timer = setInterval(() => {
       setTimeLeft(prevTime => prevTime - 1);
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, [timerActive, timeLeft]);
 
@@ -384,7 +390,7 @@ export default function WordSearchGame() {
       initialGrid = newGrid;
       allPaths.push(newPath);
     }
-    
+
     // Fill empty spots with random letters
     for (let r = 0; r < GRID_SIZE; r++) {
       for (let c = 0; c < GRID_SIZE; c++) {
@@ -408,23 +414,90 @@ export default function WordSearchGame() {
   }, [levelIndex, language, LEVELS]);
 
   function posEq(a, b) {
-    return a[0] === b[0] && a[1] === b[1];
+    return a && b && a[0] === b[0] && a[1] === b[1];
   }
 
   function isSelected(r, c) {
-    return selectedPositions.some((s) => posEq(s, [r, c]));
+    return selectedPositions.some((s) => posEq(s, [r, c])) || currentPathRef.current.some((s) => posEq(s, [r, c]));
   }
 
   function getFoundColor(r, c) {
-    const found = foundAnswers.find(ans => ans.path.some(pos => posEq(pos, [r,c])));
+    const found = foundAnswers.find(ans => ans.path.some(pos => posEq(pos, [r, c])));
     return found ? found.color : "";
   }
 
-  function handleCellTap(r, c) {
+  // Dragging logic
+  const handleMouseDown = (r, c) => {
     if (status !== "playing") return;
-    if (isSelected(r, c)) return; 
-    setSelectedPositions((s) => [...s, [r, c]]);
-  }
+    setIsDragging(true);
+    startPosRef.current = [r, c];
+    currentPathRef.current = [[r, c]];
+    setSelectedPositions([[r, c]]); // Immediately select the starting cell
+  };
+
+  const handleMouseEnter = (r, c) => {
+    if (!isDragging || status !== "playing") return;
+
+    const lastPos = currentPathRef.current[currentPathRef.current.length - 1];
+    if (posEq(lastPos, [r, c])) return; // Don't re-add the same cell
+
+    // Check if the new cell is adjacent to the last selected cell in a straight line
+    const [lastR, lastC] = lastPos;
+    const dr = Math.abs(r - lastR);
+    const dc = Math.abs(c - lastC);
+
+    // Only allow straight or diagonal lines (dr <=1 and dc <=1, but not both 0)
+    if ((dr <= 1 && dc <= 1) && !(dr === 0 && dc === 0)) {
+        // Check if it maintains a consistent direction if path length > 1
+        if (currentPathRef.current.length > 1) {
+            const secondLastPos = currentPathRef.current[currentPathRef.current.length - 2];
+            const prevDr = lastR - secondLastPos[0];
+            const prevDc = lastC - secondLastPos[1];
+            const currentDr = r - lastR;
+            const currentDc = c - lastC;
+
+            // Ensure direction is consistent or opposite if reversing
+            if (prevDr !== 0 && currentDr !== 0 && Math.sign(prevDr) !== Math.sign(currentDr)) {
+                return; // Not a consistent straight line
+            }
+            if (prevDc !== 0 && currentDc !== 0 && Math.sign(prevDc) !== Math.sign(currentDc)) {
+                return; // Not a consistent straight line
+            }
+            // For diagonal, ensure both dr and dc match sign
+            if (prevDr !== 0 && prevDc !== 0 && (Math.sign(prevDr) !== Math.sign(currentDr) || Math.sign(prevDc) !== Math.sign(currentDc))) {
+                return;
+            }
+            // Allow reversing direction
+            if (posEq([r, c], secondLastPos)) {
+                currentPathRef.current.pop(); // Remove last cell if moving back
+                setSelectedPositions(currentPathRef.current);
+                return;
+            }
+        }
+        currentPathRef.current = [...currentPathRef.current, [r, c]];
+        setSelectedPositions(currentPathRef.current);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    startPosRef.current = null;
+    // Don't clear selectedPositions here, it will be used by handleSubmit
+    // currentPathRef.current will be cleared on next drag start
+  };
+
+  useEffect(() => {
+    // Add global event listeners for mouse up to handle cases where drag ends outside the grid
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchend', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchend', handleMouseUp);
+    };
+  }, [isDragging]);
+
 
   function handleHint() {
     if (!currentObj) return;
@@ -450,7 +523,7 @@ export default function WordSearchGame() {
     const selLettersArr = selectedPositions.map(([r, c]) => grid[r][c]);
     const compareSel = normalizeForCompare(selLettersArr, language);
     const fullAnsCompare = normalizeForCompare(currentAnswerArr, language);
-    
+
     const isCorrect = compareSel === fullAnsCompare && selLettersArr.length === currentAnswerArr.length;
 
     if (isCorrect) {
@@ -459,13 +532,13 @@ export default function WordSearchGame() {
       setScore((s) => s + POINTS_PER_CORRECT);
       setConfettiRunning(true);
       setTimeout(() => setConfettiRunning(false), 2500);
-      
+
       const newFoundAnswer = {
         path: selectedPositions,
         color: ANSWER_COLORS[foundAnswers.length % ANSWER_COLORS.length]
       };
       setFoundAnswers(prev => [...prev, newFoundAnswer]);
-      
+
       if (qIndex === levelQuestions.length - 1) {
         setTimeout(() => {
           setShowLevelCompleteModal(true);
@@ -486,6 +559,7 @@ export default function WordSearchGame() {
   function handleNext() {
     const nextQ = qIndex + 1;
     setSelectedPositions([]);
+    currentPathRef.current = []; // Clear current drag path
     setHintsUsed(0);
     setStatus("playing");
     if (nextQ < levelQuestions.length) {
@@ -493,6 +567,7 @@ export default function WordSearchGame() {
     } else {
       const canUnlock = score >= REQUIRED_TO_UNLOCK;
       if (canUnlock && levelIndex + 1 < LEVELS.length) {
+        setQIndex(0); // Reset question index for the new level
         setLevelIndex((l) => l + 1);
         setUnlocked((u) => {
           const n = [...u];
@@ -514,14 +589,15 @@ export default function WordSearchGame() {
   function chooseLevel(i) {
     if (!unlocked[i]) return;
     setLevelIndex(i);
+    setQIndex(0); // Reset question index when changing levels
   }
 
   function getCellClass(r, c) {
-    const base = "w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg font-extrabold text-lg md:text-xl cursor-pointer border shadow select-none";
+    const base = "w-14 h-14 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg font-extrabold text-lg md:text-xl cursor-pointer border shadow select-none";
     const selected = isSelected(r, c);
-    const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c])); // Fixed: changed .sense to .some
+    const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c]));
 
-    if (selected) {
+    if (selected && status === "playing") {
         return base + " bg-yellow-300 hover:scale-105 transform transition";
     }
 
@@ -532,7 +608,7 @@ export default function WordSearchGame() {
     if (status === "wrong" && inCurrentAnswerPath) {
         return base + " text-white";
     }
-    
+
     return base + " bg-white/90 hover:scale-105 transform transition";
   }
 
@@ -542,20 +618,20 @@ export default function WordSearchGame() {
       return { backgroundColor: foundColor, color: "white" };
     }
     if (status === "correct") {
-        const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c])); // Fixed: changed .sense to .some
+        const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c]));
         if (inCurrentAnswerPath) {
           return { backgroundColor: ANSWER_COLORS[foundAnswers.length % ANSWER_COLORS.length], color: "white" };
         }
     }
     if (status === "wrong") {
-        const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c])); // Fixed: changed .sense to .some
+        const inCurrentAnswerPath = currentAnswerPath.some((p) => posEq(p, [r, c]));
         if (inCurrentAnswerPath) {
             return { backgroundColor: "#FCA5A5", color: "white" };
         }
     }
     return {};
   }
-  
+
   function restartAll() {
     setLevelIndex(0);
     setQIndex(0);
@@ -566,6 +642,7 @@ export default function WordSearchGame() {
     setShowFinalCompletionModal(false);
     setStatus("playing");
     setSelectedPositions([]);
+    currentPathRef.current = [];
     setHintsUsed(0);
     setTimeLeft(TIMER_DURATION);
     setTimerActive(true);
@@ -574,147 +651,172 @@ export default function WordSearchGame() {
   }
 
   return (
-    <div className="min-h-screen p-4 bg-[#BCA5D4] text-slate-900 flex flex-col items-center relative">
-      {/* language toggle top-left */}
-      <div className="absolute top-4 left-4">
-        <button
-          onClick={() => setLanguage((l) => (l === "en" ? "ta" : "en"))}
-          className="px-3 py-1 bg-[#EFE2FA] text-black rounded-lg"
-        >
-          {language === "en" ? "தமிழ்" : "English"}
-        </button>
-      </div>
+  <div className="min-h-screen p-4 bg-[#BCA5D4] text-slate-900 flex flex-col items-center relative">
+    {/* language toggle top-left */}
+    <div className="absolute top-4 left-4">
+      <button
+        onClick={() => setLanguage((l) => (l === "en" ? "ta" : "en"))}
+        className="px-3 py-1 bg-[#EFE2FA] text-black rounded-lg"
+      >
+        {language === "en" ? "தமிழ்" : "English"}
+      </button>
+    </div>
 
-      {/* Score and Timer top-right */}
-      <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
-        <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
-          {T.score}: {score}
-        </div>
-        <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
-          {T.time}: {formatTime(timeLeft)}
-        </div>
+    {/* Score and Timer top-right */}
+    <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
+      <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
+        {T.score}: {score}
       </div>
-
-      {/* header & level selector */}
-      <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-        <div className="text-white text-2xl font-bold">{T.title} — {T.level} {levelIndex + 1}</div>
-        <div className="flex gap-2">
-          {LEVELS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => chooseLevel(i)}
-              disabled={!unlocked[i]}
-              className={`px-3 py-1 rounded-lg font-semibold ${unlocked[i] ? "bg-[#EFE2FA] text-black" : "bg-[#EFE2FA] text-black/40 cursor-not-allowed"}`}
-            >
-              {T.level} {i + 1}
-            </button>
-          ))}
-        </div>
+      <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
+        {T.time}: {formatTime(timeLeft)}
       </div>
+    </div>
 
-      {/* question card */}
-      <div className="w-full max-w-4xl bg-[#EFE2FA]/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-gray-600 mb-4">
+    {/* header & level selector */}
+    <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
+      <div className="text-white text-2xl font-bold">{T.title} — {T.level} {levelIndex + 1}</div>
+      <div className="flex gap-2">
+        {LEVELS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => chooseLevel(i)}
+            disabled={!unlocked[i]}
+            className={`px-3 py-1 rounded-lg font-semibold ${unlocked[i] ? "bg-[#EFE2FA] text-black" : "bg-[#EFE2FA] text-black/40 cursor-not-allowed"}`}
+          >
+            {T.level} {i + 1}
+          </button>
+        ))}
+      </div>
+    </div>
+    
+    {/* Main content container: Question Card on left, Grid on right */}
+    <div className="flex flex-col md:flex-row items-start justify-center w-full max-w-4xl gap-4">
+
+      {/* question card (moved to the left) */}
+      <div className="w-full md:w-1/2 bg-[#EFE2FA]/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-gray-600 mb-4 md:mb-0">
         <div className="text-black/90 text-lg md:text-xl font-semibold">{T.question} {qIndex + 1} / {levelQuestions.length}</div>
         <div className="text-xl md:text-2xl text-black font-bold mt-2">{currentObj?.q}</div>
       </div>
 
-      {/* grid */}
-      <div className="bg-[#EFE2FA]/50 p-4 rounded-xl shadow-lg mb-4">
-        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, minmax(0, 1fr))` }}>
+      {/* grid (moved to the right) */}
+      <div
+        className="bg-[#EFE2FA]/50 p-4 rounded-xl shadow-lg"
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchEnd={handleMouseUp}
+      >
+        <div className="grid gap-5" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, minmax(0, 1fr))` }}>
           {grid.map((row, r) => row.map((ch, c) => (
-            <div key={`${r}-${c}`} onClick={() => handleCellTap(r, c)} className={getCellClass(r, c)} style={getCellStyle(r, c)}>
+            <div
+              key={`${r}-${c}`}
+              onMouseDown={() => handleMouseDown(r, c)}
+              onMouseEnter={() => handleMouseEnter(r, c)}
+              onTouchStart={(e) => { e.preventDefault(); handleMouseDown(r, c); }}
+              onTouchMove={(e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                if (targetElement && targetElement.dataset.row && targetElement.dataset.col) {
+                  const targetR = parseInt(targetElement.dataset.row);
+                  const targetC = parseInt(targetElement.dataset.col);
+                  handleMouseEnter(targetR, targetC);
+                }
+              }}
+              className={getCellClass(r, c)}
+              style={getCellStyle(r, c)}
+              data-row={r}
+              data-col={c}
+            >
               <span className="flex items-center justify-center h-full">{ch}</span>
             </div>
           )))}
         </div>
       </div>
+      
+    </div>
 
-      {/* answer preview + controls */}
-      <div className="flex flex-wrap items-center gap-3 mt-2 justify-center">
-        <div className="bg-gray-700 text-white rounded-lg px-4 py-2 font-mono text-xl min-h-[3rem] flex items-center">
-          {selectedPositions.map(([r,c]) => grid[r][c]).join("")}
-        </div>
-
-        <button onClick={handleHint} className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow">
-          {T.hint} ({2 - hintsUsed})
-        </button>
-
-        {status === "playing" ? (
-          <button onClick={handleSubmit} className="px-5 py-2 rounded-lg bg-green-500 text-white font-bold shadow"> {T.submit} </button>
-        ) : (
-          <button onClick={handleNext} className="px-5 py-2 rounded-lg bg-yellow-400 text-black font-bold shadow animate-bounce"> {T.next} </button>
-        )}
-
-        <button onClick={() => { setSelectedPositions([]); }} className="px-4 py-2 rounded-lg bg-gray-600 text-white">{T.clear}</button>
+    {/* answer preview + controls (kept below the main content) */}
+    <div className="flex flex-wrap items-center gap-3 mt-4 justify-center">
+      <div className="bg-gray-700 text-white rounded-lg px-4 py-2 font-mono text-xl min-h-[3rem] flex items-center">
+        {selectedPositions.map(([r, c]) => grid[r][c]).join("")}
       </div>
 
-      {/* hint over modal */}
-      {showHintOverModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
-            <h3 className="text-2xl font-bold mb-2">{T.hintsOver}</h3>
-            <p className="mb-4 text-slate-700">{T.hintsMsg}</p>
-            <button onClick={() => setShowHintOverModal(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.ok}</button>
-          </div>
-        </div>
-      )}
-      
-      {/* timeout modal */}
-      {showTimeoutModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
-            <h3 className="text-2xl font-bold mb-2">{T.timeUp}</h3>
-            <p className="mb-4 text-slate-700">{T.timeoutMsg}</p>
-            <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
-          </div>
-        </div>
+      <button onClick={handleHint} className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow">
+        {T.hint} ({2 - hintsUsed})
+      </button>
+
+      {status === "playing" ? (
+        <button onClick={handleSubmit} className="px-5 py-2 rounded-lg bg-green-500 text-white font-bold shadow"> {T.submit} </button>
+      ) : (
+        <button onClick={handleNext} className="px-5 py-2 rounded-lg bg-yellow-400 text-black font-bold shadow animate-bounce"> {T.next} </button>
       )}
 
-      {/* level complete modal */}
-      {showLevelCompleteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.levelComplete}</h2>
-            <p className="mb-4">{T.currentScore} <span className="font-mono">{score}</span></p>
-            <p className="mb-4 text-sm text-gray-700">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
-            <div className="flex gap-3 justify-center">
-              <button onClick={() => { setShowLevelCompleteModal(false); if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { handleNext(); } }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold"> {T.next} </button>
-              <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-gray-200 rounded-lg">{T.close}</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* final completion modal */}
-      {showFinalCompletionModal && (
-        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.congratsTitle}</h2>
-            <p className="mb-4 text-lg">{T.congratsMsg}</p>
-            <p className="mb-4 text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
-            <div className="flex gap-3 justify-center">
-              <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* final modal (old one for running out of points) */}
-      {showFinalModal && (
-        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.allComplete}</h2>
-            <p className="mb-4 text-lg">{T.finalMotivation}</p>
-            <p className="mb-4 text-xl font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
-            <div className="flex gap-3 justify-center">
-              <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* confetti */}
-      <Confetti running={confettiRunning} />
+      <button onClick={() => { setSelectedPositions([]); currentPathRef.current = []; }} className="px-4 py-2 rounded-lg bg-gray-600 text-white">{T.clear}</button>
     </div>
-  );
+
+    {/* Modals are kept the same */}
+    {showHintOverModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
+          <h3 className="text-2xl font-bold mb-2">{T.hintsOver}</h3>
+          <p className="mb-4 text-slate-700">{T.hintsMsg}</p>
+          <button onClick={() => setShowHintOverModal(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.ok}</button>
+        </div>
+      </div>
+    )}
+
+    {showTimeoutModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
+          <h3 className="text-2xl font-bold mb-2">{T.timeUp}</h3>
+          <p className="mb-4 text-slate-700">{T.timeoutMsg}</p>
+          <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
+        </div>
+      </div>
+    )}
+
+    {showLevelCompleteModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
+          <h2 className="text-3xl font-bold mb-2">{T.levelComplete}</h2>
+          <p className="mb-4">{T.currentScore} <span className="font-mono">{score}</span></p>
+          <p className="mb-4 text-sm text-gray-700">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
+          <div className="flex gap-3 justify-center">
+            <button onClick={() => { setShowLevelCompleteModal(false); if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { handleNext(); } else if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 >= LEVELS.length) { setShowFinalCompletionModal(true); playVictorySound(); setConfettiRunning(true); setTimeout(() => setConfettiRunning(false), 5000); } }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold"> {T.next} </button>
+            <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-gray-200 rounded-lg">{T.close}</button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {showFinalCompletionModal && (
+      <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
+        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+          <h2 className="text-3xl font-bold mb-2">{T.congratsTitle}</h2>
+          <p className="mb-4 text-lg">{T.congratsMsg}</p>
+          <p className="mb-4 text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
+          <div className="flex gap-3 justify-center">
+            <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {showFinalModal && (
+      <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
+        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+          <h2 className="text-3xl font-bold mb-2">{T.allComplete}</h2>
+          <p className="mb-4 text-lg">{T.finalMotivation}</p>
+          <p className="mb-4 text-xl font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
+          <div className="flex gap-3 justify-center">
+            <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* confetti */}
+    <Confetti running={confettiRunning} />
+  </div>
+);
 }

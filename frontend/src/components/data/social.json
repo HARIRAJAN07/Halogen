@@ -13,1261 +13,1284 @@
       { "q": { "en": "What is the first word of the Indian Constitution's Preamble?", "ta": "இந்திய அரசியலமைப்பின் முகப்புரையின் முதல் சொல் என்ன?" }, "a": { "en": "WE", "ta": "நாம்" } }
     ],
     "medium": [
-      { "q": { "en": "What is the name of the famous bath found in Mohenjo-Daro?", "ta": "மொஹெஞ்சதாரோவில் காணப்பட்ட புகழ்பெற்ற குளியல் தொட்டியின் பெயர் என்ன?" }, "a": { "en": "GREATBATH", "ta": "பெருங்குளம்" } },
-      { "q": { "en": "Which Tamil port city was known as 'the city that never sleeps'?", "ta": "'ஒருபோதும் உறங்காத நகரம்' என்று எந்தத் தமிழ்த் துறைமுக நகரம் அழைக்கப்பட்டது?" }, "a": { "en": "POOMPUHAR", "ta": "பூம்புகார்" } },
-      { "q": { "en": "What is the name for a large system of stars, gas, and dust?", "ta": "நட்சத்திரங்கள், வாயு மற்றும் தூசுகளின் பெரிய அமைப்புக்கு என்ன பெயர்?" }, "a": { "en": "GALAXY", "ta": "விண்மீன் மண்டலம்" } },
-      { "q": { "en": "Which emperor's edicts were inscribed on pillars and rocks across India?", "ta": "இந்தியாவின் தூண்கள் மற்றும் பாறைகளில் எந்தப் பேரரசரின் ஆணைகள் பொறிக்கப்பட்டிருந்தன?" }, "a": { "en": "ASHOKA", "ta": "அசோகா" } },
-      { "q": { "en": "What is the spinning motion of the Earth on its axis called?", "ta": "பூமியின் அச்சில் அதன் சுழற்சி இயக்கம் என்னவென்று அழைக்கப்படுகிறது?" }, "a": { "en": "ROTATION", "ta": "சுழற்சி" } },
-      { "q": { "en": "Which term describes having a variety of different cultures in a society?", "ta": "ஒரு சமூகத்தில் பல்வேறுபட்ட கலாச்சாரங்கள் இருப்பதைக் குறிக்கும் சொல் எது?" }, "a": { "en": "DIVERSITY", "ta": "பன்முகத்தன்மை" } },
-      { "q": { "en": "What are the rights guaranteed to all Indian citizens by the Constitution called?", "ta": "இந்திய அரசியலமைப்பால் அனைத்து இந்திய குடிமக்களுக்கும் உத்தரவாதம் அளிக்கப்பட்ட உரிமைகள் என்னவென்று அழைக்கப்படுகின்றன?" }, "a": { "en": "FUNDAMENTAL", "ta": "அடிப்படை" } },
-      { "q": { "en": "Which type of economic activity involves providing services?", "ta": "சேவைகளை வழங்குவதைக் குறிக்கும் பொருளாதார செயல்பாடு எது?" }, "a": { "en": "TERTIARY", "ta": "மூன்றாம் நிலை" } },
-      { "q": { "en": "Which ancient Tamil kingdom was famous for its pearls?", "ta": "எந்தப் பண்டைய தமிழ்க் இராச்சியம் அதன் முத்துக்களுக்குப் புகழ் பெற்றது?" }, "a": { "en": "PANDYA", "ta": "பாண்டிய" } },
-      { "q": { "en": "What is the name for a fixed, oversimplified idea about a person or group?", "ta": "ஒரு நபர் அல்லது குழுவைப் பற்றிய ஒரு நிலையான, மிகைப்படுத்தப்பட்ட யோசனைக்கு என்ன பெயர்?" }, "a": { "en": "STEREOTYPE", "ta": "ஸ்டீரியோடைப்" } }
-    ],
-    "hard": [
-      { "q": { "en": "What is the name of the ancient site in Tamil Nadu where Roman artifacts were found?", "ta": "தமிழ்நாட்டில் ரோமானிய கலைப்பொருட்கள் கண்டெடுக்கப்பட்ட பண்டைய இடத்தின் பெயர் என்ன?" }, "a": { "en": "ARICAMEDU", "ta": "அரிக்கமேடு" } },
-      { "q": { "en": "Which term refers to the large stone monuments used as burial sites?", "ta": "புதைகுழிகளாகப் பயன்படுத்தப்படும் பெரிய கல் நினைவுச்சின்னங்களைக் குறிக்கும் சொல் எது?" }, "a": { "en": "MEGALITHIC", "ta": "பெருங்கற்கால" } },
-      { "q": { "en": "What is the name of the Buddhist concept meaning 'the truth of the end of suffering'?", "ta": "'துன்பத்தின் முடிவுக்கான உண்மை' என்று பொருள்படும் புத்த மதக் கருத்தின் பெயர் என்ன?" }, "a": { "en": "NIRODHA", "ta": "நிரோதா" } },
-      { "q": { "en": "Which dynasty was founded by Chandragupta Maurya?", "ta": "சந்திரகுப்த மௌரியரால் எந்த வம்சம் நிறுவப்பட்டது?" }, "a": { "en": "MAURYAN", "ta": "மௌரியன்" } },
-      { "q": { "en": "What is the name of the water layer that surrounds the Earth?", "ta": "பூமியைச் சுற்றியுள்ள நீர் அடுக்கின் பெயர் என்ன?" }, "a": { "en": "HYDROSPHERE", "ta": "நீர்க்கோளம்" } },
-      { "q": { "en": "Which term describes the unfair treatment of people based on their caste?", "ta": "ஒருவரின் சாதியின் அடிப்படையில் மக்களுக்கு எதிரான நியாயமற்ற நடத்தையை விவரிக்கும் சொல் எது?" }, "a": { "en": "DISCRIMINATION", "ta": "பாகுபாடு" } },
-      { "q": { "en": "What is the name of the ancient Tamil script found in cave inscriptions?", "ta": "குகைக் கல்வெட்டுகளில் காணப்படும் பண்டைய தமிழ்ச் சுவடிகளின் பெயர் என்ன?" }, "a": { "en": "TAMILBRAHMI", "ta": "தமிழ் பிராமி" } },
-      { "q": { "en":"Which Vedic text is a collection of hymns and is the oldest?", "ta":"எந்த வேத நூல் பாடல்களின் தொகுப்பாகும் மற்றும் மிக பழமையானது?"},"a":{"en":"RIGVEDA","ta":"ரிக்வேதம்"}} ,
-      { "q": {"en":" What is the name of the economic concept where everyone depends on each other?","ta":"கேள்வி: அனைவரும் ஒருவருக்கொருவர் சார்ந்திருக்கும் பொருளாதாரக் கருத்தின் பெயர் என்ன?"},"a":{"en":" INTERDEPENDENCE","ta":" சார்புத்தன்மை"}},
-      { "q": {"en":"Which term refers to the right to vote for all adult citizens?","ta":"அனைத்து வயது வந்த குடிமக்களுக்கும் வாக்களிக்கும் உரிமையைக் குறிக்கும் சொல் எது?"},"a":{"en":"FRANCHISE","ta":"உரிமையளிப்பு"}}
-    ]
+  { 
+    "q": { 
+      "en": "The largest desert in the world, located in Africa.", 
+      "ta": "உலகிலேயே மிகப்பெரிய பாலைவனம், ஆப்ரிக்காவில் அமைந்துள்ளது ?" 
+    }, 
+    "a": { "en": "SAHARA", "ta": "சஹாரா" } 
+  },
+  { 
+    "q": { 
+      "en": "Which ancient Tamil kingdom was famous for its pearls?", 
+      "ta": "எந்தப் பண்டைய தமிழ்க் இராச்சியம் அதன் முத்துக்களுக்குப் புகழ் பெற்றது?" 
+    }, 
+    "a": { "en": "PANDYA", "ta": "பாண்டிய" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the name for a large system of stars, gas, and dust?", 
+      "ta": "நட்சத்திரங்கள், வாயு மற்றும் தூசுகளின் பெரிய அமைப்புக்கு என்ன பெயர்?" 
+    }, 
+    "a": { "en": "GALAXY", "ta": "விண்மீன்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which emperor's edicts were inscribed on pillars and rocks across India?", 
+      "ta": "இந்தியாவின் தூண்கள் மற்றும் பாறைகளில் எந்தப் பேரரசரின் ஆணைகள் பொறிக்கப்பட்டிருந்தன?" 
+    }, 
+    "a": { "en": "ASHOKA", "ta": "அசோகா" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the spinning motion of the Earth on its axis called?", 
+      "ta": "பூமியின் அச்சில் அதன் சுழற்சி இயக்கம் என்னவென்று அழைக்கப்படுகிறது?" 
+    }, 
+    "a": { "en": "SPIN", "ta": "சுழல்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which social system divides people into hereditary groups in India?", 
+      "ta": "இந்தியாவில் மக்கள் பிறப்பின் அடிப்படையில் பிரிக்கப்பட்ட சமூக அமைப்பு எது?" 
+    }, 
+    "a": { "en": "CASTE", "ta": "ஜாதி" } 
+  },
+  { 
+    "q": { 
+      "en": "Which branch of study deals with production and distribution of goods?", 
+      "ta": "பொருட்களின் உற்பத்தி மற்றும் விநியோகத்தைப் பற்றிய கல்வி எது?" 
+    }, 
+    "a": { "en": "ECONOMY", "ta": "பொருளாதாரம்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which war in 1857 is called the First War of Indian Independence?", 
+      "ta": "1857ல் நடந்த எந்தப் போர் இந்தியாவின் முதல் சுதந்திரப் போராட்டம் என அழைக்கப்படுகிறது?" 
+    }, 
+    "a": { "en": "REVOLT", "ta": "எதிர்ப்பு" } 
+  },
+  { 
+    "q": { 
+      "en": "Which ocean is named after India?", 
+      "ta": "இந்தியாவின் பெயரால் அழைக்கப்படும் பெருங்கடல் எது?" 
+    }, 
+    "a": { "en": "INDIAN", "ta": "இந்திய" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the basic political unit in a democracy?", 
+      "ta": "ஜனநாயகத்தில் அடிப்படை அரசியல் அலகு எது?" 
+    }, 
+    "a": { "en": "VOTER", "ta": "வாக்காளர்" } 
+  }
+]
+,
+  "hard": [
+  { 
+    "q": { 
+      "en": "Which ancient port city in Tamil Nadu had Indo-Roman trade links?", 
+      "ta": "இந்தோ-ரோமானிய வர்த்தகத் தொடர்புகள் இருந்த தமிழ்நாட்டின் பண்டைய துறைமுக நகரம் எது?" 
+    }, 
+    "a": { "en": "KORKAI", "ta": "கொர்கை" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the name of a large stone used in prehistoric burials?", 
+      "ta": "பண்டைய புதைகுழிகளில் பயன்படுத்தப்பட்ட பெரிய கல்லின் பெயர் என்ன?" 
+    }, 
+    "a": { "en": "MENHIR", "ta": "மென்ஹிர்" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the Buddhist truth about the end of suffering called?", 
+      "ta": "துன்பத்தின் முடிவை விளக்கும் புத்தமத உண்மையின் பெயர் என்ன?" 
+    }, 
+    "a": { "en": "NIRODHA", "ta": "நிரோதா" } 
+  },
+  { 
+    "q": { 
+      "en": "Which dynasty was founded by Chandragupta Maurya?", 
+      "ta": "சந்திரகுப்த மௌரியரால் நிறுவப்பட்ட வம்சம் எது?" 
+    }, 
+    "a": { "en": "MAURYAN", "ta": "மௌரியன்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which sphere of Earth contains all water bodies?", 
+      "ta": "பூமியில் உள்ள அனைத்து நீர்நிலைகளையும் உள்ளடக்கிய கோளம் எது?" 
+    }, 
+    "a": { "en": "HYDROS", "ta": "நீர்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which term means unfair treatment based on caste?", 
+      "ta": "சாதி அடிப்படையில் அநீதி செய்வதைக் குறிக்கும் சொல் எது?" 
+    }, 
+    "a": { "en": "BIAS", "ta": "பாகுபாடு" } 
+  },
+  { 
+    "q": { 
+      "en": "Which ancient Tamil script is found in cave writings?", 
+      "ta": "குகை கல்வெட்டுகளில் காணப்படும் பண்டைய தமிழ்ச் சுவடிகள் எவை?" 
+    }, 
+    "a": { "en": "BRAHMI", "ta": "பிராமி" } 
+  },
+  { 
+    "q": { 
+      "en": "Which Vedic text is a collection of hymns and the oldest?", 
+      "ta": "எந்த வேத நூல் பாடல்களின் தொகுப்பாகவும் பழமையானதுமாகும்?" 
+    }, 
+    "a": { "en": "RIGVEDA", "ta": "ரிக்வேதம்" } 
+  },
+  { 
+    "q": { 
+      "en": "Which system shows people depending on each other?", 
+      "ta": "மக்கள் ஒருவர்மீது ஒருவர் சார்ந்திருக்கும் அமைப்பு எது?" 
+    }, 
+    "a": { "en": "MUTUAL", "ta": "பரஸ்பரம்" } 
+  },
+  { 
+    "q": { 
+      "en": "What is the term for the right to vote in elections?", 
+      "ta": "தேர்தல்களில் வாக்களிக்கும் உரிமையை குறிக்கும் சொல் எது?" 
+    }, 
+    "a": { "en": "VOTING", "ta": "வாக்கு" } 
+  }
+]
+
   },
   "grade7": {
     "easy": [
-      {
-        "q": {
-          "en": "Who was the first woman ruler of the Delhi Sultanate?",
-          "ta": "தில்லி சுல்தானில் முதல் பெண் ஆட்சி செய்தவர் யார்?"
-        },
-        "a": {
-          "en": "RAZIA",
-          "ta": "ரஸியா"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the outermost layer of the Earth called?",
-          "ta": "பூமியின் வெளிப்புற அடுக்கு என்ன?"
-        },
-        "a": {
-          "en": "CRUST",
-          "ta": "உறை"
-        }
-      },
-      {
-        "q": {
-          "en": "What is a U-shaped valley formed by?",
-          "ta": "U-வடிவ பள்ளத்தாக்கு எதனால் உருவாகிறது?"
-        },
-        "a": {
-          "en": "GLACIER",
-          "ta": "பனிக்கட்டி"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the principle of treating everyone the same under the law?",
-          "ta": "சட்டத்தின் கீழ் அனைவரையும் சமமாக நடத்தும் கொள்கை என்ன?"
-        },
-        "a": {
-          "en": "EQUALITY",
-          "ta": "சமத்துவம்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name for a group that seeks to win elections and govern?",
-          "ta": "தேர்தலில் வென்று ஆட்சி செய்ய முயலும் குழுவின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "PARTY",
-          "ta": "கட்சி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Mughal emperor built the Taj Mahal?",
-          "ta": "தாஜ்மஹாலை கட்டிய முகலாய பேரரசர் யார்?"
-        },
-        "a": {
-          "en": "SHAHJAHAN",
-          "ta": "ஷாஜஹான்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name for resources that can be replaced, like solar energy?",
-          "ta": "சூரிய சக்தி போன்ற மாற்றக்கூடிய வளங்களின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "RENEWABLE",
-          "ta": "புதுப்பிக்கக்கூடிய"
-        }
-      },
-      {
-        "q": {
-          "en": "Who is the constitutional head of a state government?",
-          "ta": "மாநில அரசின் அரசியல் தலைவராக இருப்பவர் யார்?"
-        },
-        "a": {
-          "en": "GOVERNOR",
-          "ta": "ஆளுநர்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for the variety of life in a particular habitat?",
-          "ta": "ஒரு சூழலில் உள்ள உயிர்களின் பல்வகை தன்மைக்கு என்ன பெயர்?"
-        },
-        "a": {
-          "en": "BIODIVERSITY",
-          "ta": "உயிர்வளப் பல்வகை"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name for the practice of visiting places for pleasure?",
-          "ta": "மகிழ்ச்சிக்காக இடங்களை பார்வையிடும் நடைமுறை என்ன?"
-        },
-        "a": {
-          "en": "TOURISM",
-          "ta": "சுற்றுலா"
-        }
-      }
-    ],
+  {
+    "q": {
+      "en": "Which river is the longest in India?",
+      "ta": "இந்தியாவின் நீளமான நதி எது?"
+    },
+    "a": {
+      "en": "GANGA",
+      "ta": "கங்கை"
+    }
+  },
+  {
+    "q": {
+      "en": "Who is known as the Father of the Indian Nation?",
+      "ta": "இந்திய தேசத்தின் தந்தை என்று அழைக்கப்படுபவர் யார்?"
+    },
+    "a": {
+      "en": "GANDHI",
+      "ta": "காந்தி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which ocean lies to the south of India?",
+      "ta": "இந்தியாவின் தெற்கில் எந்தப் பெருங்கடல் உள்ளது?"
+    },
+    "a": {
+      "en": "INDIAN",
+      "ta": "இந்திய"
+    }
+  },
+  {
+    "q": {
+      "en": "Which festival is called the Festival of Lights?",
+      "ta": "விளக்குத் திருவிழா என்று அழைக்கப்படும் பண்டிகை எது?"
+    },
+    "a": {
+      "en": "DIWALI",
+      "ta": "தீபாவளி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which gas do humans need to breathe?",
+      "ta": "மனிதர்கள் சுவாசிக்க வேண்டிய வாயு எது?"
+    },
+    "a": {
+      "en": "OXYGEN",
+      "ta": "ஆமிலன்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the capital city of India?",
+      "ta": "இந்தியாவின் தலைநகர் எது?"
+    },
+    "a": {
+      "en": "DELHI",
+      "ta": "தில்லி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which metal is known as 'yellow metal'?",
+      "ta": "‘மஞ்சள் உலோகம்’ என்று அழைக்கப்படும் உலோகம் எது?"
+    },
+    "a": {
+      "en": "GOLDEN",
+      "ta": "தங்கம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which planet is called the Red Planet?",
+      "ta": "சிவப்பு கோள் என்று அழைக்கப்படும் கிரகம் எது?"
+    },
+    "a": {
+      "en": "MARS",
+      "ta": "செவ்வாய்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which monument is one of the Seven Wonders in India?",
+      "ta": "இந்தியாவில் உள்ள ஏழு அதிசயங்களில் ஒன்று எது?"
+    },
+    "a": {
+      "en": "TAJMAH",
+      "ta": "தாஜ்மா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which direction does the Sun rise?",
+      "ta": "சூரியன் எந்த திசையில் உதிக்கிறது?"
+    },
+    "a": {
+      "en": "EAST",
+      "ta": "கிழக்கு"
+    }
+  }
+]
+,
     "medium": [
-      {
-        "q": {
-          "en": "Which Khalji Sultan introduced the market control policy?",
-          "ta": "சந்தை கட்டுப்பாட்டு கொள்கையை அறிமுகப்படுத்திய கில்ஜி சுல்தான் யார்?"
-        },
-        "a": {
-          "en": "ALADDIN",
-          "ta": "அலாவுதீன்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the molten rock inside the Earth's mantle called?",
-          "ta": "பூமியின் மேல் அடுக்கில் உள்ள உருகிய பாறை என்ன?"
-        },
-        "a": {
-          "en": "MAGMA",
-          "ta": "மக்மா"
-        }
-      },
-      {
-        "q": {
-          "en": "Which landform is formed at the mouth of a river?",
-          "ta": "ஆற்றின் வாயில் உருவாகும் நில அமைப்பு என்ன?"
-        },
-        "a": {
-          "en": "DELTA",
-          "ta": "டெல்டா"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the system with multiple political parties called?",
-          "ta": "பல அரசியல் கட்சிகள் உள்ள அமைப்பு என்ன?"
-        },
-        "a": {
-          "en": "MULTIPARTY",
-          "ta": "பல்கட்சி அமைப்பு"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Maratha ruler built a strong navy to challenge the Europeans?",
-          "ta": "ஐரோப்பியர்களை எதிர்க்க கடல்படை அமைத்த மராத்தா அரசர் யார்?"
-        },
-        "a": {
-          "en": "SHIVAJI",
-          "ta": "சிவாஜி"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for money used to start a business?",
-          "ta": "தொழில் தொடங்க பயன்படுத்தப்படும் பணம் என்ன?"
-        },
-        "a": {
-          "en": "CAPITAL",
-          "ta": "முதலீடு"
-        }
-      },
-      {
-        "q": {
-          "en": "Which empire was known for its elaborate water management systems?",
-          "ta": "நீர்ப்பாசன அமைப்புகளுக்காக புகழ்பெற்ற பேரரசு எது?"
-        },
-        "a": {
-          "en": "VIJAYANAGAR",
-          "ta": "விஜயநகரம்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for the industry that provides services?",
-          "ta": "சேவைகளை வழங்கும் தொழில் துறை என்ன?"
-        },
-        "a": {
-          "en": "TERTIARY",
-          "ta": "மூன்றாம் நிலைத் துறை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which continent is known for its Amazon rainforest?",
-          "ta": "அமேசான் காடுகளுக்காக பிரபலமான கண்டம் எது?"
-        },
-        "a": {
-          "en": "SOUTHAMERICA",
-          "ta": "தென் அமெரிக்கா"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the key that explains symbols on a map called?",
-          "ta": "வரைபடத்தில் குறியீடுகளை விளக்கும் விசை என்ன?"
-        },
-        "a": {
-          "en": "LEGEND",
-          "ta": "குறியீட்டு விளக்கம்"
-        }
-      }
-    ],
+  {
+    "q": {
+      "en": "Which Khalji Sultan introduced the market control policy?",
+      "ta": "சந்தை கட்டுப்பாட்டு கொள்கையை அறிமுகப்படுத்திய கில்ஜி சுல்தான் யார்?"
+    },
+    "a": {
+      "en": "ALADDIN",
+      "ta": "அலாவுதீன்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the molten rock inside the Earth's mantle called?",
+      "ta": "பூமியின் மேல் அடுக்கில் உள்ள உருகிய பாறை என்ன?"
+    },
+    "a": {
+      "en": "MAGMA",
+      "ta": "மக்மா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which landform is formed at the mouth of a river?",
+      "ta": "ஆற்றின் வாயில் உருவாகும் நில அமைப்பு என்ன?"
+    },
+    "a": {
+      "en": "DELTA",
+      "ta": "டெல்டா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which economic activity involves buying and selling goods?",
+      "ta": "பொருட்களை வாங்கி விற்கும் பொருளாதார செயல் எது?"
+    },
+    "a": {
+      "en": "TRADE",
+      "ta": "வர்த்தகம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Maratha ruler built a strong navy to challenge the Europeans?",
+      "ta": "ஐரோப்பியர்களை எதிர்க்க கடல்படை அமைத்த மராத்தா அரசர் யார்?"
+    },
+    "a": {
+      "en": "SHIVAJI",
+      "ta": "சிவாஜி"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the term for money used to start a business?",
+      "ta": "தொழில் தொடங்க பயன்படுத்தப்படும் பணம் என்ன?"
+    },
+    "a": {
+      "en": "CAPITAL",
+      "ta": "முதலீடு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Mughal emperor built the Red Fort in Delhi?",
+      "ta": "தில்லியில் லால் கோட்டை கட்டிய முகலாய பேரரசர் யார்?"
+    },
+    "a": {
+      "en": "SHAHJAN",
+      "ta": "ஷாஜகான்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the term for the industry that provides services?",
+      "ta": "சேவைகளை வழங்கும் தொழில் துறை என்ன?"
+    },
+    "a": {
+      "en": "TERTIARY",
+      "ta": "மூன்றாம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which continent is known as the 'Dark Continent'?",
+      "ta": "‘கருப்பு கண்டம்’ என்று அழைக்கப்படும் கண்டம் எது?"
+    },
+    "a": {
+      "en": "AFRICA",
+      "ta": "ஆப்ரிக்கா"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the key that explains symbols on a map called?",
+      "ta": "வரைபடத்தில் குறியீடுகளை விளக்கும் விசை என்ன?"
+    },
+    "a": {
+      "en": "LEGEND",
+      "ta": "குறியீடு"
+    }
+  }
+]
+,
     "hard": [
-      {
-        "q": {
-          "en": "Which Tughlaq Sultan is known for his failed currency experiment?",
-          "ta": "தோல்வியடைந்த நாணய முயற்சிக்காக பிரபலமான துக்ளக் சுல்தான் யார்?"
-        },
-        "a": {
-          "en": "MUHAMMADBIN",
-          "ta": "முகம்மது பின் துக்ளக்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the point inside the Earth where an earthquake starts?",
-          "ta": "பூமிக்குள் நிலநடுக்கம் தொடங்கும் இடம் என்ன?"
-        },
-        "a": {
-          "en": "FOCUS",
-          "ta": "மையம்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which philosophy preached absolute determinism and was contemporary to Jainism?",
-          "ta": "ஜைன மதத்துடன் இணைந்து இருந்த, முழுமையான விதிவிலக்கை போதித்த தத்துவம் எது?"
-        },
-        "a": {
-          "en": "AJIVIKA",
-          "ta": "அஜீவிகா"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of the council of eight ministers in Shivaji's administration?",
-          "ta": "சிவாஜியின் ஆட்சியில் எட்டு அமைச்சர்களைக் கொண்ட குழுவின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "ASHTAPRADHAN",
-          "ta": "அஷ்டப்ரதான்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which type of market has a single seller for a product?",
-          "ta": "ஒரு பொருளுக்கான ஒரே விற்பனையாளரைக் கொண்ட சந்தை வகை எது?"
-        },
-        "a": {
-          "en": "MONOPOLY",
-          "ta": "ஒரே விற்பனையாளர் சந்தை"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for the process of making maps?",
-          "ta": "வரைபடங்களை உருவாக்கும் செயல்முறை என்ன?"
-        },
-        "a": {
-          "en": "CARTOGRAPHY",
-          "ta": "வரைபடவியல்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Sufi saint is known for his doctrine of universal brotherhood?",
-          "ta": "உலக சகோதரத்துவக் கொள்கைக்காக பிரபலமான சூஃபி சாந்தர் யார்?"
-        },
-        "a": {
-          "en": "NIZAMUDDIN",
-          "ta": "நிஜாமுதீன்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of the government body that manages disasters in India?",
-          "ta": "இந்தியாவில் பேரழிவுகளை நிர்வகிக்கும் அரசு அமைப்பு எது?"
-        },
-        "a": {
-          "en": "NDMA",
-          "ta": "தேசிய பேரழிவு மேலாண்மை ஆணையம்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which consumer right protects against hazardous goods and services?",
-          "ta": "ஆபத்தான பொருட்கள் மற்றும் சேவைகளிலிருந்து பாதுகாப்பு அளிக்கும் நுகர்வோர் உரிமை எது?"
-        },
-        "a": {
-          "en": "SAFETY",
-          "ta": "பாதுகாப்பு உரிமை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Vijayanagar king was known as 'Andhra Bhoja'?",
-          "ta": "'ஆந்திர போஜா' என அழைக்கப்பட்ட விஜயநகர அரசர் யார்?"
-        },
-        "a": {
-          "en": "KRISHNADEVARAYA",
-          "ta": "கிருஷ்ணதேவராயர்"
-        }
-      }
-    ]
+  {
+    "q": {
+      "en": "Which Delhi Sultan was called the 'wisest fool' for his experiments?",
+      "ta": "தனது சோதனைகளுக்காக 'மிகவும் புத்திசாலித்தனமான முட்டாள்' என்று அழைக்கப்பட்ட தில்லி சுல்தான் யார்?"
+    },
+    "a": {
+      "en": "TUGHLUQ",
+      "ta": "துக்ளக்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the point inside the Earth where an earthquake starts?",
+      "ta": "பூமிக்குள் நிலநடுக்கம் தொடங்கும் இடம் என்ன?"
+    },
+    "a": {
+      "en": "FOCUS",
+      "ta": "மையம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which philosophy preached absolute determinism and was contemporary to Jainism?",
+      "ta": "ஜைன மதத்துடன் இணைந்து இருந்த, முழுமையான விதிவிலக்கை போதித்த தத்துவம் எது?"
+    },
+    "a": {
+      "en": "AJIVIKA",
+      "ta": "அஜீவிகா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Mughal ruler built Fatehpur Sikri?",
+      "ta": "ஃபதேபூர் சிக்ரியை கட்டிய முகலாய மன்னன் யார்?"
+    },
+    "a": {
+      "en": "AKBAR",
+      "ta": "அக்பர்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which type of market has a single seller for a product?",
+      "ta": "ஒரு பொருளுக்கான ஒரே விற்பனையாளரைக் கொண்ட சந்தை வகை எது?"
+    },
+    "a": {
+      "en": "MONOPOLY",
+      "ta": "மோனோபொலி"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the science of coins and currency called?",
+      "ta": "நாணயங்கள் மற்றும் நாணய வரலாற்றை ஆய்வு செய்யும் அறிவியல் என்ன?"
+    },
+    "a": {
+      "en": "NUMISM",
+      "ta": "நாணயம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Sufi saint is known for his doctrine of universal brotherhood?",
+      "ta": "உலக சகோதரத்துவக் கொள்கைக்காக பிரபலமான சூஃபி சாந்தர் யார்?"
+    },
+    "a": {
+      "en": "NIZAM",
+      "ta": "நிஜாம்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the name of the government body that manages disasters in India?",
+      "ta": "இந்தியாவில் பேரழிவுகளை நிர்வகிக்கும் அரசு அமைப்பு எது?"
+    },
+    "a": {
+      "en": "NDMA",
+      "ta": "என்டிஎம்ஏ"
+    }
+  },
+  {
+    "q": {
+      "en": "Which consumer right protects against hazardous goods and services?",
+      "ta": "ஆபத்தான பொருட்கள் மற்றும் சேவைகளிலிருந்து பாதுகாப்பு அளிக்கும் நுகர்வோர் உரிமை எது?"
+    },
+    "a": {
+      "en": "SAFETY",
+      "ta": "பாதுகா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which empire was founded by Chandragupta Maurya?",
+      "ta": "சந்திரகுப்த மௌரியர் நிறுவிய பேரரசு எது?"
+    },
+    "a": {
+      "en": "MAURYA",
+      "ta": "மௌர்யா"
+    }
+  }
+]
+
   },
   "grade8": {
     "easy": [
-      {
-        "q": {
-          "en": "Which European trading company first came to India?",
-          "ta": "இந்தியாவிற்கு முதலில் வந்த ஐரோப்பிய வர்த்தக நிறுவனம் எது?"
-        },
-        "a": {
-          "en": "PORTUGUESE",
-          "ta": "போர்த்துகீசியம்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name for the continuous movement of water on Earth?",
-          "ta": "பூமியில் நீரின் தொடர்ச்சியான இயக்கத்தின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "CYCLE",
-          "ta": "சுழற்சி"
-        }
-      },
-      {
-        "q": {
-          "en": "Who is the head of a State Government?",
-          "ta": "ஒரு மாநில அரசாங்கத்தின் தலைவர் யார்?"
-        },
-        "a": {
-          "en": "MINISTER",
-          "ta": "முதலமைச்சர்"
-        }
-      },
-      {
-        "q": {
-          "en": "What do we call money kept in a bank for future use?",
-          "ta": "எதிர்கால பயன்பாட்டிற்காக வங்கியில் வைக்கப்படும் பணத்தை நாம் என்னவென்று அழைக்கிறோம்?"
-        },
-        "a": {
-          "en": "SAVINGS",
-          "ta": "சேமிப்பு"
-        }
-      },
-      {
-        "q": {
-          "en": "Which war established British power in South India against the French?",
-          "ta": "பிரெஞ்சுக்காரர்களுக்கு எதிராக தென்னிந்தியாவில் பிரிட்டிஷ் அதிகாரத்தை நிறுவிய போர் எது?"
-        },
-        "a": {
-          "en": "CARNATIC",
-          "ta": "கர்நாடகம்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name for the revolt of Indian soldiers in 1857?",
-          "ta": "1857 இல் இந்திய சிப்பாய்களின் கிளர்ச்சிக்கு என்ன பெயர்?"
-        },
-        "a": {
-          "en": "SEPOY",
-          "ta": "சிப்பாய்"
-        }
-      },
-      {
-        "q": {
-          "en": "What do we call the day-to-day condition of the atmosphere?",
-          "ta": "வளிமண்டலத்தின் அன்றாட நிலையை நாம் என்னவென்று அழைக்கிறோம்?"
-        },
-        "a": {
-          "en": "WEATHER",
-          "ta": "வானிலை"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the highest court in a state called?",
-          "ta": "ஒரு மாநிலத்தில் உள்ள மிக உயர்ந்த நீதிமன்றம் என்னவென்று அழைக்கப்படுகிறது?"
-        },
-        "a": {
-          "en": "HIGHCOURT",
-          "ta": "உயர்நீதிமன்றம்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which sector is run by individuals for profit?",
-          "ta": "எந்தத் துறை தனிநபர்களால் லாபத்திற்காக நடத்தப்படுகிறது?"
-        },
-        "a": {
-          "en": "PRIVATE",
-          "ta": "தனியார்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the movement of people from villages to cities called?",
-          "ta": "கிராமங்களிலிருந்து நகரங்களுக்கு மக்கள் இடம் பெயரும் செயல் என்னவென்று அழைக்கப்படுகிறது?"
-        },
-        "a": {
-          "en": "MIGRATION",
-          "ta": "குடிபெயர்தல்"
-        }
-      }
-    ],
-    "medium": [
-      {
-        "q": {
-          "en": "What was the British land revenue system that ruined farmers?",
-          "ta": "விவசாயிகளை அழித்த பிரிட்டிஷ் நில வருவாய் முறை என்ன?"
-        },
-        "a": {
-          "en": "ZAMINDARI",
-          "ta": "ஜமீன்தாரி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which policy forced Indian rulers to accept British troops and pay for them?",
-          "ta": "எந்தக் கொள்கை இந்திய ஆட்சியாளர்களை பிரிட்டிஷ் துருப்புக்களை ஏற்றுக்கொண்டு அவர்களுக்கு பணம் செலுத்த கட்டாயப்படுத்தியது?"
-        },
-        "a": {
-          "en": "SUBSIDIARY",
-          "ta": "துணைப்படை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which type of rainfall is caused by mountains blocking moist winds?",
-          "ta": "ஈரப்பதமான காற்றை மலைகள் தடுப்பதால் ஏற்படும் மழையின் வகை எது?"
-        },
-        "a": {
-          "en": "OROGRAPHIC",
-          "ta": "ஓரோகிராபிக்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the legal status of belonging to a particular country?",
-          "ta": "ஒரு குறிப்பிட்ட நாட்டிற்குச் சொந்தமான சட்டப்பூர்வ நிலை என்ன?"
-        },
-        "a": {
-          "en": "CITIZENSHIP",
-          "ta": "குடியுரிமை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Mysore ruler fiercely resisted British expansion?",
-          "ta": "எந்த மைசூர் ஆட்சியாளர் பிரிட்டிஷ் விரிவாக்கத்தை கடுமையாக எதிர்த்தார்?"
-        },
-        "a": {
-          "en": "TIPUSULTAN",
-          "ta": "திப்புசுல்தான்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for money earned illegally and not declared to the government?",
-          "ta": "சட்டவிரோதமாக சம்பாதித்து அரசாங்கத்திடம் அறிவிக்கப்படாத பணத்திற்கான சொல் என்ன?"
-        },
-        "a": {
-          "en": "BLACKMONEY",
-          "ta": "கருப்புப்பணம்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Indian city was developed as a major port by the British?",
-          "ta": "பிரிட்டிஷ் காரர்களால் முக்கிய துறைமுகமாக உருவாக்கப்பட்ட இந்திய நகரம் எது?"
-        },
-        "a": {
-          "en": "MADRAS",
-          "ta": "மெட்ராஸ்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the principle that separates religion from state power?",
-          "ta": "மதத்தை அரச அதிகாரத்திலிருந்து பிரிக்கும் கொள்கை என்ன?"
-        },
-        "a": {
-          "en": "SECULARISM",
-          "ta": "மதச்சார்பின்மை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which UN organization protects the rights of children worldwide?",
-          "ta": "உலகெங்கிலும் உள்ள குழந்தைகளின் உரிமைகளைப் பாதுகாக்கும் ஐ.நா அமைப்பு எது?"
-        },
-        "a": {
-          "en": "UNICEF",
-          "ta": "யுனிசெஃப்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which continent is known as the 'White Continent'?",
-          "ta": "'வெள்ளை கண்டம்' என்று அழைக்கப்படும் கண்டம் எது?"
-        },
-        "a": {
-          "en": "ANTARCTICA",
-          "ta": "அண்டார்டிகா"
-        }
-      }
-    ],
-    "hard": [
-      {
-        "q": {
-          "en": "Which 1806 revolt by Indian soldiers happened at a fort in Tamil Nadu?",
-          "ta": "1806 இல் இந்திய சிப்பாய்களால் தமிழ்நாட்டில் ஒரு கோட்டையில் நடந்த கிளர்ச்சி எது?"
-        },
-        "a": {
-          "en": "VELLORE",
-          "ta": "வேலூர்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for the process of rocks breaking down into soil?",
-          "ta": "பாறைகள் மண்ணாக சிதைந்து போகும் செயல்முறைக்கு என்ன பெயர்?"
-        },
-        "a": {
-          "en": "WEATHERING",
-          "ta": "சிதைவு"
-        }
-      },
-      {
-        "q": {
-          "en": "Which fundamental right allows citizens to move to court to enforce their rights?",
-          "ta": "எந்த அடிப்படை உரிமை குடிமக்கள் தங்கள் உரிமைகளை நடைமுறைப்படுத்த நீதிமன்றத்திற்கு செல்ல அனுமதிக்கிறது?"
-        },
-        "a": {
-          "en": "REMEDIES",
-          "ta": "தீர்வுகள்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which government initiative aims to educate all children in India?",
-          "ta": "இந்தியாவின் அனைத்து குழந்தைகளுக்கும் கல்வி கற்பிப்பதை நோக்கமாகக் கொண்ட அரசுத் திட்டம் எது?"
-        },
-        "a": {
-          "en": "SARVASHIKSHA",
-          "ta": "சர்வஷிக்ஷா"
-        }
-      },
-      {
-        "q": {
-          "en": "Which organization represents Indian industry and business?",
-          "ta": "இந்திய தொழில் மற்றும் வணிகத்தை பிரதிநிதித்துவப்படுத்தும் அமைப்பு எது?"
-        },
-        "a": {
-          "en": "CII",
-          "ta": "CII"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the term for a sudden natural event that causes great damage?",
-          "ta": "பெரும் சேதத்தை ஏற்படுத்தும் திடீர் இயற்கை நிகழ்வுக்கான சொல் என்ன?"
-        },
-        "a": {
-          "en": "HAZARD",
-          "ta": "இடர்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Indian foreign policy principle means 'peaceful coexistence'?",
-          "ta": "'அமைதியான சகவாழ்வு' என்று பொருள்படும் இந்திய வெளியுறவுக் கொள்கை கொள்கை எது?"
-        },
-        "a": {
-          "en": "PANCHSHEEL",
-          "ta": "பஞ்சசீல்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of the litigation process to protect fundamental rights?",
-          "ta": "அடிப்படை உரிமைகளைப் பாதுகாப்பதற்காக உள்ள வழக்காடு முறையின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "PIL",
-          "ta": "PIL"
-        }
-      },
-      {
-        "q": {
-          "en": "Which soil type is most suitable for growing cotton?",
-          "ta": "பருத்தி பயிரிடுவதற்கு மிகவும் பொருத்தமான மண் வகை எது?"
-        },
-        "a": {
-          "en": "REGUR",
-          "ta": "இரெகுர்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which paramilitary force guards India's international borders?",
-          "ta": "இந்தியாவின் சர்வதேச எல்லைகளைப் பாதுகாக்கும் துணை ராணுவப் படை எது?"
-        },
-        "a": {
-          "en": "BSF",
-          "ta": "BSF"
-        }
-      }
-    ]
+  {
+    "q": {
+      "en": "Which European trading company first came to India?",
+      "ta": "இந்தியாவிற்கு முதலில் வந்த ஐரோப்பிய வர்த்தக நிறுவனம் எது?"
+    },
+    "a": {
+      "en": "DUTCH",
+      "ta": "டச்சு"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the name for the continuous movement of water on Earth?",
+      "ta": "பூமியில் நீரின் தொடர்ச்சியான இயக்கத்தின் பெயர் என்ன?"
+    },
+    "a": {
+      "en": "CIRCLE",
+      "ta": "சுழற்சி"
+    }
+  },
+  {
+    "q": {
+      "en": "Who is the head of a State Government?",
+      "ta": "ஒரு மாநில அரசாங்கத்தின் தலைவர் யார்?"
+    },
+    "a": {
+      "en": "CHIEF",
+      "ta": "முதல்வர்"
+    }
+  },
+  {
+    "q": {
+      "en": "What do we call money kept in a bank for future use?",
+      "ta": "எதிர்கால பயன்பாட்டிற்காக வங்கியில் வைக்கப்படும் பணத்தை நாம் என்னவென்று அழைக்கிறோம்?"
+    },
+    "a": {
+      "en": "SAVING",
+      "ta": "சேமிப்பு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which war established British power in South India against the French?",
+      "ta": "பிரெஞ்சுக்காரர்களுக்கு எதிராக தென்னிந்தியாவில் பிரிட்டிஷ் அதிகாரத்தை நிறுவிய போர் எது?"
+    },
+    "a": {
+      "en": "ARCOT",
+      "ta": "ஆர்காட்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the name for the revolt of Indian soldiers in 1857?",
+      "ta": "1857 இல் இந்திய சிப்பாய்களின் கிளர்ச்சிக்கு என்ன பெயர்?"
+    },
+    "a": {
+      "en": "REVOLT",
+      "ta": "கிளர்ச்சி"
+    }
+  },
+  {
+    "q": {
+      "en": "What do we call the day-to-day condition of the atmosphere?",
+      "ta": "வளிமண்டலத்தின் அன்றாட நிலையை நாம் என்னவென்று அழைக்கிறோம்?"
+    },
+    "a": {
+      "en": "CLIMATE",
+      "ta": "வானிலை"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the highest court in a state called?",
+      "ta": "ஒரு மாநிலத்தில் உள்ள மிக உயர்ந்த நீதிமன்றம் என்னவென்று அழைக்கப்படுகிறது?"
+    },
+    "a": {
+      "en": "HIGHCT",
+      "ta": "உயர்நீதி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sector is run by individuals for profit?",
+      "ta": "எந்தத் துறை தனிநபர்களால் லாபத்திற்காக நடத்தப்படுகிறது?"
+    },
+    "a": {
+      "en": "PRIVATE",
+      "ta": "தனியார்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the movement of people from villages to cities called?",
+      "ta": "கிராமங்களிலிருந்து நகரங்களுக்கு மக்கள் இடம் பெயரும் செயல் என்னவென்று அழைக்கப்படுகிறது?"
+    },
+    "a": {
+      "en": "URBAN",
+      "ta": "நகர்வு"
+    }
+  }
+],
+   "medium": [
+  {
+    "q": {
+      "en": "What was the British land revenue system that ruined farmers?",
+      "ta": "விவசாயிகளை அழித்த பிரிட்டிஷ் நில வருவாய் முறை என்ன?"
+    },
+    "a": {
+      "en": "RYOTWARI",
+      "ta": "ரையோட்வாரி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Mysore ruler fiercely resisted British expansion?",
+      "ta": "எந்த மைசூர் ஆட்சியாளர் பிரிட்டிஷ் விரிவாக்கத்தை கடுமையாக எதிர்த்தார்?"
+    },
+    "a": {
+      "en": "TIPU",
+      "ta": "திப்பு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which type of rainfall is caused by mountains blocking moist winds?",
+      "ta": "ஈரப்பதமான காற்றை மலைகள் தடுப்பதால் ஏற்படும் மழையின் வகை எது?"
+    },
+    "a": {
+      "en": "RELIEF",
+      "ta": "சரிவு"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the legal status of belonging to a particular country?",
+      "ta": "ஒரு குறிப்பிட்ட நாட்டிற்குச் சொந்தமான சட்டப்பூர்வ நிலை என்ன?"
+    },
+    "a": {
+      "en": "CITIZEN",
+      "ta": "குடிமகன்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Indian city was developed as a major port by the British?",
+      "ta": "பிரிட்டிஷ் காரர்களால் முக்கிய துறைமுகமாக உருவாக்கப்பட்ட இந்திய நகரம் எது?"
+    },
+    "a": {
+      "en": "MADRAS",
+      "ta": "மெட்ராஸ்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which principle separates religion from state power?",
+      "ta": "மதத்தை அரச அதிகாரத்திலிருந்து பிரிக்கும் கொள்கை என்ன?"
+    },
+    "a": {
+      "en": "SECULAR",
+      "ta": "மதச்சார்பின்மை"
+    }
+  },
+  {
+    "q": {
+      "en": "Which UN body protects the rights of children worldwide?",
+      "ta": "உலகெங்கிலும் உள்ள குழந்தைகளின் உரிமைகளைப் பாதுகாக்கும் ஐ.நா அமைப்பு எது?"
+    },
+    "a": {
+      "en": "UNICEF",
+      "ta": "யுனிசெஃப்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which continent is known as the 'White Continent'?",
+      "ta": "'வெள்ளை கண்டம்' என்று அழைக்கப்படும் கண்டம் எது?"
+    },
+    "a": {
+      "en": "ANTARCT",
+      "ta": "அண்டார்க்"
+    }
+  }
+]
+,
+   "hard": [
+  {
+    "q": {
+      "en": "Which 1806 revolt by Indian soldiers happened at a fort in Tamil Nadu?",
+      "ta": "1806 இல் இந்திய சிப்பாய்களால் தமிழ்நாட்டில் ஒரு கோட்டையில் நடந்த கிளர்ச்சி எது?"
+    },
+    "a": {
+      "en": "VELLORE",
+      "ta": "வேலூர்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the process of rocks breaking down into soil?",
+      "ta": "பாறைகள் மண்ணாக சிதைந்து போகும் செயல்முறை என்ன?"
+    },
+    "a": {
+      "en": "WEATHER",
+      "ta": "சிதைவு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which fundamental right allows citizens to go to court for rights?",
+      "ta": "உரிமைகளைப் பாதுகாக்க குடிமக்கள் நீதிமன்றத்திற்கு செல்ல அனுமதிக்கும் உரிமை எது?"
+    },
+    "a": {
+      "en": "REMEDY",
+      "ta": "தீர்வு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Indian principle means 'peaceful coexistence'?",
+      "ta": "'அமைதியான சகவாழ்வு' என்று பொருள்படும் இந்திய கொள்கை எது?"
+    },
+    "a": {
+      "en": "PANCHAL",
+      "ta": "பஞ்சசீல்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which soil type is most suitable for growing cotton?",
+      "ta": "பருத்தி பயிரிடுவதற்கு மிகவும் பொருத்தமான மண் வகை எது?"
+    },
+    "a": {
+      "en": "BLACKSO",
+      "ta": "கருப்பு மண்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which paramilitary force guards India's international borders?",
+      "ta": "இந்தியாவின் சர்வதேச எல்லைகளைப் பாதுகாக்கும் துணை ராணுவப் படை எது?"
+    },
+    "a": {
+      "en": "BORDER",
+      "ta": "எல்லை"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a sudden natural event that causes great damage called?",
+      "ta": "பெரும் சேதத்தை ஏற்படுத்தும் திடீர் இயற்கை நிகழ்வின் பெயர் என்ன?"
+    },
+    "a": {
+      "en": "DISASTER",
+      "ta": "பேரழிவு"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the largest ocean in the world?",
+      "ta": "உலகின் மிகப்பெரிய பெருங்கடல் எது?"
+    },
+    "a": {
+      "en": "PACIFIC",
+      "ta": "பசிபிக்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which social system divided people by birth in India?",
+      "ta": "இந்தியாவில் பிறப்பின் அடிப்படையில் மக்களைப் பிரித்த சமூக அமைப்பு எது?"
+    },
+    "a": {
+      "en": "CASTES",
+      "ta": "ஜாதிகள்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which city is the headquarters of the United Nations?",
+      "ta": "ஐக்கிய நாடுகள் சபையின் தலைமையகம் அமைந்துள்ள நகரம் எது?"
+    },
+    "a": {
+      "en": "NEWYORK",
+      "ta": "நியூயார்க்"
+    }
+  }
+]
+
   },
 "grade9": {
-    "easy": [
-      {
-        "q": {
-          "en": "Which layer of the Earth do we live on?",
-          "ta": "நாம் வாழும் பூமியின் அடுக்கு எது?"
-        },
-        "a": {
-          "en": "CRUST",
-          "ta": "உறை"
-        }
+  "easy": [
+    {
+      "q": {
+        "en": "Which is the smallest continent on Earth?",
+        "ta": "பூமியில் சிறிய கண்டம் எது?"
       },
-      {
-        "q": {
-          "en": "What is the system of government where people elect their representatives?",
-          "ta": "மக்கள் தங்கள் பிரதிநிதிகளை தேர்ந்தெடுக்கும் ஆட்சி அமைப்பு எது?"
-        },
-        "a": {
-          "en": "DEMOCRACY",
-          "ta": "ஜனநாயகம்"
-        }
+      "a": { "en": "AUSTRAL", "ta": "ஆஸ்திரே" }
+    },
+    {
+      "q": {
+        "en": "Which country is called the Land of Rising Sun?",
+        "ta": "உயரும் சூரியனின் நாடு என்று அழைக்கப்படும் நாடு எது?"
       },
-      {
-        "q": {
-          "en": "What is the first right in the Indian Fundamental Rights?",
-          "ta": "இந்திய அடிப்படை உரிமைகளில் முதல் உرிமை எது?"
-        },
-        "a": {
-          "en": "EQUALITY",
-          "ta": "சமத்துவம்"
-        }
+      "a": { "en": "JAPAN", "ta": "ஜப்பான்" }
+    },
+    {
+      "q": {
+        "en": "Which gas do plants release during photosynthesis?",
+        "ta": "ஒளிச்சேர்க்கையின் போது தாவரங்கள் வெளியிடும் வாயு எது?"
       },
-      {
-        "q": {
-          "en": "India has which type of government system: Federal or Unitary?",
-          "ta": "இந்தியா எந்த வகை ஆட்சி அமைப்பைக் கொண்டுள்ளது — கூட்டாட்சி அல்லது ஒரே ஆட்சி?"
-        },
-        "a": {
-          "en": "FEDERAL",
-          "ta": "கூட்டாட்சி"
-        }
+      "a": { "en": "OXYGEN", "ta": "ஆக்சிஜன்" }
+    },
+    {
+      "q": {
+        "en": "What is the capital of Tamil Nadu?",
+        "ta": "தமிழ்நாட்டின் தலைநகர் எது?"
       },
-      {
-        "q": {
-          "en": "What is the basic unit of rural local government in India?",
-          "ta": "இந்தியாவின் கிராமப்புற உள்ளாட்சி ஆட்சியின் அடிப்படை அலகு எது?"
-        },
-        "a": {
-          "en": "PANCHAYAT",
-          "ta": "பஞ்சாயத்து"
-        }
+      "a": { "en": "CHENNAI", "ta": "சென்னை" }
+    },
+    {
+      "q": {
+        "en": "Which instrument is used to measure temperature?",
+        "ta": "வெப்பநிலையை அளவிட எந்த கருவி பயன்படுத்தப்படுகிறது?"
       },
-      {
-        "q": {
-          "en": "What must you always wear while riding a two-wheeler?",
-          "ta": "இரு சக்கர வாகனத்தில் பயணிக்கும்போது நீங்கள் எதை அணிய வேண்டும்?"
-        },
-        "a": {
-          "en": "HELMET",
-          "ta": "தலைக்கவசம்"
-        }
+      "a": { "en": "THERMO", "ta": "வெப்பி" }
+    },
+    {
+      "q": {
+        "en": "Which heavenly body is known as the Red Planet?",
+        "ta": "சிவப்பு கோள் என்று அழைக்கப்படும் விண்மீன் எது?"
       },
-      {
-        "q": {
-          "en": "What is the monetary measure of a country's development?",
-          "ta": "ஒரு நாட்டின் வளர்ச்சியை அளவிடும் பணவியல் அளவீடு எது?"
-        },
-        "a": {
-          "en": "INCOME",
-          "ta": "வருமானம்"
-        }
+      "a": { "en": "MARS", "ta": "செவ்வாய்" }
+    },
+    {
+      "q": {
+        "en": "Which natural satellite revolves around the Earth?",
+        "ta": "பூமியைச் சுற்றி வரும் இயற்கைக் கோள் எது?"
       },
-      {
-        "q": {
-          "en": "On which river was the ancient Egyptian civilization located?",
-          "ta": "பழமையான எகிப்து நாகரிகம் எந்த நதியின் கரையில் இருந்தது?"
-        },
-        "a": {
-          "en": "NILE",
-          "ta": "நைல்"
-        }
+      "a": { "en": "MOON", "ta": "சந்திரன்" }
+    },
+    {
+      "q": {
+        "en": "What is the national fruit of India?",
+        "ta": "இந்தியாவின் தேசிய பழம் எது?"
       },
-      {
-        "q": {
-          "en": "Which ancient Tamil kingdom was known for its pearl fisheries?",
-          "ta": "முத்து மீன்பிடிக்காக புகழ்பெற்ற பழமையான தமிழ்நாடு அரசாட்சி எது?"
-        },
-        "a": {
-          "en": "PANDYA",
-          "ta": "பாண்டியர்"
-        }
+      "a": { "en": "MANGO", "ta": "மாம்பழம்" }
+    },
+    {
+      "q": {
+        "en": "Which season comes after summer in India?",
+        "ta": "இந்தியாவில் கோடைக்குப் பிறகு வரும் பருவம் எது?"
       },
-      {
-        "q": {
-          "en": "Who was a famous social reformer from Bengal who fought against Sati?",
-          "ta": "சதி நடைமுறைக்கு எதிராக போராடிய பெங்காலின் புகழ்பெற்ற சமூக சீர்திருத்தவாதி யார்?"
-        },
-        "a": {
-          "en": "RAJA",
-          "ta": "ராஜா"
-        }
-      }
-    ],
-    "medium": [
-      {
-        "q": {
-          "en": "What is the point inside the Earth where an earthquake originates called?",
-          "ta": "பூமிக்குள் நிலநடுக்கம் தோன்றும் இடம் என்ன?"
-        },
-        "a": {
-          "en": "FOCUS",
-          "ta": "மையம்"
-        }
+      "a": { "en": "MONSOON", "ta": "மழைக்காலம்" }
+    },
+    {
+      "q": {
+        "en": "Which device is used to find directions?",
+        "ta": "திசைகளை அறிய எந்த கருவி பயன்படுத்தப்படுகிறது?"
       },
-      {
-        "q": {
-          "en": "What is the document that lays down the framework of a country's government?",
-          "ta": "ஒரு நாட்டின் ஆட்சி அமைப்பை வரையறுக்கும் ஆவணம் எது?"
-        },
-        "a": {
-          "en": "CONSTITUTION",
-          "ta": "அரசமைப்பு"
-        }
+      "a": { "en": "COMPASS", "ta": "திசைகாட்டி" }
+    }
+  ],
+
+  "medium": [
+    {
+      "q": {
+        "en": "Which Greek city-state is called the birthplace of democracy?",
+        "ta": "ஜனநாயகத்தின் பிறப்பிடம் என அழைக்கப்படும் கிரேக்க நகர-நாடு எது?"
       },
-      {
-        "q": {
-          "en": "Which right allows citizens to approach the court if their rights are denied?",
-          "ta": "குடிமக்களின் உரிமைகள் மறுக்கப்படும்போது நீதிமன்றத்தை அணுக அனுமதிக்கும் உரிமை எது?"
-        },
-        "a": {
-          "en": "REMEDIES",
-          "ta": "தீர்வுகள்"
-        }
+      "a": { "en": "ATHENS", "ta": "அதென்ஸ்" }
+    },
+    {
+      "q": {
+        "en": "Which ancient Indian text is known for statecraft and economics?",
+        "ta": "அரசியல் மற்றும் பொருளாதாரத்திற்குப் புகழ்பெற்ற இந்திய நூல் எது?"
       },
-      {
-        "q": {
-          "en": "The 73rd Amendment is related to which level of government?",
-          "ta": "73வது திருத்தம் எந்த ஆட்சி நிலையைச் சார்ந்தது?"
-        },
-        "a": {
-          "en": "RURAL",
-          "ta": "கிராமப்புறம்"
-        }
+      "a": { "en": "ARTHASH", "ta": "அர்த்தசா" }
+    },
+    {
+      "q": {
+        "en": "What is the currency of Russia?",
+        "ta": "ரஷ்யாவின் நாணயம் எது?"
       },
-      {
-        "q": {
-          "en": "What type of sign is a red, upside-down triangle?",
-          "ta": "சிவப்பு நிற, கீழே நோக்கிய முக்கோண அடையாளம் எதை குறிக்கிறது?"
-        },
-        "a": {
-          "en": "WARNING",
-          "ta": "எச்சரிக்கை"
-        }
+      "a": { "en": "ROUBLE", "ta": "ரூபிள்" }
+    },
+    {
+      "q": {
+        "en": "Which dam is built across the Sutlej River in India?",
+        "ta": "இந்தியாவில் சுத்லெஜ் நதியில் கட்டப்பட்ட அணை எது?"
       },
-      {
-        "q": {
-          "en": "Which index measures development based on health, education, and income?",
-          "ta": "உடல் நலம், கல்வி மற்றும் வருமானத்தின் அடிப்படையில் வளர்ச்சியை அளவிடும் குறியீடு எது?"
-        },
-        "a": {
-          "en": "HDI",
-          "ta": "மனித வளர்ச்சி குறியீடு"
-        }
+      "a": { "en": "BHAAKRA", "ta": "பக்ரா" }
+    },
+    {
+      "q": {
+        "en": "Which movement was led by Mahatma Gandhi in 1942?",
+        "ta": "1942 இல் மகாத்மா காந்தி வழிநடத்திய இயக்கம் எது?"
       },
-      {
-        "q": {
-          "en": "What was the writing system of ancient Egypt called?",
-          "ta": "பழமையான எகிப்தின் எழுத்து முறை என்ன?"
-        },
-        "a": {
-          "en": "HIEROGLYPHICS",
-          "ta": "ஹைரோகிளிபிக்ஸ்"
-        }
+      "a": { "en": "QUITIND", "ta": "விடுதலை" }
+    },
+    {
+      "q": {
+        "en": "Which planet is known for its rings?",
+        "ta": "மோதிரங்களுக்குப் புகழ்பெற்ற கோள் எது?"
       },
-      {
-        "q": {
-          "en": "The collection of Tamil literature from the ancient period is known as?",
-          "ta": "பழமையான தமிழ் இலக்கியங்களின் தொகுப்பு என்ன?"
-        },
-        "a": {
-          "en": "SANGAM",
-          "ta": "சங்க இலக்கியம்"
-        }
+      "a": { "en": "SATURN", "ta": "சனி" }
+    },
+    {
+      "q": {
+        "en": "Which line divides India and Pakistan?",
+        "ta": "இந்தியாவையும் பாகிஸ்தானையும் பிரிக்கும் கோடு எது?"
       },
-      {
-        "q": {
-          "en": "Which movement emphasized personal devotion to God as a path to salvation?",
-          "ta": "கடவுளிடம் தனிப்பட்ட பக்தியை மீட்சி வழியாக வலியுறுத்திய இயக்கம் எது?"
-        },
-        "a": {
-          "en": "BHAKTI",
-          "ta": "பக்தி இயக்கம்"
-        }
+      "a": { "en": "RADCLI", "ta": "ராட்கிளி" }
+    },
+    {
+      "q": {
+        "en": "Which movement promoted widow remarriage in India?",
+        "ta": "இந்தியாவில் விதவை மறுமணத்தை ஊக்குவித்த இயக்கம் எது?"
       },
-      {
-        "q": {
-          "en": "Which ancient civilization is credited with the invention of democracy?",
-          "ta": "ஜனநாயகத்தை கண்டுபிடித்ததாகக் கருதப்படும் பழமையான நாகரிகம் எது?"
-        },
-        "a": {
-          "en": "GREEK",
-          "ta": "கிரேக்க நாகரிகம்"
-        }
-      }
-    ],
-    "hard": [
-      {
-        "q": {
-          "en": "What is the process of mountain building through tectonic forces called?",
-          "ta": "நிலஅமைப்புப் பிணைப்பு மூலம் மலை உருவாகும் செயல்முறை என்ன?"
-        },
-        "a": {
-          "en": "OROGENY",
-          "ta": "மலை உருவாக்கம்"
-        }
+      "a": { "en": "REFORM", "ta": "சீர்திருத்தம்" }
+    },
+    {
+      "q": {
+        "en": "Which Indian city is called the Manchester of India?",
+        "ta": "இந்தியாவின் மான்செஸ்டர் என்று அழைக்கப்படும் நகரம் எது?"
       },
-      {
-        "q": {
-          "en": "What is the principle that each branch of government has unique powers?",
-          "ta": "ஆட்சியின் ஒவ்வொரு கிளைக்கும் தனித்தன்மையான அதிகாரங்கள் இருப்பது என்ன கொள்கை?"
-        },
-        "a": {
-          "en": "SEPARATION",
-          "ta": "பிரிவினை கொள்கை"
-        }
+      "a": { "en": "AHMEDAB", "ta": "அகமதாபாத்" }
+    },
+    {
+      "q": {
+        "en": "Which revolution increased food grain production in India?",
+        "ta": "இந்தியாவில் தானிய உற்பத்தியை அதிகரித்த புரட்சி எது?"
       },
-      {
-        "q": {
-          "en": "What is the acronym for India's National Human Rights Commission?",
-          "ta": "இந்திய தேசிய மனித உரிமைகள் ஆணையத்தின் சுருக்கெழுத்து என்ன?"
-        },
-        "a": {
-          "en": "NHRC",
-          "ta": "NHRC"
-        }
+      "a": { "en": "GREEN", "ta": "பச்சை" }
+    }
+  ],
+
+  "hard": [
+    {
+      "q": {
+        "en": "Which 1806 revolt by Indian soldiers happened at a fort in Tamil Nadu?",
+        "ta": "1806 இல் இந்திய சிப்பாய்களால் தமிழ்நாட்டில் ஒரு கோட்டையில் நடந்த கிளர்ச்சி எது?"
       },
-      {
-        "q": {
-          "en": "What is the term for the financial grants given to local bodies by the state?",
-          "ta": "மாநிலம் உள்ளாட்சி அமைப்புகளுக்கு வழங்கும் நிதி உதவிக்கு என்ன பெயர்?"
-        },
-        "a": {
-          "en": "GRANTS",
-          "ta": "நிதி உதவிகள்"
-        }
+      "a": { "en": "VELLORE", "ta": "வேலூர்" }
+    },
+    {
+      "q": {
+        "en": "What is the process of rocks breaking down into soil?",
+        "ta": "பாறைகள் மண்ணாக சிதைந்து போகும் செயல்முறை என்ன?"
       },
-      {
-        "q": {
-          "en": "What is the term for the ability to meet present needs without harming future generations?",
-          "ta": "எதிர்கால தலைமுறைகளை பாதிக்காமல் தற்போதைய தேவைகளை பூர்த்தி செய்யும் திறன் என்ன?"
-        },
-        "a": {
-          "en": "SUSTAINABILITY",
-          "ta": "நிலைத்தன்மை"
-        }
+      "a": { "en": "WEATHER", "ta": "சிதைவு" }
+    },
+    {
+      "q": {
+        "en": "Which principle means 'peaceful coexistence'?",
+        "ta": "'அமைதியான சகவாழ்வு' என்று பொருள்படும் கொள்கை எது?"
       },
-      {
-        "q": {
-          "en": "Who was the famous Babylonian king known for his code of laws?",
-          "ta": "சட்டக் குறியீடுகளுக்காக புகழ்பெற்ற பாபிலோனிய அரசர் யார்?"
-        },
-        "a": {
-          "en": "HAMMURABI",
-          "ta": "ஹம்முராபி"
-        }
+      "a": { "en": "PANCHAL", "ta": "பஞ்சசீல்" }
+    },
+    {
+      "q": {
+        "en": "Which soil type is most suitable for growing cotton?",
+        "ta": "பருத்தி பயிரிடுவதற்கு மிகவும் பொருத்தமான மண் வகை எது?"
       },
-      {
-        "q": {
-          "en": "What was the script used for writing Tamil in the earliest times?",
-          "ta": "தமிழை எழுத பழமையில் பயன்படுத்தப்பட்ட எழுத்து முறை எது?"
-        },
-        "a": {
-          "en": "BRAHMI",
-          "ta": "பிராமி"
-        }
+      "a": { "en": "BLACKSO", "ta": "கருப்பு மண்" }
+    },
+    {
+      "q": {
+        "en": "Which paramilitary force guards India's borders?",
+        "ta": "இந்தியாவின் எல்லைகளைப் பாதுகாக்கும் துணை ராணுவப் படை எது?"
       },
-      {
-        "q": {
-          "en": "Which philosopher-saint preached the message of universal brotherhood in Chicago?",
-          "ta": "சிகாகோவில் உலக சகோதரத்துவத்தைப் போதித்த தத்துவஞானி யார்?"
-        },
-        "a": {
-          "en": "VIVEKANANDA",
-          "ta": "விவேகானந்தர்"
-        }
+      "a": { "en": "BORDER", "ta": "எல்லை" }
+    },
+    {
+      "q": {
+        "en": "What is a sudden natural event that causes damage called?",
+        "ta": "பெரும் சேதத்தை ஏற்படுத்தும் திடீர் இயற்கை நிகழ்வின் பெயர் என்ன?"
       },
-      {
-        "q": {
-          "en": "What was the common language of the ancient Roman world?",
-          "ta": "பழமையான ரோமன் உலகின் பொதுவான மொழி எது?"
-        },
-        "a": {
-          "en": "LATIN",
-          "ta": "லத்தீன்"
-        }
+      "a": { "en": "DISASTR", "ta": "பேரழிவு" }
+    },
+    {
+      "q": {
+        "en": "What is the largest ocean in the world?",
+        "ta": "உலகின் மிகப்பெரிய பெருங்கடல் எது?"
       },
-      {
-        "q": {
-          "en": "What term describes the trade route that connected China with the West?",
-          "ta": "சீனாவை மேற்கு உலகத்துடன் இணைத்த வர்த்தக பாதைக்கு என்ன பெயர்?"
-        },
-        "a": {
-          "en": "SILKROAD",
-          "ta": "பட்டு பாதை"
-        }
-      }
-    ]
+      "a": { "en": "PACIFIC", "ta": "பசிபிக்" }
+    },
+    {
+      "q": {
+        "en": "Which social system divided people by birth in India?",
+        "ta": "இந்தியாவில் பிறப்பின் அடிப்படையில் மக்களைப் பிரித்த சமூக அமைப்பு எது?"
+      },
+      "a": { "en": "CASTES", "ta": "ஜாதிகள்" }
+    },
+    {
+      "q": {
+        "en": "Which city is the headquarters of the United Nations?",
+        "ta": "ஐ.நா. தலைமையகம் அமைந்துள்ள நகரம் எது?"
+      },
+      "a": { "en": "NEWYORK", "ta": "நியூயார்க்" }
+    },
+    {
+      "q": {
+        "en": "Which desert is the largest hot desert in the world?",
+        "ta": "உலகின் மிகப்பெரிய சூடான பாலைவனம் எது?"
+      },
+      "a": { "en": "SAHARA", "ta": "சஹாரா" }
+    }
+  ]
+
+
 },
 "grade10": {
-    "easy": [
-      {
-        "q": {
-          "en": "Who was the dictator of Nazi Germany?",
-          "ta": "நாஜி ஜெர்மனியின் சர்வாதிகாரி யார்?"
-        },
-        "a": {
-          "en": "HITLER",
-          "ta": "ஹிட்லர்"
-        }
-      },
-      {
-        "q": {
-          "en": "On which two Japanese cities did the USA drop atomic bombs?",
-          "ta": "அமெரிக்கா எந்த இரண்டு ஜப்பானிய நகரங்கள் மீது அணுகுண்டுகளை வீசியது?"
-        },
-        "a": {
-          "en": "HIROSHIMA",
-          "ta": "ஹிரோஷிமா"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Indian leader started the Non-Cooperation Movement?",
-          "ta": "எந்த இந்தியத் தலைவர் ஒத்துழையாமை இயக்கத்தைத் தொடங்கினார்?"
-        },
-        "a": {
-          "en": "GANDHI",
-          "ta": "காந்தி"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of the Indian National Army founded by Subhas Chandra Bose?",
-          "ta": "சுபாஷ் சந்திர போஸால் நிறுவப்பட்ட இந்திய தேசிய இராணுவத்தின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "INA",
-          "ta": "INA"
-        }
-      },
-      {
-        "q": {
-          "en": "Which movement was started by Periyar in Tamil Nadu?",
-          "ta": "தமிழ்நாட்டில் பெரியாரால் தொடங்கப்பட்ட இயக்கம் எது?"
-        },
-        "a": {
-          "en": "SELFRESPECT",
-          "ta": "சுயமரியாதை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which is the highest mountain range in India?",
-          "ta": "இந்தியாவின் மிக உயர்ந்த மலைத்தொடர் எது?"
-        },
-        "a": {
-          "en": "HIMALAYAS",
-          "ta": "இமயமலை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which revolution in the 1960s greatly increased India's food production?",
-          "ta": "1960களில் இந்தியாவின் உணவு உற்பத்தியை பெருமளவில் அதிகரித்த புரட்சி எது?"
-        },
-        "a": {
-          "en": "GREEN",
-          "ta": "பசுமை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which is the longest river in South India?",
-          "ta": "தென்னிந்தியாவின் மிக நீளமான நதி எது?"
-        },
-        "a": {
-          "en": "GODAVARI",
-          "ta": "கோதாவரி"
-        }
-      },
-      {
-        "q": {
-          "en": "Who is the constitutional head of the Indian Union?",
-          "ta": "இந்திய ஒன்றியத்தின் அரசியலமைப்புத் தலைவர் யார்?"
-        },
-        "a": {
-          "en": "PRESIDENT",
-          "ta": "குடியரசுத் தலைவர்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of the house where the Prime Minister of India lives?",
-          "ta": "இந்தியப் பிரதமர் வசிக்கும் வீட்டின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "RACE",
-          "ta": "ரேஸ்"
-        }
-      }
-    ],
-    "medium": [
-      {
-        "q": {
-          "en": "What was the name of the US plan to rebuild Europe after WWII?",
-          "ta": "இரண்டாம் உலகப் போருக்குப் பிறகு ஐரோப்பாவை மீண்டும் கட்டியெழுப்ப அமெரிக்காவின் திட்டத்தின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "MARSHALL",
-          "ta": "மார்ஷல்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which 1856 Act was championed by Iswarchandra Vidyasagar?",
-          "ta": "எந்த 1856 ஆம் ஆண்டு சட்டத்திற்கு ஈஸ்வரசந்திர வித்யாசாகர் ஆதரவு அளித்தார்?"
-        },
-        "a": {
-          "en": "WIDOW",
-          "ta": "விதவை"
-        }
-      },
-      {
-        "q": {
-          "en": "Which Tamil poet is known as 'Mahakavi' (the great poet)?",
-          "ta": "எந்த தமிழ்க் கவிஞர் 'மகாகவி' என்று அழைக்கப்படுகிறார்?"
-        },
-        "a": {
-          "en": "BHARATHI",
-          "ta": "பாரதி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which 'Drain' theory was propounded by Dadabhai Naoroji?",
-          "ta": "எந்த 'வளங்கள் வெளியேறும்' கோட்பாடு தாதாபாய் நௌரோஜியால் முன்வைக்கப்பட்டது?"
-        },
-        "a": {
-          "en": "WEALTH",
-          "ta": "செல்வம்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the seasonal wind that brings rainfall to India called?",
-          "ta": "இந்தியாவிற்கு மழையைக் கொண்டுவரும் பருவ காலக் காற்றின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "MONSOON",
-          "ta": "மான்சூன்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which mineral is used for making electrical wires?",
-          "ta": "மின்சார கம்பிகளை தயாரிக்க எந்த கனிமம் பயன்படுத்தப்படுகிறது?"
-        },
-        "a": {
-          "en": "COPPER",
-          "ta": "தாமிரம்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which city is known as the 'Detroit of India' for its automobile industry?",
-          "ta": "அதன் வாகனத் தொழிலுக்காக 'இந்தியாவின் டெட்ராய்ட்' என்று எந்த நகரம் அழைக்கப்படுகிறது?"
-        },
-        "a": {
-          "en": "CHENNAI",
-          "ta": "சென்னை"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the first sentence of the Indian Constitution called?",
-          "ta": "இந்திய அரசியலமைப்பின் முதல் வாக்கியம் என்னவென்று அழைக்கப்படுகிறது?"
-        },
-        "a": {
-          "en": "PREAMBLE",
-          "ta": "முகவுரை"
-        }
-      },
-      {
-        "q": {
-          "en": "Who is the real executive head of the Indian government?",
-          "ta": "இந்திய அரசாங்கத்தின் உண்மையான நிர்வாகத் தலைவர் யார்?"
-        },
-        "a": {
-          "en": "MINISTER",
-          "ta": "முதலமைச்சர்"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the name of India's policy of not joining any power bloc?",
-          "ta": "எந்தவொரு அதிகாரக் கூட்டணியிலும் சேராத இந்தியாவின் கொள்கையின் பெயர் என்ன?"
-        },
-        "a": {
-          "en": "NONALIGNED",
-          "ta": "அணிசேரா"
-        }
-      }
-    ],
-    "hard": [
-      {
-        "q": {
-          "en": "Which 1942 mission was sent by the British to secure Indian cooperation in WWII?",
-          "ta": "இரண்டாம் உலகப் போரில் இந்திய ஒத்துழைப்பைப் பெற பிரிட்டிஷ் காரர்களால் 1942 இல் அனுப்பப்பட்ட தூதுக்குழு எது?"
-        },
-        "a": {
-          "en": "CRIPPS",
-          "ta": "கிரிப்ஸ்"
-        }
-      },
-      {
-        "q": {
-          "en": "Who was the first Palayakkarar to resist the East India Company?",
-          "ta": "கிழக்கிந்திய கம்பெனியை எதிர்த்த முதல் பாளையக்காரர் யார்?"
-        },
-        "a": {
-          "en": "PULITHEVAR",
-          "ta": "புலித்தேவர்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which book, whose title means \"The Truth Illuminator\", was written by Dayananda Saraswati?",
-          "ta": "\"சத்தியார்த்த பிரகாஷ்\" என்ற தலைப்பில் புத்தகம் எழுதியவர் யார்?"
-        },
-        "a": {
-          "en": "SATYARTHAPRAKASH",
-          "ta": "தயானந்த சரஸ்வதி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which soil type, rich in iron and aluminium, is found in Tamil Nadu?",
-          "ta": "இரும்பு மற்றும் அலுமினியம் நிறைந்த எந்த மண் வகை தமிழ்நாட்டில் காணப்படுகிறது?"
-        },
-        "a": {
-          "en": "LATERITE",
-          "ta": "லேட்டரைட்"
-        }
-      },
-      {
-        "q": {
-          "en": "Which non-conventional energy source uses the sun's rays?",
-          "ta": "சூரியனின் கதிர்களைப் பயன்படுத்தும் மரபுசாரா எரிசக்தி ஆதாரம் எது?"
-        },
-        "a": {
-          "en": "SOLAR",
-          "ta": "சூரிய"
-        }
-      },
-      {
-        "q": {
-          "en": "Which is the southernmost major port of India located in Tamil Nadu?",
-          "ta": "தமிழ்நாட்டில் அமைந்துள்ள இந்தியாவின் தென்முனையில் உள்ள முக்கிய துறைமுகம் எது?"
-        },
-        "a": {
-          "en": "TUTICORIN",
-          "ta": "தூத்துக்குடி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which principle of state policy directs the government to promote the welfare of the people?",
-          "ta": "மக்களின் நலனை மேம்படுத்துமாறு அரசாங்கத்தை வழிநடத்தும் மாநிலக் கொள்கையின் கோட்பாடு எது?"
-        },
-        "a": {
-          "en": "DIRECTIVE",
-          "ta": "வழிகாட்டி"
-        }
-      },
-      {
-        "q": {
-          "en": "Which court is at the apex of the Indian judicial system?",
-          "ta": "இந்திய நீதி அமைப்பின் உச்சத்தில் உள்ள நீதிமன்றம் எது?"
-        },
-        "a": {
-          "en": "SUPREME",
-          "ta": "உச்ச"
-        }
-      },
-      {
-        "q": {
-          "en": "Who was the first woman President of the Indian National Congress?",
-          "ta": "இந்திய தேசிய காங்கிரஸின் முதல் பெண் தலைவர் யார்?"
-        },
-        "a": {
-          "en": "ANNIE",
-          "ta": "அன்னி"
-        }
-      },
-      {
-        "q": {
-          "en": "What is the five-principled pledge signed between India and China called?",
-          "ta": "இந்தியாவுக்கும் சீனாவுக்கும் இடையே கையெழுத்திடப்பட்ட ஐந்து அம்ச உடன்படிக்கை என்னவென்று அழைக்கப்படுகிறது?"
-        },
-        "a": {
-          "en": "PANCHSHEEL",
-          "ta": "பஞ்சசீல்"
-        }
-      }
-    ]
+   "easy": [
+  {
+    "q": {
+      "en": "Who was the dictator of Nazi Germany?",
+      "ta": "நாஜி ஜெர்மனியின் சர்வாதிகாரி யார்?"
+    },
+    "a": {
+      "en": "HITLER",
+      "ta": "ஹிட்லர்"
+    }
+  },
+  {
+    "q": {
+      "en": "On which Japanese city did the USA drop the first atomic bomb?",
+      "ta": "அமெரிக்கா எந்த ஜப்பானிய நகரத்தில் முதல் அணுகுண்டை வீசியது?"
+    },
+    "a": {
+      "en": "HIRO",
+      "ta": "ஹிரோ"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Indian leader started the Non-Cooperation Movement?",
+      "ta": "ஒத்துழையாமை இயக்கத்தைத் தொடங்கிய இந்தியத் தலைவர் யார்?"
+    },
+    "a": {
+      "en": "GANDHI",
+      "ta": "காந்தி"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the short name of Indian National Army?",
+      "ta": "இந்திய தேசிய இராணுவத்தின் சுருக்கப் பெயர் என்ன?"
+    },
+    "a": {
+      "en": "INA",
+      "ta": "ஐஎன்ஏ"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the highest mountain range in India?",
+      "ta": "இந்தியாவின் மிக உயர்ந்த மலைத்தொடர் எது?"
+    },
+    "a": {
+      "en": "HIMALAY",
+      "ta": "இமயம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which revolution increased India's food production in 1960s?",
+      "ta": "1960களில் இந்தியாவின் உணவு உற்பத்தியை அதிகரித்த புரட்சி எது?"
+    },
+    "a": {
+      "en": "GREEN",
+      "ta": "பசுமை"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the longest river in South India?",
+      "ta": "தென்னிந்தியாவின் மிக நீளமான நதி எது?"
+    },
+    "a": {
+      "en": "KAVERI",
+      "ta": "காவிரி"
+    }
+  },
+  {
+    "q": {
+      "en": "Who is the constitutional head of the Indian Union?",
+      "ta": "இந்திய ஒன்றியத்தின் அரசியலமைப்புத் தலைவர் யார்?"
+    },
+    "a": {
+      "en": "PRES",
+      "ta": "குடியரசு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the national animal of India?",
+      "ta": "இந்தியாவின் தேசிய விலங்கு எது?"
+    },
+    "a": {
+      "en": "TIGER",
+      "ta": "புலி"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the capital city of India?",
+      "ta": "இந்தியாவின் தலைநகரம் எது?"
+    },
+    "a": {
+      "en": "DELHI",
+      "ta": "டெல்லி"
+    }
+  }
+]
+,"medium": [
+  {
+    "q": {
+      "en": "Which US plan rebuilt Europe after WWII?",
+      "ta": "இரண்டாம் உலகப் போருக்குப் பிறகு ஐரோப்பாவை மீண்டும் கட்டியெழுப்பிய அமெரிக்கத் திட்டம் எது?"
+    },
+    "a": {
+      "en": "MARSHAL",
+      "ta": "மார்ஷல்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which 1856 Act was championed by Iswarchandra Vidyasagar?",
+      "ta": "1856 ஆம் ஆண்டு ஈஸ்வரசந்திர வித்யாசாகர் ஆதரவு அளித்த சட்டம் எது?"
+    },
+    "a": {
+      "en": "WIDOW",
+      "ta": "விதவை"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Tamil poet is called 'Mahakavi'?",
+      "ta": "‘மகாகவி’ என்று அழைக்கப்படும் தமிழ்க் கவிஞர் யார்?"
+    },
+    "a": {
+      "en": "BHARATI",
+      "ta": "பாரதி"
+    }
+  },
+  {
+    "q": {
+      "en": "What seasonal wind brings rain to India?",
+      "ta": "இந்தியாவிற்கு மழையைத் தரும் பருவக் காற்று எது?"
+    },
+    "a": {
+      "en": "MONSOON",
+      "ta": "மழைக்காற்று"
+    }
+  },
+  {
+    "q": {
+      "en": "Which mineral is used for making wires?",
+      "ta": "மின்கம்பிகளை தயாரிக்க எந்த கனிமம் பயன்படுத்தப்படுகிறது?"
+    },
+    "a": {
+      "en": "COPPER",
+      "ta": "செம்பு"
+    }
+  },
+  {
+    "q": {
+      "en": "Which city is called 'Detroit of India'?",
+      "ta": "‘இந்தியாவின் டெட்ராய்ட்’ என்று அழைக்கப்படும் நகரம் எது?"
+    },
+    "a": {
+      "en": "CHENNAI",
+      "ta": "சென்னை"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the first line of the Constitution called?",
+      "ta": "இந்திய அரசியலமைப்பின் முதல் வரி எது?"
+    },
+    "a": {
+      "en": "PREAMB",
+      "ta": "முகவுரை"
+    }
+  },
+  {
+    "q": {
+      "en": "Who is the real executive head of India?",
+      "ta": "இந்தியாவின் உண்மையான நிர்வாகத் தலைவர் யார்?"
+    },
+    "a": {
+      "en": "PM",
+      "ta": "பிரதமர்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which policy kept India out of power blocs?",
+      "ta": "இந்தியாவை அதிகாரக் கூட்டணிகளில் சேராமல் வைத்த கொள்கை எது?"
+    },
+    "a": {
+      "en": "NONALGN",
+      "ta": "அணிசேரா"
+    }
+  },
+  {
+    "q": {
+      "en": "Which metal is known as 'liquid silver'?",
+      "ta": "‘திரவ வெள்ளி’ என்று அழைக்கப்படும் உலோகம் எது?"
+    },
+    "a": {
+      "en": "MERCURY",
+      "ta": "பாரா"
+    }
+  }
+]
+,
+   "hard": [
+  {
+    "q": {
+      "en": "Which 1942 movement was launched with the slogan 'Do or Die'?",
+      "ta": "1942 இல் 'செய் அல்லது சாய்' என்ற முழக்கத்துடன் தொடங்கப்பட்ட இயக்கம் எது?"
+    },
+    "a": {
+      "en": "QUITIND",
+      "ta": "வெளியேறு"
+    }
+  },
+  {
+    "q": {
+      "en": "Who was the first Palayakkarar to resist the East India Company?",
+      "ta": "கிழக்கிந்திய கம்பெனியை எதிர்த்த முதல் பாளையக்காரர் யார்?"
+    },
+    "a": {
+      "en": "PULI",
+      "ta": "புலி"
+    }
+  },
+  {
+    "q": {
+      "en": "Which empire was ruled by Ashoka the Great?",
+      "ta": "மகா அசோகரால் ஆட்சி செய்யப்பட்ட பேரரசு எது?"
+    },
+    "a": {
+      "en": "MAURYA",
+      "ta": "மௌரிய"
+    }
+  },
+  {
+    "q": {
+      "en": "Which type of soil is ideal for cotton cultivation?",
+      "ta": "பருத்தி பயிரிட எந்த வகை மண் சிறந்தது?"
+    },
+    "a": {
+      "en": "BLACK",
+      "ta": "கருப்பு"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the southernmost major port of India?",
+      "ta": "இந்தியாவின் தென்முனையில் உள்ள முக்கிய துறைமுகம் எது?"
+    },
+    "a": {
+      "en": "TUTI",
+      "ta": "தூத்தி"
+    }
+  },
+  {
+    "q": {
+      "en": "Who founded the Indian National Congress?",
+      "ta": "இந்திய தேசிய காங்கிரஸை யார் நிறுவினார்?"
+    },
+    "a": {
+      "en": "HUME",
+      "ta": "ஹ்யூம்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which dynasty built the famous Brihadeeswarar Temple?",
+      "ta": "பிரபல பிரகதீஸ்வரர் கோவிலை எந்த வம்சம் கட்டியது?"
+    },
+    "a": {
+      "en": "CHOLA",
+      "ta": "சோழர்"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the apex court of India called?",
+      "ta": "இந்தியாவின் உச்ச நீதிமன்றம் எது?"
+    },
+    "a": {
+      "en": "SUPREME",
+      "ta": "உச்ச"
+    }
+  },
+  {
+    "q": {
+      "en": "Which leader was known as the 'Iron Man of India'?",
+      "ta": "‘இந்தியாவின் இரும்பு மனிதன்’ என்று அழைக்கப்பட்ட தலைவர் யார்?"
+    },
+    "a": {
+      "en": "PATEL",
+      "ta": "பட்டேல்"
+    }
+  },
+  {
+    "q": {
+      "en": "Which mineral is most abundant in Earth's crust?",
+      "ta": "பூமியின் மேற்பரப்பில் மிக அதிகம் உள்ள கனிமம் எது?"
+    },
+    "a": {
+      "en": "QUARTZ",
+      "ta": "குவார்ட்ஸ்"
+    }
+  }
+]
+
   }
 
 }
