@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
-import riddles from "../data/riddle.json"; // ✅ loads from your JSON file
+import riddles from "../data/riddle.json";
 import BgImage from "../../assets/BgImage.png";
 
 const App = () => {
@@ -128,25 +128,25 @@ const App = () => {
   };
 
   return (
-  <div className="relative min-h-screen flex flex-col justify-center items-center p-4 font-sans overflow-hidden">
-    {/* Background Image */}
-    <img
-      src={BgImage}
-      alt="Background"
-      className="absolute inset-0 w-full h-full object-cover z-0"
-    />
+    <div className="relative min-h-screen flex flex-col justify-center items-center p-4 font-sans overflow-hidden">
+      {/* Background Image */}
+      <img
+        src={BgImage}
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
 
       {/* Main Quiz Box */}
-      <div className="relative z-10 max-w-2xl w-full p-8 bg-white/50 dark:bg-black/20 backdrop-blur-lg rounded-3xl shadow-2xl flex flex-col items-center gap-6 min-h-[500px] transition-all duration-300 border border-white/30 dark:border-white/10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#7164b4] dark:text-[#bca5d4] mb-4 text-center">Guess the Word 🤔</h1>
+      <div className="relative z-10 max-w-2xl w-full p-6 sm:p-8 md:p-10 bg-white/80 dark:bg-black/20 backdrop-blur-lg rounded-3xl shadow-2xl flex flex-col items-center gap-4 sm:gap-6 min-h-[500px] transition-all duration-300 border border-white/30 dark:border-white/10">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7164b4] dark:text-[#bca5d4] mb-2 sm:mb-4 text-center">Riddle Master</h1>
 
         {/* Levels + Timer */}
-        <div className="flex justify-between w-full text-lg font-semibold mb-4">
+        <div className="flex flex-col sm:flex-row justify-between w-full text-base sm:text-lg font-semibold mb-2 sm:mb-4 items-center sm:items-start space-y-2 sm:space-y-0">
           <div className="flex space-x-2">
             {[0, 1, 2].map(level => (
               <span
                 key={level}
-                className={`py-1 px-3 rounded-full transition-all duration-300 ${
+                className={`py-1 px-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 ${
                   currentQuestionIndex === level
                     ? 'bg-[#8f9fe4] text-[#efe2fa] shadow-md transform scale-110 animate-pulse'
                     : 'bg-[#bca5d4] dark:bg-[#7164b4] text-[#7164b4] dark:text-[#efe2fa]'
@@ -162,10 +162,10 @@ const App = () => {
         </div>
 
         {/* Hints */}
-        <div className="w-full text-center min-h-[100px] mb-4">
+        <div className="w-full text-center min-h-[80px] sm:min-h-[100px] mb-2 sm:mb-4">
           {revealedHints.map((show, idx) =>
             show ? (
-              <p key={idx} className="mb-2 italic text-[#7164b4] dark:text-[#bca5d4] text-lg">
+              <p key={idx} className="mb-1 sm:mb-2 italic text-[#7164b4] dark:text-[#bca5d4] text-base sm:text-lg">
                 "{currentQuestion.hints[idx]}"
               </p>
             ) : null
@@ -173,13 +173,13 @@ const App = () => {
         </div>
 
         {/* Hint buttons */}
-        <div className="flex justify-center space-x-4 mb-6">
+        <div className="flex justify-center flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
           {['Hint 1', 'Hint 2', 'Hint 3'].map((label, idx) => (
             <button
               key={idx}
               onClick={() => handleHintClick(idx)}
               disabled={revealedHints[idx] || correctAnswer || idx === 0}
-              className={`px-6 py-2 rounded-full font-bold text-white transition-all duration-200 shadow-lg ${
+              className={`px-4 py-2 sm:px-6 sm:py-2 rounded-full font-bold text-sm sm:text-base text-white transition-all duration-200 shadow-lg ${
                 revealedHints[idx]
                   ? 'hint-used-style'
                   : 'bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] hover:from-[#bca5d4] hover:to-[#8f9fe4]'
@@ -191,19 +191,19 @@ const App = () => {
         </div>
 
         {/* Answer input */}
-        <form onSubmit={handleGuess} className="w-full flex flex-col items-center space-y-4">
+        <form onSubmit={handleGuess} className="w-full flex flex-col items-center space-y-2 sm:space-y-4">
           <input
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             disabled={correctAnswer || gameOver}
-            className="w-full px-4 py-3 rounded-xl border-2 border-[#bca5d4] dark:border-[#8f9fe4] text-center text-lg bg-white/70 dark:bg-black/20 text-[#7164b4] dark:text-[#efe2fa]"
+            className="w-full px-4 py-2 sm:py-3 rounded-xl border-2 border-[#bca5d4] dark:border-[#8f9fe4] text-center text-base sm:text-lg bg-white/70 dark:bg-black/20 text-[#7164b4] dark:text-[#efe2fa]"
             placeholder="Type your answer here"
           />
           <button
             type="submit"
             disabled={correctAnswer || gameOver}
-            className="w-full px-8 py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#7164b4] to-[#8f9fe4] hover:from-[#8f9fe4] hover:to-[#bca5d4]"
+            className="w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#7164b4] to-[#8f9fe4] hover:from-[#8f9fe4] hover:to-[#bca5d4] text-base sm:text-lg"
           >
             Submit Answer
           </button>
@@ -213,13 +213,13 @@ const App = () => {
       {/* Popups + Game Over */}
       {correctAnswer && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
-          <div className="bg-white/90 p-8 rounded-3xl shadow-2xl text-center max-w-sm w-full">
-            <div className="text-6xl mb-4 animate-bounce">🎉</div>
-            <h2 className="text-3xl font-bold mb-2 text-[#7164b4]">Correct!</h2>
-            <p>The word was: <span className="font-semibold">{questions[currentQuestionIndex].answer}</span></p>
+          <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
+            <div className="text-5xl sm:text-6xl mb-4 animate-bounce">🎉</div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">Correct!</h2>
+            <p className="text-base sm:text-lg">The word was: <span className="font-semibold">{questions[currentQuestionIndex].answer}</span></p>
             <button
               onClick={handleNextFromPopup}
-              className="mt-6 w-full px-8 py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#8f9fe4] to-[#7164b4]"
+              className="mt-4 sm:mt-6 w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] text-base sm:text-lg"
             >
               Next 👉
             </button>
@@ -229,13 +229,13 @@ const App = () => {
 
       {isIncorrectPopupVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
-          <div className="bg-white/90 p-8 rounded-3xl shadow-2xl text-center max-w-sm w-full">
-            <div className="text-6xl mb-4">❌</div>
-            <h2 className="text-3xl font-bold mb-2 text-red-600">Incorrect!</h2>
-            <p>Try again!</p>
-            <div className="mt-6 flex justify-center space-x-4">
-              <button onClick={handleTryAgain} className="px-6 py-3 rounded-xl font-bold text-white bg-[#bca5d4]">Try Again 🧐</button>
-              <button onClick={handleNextFromPopup} className="px-6 py-3 rounded-xl font-bold text-white bg-[#8f9fe4]">Next 👉</button>
+          <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
+            <div className="text-5xl sm:text-6xl mb-4">❌</div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-red-600">Incorrect!</h2>
+            <p className="text-base sm:text-lg">Try again!</p>
+            <div className="mt-4 sm:mt-6 flex justify-center space-x-2 sm:space-x-4">
+              <button onClick={handleTryAgain} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#bca5d4] text-sm sm:text-base">Try Again 🧐</button>
+              <button onClick={handleNextFromPopup} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#8f9fe4] text-sm sm:text-base">Next 👉</button>
             </div>
           </div>
         </div>
@@ -243,18 +243,18 @@ const App = () => {
 
       {gameOver && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
-          <div className="bg-white/90 p-8 rounded-3xl shadow-2xl text-center max-w-sm w-full">
-            <div className="text-6xl mb-4">🏆</div>
-            <h2 className="text-3xl font-bold mb-2 text-[#7164b4]">Quiz Completed!</h2>
-            <p className="text-xl mb-4">Your Score: {score}/3</p>
-            <div className="text-4xl mb-6">{renderStars()}</div>
-            <button onClick={startGame} className="w-full px-8 py-3 rounded-xl font-bold text-white bg-[#7164b4]">Restart Game 🔄</button>
+          <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
+            <div className="text-5xl sm:text-6xl mb-4">🏆</div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">Quiz Completed!</h2>
+            <p className="text-lg sm:text-xl mb-4">Your Score: {score}/3</p>
+            <div className="text-3xl sm:text-4xl mb-6">{renderStars()}</div>
+            <button onClick={startGame} className="w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-[#7164b4] text-base sm:text-lg">Restart Game 🔄</button>
           </div>
         </div>
       )}
 
       {showHintMessage && (
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#7164b4] text-white px-4 py-2 rounded-lg shadow-lg z-50">
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#7164b4] text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm sm:text-base">
           <p>Another hint revealed! 💡</p>
         </div>
       )}
