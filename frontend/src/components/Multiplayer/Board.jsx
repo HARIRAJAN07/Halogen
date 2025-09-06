@@ -12,7 +12,7 @@ const Board = ({ board, onCellClick, turn }) => {
         width: '100%',
         height: '100%',
         padding: '1vw',
-        background: 'linear-gradient(135deg, #e0f7fa 0%, #fff9c4 100%)',
+        background: 'white',
         borderRadius: '1vw',
         boxShadow: '0 8px 20px rgba(0,0,0,0.2)'
       }}

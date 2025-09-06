@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Board from './Board';
 import Questions from './Questions';
-import { Typography, Paper } from '@mui/material';
+import { Typography, Paper, Button, Card, CardContent } from '@mui/material';
+import { Fireworks } from '@fireworks-js/react';
+import ConfettiExplosion from 'react-confetti-explosion';
 import bluebg from '../../assets/blueBG.jpg';
+import cheer from '../../assets/cheer.mp3';
 
 const XO = () => {
   const [board, setBoard] = useState([
@@ -11,15 +14,24 @@ const XO = () => {
     [null, null, null]
   ]);
 
-  const [turn, setTurn] = useState(null);            
-  const [currentPlayer, setCurrentPlayer] = useState(null); 
-  const [queue, setQueue] = useState([]);            
+  const [turn, setTurn] = useState(null);
+  const [currentPlayer, setCurrentPlayer] = useState(null);
+  const [queue, setQueue] = useState([]);
   const [message, setMessage] = useState('Answer a question to start!');
   const [timer, setTimer] = useState(0);
-  const [gameOver, setGameOver] = useState(false); 
+  const [gameOver, setGameOver] = useState(false);
+  const [winner, setWinner] = useState(null);
+
+  // celebration
+  const [showFireworks, setShowFireworks] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const audioRef = useRef(null);
+
+  // language toggle only for XO texts
+  const [tamil, setTamil] = useState(false);
 
   const timerRef = useRef(null);
-  const queueRef = useRef(queue); 
+  const queueRef = useRef(queue);
 
   useEffect(() => {
     queueRef.current = queue;
@@ -47,13 +59,13 @@ const XO = () => {
   };
 
   const startTurn = (player) => {
-    if (gameOver) return; 
+    if (gameOver) return;
     stopInterval();
 
     setTurn(player);
     setCurrentPlayer(player);
     setTimer(5);
-    setMessage(`✅ Player ${player}, place your mark!`);
+    setMessage(tamil ? `✅ வீரர் ${player}, உங்கள் அடையாளத்தை வையுங்கள்!` : `✅ Player ${player}, place your mark!`);
 
     timerRef.current = setInterval(() => {
       setTimer((prev) => {
@@ -62,7 +74,7 @@ const XO = () => {
           setTurn(null);
           setCurrentPlayer(null);
           setTimer(0);
-          setMessage(`⏱ Player ${player} time expired.`);
+          setMessage(tamil ? `⏱ வீரர் ${player} நேரம் முடிந்தது.` : `⏱ Player ${player} time expired.`);
 
           const q = queueRef.current;
           if (!gameOver && q.length > 0) {
@@ -78,14 +90,14 @@ const XO = () => {
   };
 
   const handleCellClick = (row, col) => {
-    if (gameOver) return; 
+    if (gameOver) return;
 
     if (!turn) {
-      setMessage('⚠️ Answer a question first to earn a turn!');
+      setMessage(tamil ? '⚠️ முதலில் கேள்விக்கு பதில் சொல்லுங்கள்!' : '⚠️ Answer a question first to earn a turn!');
       return;
     }
     if (board[row][col]) {
-      setMessage('⚠️ Cell already occupied!');
+      setMessage(tamil ? '⚠️ இந்த செல் ஏற்கனவே பயன்படுத்தப்பட்டுள்ளது!' : '⚠️ Cell already occupied!');
       return;
     }
 
@@ -93,15 +105,29 @@ const XO = () => {
     newBoard[row][col] = turn;
     setBoard(newBoard);
 
-    const winner = checkWinner(newBoard);
-    if (winner) {
-      setMessage(`🎉 Player ${winner} wins!`);
+    const w = checkWinner(newBoard);
+    if (w) {
+      setWinner(w);
+      setMessage(tamil ? `🎉 வீரர் ${w} வெற்றி பெற்றார்!` : `🎉 Player ${w} wins!`);
       stopInterval();
       setTurn(null);
       setCurrentPlayer(null);
       setQueue([]);
       setTimer(0);
-      setGameOver(true); 
+      setGameOver(true);
+
+      // trigger celebrations
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.play();
+      }
+      setShowFireworks(true);
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowFireworks(false);
+        setShowConfetti(false);
+      }, 8000);
+
       return;
     }
 
@@ -116,12 +142,12 @@ const XO = () => {
       setQueue(rest);
       startTurn(next);
     } else {
-      setMessage('Answer a question to continue.');
+      setMessage(tamil ? 'தொடர கேள்விக்கு பதில் சொல்லுங்கள்.' : 'Answer a question to continue.');
     }
   };
 
   const handleCorrectAnswer = (player) => {
-    if (gameOver) return; 
+    if (gameOver) return;
 
     if (!turn && !currentPlayer) {
       startTurn(player);
@@ -146,37 +172,108 @@ const XO = () => {
         backgroundImage: `url(${bluebg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        paddingTop: '2vh'
+        paddingTop: '2vh',
+        position: 'relative'
       }}
     >
+      {/* Fireworks background */}
+      {showFireworks && (
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Fireworks
+            options={{
+              rocketsPoint: { min: 50, max: 50 },
+              hue: { min: 0, max: 360 },
+              delay: { min: 30, max: 60 },
+              speed: 5,
+              acceleration: 1.05,
+              friction: 0.95,
+              gravity: 1.5,
+              particles: 100,
+              trace: 3,
+              explosion: 6
+            }}
+            style={{
+              position: 'fixed',
+              width: '100%',
+              height: '100%',
+              top: 0,
+              left: 0
+            }}
+          />
+        </div>
+      )}
+
+      {/* Confetti */}
+      {showConfetti && (
+        <div style={{ position: 'absolute', zIndex: 10 }}>
+          <ConfettiExplosion force={0.7} duration={4500} particleCount={150} width={1200} />
+        </div>
+      )}
+
+      {/* Hidden sound */}
+      <audio ref={audioRef} src={cheer} />
+
+      {/* Winner card */}
+      {gameOver && winner && (
+        <Card
+          style={{
+            position: 'absolute',
+            top: '30%',
+            left: '50%',
+            transform: 'translate(-50%, -30%)',
+            padding: '2vh 4vw',
+            zIndex: 20,
+            boxShadow: '0 1vh 2vh rgba(0,0,0,0.3)',
+            borderRadius: '2vh',
+            background: 'linear-gradient(135deg, #FFEB3B, #FF9800)'
+          }}
+        >
+          <CardContent>
+            <Typography variant="h4" style={{ fontWeight: 'bold', textAlign: 'center', color: '#000' }}>
+              {tamil ? `🎉 வாழ்த்துக்கள்! வீரர் ${winner} வெற்றி பெற்றார்!` : `🎉 Congratulations! Player ${winner} Wins!`}
+            </Typography>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Player X */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Questions player="X" onCorrectAnswer={handleCorrectAnswer} activeTurn={turn} />
-        <Typography
-          variant="h6"
-          style={{
-            marginTop: '2vh',
-            fontWeight: 'bold',
-            fontSize: '2.2vh',
-            color: turn === 'X' ? '#1E88E5' : '#333'
-          }}
-        >
-          {turn === 'X' && `Timer: ${timer}s`}
-        </Typography>
+        {turn === 'X' && (
+          <Paper
+            style={{
+              marginTop: '2vh',
+              padding: '1vh 2vw',
+              borderRadius: '1vh',
+              backgroundColor: '#fff',
+              boxShadow: '0 0.5vh 1vh rgba(0,0,0,0.15)'
+            }}
+          >
+            <Typography
+              variant="h6"
+              style={{
+                fontWeight: 'bold',
+                fontSize: '2.2vh',
+                color: '#1E88E5',
+                textAlign: 'center'
+              }}
+            >
+              {tamil ? 'நேரம்' : 'Timer'}: {timer}s
+            </Typography>
+          </Paper>
+        )}
       </div>
 
       {/* Board */}
       <div style={{ width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Paper
           style={{
-            width: '90%',
+            width: '70%',
             marginTop: '12vh',
             padding: '3%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            backgroundColor: '#FFFFFF',
             boxShadow: '0 1vh 3vh rgba(0,0,0,0.2)',
             borderRadius: '2vh'
           }}
@@ -195,22 +292,48 @@ const XO = () => {
             {message}
           </Typography>
         </Paper>
+
+        {/* Language toggle button */}
+        <Button
+          variant="contained"
+          onClick={() => setTamil(!tamil)}
+          style={{
+            marginTop: '3vh',
+            fontWeight: 'bold',
+            borderRadius: '1.5vh',
+            background: tamil ? '#1E88E5' : '#D32F2F'
+          }}
+        >
+          {tamil ? 'Switch to English' : 'தமிழ்'}
+        </Button>
       </div>
 
       {/* Player O */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Questions player="O" onCorrectAnswer={handleCorrectAnswer} activeTurn={turn} />
-        <Typography
-          variant="h6"
-          style={{
-            marginTop: '2vh',
-            fontWeight: 'bold',
-            fontSize: '2.2vh',
-            color: turn === 'O' ? '#D32F2F' : '#333'
-          }}
-        >
-          {turn === 'O' && `Timer: ${timer}s`}
-        </Typography>
+        {turn === 'O' && (
+          <Paper
+            style={{
+              marginTop: '2vh',
+              padding: '1vh 2vw',
+              borderRadius: '1vh',
+              backgroundColor: '#fff',
+              boxShadow: '0 0.5vh 1vh rgba(0,0,0,0.15)'
+            }}
+          >
+            <Typography
+              variant="h6"
+              style={{
+                fontWeight: 'bold',
+                fontSize: '2.2vh',
+                color: '#D32F2F',
+                textAlign: 'center'
+              }}
+            >
+              {tamil ? 'நேரம்' : 'Timer'}: {timer}s
+            </Typography>
+          </Paper>
+        )}
       </div>
     </div>
   );
