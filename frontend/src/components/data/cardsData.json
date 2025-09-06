@@ -1,0 +1,68 @@
+[
+  {
+    "type": "antonym",
+    "pairs": [
+      ["happy", "sad"],
+      ["big", "small"],
+      ["fast", "slow"],
+      ["near", "far"],
+      ["hot", "cold"],
+      ["young", "old"]
+    ]
+  },
+  {
+    "type": "antonym",
+    "pairs": [
+      ["ancient", "modern"],
+      ["shallow", "deep"],
+      ["rough", "smooth"],
+      ["noisy", "quiet"],
+      ["brave", "cowardly"],
+      ["dark", "light"]
+    ]
+  },
+  {
+    "type": "antonym",
+    "pairs": [
+      ["optimistic", "pessimistic"],
+      ["scarce", "abundant"],
+      ["minor", "major"],
+      ["complex", "simple"],
+      ["harsh", "gentle"],
+      ["benevolent", "malevolent"]
+    ]
+  },
+  {
+    "type": "synonym",
+    "pairs": [
+      ["quick", "rapid"],
+      ["smart", "clever"],
+      ["bright", "luminous"],
+      ["end", "finish"],
+      ["gift", "present"],
+      ["strong", "powerful"]
+    ]
+  },
+  {
+    "type": "synonym",
+    "pairs": [
+      ["tiny", "small"],
+      ["rapid", "swift"],
+      ["happy", "joyful"],
+      ["clever", "intelligent"],
+      ["finish", "complete"],
+      ["strong", "robust"]
+    ]
+  },
+  {
+    "type": "synonym",
+    "pairs": [
+      ["rapid", "speedy"],
+      ["big", "huge"],
+      ["strong", "sturdy"],
+      ["big", "enormous"],
+      ["big", "massive"],
+      ["happy", "content"]
+    ]
+  }
+]

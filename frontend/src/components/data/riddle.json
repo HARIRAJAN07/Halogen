@@ -1,0 +1,122 @@
+[
+{
+"class": "6-8",
+"difficulty": 1,
+"answer": "Photosynthesis",
+"hints": [
+"I am the process plants use to make food.",
+"I require sunlight, water, and carbon dioxide.",
+"I produce glucose and oxygen."
+]
+},
+{
+"class": "6-8",
+"difficulty": 2,
+"answer": "Metamorphosis",
+"hints": [
+"I am the transformation of an organism's body.",
+"I am what a caterpillar undergoes to become a butterfly.",
+"I involve four stages: egg, larva, pupa, and adult."
+]
+},
+{
+"class": "6-8",
+"difficulty": 3,
+"answer": "Volcano",
+"hints": [
+"I am a mountain that can erupt.",
+"Molten rock, ash, and gases can escape through my vent.",
+"My name comes from the Roman god of fire."
+]
+},
+{
+"class": "9-10",
+"difficulty": 1,
+"answer": "Gravity",
+"hints": [
+"I am a fundamental force of nature.",
+"I pull objects towards the center of the Earth.",
+"I was famously described by Isaac Newton after an apple fell."
+]
+},
+{
+"class": "9-10",
+"difficulty": 2,
+"answer": "Kinetic Energy",
+"hints": [
+"I am the energy of motion.",
+"A fast-moving car has a lot of me.",
+"My value is calculated using the formula Ek = frac12mv 2."
+]
+},
+{
+"class": "9-10",
+"difficulty": 3,
+"answer": "Electromagnetism",
+"hints": [
+"I am a force that combines electricity and magnetism.",
+"I am responsible for light and radio waves.",
+"James Clerk Maxwell unified my principles in a set of four equations."
+]
+},
+{
+"class": "11-12",
+"difficulty": 1,
+"answer": "Quantum Entanglement",
+"hints": [
+"I am a physical phenomenon where two particles are linked.",
+"Measuring the state of one particle instantly affects the other, no matter the distance.",
+"Albert Einstein famously referred to me as 'spooky action at a distance'."
+]
+},
+{
+"class": "11-12",
+"difficulty": 2,
+"answer": "Thermodynamics",
+"hints": [
+"I am the branch of physics concerned with heat and temperature.",
+"My first law is the conservation of energy.",
+"My third law states that a perfect crystal's entropy is zero at absolute zero temperature."
+]
+},
+{
+"class": "11-12",
+"difficulty": 3,
+"answer": "Stellar Nucleosynthesis",
+"hints": [
+"I am the process by which stars create heavier elements.",
+"I begin with hydrogen fusion to form helium.",
+"Supernovae are the primary source of heavy elements from this process."
+]
+},
+{
+"class": "9-10",
+"difficulty": 3,
+"answer": "Entropy",
+"hints": [
+"I am a measure of disorder or randomness in a system.",
+"The universe is always tending towards more of me.",
+"I am described by the second law of thermodynamics."
+]
+},
+{
+"class": "6-8",
+"difficulty": 2,
+"answer": "Ecosystem",
+"hints": [
+"I am a community of living organisms and their non-living environment.",
+"A forest, a desert, or an ocean can be examples of me.",
+"My balance can be affected by factors like climate change or invasive species."
+]
+},
+{
+"class": "11-12",
+"difficulty": 1,
+"answer": "Gene",
+"hints": [
+"I am a basic unit of heredity.",
+"I am a segment of DNA or RNA.",
+"I carry the instructions for building proteins."
+]
+}
+]
