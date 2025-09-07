@@ -5,7 +5,7 @@ import topicsTamData from "../../data/topicstam.json";
 import bg from "../../assets/bg.jpg";
 
 const TopicSelection = () => {
-  const { classId , displaName ,subject } = useParams();
+  const { classId , displayName ,schoolName,subject } = useParams();
   const navigate = useNavigate();
 
   // ✅ State for language toggle
@@ -29,9 +29,7 @@ const TopicSelection = () => {
   // ✅ Navigate to next page
   const goNext = (topic) => {
     navigate(
-      `/difficulty/${classId}/${encodeURIComponent(displaName)}/${encodeURIComponent(subject)}/${encodeURIComponent(
-        topic
-      )}`
+      `/single/${classId}/${displayName}/${schoolName}/${subject}/match/${topic}/ma`
     );
   };
 

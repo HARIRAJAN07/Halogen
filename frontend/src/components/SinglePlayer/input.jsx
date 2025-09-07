@@ -73,12 +73,13 @@ export default function Input() {
   const [step, setStep] = useState(1);
   const [nickname, setNickname] = useState("");
   const [displayName, setDisplayName] = useState(""); // ✅ actual display name with alliteration
+  const [schoolName, setSchoolName] = useState(""); // ✅ new school name state
   const [avatar, setAvatar] = useState("");
   const [className, setClassName] = useState("");
-const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const nextStep = () => {
-    if (step < 3) setStep(step + 1);
+    if (step < 4) setStep(step + 1);
   };
 
   const prevStep = () => {
@@ -117,7 +118,7 @@ const navigate = useNavigate();
       >
         {/* Step indicators */}
         <div className="flex justify-center gap-4 mb-6">
-          {[1, 2, 3].map((s) => (
+          {[1, 2, 3, 4].map((s) => (
             <div
               key={s}
               className={`h-2 w-12 rounded-full ${
@@ -131,10 +132,7 @@ const navigate = useNavigate();
         <div className="flex-grow flex flex-col justify-center">
           {step === 1 && (
             <div className="text-center flex flex-col items-center">
-              <h2
-                className="text-2xl font-bold mb-6"
-                style={{ color: "#351D6B" }}
-              >
+              <h2 className="text-2xl font-bold mb-6" style={{ color: "#351D6B" }}>
                 What's your nickname?
               </h2>
               <div
@@ -176,7 +174,6 @@ const navigate = useNavigate();
                   Next
                 </button>
               </div>
-              {/* ✅ Show generated alliteration */}
               {displayName && (
                 <div className="text-sm text-[#351D6B] mt-3 font-medium">
                   Suggested: {displayName}
@@ -188,7 +185,30 @@ const navigate = useNavigate();
             </div>
           )}
 
+          {/* ✅ New School Name Step */}
           {step === 2 && (
+            <div className="text-center flex flex-col items-center">
+              <h2 className="text-xl font-bold text-[#202345] mb-4">
+                Enter your School Name
+              </h2>
+              <input
+                type="text"
+                value={schoolName}
+                onChange={(e) => setSchoolName(e.target.value)}
+                placeholder="Type your school name"
+                className="w-full py-3 px-5 rounded-full border border-[#351D6B] text-[#351D6B] text-base outline-none"
+              />
+              <button
+                onClick={nextStep}
+                disabled={!schoolName}
+                className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50"
+              >
+                Next
+              </button>
+            </div>
+          )}
+
+          {step === 3 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-xl font-bold text-[#202345] mb-4">
                 Choose your Avatar
@@ -216,24 +236,23 @@ const navigate = useNavigate();
             </div>
           )}
 
-          {step === 3 && (
+          {step === 4 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-xl font-bold text-[#202345] mb-4">
                 Select your Class
               </h2>
               <CustomClassDropdown value={className} onChange={setClassName} />
-             <button
-  onClick={() =>
-    navigate(`/single/${className}/${displayName}`, {
-      state: { nickname: displayName, avatar },
-    })
-  }
-  disabled={!className}
-  className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50"
->
-  Finish
-</button>
-
+              <button
+                onClick={() =>
+                  navigate(`/single/${className}/${displayName}/${schoolName}`, {
+                    state: { nickname: displayName, avatar, schoolName }, // ✅ pass schoolName too
+                  })
+                }
+                disabled={!className}
+                className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50"
+              >
+                Finish
+              </button>
             </div>
           )}
         </div>

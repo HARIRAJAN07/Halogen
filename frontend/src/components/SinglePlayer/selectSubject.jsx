@@ -19,7 +19,7 @@ const SubjectSelection = () => {
   const [language, setLanguage] = useState("en");
   const navigate = useNavigate(); // ✅ hook for navigation
 
-  const { classId , displayName } = useParams(); 
+  const { classId , displayName , schoolName} = useParams(); 
  
 
   const toggleFlip = (subjectName) => {
@@ -99,7 +99,7 @@ const SubjectSelection = () => {
     // example: replace with dynamic id later
 
     // ✅ Navigate correctly to dashboard route with subject
-    navigate(`/single/${classId}/${displayName}/${subject.en.toLowerCase()}`, {
+    navigate(`/single/${classId}/${displayName}/${schoolName}/${subject.en.toLowerCase()}`, {
       state: { subject: subject.en }, // optional, extra data
     });
   }}
