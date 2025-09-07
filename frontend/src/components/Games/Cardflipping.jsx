@@ -2,8 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import cardsJSON from "../../data/cardsData.json";
 import BgImage from "../../assets/BgImage.png";
 import TablaCelebration from '../utils/Celeb'; // Import your celebration component
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const Cardflipping = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -83,11 +86,6 @@ const Cardflipping = () => {
       if (firstCardData.match === secondCardData.word) {
         setMatchedCards(prev => [...prev, firstCard, secondCard]);
         setFlippedCards([]);
-
-        setTimeout(() => {
-          setMessage('You are correct!');
-          setTimeout(() => setMessage(''), 2000);
-        }, 500);
       } else {
         setTimeout(() => {
           setCards(prevCards =>
@@ -132,6 +130,16 @@ const Cardflipping = () => {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
 
+  // New functions for the buttons
+  const restartGame = () => {
+    initializeGame();
+  };
+
+  const goToDashboard = () => {
+    navigate('/'); // Navigates to the dashboard route
+  };
+
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-start p-4 font-sans text-gray-800 bg-cover bg-center"
@@ -169,6 +177,24 @@ const Cardflipping = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50">
           <div className="bg-white p-12 rounded-xl shadow-lg border-4 text-center text-2xl font-bold transition-all duration-300 transform scale-105 relative" style={{ borderColor: '#bca5d4' }}>
             {message}
+            {/* Added buttons for navigation */}
+            <div className="mt-8 flex justify-center space-x-4">
+              <button
+                onClick={goToDashboard}
+                className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors"
+                style={{ backgroundColor: '#7164b4' }}
+              >
+                Go to Dashboard
+              </button>
+              <button
+                onClick={restartGame}
+                autoFocus
+                className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors"
+                style={{ backgroundColor: '#bca5d4' }}
+              >
+                Play Again
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -199,7 +225,7 @@ const Cardflipping = () => {
         ))}
       </div>
 
-      {/* Restart */}
+      {/* The original Restart button is redundant now, but you can keep it if you want */}
       <button
         onClick={initializeGame}
         className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors mb-4"

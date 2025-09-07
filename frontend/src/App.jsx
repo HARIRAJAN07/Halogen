@@ -7,7 +7,7 @@ import SelectMode from './components/SinglePlayer/selectMode';
 import Game from './components/SinglePlayer/Game';
 import TopicSelection from './components/SinglePlayer/TopicSelection';
 import Match from './components/SinglePlayer/Match';
-
+import MultiplayerInput from './components/MultiPlayer/MultiPlayerInput';
 
 const App = () => {
   return (
@@ -16,7 +16,8 @@ const App = () => {
       <Route path="/"  element={<ChooseSorM />}/>
       <Route path='/single' element={<Input />}/>
       <Route path="/subject" element={<SubjectSelection />} />
-      <Route path="/multi" element={<XO />} />
+      <Route path="/xo" element={<XO />} />
+      <Route path="/multiplayer-input" element={<MultiplayerInput />} />
       <Route path="/single/:classId/:displayName/:schoolName" element={<SubjectSelection />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject" element={<SelectMode />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject/game" element={<Game />} />
