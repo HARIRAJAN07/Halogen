@@ -1,13 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Board from './Board';
 import Questions from './Questions';
-import { Typography, Paper, Button, Card, CardContent } from '@mui/material';
+import { Typography, Paper, Button, Card, CardContent, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import { Fireworks } from '@fireworks-js/react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import bluebg from '../../assets/blueBG.jpg';
 import cheer from '../../assets/cheer.mp3';
+import { useNavigate, useLocation } from 'react-router-dom'; 
 
 const XO = () => {
+  const location = useLocation();
+  // Get player data from navigation state or use defaults
+  const [player1, setPlayer1] = useState({ 
+    name: location.state?.player1?.name || "Player X", 
+    avatar: location.state?.player1?.avatar || "❌" 
+  });
+  const [player2, setPlayer2] = useState({ 
+    name: location.state?.player2?.name || "Player O", 
+    avatar: location.state?.player2?.avatar || "⭕" 
+  });
+
   const [board, setBoard] = useState([
     [null, null, null],
     [null, null, null],
@@ -21,6 +33,8 @@ const XO = () => {
   const [timer, setTimer] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [winner, setWinner] = useState(null);
+  const [isDraw, setIsDraw] = useState(false); 
+  const [showResultDialog, setShowResultDialog] = useState(false); 
 
   // celebration
   const [showFireworks, setShowFireworks] = useState(false);
@@ -32,6 +46,7 @@ const XO = () => {
 
   const timerRef = useRef(null);
   const queueRef = useRef(queue);
+  const navigate = useNavigate();
 
   useEffect(() => {
     queueRef.current = queue;
@@ -51,11 +66,40 @@ const XO = () => {
     return null;
   };
 
+  const checkDraw = (b) => {
+    // Check if all cells are filled and there's no winner
+    return b.flat().every(cell => cell !== null) && !checkWinner(b);
+  };
+
   const stopInterval = () => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
+  };
+
+  const restartGame = () => {
+    setBoard([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]);
+    setTurn(null);
+    setCurrentPlayer(null);
+    setQueue([]);
+    setMessage(tamil ? 'கேள்விக்கு பதிலளித்து ஆரம்பிக்கவும்!' : 'Answer a question to start!');
+    setTimer(0);
+    setGameOver(false);
+    setWinner(null);
+    setIsDraw(false);
+    setShowResultDialog(false);
+    setShowFireworks(false);
+    setShowConfetti(false);
+    stopInterval();
+  };
+
+  const goToDashboard = () => {
+    navigate('/'); 
   };
 
   const startTurn = (player) => {
@@ -65,7 +109,10 @@ const XO = () => {
     setTurn(player);
     setCurrentPlayer(player);
     setTimer(5);
-    setMessage(tamil ? `✅ வீரர் ${player}, உங்கள் அடையாளத்தை வையுங்கள்!` : `✅ Player ${player}, place your mark!`);
+    
+    // Use player names in the message
+    const playerName = player === 'X' ? player1.name : player2.name;
+    setMessage(tamil ? `✅ ${playerName}, உங்கள் அடையாளத்தை வையுங்கள்!` : `✅ ${playerName}, place your mark!`);
 
     timerRef.current = setInterval(() => {
       setTimer((prev) => {
@@ -74,7 +121,9 @@ const XO = () => {
           setTurn(null);
           setCurrentPlayer(null);
           setTimer(0);
-          setMessage(tamil ? `⏱ வீரர் ${player} நேரம் முடிந்தது.` : `⏱ Player ${player} time expired.`);
+          
+          const playerName = player === 'X' ? player1.name : player2.name;
+          setMessage(tamil ? `⏱ ${playerName} நேரம் முடிந்தது.` : `⏱ ${playerName} time expired.`);
 
           const q = queueRef.current;
           if (!gameOver && q.length > 0) {
@@ -108,13 +157,18 @@ const XO = () => {
     const w = checkWinner(newBoard);
     if (w) {
       setWinner(w);
-      setMessage(tamil ? `🎉 வீரர் ${w} வெற்றி பெற்றார்!` : `🎉 Player ${w} wins!`);
+      
+      // Get winner's name
+      const winnerName = w === 'X' ? player1.name : player2.name;
+      setMessage(tamil ? `🎉 ${winnerName} வெற்றி பெற்றார்!` : `🎉 ${winnerName} wins!`);
+      
       stopInterval();
       setTurn(null);
       setCurrentPlayer(null);
       setQueue([]);
       setTimer(0);
       setGameOver(true);
+      setShowResultDialog(true);
 
       // trigger celebrations
       if (audioRef.current) {
@@ -128,6 +182,20 @@ const XO = () => {
         setShowConfetti(false);
       }, 8000);
 
+      return;
+    }
+
+    // Check for draw
+    if (checkDraw(newBoard)) {
+      setIsDraw(true);
+      setMessage(tamil ? '🤝 போட்டி சமனாக முடிந்தது!' : '🤝 Match ended in a draw!');
+      stopInterval();
+      setTurn(null);
+      setCurrentPlayer(null);
+      setQueue([]);
+      setTimer(0);
+      setGameOver(true);
+      setShowResultDialog(true);
       return;
     }
 
@@ -157,6 +225,11 @@ const XO = () => {
       setQueue((prev) => (prev.includes(player) ? prev : [...prev, player]));
       return;
     }
+  };
+
+  // Function to get player name based on player symbol
+  const getPlayerName = (playerSymbol) => {
+    return playerSymbol === 'X' ? player1.name : player2.name;
   };
 
   return (
@@ -213,32 +286,45 @@ const XO = () => {
       {/* Hidden sound */}
       <audio ref={audioRef} src={cheer} />
 
-      {/* Winner card */}
-      {gameOver && winner && (
-        <Card
-          style={{
-            position: 'absolute',
-            top: '30%',
-            left: '50%',
-            transform: 'translate(-50%, -30%)',
-            padding: '2vh 4vw',
-            zIndex: 20,
-            boxShadow: '0 1vh 2vh rgba(0,0,0,0.3)',
-            borderRadius: '2vh',
-            background: 'linear-gradient(135deg, #FFEB3B, #FF9800)'
-          }}
-        >
-          <CardContent>
-            <Typography variant="h4" style={{ fontWeight: 'bold', textAlign: 'center', color: '#000' }}>
-              {tamil ? `🎉 வாழ்த்துக்கள்! வீரர் ${winner} வெற்றி பெற்றார்!` : `🎉 Congratulations! Player ${winner} Wins!`}
-            </Typography>
-          </CardContent>
-        </Card>
-      )}
+      {/* Result Dialog */}
+      <Dialog open={showResultDialog} onClose={() => setShowResultDialog(false)}>
+        <DialogTitle>
+          {winner 
+            ? (tamil ? `🎉 வாழ்த்துக்கள்! ${getPlayerName(winner)} வெற்றி பெற்றார்!` : `🎉 Congratulations! ${getPlayerName(winner)} Wins!`)
+            : (tamil ? '🤝 போட்டி சமனாக முடிந்தது!' : '🤝 Match ended in a draw!')
+          }
+        </DialogTitle>
+        <DialogContent>
+          <Typography>
+            {tamil 
+              ? 'மீண்டும் விளையாட விரும்புகிறீர்களா அல்லது டாஷ்போர்டுக்கு செல்ல விரும்புகிறீர்களா?'
+              : 'Would you like to play again or go to dashboard?'
+            }
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={goToDashboard}>
+            {tamil ? 'டாஷ்போர்டுக்கு செல்' : 'Go to Dashboard'}
+          </Button>
+          <Button onClick={restartGame} autoFocus>
+            {tamil ? 'மீண்டும் விளையாடு' : 'Play Again'}
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {/* Player X */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Questions player="X" onCorrectAnswer={handleCorrectAnswer} activeTurn={turn} />
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1vh' }}>
+          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold' }}>
+            Player X
+          </Typography>
+        </div>
+        <Questions 
+          player="X" 
+          playerName={player1.name} 
+          onCorrectAnswer={handleCorrectAnswer} 
+          activeTurn={turn} 
+        />
         {turn === 'X' && (
           <Paper
             style={{
@@ -310,7 +396,17 @@ const XO = () => {
 
       {/* Player O */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Questions player="O" onCorrectAnswer={handleCorrectAnswer} activeTurn={turn} />
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1vh' }}>
+          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold' }}>
+            Player O
+          </Typography>
+        </div>
+        <Questions 
+          player="O" 
+          playerName={player2.name} 
+          onCorrectAnswer={handleCorrectAnswer} 
+          activeTurn={turn} 
+        />
         {turn === 'O' && (
           <Paper
             style={{

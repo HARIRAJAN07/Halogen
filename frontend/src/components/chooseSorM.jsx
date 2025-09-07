@@ -141,7 +141,7 @@ const ChooseSorM = () => {
           backText={t.multiBack}
           image={multi}
           proceedText={t.proceed}
-          navigateTo="/multi"
+          navigateTo="/multiplayer-input"
         />
       </div>
     </div>
