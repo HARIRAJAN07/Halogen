@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { useNavigate , useParams} from "react-router-dom";
 import socialData from '../../data/social.json';
 
 const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;
-const REQUIRED_TO_UNLOCK = 20;
+const REQUIRED_TO_UNLOCK = 10;
 const QUESTIONS_PER_LEVEL = 3;
 const TIMER_DURATION = 180;
 
@@ -38,7 +39,8 @@ const TRANSLATIONS = {
     timeoutMsg: "Time's up! You can restart the game to try again.",
     congratsTitle: "Congratulations! 🎉",
     congratsMsg: "You have completed all levels! Good job!",
-    finalScore: "Your final score:"
+    finalScore: "Your final score:",
+    goToDashboard: "Go to Dashboard"
   },
   ta: {
     title: "வார்த்தை தேடல்",
@@ -66,7 +68,8 @@ const TRANSLATIONS = {
     timeoutMsg: "நேரம் முடிந்துவிட்டது! மீண்டும் முயற்சி செய்ய விளையாட்டை மீண்டும் தொடங்கலாம்.",
     congratsTitle: "வாழ்த்துக்கள்! 🎉",
     congratsMsg: "அனைத்து நிலைகளையும் முடித்துவிட்டீர்கள்! நல்ல வேலை!",
-    finalScore: "உங்கள் இறுதி மதிப்பெண்:"
+    finalScore: "உங்கள் இறுதி மதிப்பெண்:",
+    goToDashboard: "டாஷ்போர்டுக்கு செல்லவும்"
   },
 };
 
@@ -184,6 +187,8 @@ function playVictorySound() {
 }
 
 export default function WordSearchGame() {
+  const navigate = useNavigate();
+  const { classId } = useParams();
   const [language, setLanguage] = useState("en");
   const T = TRANSLATIONS[language];
   const ALPHABET = language === "en" ? Array.from(ALPHABET_EN) : arrayFromStr(ALPHABET_TA);
@@ -193,15 +198,25 @@ export default function WordSearchGame() {
   const [timerActive, setTimerActive] = useState(true);
 
   // Get questions based on selected grade and level
-  const getQuestionsForLevel = (levelIndex, lang = language) => {
+ const getQuestionsForLevel = (levelIndex, lang = language) => {
+    // 📝 Logic to select the next class's questions
+    const targetClass = parseInt(classId);
+    const questionsGrade = `grade${targetClass + 1}`; // ✅ Select questions from the next class
+
     const levelKeys = ["easy", "medium", "hard"];
     const levelKey = levelKeys[levelIndex];
 
-    const grade = "grade6";
-    if (!socialData[grade] || !socialData[grade][levelKey]) {
-      return [];
+    if (!socialData[questionsGrade] || !socialData[questionsGrade][levelKey]) {
+      console.warn(`No data found for grade ${targetClass + 1} and level ${levelKey}. Using default 'grade6'.`);
+      // Fallback to a default if the data is not found
+      if (!socialData.grade6 || !socialData.grade6[levelKey]) {
+          return [];
+      }
+      const allQuestions = socialData.grade6[levelKey];
+      // ... (rest of the function logic to select random questions)
     }
-    const allQuestions = socialData[grade][levelKey];
+
+    const allQuestions = socialData[questionsGrade][levelKey];
     const selectedQuestions = [];
     const usedIndices = new Set();
     while (selectedQuestions.length < QUESTIONS_PER_LEVEL && selectedQuestions.length < allQuestions.length) {
@@ -212,8 +227,8 @@ export default function WordSearchGame() {
         const selectedQuestion = {
           q: questionObj.q[lang] || questionObj.q.en,
           a: questionObj.a[lang] || questionObj.a.en,
-          originalQ: questionObj.q.en, // Store original English question
-          originalA: questionObj.a.en  // Store original English answer
+          originalQ: questionObj.q.en,
+          originalA: questionObj.a.en
         };
         selectedQuestions.push(selectedQuestion);
       }
@@ -632,23 +647,49 @@ export default function WordSearchGame() {
     return {};
   }
 
-  function restartAll() {
-    setLevelIndex(0);
-    setQIndex(0);
-    setScore(0);
-    setUnlocked([true, false, false]);
-    setShowFinalModal(false);
-    setShowTimeoutModal(false);
-    setShowFinalCompletionModal(false);
-    setStatus("playing");
-    setSelectedPositions([]);
-    currentPathRef.current = [];
-    setHintsUsed(0);
-    setTimeLeft(TIMER_DURATION);
-    setTimerActive(true);
-    setFoundAnswers([]);
-    setInitialLevels([]); // Reset initial levels to get new questions
+// Add a loading state
+const [isLoading, setIsLoading] = useState(true);
+
+// Update the useEffect that loads questions
+useEffect(() => {
+  // Only generate new questions when the component first mounts or after restart
+  if (initialLevels.length === 0) {
+    setIsLoading(true);
+    const newLevels = [
+      getQuestionsForLevel(0, "en"),
+      getQuestionsForLevel(1, "en"),
+      getQuestionsForLevel(2, "en")
+    ];
+    setInitialLevels(newLevels);
+    setIsLoading(false);
   }
+}, [initialLevels]);
+
+// Update the restart function
+function restartAll(goToDashboard = false) {
+  setIsLoading(true);
+  setLevelIndex(0);
+  setQIndex(0);
+  setScore(0);
+  setUnlocked([true, false, false]);
+  setShowFinalModal(false);
+  setShowTimeoutModal(false);
+  setShowFinalCompletionModal(false);
+  setStatus("playing");
+  setSelectedPositions([]);
+  currentPathRef.current = [];
+  setHintsUsed(0);
+  setTimeLeft(TIMER_DURATION);
+  setTimerActive(true);
+  setFoundAnswers([]);
+  
+  // Reset initial levels to trigger new question generation
+  setInitialLevels([]);
+  
+  if (goToDashboard) {
+    navigate("/");
+  }
+}
 
   return (
   <div className="min-h-screen p-4 bg-[#BCA5D4] text-slate-900 flex flex-col items-center relative">
@@ -770,7 +811,7 @@ export default function WordSearchGame() {
         <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
           <h3 className="text-2xl font-bold mb-2">{T.timeUp}</h3>
           <p className="mb-4 text-slate-700">{T.timeoutMsg}</p>
-          <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
+          <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
         </div>
       </div>
     )}
@@ -782,7 +823,19 @@ export default function WordSearchGame() {
           <p className="mb-4">{T.currentScore} <span className="font-mono">{score}</span></p>
           <p className="mb-4 text-sm text-gray-700">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
           <div className="flex gap-3 justify-center">
-            <button onClick={() => { setShowLevelCompleteModal(false); if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { handleNext(); } else if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 >= LEVELS.length) { setShowFinalCompletionModal(true); playVictorySound(); setConfettiRunning(true); setTimeout(() => setConfettiRunning(false), 5000); } }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold"> {T.next} </button>
+            <button onClick={() => { 
+              setShowLevelCompleteModal(false); 
+              if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { 
+                handleNext(); 
+              } else if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 >= LEVELS.length) { 
+                setShowFinalCompletionModal(true); 
+                playVictorySound(); 
+                setConfettiRunning(true); 
+                setTimeout(() => setConfettiRunning(false), 5000); 
+              } 
+            }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold"> 
+              {T.next} 
+            </button>
             <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-gray-200 rounded-lg">{T.close}</button>
           </div>
         </div>
@@ -796,7 +849,12 @@ export default function WordSearchGame() {
           <p className="mb-4 text-lg">{T.congratsMsg}</p>
           <p className="mb-4 text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
           <div className="flex gap-3 justify-center">
-            <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
+            <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">
+              {T.playAgain}
+            </button>
+            <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">
+              {T.goToDashboard}
+            </button>
           </div>
         </div>
       </div>
@@ -809,7 +867,12 @@ export default function WordSearchGame() {
           <p className="mb-4 text-lg">{T.finalMotivation}</p>
           <p className="mb-4 text-xl font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
           <div className="flex gap-3 justify-center">
-            <button onClick={restartAll} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
+            <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">
+              {T.playAgain}
+            </button>
+            <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">
+              {T.goToDashboard}
+            </button>
           </div>
         </div>
       </div>
