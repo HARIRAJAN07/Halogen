@@ -1,72 +1,68 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import cardsJSON from "../data/cardsData.json";
+import cardsJSON from "../data/cardsDataT.json"; // Tamil data
 import BgImage from "../../assets/BgImage.png";
 
-const Cardflipping = () => {
+const App = () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [message, setMessage] = useState('');
   const [isGameActive, setIsGameActive] = useState(true);
-  const [gameMode, setGameMode] = useState('antonym');
+  const [gameMode, setGameMode] = useState('மொழியியல்');
   const [showAllCardsTemporarily, setShowAllCardsTemporarily] = useState(false);
-  const [timer, setTimer] = useState(90); // 1. New state for the timer, set to 90 seconds
+  const [timer, setTimer] = useState(90);
 
-const initializeGame = useCallback(() => {
-  if (!cardsJSON || !cardsJSON.length) return;
+  const initializeGame = useCallback(() => {
+    if (!cardsJSON || !cardsJSON.length) return;
 
-  const gamePairs = cardsJSON.find(data => data.type === gameMode).pairs;
+    const gamePairs = cardsJSON.find(data => data.type === gameMode)?.pairs || [];
 
-  const deck = gamePairs.flatMap(pair => [
-    { id: Math.random(), word: pair[0], match: pair[1] },
-    { id: Math.random(), word: pair[1], match: pair[0] }
-  ]);
+    const deck = gamePairs.flatMap(pair => [
+      { id: Math.random(), word: pair[0], match: pair[1] },
+      { id: Math.random(), word: pair[1], match: pair[0] }
+    ]);
 
-  // Shuffle
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
-  }
+    // Shuffle deck
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
 
-  setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
-  setFlippedCards([]);
-  setMatchedCards([]);
-  setMessage('');
-  setIsGameActive(true);
-  setTimer(90);
+    setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setMessage('');
+    setIsGameActive(true);
+    setTimer(90);
 
-  // Set a flag to show all cards for 4 seconds
-  setShowAllCardsTemporarily(true);
-  setTimeout(() => {
-    setShowAllCardsTemporarily(false);
-  }, 4000); // Changed from 2000 to 4000
-}, [gameMode]);
+    setShowAllCardsTemporarily(true);
+    setTimeout(() => setShowAllCardsTemporarily(false), 4000);
+  }, [gameMode]);
+
   useEffect(() => {
     initializeGame();
   }, [initializeGame]);
 
-  // 2. useEffect for the countdown timer
+  // Timer
   useEffect(() => {
     let countdown;
-
     if (!showAllCardsTemporarily && isGameActive) {
       countdown = setInterval(() => {
         setTimer(prevTime => {
           if (prevTime <= 1) {
             clearInterval(countdown);
             setIsGameActive(false);
-            setMessage("Time's up! Game over.");
+            setMessage("நேரம் முடிந்துவிட்டது! விளையாட்டு முடிந்தது.");
             return 0;
           }
           return prevTime - 1;
         });
       }, 1000);
     }
-
     return () => clearInterval(countdown);
   }, [showAllCardsTemporarily, isGameActive]);
 
-  // Handle card flipping and matching
+  // Handle card flips and matching
   useEffect(() => {
     if (flippedCards.length === 2) {
       const [firstCard, secondCard] = flippedCards;
@@ -76,9 +72,8 @@ const initializeGame = useCallback(() => {
       if (firstCardData.match === secondCardData.word) {
         setMatchedCards(prev => [...prev, firstCard, secondCard]);
         setFlippedCards([]);
-
         setTimeout(() => {
-          setMessage('You are correct!');
+          setMessage('சரி!');
           setTimeout(() => setMessage(''), 2000);
         }, 500);
       } else {
@@ -99,8 +94,8 @@ const initializeGame = useCallback(() => {
   // Check for win
   useEffect(() => {
     if (matchedCards.length === cards.length && cards.length > 0) {
-      setMessage('You have won the game!');
-      setIsGameActive(false); // Stop the timer on win
+      setMessage('விளையாட்டு வெற்றி!');
+      setIsGameActive(false);
     }
   }, [matchedCards, cards]);
 
@@ -114,11 +109,10 @@ const initializeGame = useCallback(() => {
     setFlippedCards(prev => [...prev, id]);
   };
 
-  const gameInstructions = gameMode === 'antonym'
-    ? 'Flip the perfect antonyms together!'
-    : 'Flip the perfect synonyms together!';
+  const gameInstructions = gameMode === 'மொழியியல்'
+    ? 'சரியான பொருத்தங்களை இணைக்கவும்!'
+    : 'சரியான கவிதை-கவிஞர் இணைப்புகளை கண்டுபிடிக்கவும்!';
 
-  // Helper function to format the time
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -128,36 +122,32 @@ const initializeGame = useCallback(() => {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-start p-4 font-sans text-gray-800 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${BgImage})`,
-      }}
+      style={{ backgroundImage: `url(${BgImage})` }}
     >
       {/* Mode Buttons */}
       <div className="flex justify-center mb-6 mt-4">
         <button
-          onClick={() => setGameMode('antonym')}
+          onClick={() => setGameMode('மொழியியல்')}
           className={`px-4 py-2 mx-2 rounded-full font-bold transition-colors
-            ${gameMode === 'antonym' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
+            ${gameMode === 'மொழியியல்' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
         >
-          Antonyms
+          மொழியியல்
         </button>
         <button
-          onClick={() => setGameMode('synonym')}
+          onClick={() => setGameMode('கவிதை_கவிஞர்')}
           className={`px-4 py-2 mx-2 rounded-full font-bold transition-colors
-            ${gameMode === 'synonym' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
+            ${gameMode === 'கவிதை_கவிஞர்' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
         >
-          Synonyms
+          கவிதை_கவிஞர்
         </button>
       </div>
-      
-      {/* 3. Display the timer */}
+
       <h2 className="text-xl font-bold mb-4">
-        Time Remaining: <span className="text-red-600">{formatTime(timer)}</span>
+        காலம் மீதமுள்ளது: <span className="text-red-600">{formatTime(timer)}</span>
       </h2>
 
       <p className="text-lg text-center mb-8">{gameInstructions}</p>
 
-      {/* Message Overlay */}
       {message && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50">
           <div className="bg-white p-12 rounded-xl shadow-lg border-4 text-center text-2xl font-bold transition-all duration-300 transform scale-105 relative" style={{ borderColor: '#bca5d4' }}>
@@ -166,7 +156,6 @@ const initializeGame = useCallback(() => {
         </div>
       )}
 
-      {/* Card Grid */}
       <div className="grid grid-cols-4 gap-6 w-full max-w-4xl p-4 mb-8" style={{ perspective: '1000px' }}>
         {cards.map(card => (
           <div
@@ -179,7 +168,6 @@ const initializeGame = useCallback(() => {
             {/* Front */}
             <div className="absolute inset-0 backface-hidden rounded-xl flex items-center justify-center border-4 text-white text-3xl font-bold" style={{ backgroundColor: '#7164b4', borderColor: '#7164b4' }}>
               <span className="text-4xl">🃏</span>
-              <i className="fas fa-question"></i>
             </div>
             {/* Back */}
             <div
@@ -192,13 +180,12 @@ const initializeGame = useCallback(() => {
         ))}
       </div>
 
-      {/* Restart */}
       <button
         onClick={initializeGame}
         className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors mb-4"
         style={{ backgroundColor: '#7164b4' }}
       >
-        Restart Game
+        விளையாட்டை மீண்டும் தொடங்கவும்
       </button>
     </div>
   );
