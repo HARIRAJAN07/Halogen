@@ -1,122 +1,338 @@
 [
 {
-"class": "6-8",
+"class": "6",
 "difficulty": 1,
-"answer": "Photosynthesis",
+"answer": "Sun",
 "hints": [
-"I am the process plants use to make food.",
-"I require sunlight, water, and carbon dioxide.",
-"I produce glucose and oxygen."
+"I am a star in the center of our solar system.",
+"I give light and heat to the Earth.",
+"Plants need me to make food."
+],
+"ta_answer": "சூரியன்",
+"ta_hints": [
+"நான் நமது சூரிய குடும்பத்தின் மையத்தில் உள்ள ஒரு நட்சத்திரம்.",
+"நான் பூமிக்கு ஒளியும் வெப்பமும் தருகிறேன்.",
+"தாவரங்களுக்கு உணவு தயாரிக்க நான் தேவை."
 ]
 },
 {
-"class": "6-8",
+"class": "6",
 "difficulty": 2,
-"answer": "Metamorphosis",
+"answer": "Roots",
 "hints": [
-"I am the transformation of an organism's body.",
-"I am what a caterpillar undergoes to become a butterfly.",
-"I involve four stages: egg, larva, pupa, and adult."
+"I am a part of a plant.",
+"I grow underground.",
+"I absorb water and nutrients."
+],
+"ta_answer": "வேர்கள்",
+"ta_hints": [
+"நான் ஒரு தாவரத்தின் ஒரு பகுதி.",
+"நான் பூமிக்கு அடியில் வளர்வேன்.",
+"நான் நீர் மற்றும் ஊட்டச்சத்துக்களை உறிஞ்சுவேன்."
 ]
 },
 {
-"class": "6-8",
+"class": "6",
 "difficulty": 3,
-"answer": "Volcano",
+"answer": "Cloud",
 "hints": [
-"I am a mountain that can erupt.",
-"Molten rock, ash, and gases can escape through my vent.",
-"My name comes from the Roman god of fire."
+"I am made of tiny water droplets or ice crystals.",
+"I float in the sky.",
+"I can bring rain."
+],
+"ta_answer": "மேகம்",
+"ta_hints": [
+"நான் சிறிய நீர் துளிகள் அல்லது பனி படிகங்களால் ஆனவன்.",
+"நான் வானத்தில் மிதப்பேன்.",
+"நான் மழையை கொண்டு வருவேன்."
 ]
 },
 {
-"class": "9-10",
+"class": "7",
 "difficulty": 1,
+"answer": "Magnet",
+"hints": [
+"I have a north and a south pole.",
+"I attract some metals, but not all.",
+"I can be used to pick up paper clips."
+],
+"ta_answer": "காந்தம்",
+"ta_hints": [
+"எனக்கு வட மற்றும் தென் துருவங்கள் உண்டு.",
+"நான் சில உலோகங்களை ஈர்ப்பேன், அனைத்தையும் அல்ல.",
+"காகிதக் கிளிப்புகளை எடுக்க நான் பயன்படுத்தப்படலாம்."
+]
+},
+{
+"class": "7",
+"difficulty": 2,
+"answer": "Skeleton",
+"hints": [
+"I am inside your body.",
+"I am made of bones.",
+"I give you shape and support."
+],
+"ta_answer": "எலும்புக்கூடு",
+"ta_hints": [
+"நான் உங்கள் உடலுக்குள் இருப்பவன்.",
+"நான் எலும்புகளால் ஆனவன்.",
+"நான் உங்களுக்கு வடிவத்தையும் ஆதரவையும் கொடுப்பேன்."
+]
+},
+{
+"class": "7",
+"difficulty": 3,
+"answer": "Fossil",
+"hints": [
+"I am the preserved remains of a long-dead organism.",
+"I am often found in rocks.",
+"I can tell you about life from the past."
+],
+"ta_answer": "புதைபடிவம்",
+"ta_hints": [
+"நான் நீண்ட காலமாக இறந்த உயிரினத்தின் பாதுகாக்கப்பட்ட எச்சங்கள்.",
+"நான் பெரும்பாலும் பாறைகளில் காணப்படுவேன்.",
+"நான் கடந்த கால வாழ்க்கையைப் பற்றி உங்களுக்கு சொல்ல முடியும்."
+]
+},
+{
+"class": "8",
+"difficulty": 1,
+"answer": "Atom",
+"hints": [
+"I am the smallest unit of an element.",
+"I am made of protons, neutrons, and electrons.",
+"Everything is made of me."
+],
+"ta_answer": "அணு",
+"ta_hints": [
+"நான் ஒரு தனிமத்தின் மிகச்சிறிய அலகு.",
+"நான் புரோட்டான், நியூட்ரான் மற்றும் எலக்ட்ரானால் ஆனவன்.",
+"எல்லாமே என்னால் ஆனது."
+]
+},
+{
+"class": "8",
+"difficulty": 2,
+"answer": "Cell",
+"hints": [
+"I am the basic building block of all living things.",
+"I can be either prokaryotic or eukaryotic.",
+"You have trillions of me in your body."
+],
+"ta_answer": "செல்",
+"ta_hints": [
+"நான் அனைத்து உயிரினங்களின் அடிப்படை கட்டுமான அலகு.",
+"நான் புரோகாரியோடிக் அல்லது யூகாரியோடிக் ஆக இருக்கலாம்.",
+"உங்கள் உடலில் கோடிக்கணக்கான நான் இருக்கிறேன்."
+]
+},
+{
+"class": "8",
+"difficulty": 3,
 "answer": "Gravity",
 "hints": [
-"I am a fundamental force of nature.",
-"I pull objects towards the center of the Earth.",
-"I was famously described by Isaac Newton after an apple fell."
+"I am a force that pulls everything towards the Earth's center.",
+"I keep you from floating into space.",
+"Isaac Newton famously described me."
+],
+"ta_answer": "புவியீர்ப்பு விசை",
+"ta_hints": [
+"நான் எல்லாவற்றையும் பூமியின் மையத்தை நோக்கி இழுக்கும் ஒரு சக்தி.",
+"நான் உங்களை விண்வெளியில் மிதக்கவிடாமல் தடுப்பேன்.",
+"ஐசக் நியூட்டன் என்னை பிரபலமாக விவரித்தார்."
 ]
 },
 {
-"class": "9-10",
-"difficulty": 2,
-"answer": "Kinetic Energy",
-"hints": [
-"I am the energy of motion.",
-"A fast-moving car has a lot of me.",
-"My value is calculated using the formula Ek = frac12mv 2."
-]
-},
-{
-"class": "9-10",
-"difficulty": 3,
-"answer": "Electromagnetism",
-"hints": [
-"I am a force that combines electricity and magnetism.",
-"I am responsible for light and radio waves.",
-"James Clerk Maxwell unified my principles in a set of four equations."
-]
-},
-{
-"class": "11-12",
+"class": "9",
 "difficulty": 1,
-"answer": "Quantum Entanglement",
+"answer": "Oxygen",
 "hints": [
-"I am a physical phenomenon where two particles are linked.",
-"Measuring the state of one particle instantly affects the other, no matter the distance.",
-"Albert Einstein famously referred to me as 'spooky action at a distance'."
+"I am a gas.",
+"Animals need me to breathe.",
+"Plants produce me."
+],
+"ta_answer": "ஆக்ஸிஜன்",
+"ta_hints": [
+"நான் ஒரு வாயு.",
+"விலங்குகளுக்கு சுவாசிக்க நான் தேவை.",
+"தாவரங்கள் என்னை உற்பத்தி செய்கின்றன."
 ]
 },
 {
-"class": "11-12",
+"class": "9",
 "difficulty": 2,
-"answer": "Thermodynamics",
+"answer": "Digestion",
 "hints": [
-"I am the branch of physics concerned with heat and temperature.",
-"My first law is the conservation of energy.",
-"My third law states that a perfect crystal's entropy is zero at absolute zero temperature."
+"I am a process in your body.",
+"I break down food.",
+"I turn it into energy."
+],
+"ta_answer": "செரிமானம்",
+"ta_hints": [
+"நான் உங்கள் உடலில் ஒரு செயல்முறை.",
+"நான் உணவை உடைப்பேன்.",
+"நான் அதை ஆற்றலாக மாற்றுவேன்."
 ]
 },
 {
-"class": "11-12",
+"class": "9",
 "difficulty": 3,
-"answer": "Stellar Nucleosynthesis",
+"answer": "Magnetism",
 "hints": [
-"I am the process by which stars create heavier elements.",
-"I begin with hydrogen fusion to form helium.",
-"Supernovae are the primary source of heavy elements from this process."
+"I am an invisible force.",
+"I pull or push things made of iron.",
+"I have two poles."
+],
+"ta_answer": "காந்தவியல்",
+"ta_hints": [
+"நான் ஒரு கண்ணுக்கு தெரியாத சக்தி.",
+"நான் இரும்பினால் செய்யப்பட்ட பொருட்களை இழுப்பேன் அல்லது தள்ளுவேன்.",
+"எனக்கு இரண்டு துருவங்கள் உள்ளன."
 ]
 },
 {
-"class": "9-10",
-"difficulty": 3,
-"answer": "Entropy",
-"hints": [
-"I am a measure of disorder or randomness in a system.",
-"The universe is always tending towards more of me.",
-"I am described by the second law of thermodynamics."
-]
-},
-{
-"class": "6-8",
-"difficulty": 2,
-"answer": "Ecosystem",
-"hints": [
-"I am a community of living organisms and their non-living environment.",
-"A forest, a desert, or an ocean can be examples of me.",
-"My balance can be affected by factors like climate change or invasive species."
-]
-},
-{
-"class": "11-12",
+"class": "10",
 "difficulty": 1,
-"answer": "Gene",
+"answer": "DNA",
 "hints": [
-"I am a basic unit of heredity.",
-"I am a segment of DNA or RNA.",
-"I carry the instructions for building proteins."
+"I contain the genetic instructions for all living things.",
+"I look like a twisted ladder.",
+"My full name is Deoxyribonucleic acid."
+],
+"ta_answer": "டிஎன்ஏ",
+"ta_hints": [
+"நான் அனைத்து உயிரினங்களுக்கும் மரபணு வழிமுறைகளைக் கொண்டிருக்கிறேன்.",
+"நான் ஒரு முறுக்கப்பட்ட ஏணி போல் இருப்பேன்.",
+"எனது முழு பெயர் டிஆக்சிரைபோநியூக்ளிக் அமிலம்."
+]
+},
+{
+"class": "10",
+"difficulty": 2,
+"answer": "Volume",
+"hints": [
+"I measure how much space an object takes up.",
+"I can be found in a cube.",
+"I am measured in cubic units."
+],
+"ta_answer": "கனஅளவு",
+"ta_hints": [
+"ஒரு பொருள் எவ்வளவு இடத்தை எடுத்துக்கொள்கிறது என்பதை நான் அளவிடுகிறேன்.",
+"நான் ஒரு கனசதுரத்தில் காணப்படுவேன்.",
+"நான் கன அலகுகளில் அளவிடப்படுகிறேன்."
+]
+},
+{
+"class": "10",
+"difficulty": 3,
+"answer": "Density",
+"hints": [
+"I am a measure of how tightly packed matter is.",
+"My formula is mass divided by volume.",
+"An object's ability to float depends on me."
+],
+"ta_answer": "அடர்த்தி",
+"ta_hints": [
+"நான் ஒரு பொருளில் உள்ள திணிவு எவ்வளவு இறுக்கமாக நிரம்பியுள்ளது என்பதை அளவிடுகிறேன்.",
+"என் சூத்திரம் நிறை வகுத்தல் கனஅளவு.",
+"ஒரு பொருளின் மிதக்கும் திறன் என்னைப் பொறுத்தது."
+]
+},
+{
+"class": "11",
+"difficulty": 1,
+"answer": "Protein",
+"hints": [
+"I am a large molecule.",
+"I am made of amino acids.",
+"I am essential for building and repairing body tissues."
+],
+"ta_answer": "புரதம்",
+"ta_hints": [
+"நான் ஒரு பெரிய மூலக்கூறு.",
+"நான் அமினோ அமிலங்களால் ஆனவன்.",
+"நான் உடல் திசுக்களை உருவாக்கவும் சரிசெய்யவும் அத்தியாவசியமானவன்."
+]
+},
+{
+"class": "11",
+"difficulty": 2,
+"answer": "Light",
+"hints": [
+"I travel in waves.",
+"I have no mass.",
+"I can be broken into a rainbow."
+],
+"ta_answer": "ஒளி",
+"ta_hints": [
+"நான் அலைகளில் பயணிப்பேன்.",
+"எனக்கு நிறை இல்லை.",
+"என்னை வானவில்லாக பிரிக்க முடியும்."
+]
+},
+{
+"class": "11",
+"difficulty": 3,
+"answer": "Acid",
+"hints": [
+"I taste sour.",
+"My pH is below 7.",
+"I can be found in a lemon."
+],
+"ta_answer": "அமிலம்",
+"ta_hints": [
+"நான் புளிப்பு சுவை கொண்டவன்.",
+"எனது pH 7 க்கும் குறைவாக உள்ளது.",
+"நான் எலுமிச்சையில் காணப்படுவேன்."
+]
+},
+{
+"class": "12",
+"difficulty": 1,
+"answer": "Molecule",
+"hints": [
+"I am formed when two or more atoms join together.",
+"I can be a simple gas like oxygen (O2)",
+"I am the smallest particle of a substance that still retains its properties."
+],
+"ta_answer": "மூலக்கூறு",
+"ta_hints": [
+"இரண்டு அல்லது அதற்கு மேற்பட்ட அணுக்கள் ஒன்று சேரும்போது நான் உருவாகிறேன்.",
+"நான் ஆக்ஸிஜன் (O 2) போன்ற ஒரு எளிய வாயுவாக இருக்கலாம்.",
+"நான் ஒரு பொருளின் மிகச்சிறிய துகள், அது இன்னும் அதன் பண்புகளை தக்க வைத்துக் கொண்டுள்ளது."
+]
+},
+{
+"class": "12",
+"difficulty": 2,
+"answer": "Virus",
+"hints": [
+"I am not a cell.",
+"I need a host to reproduce.",
+"I can make you sick."
+],
+"ta_answer": "வைரஸ்",
+"ta_hints": [
+"நான் ஒரு செல் அல்ல.",
+"நான் இனப்பெருக்கம் செய்ய ஒரு ஹோஸ்ட் தேவை.",
+"நான் உங்களை நோய்வாய்ப்படுத்த முடியும்."
+]
+},
+{
+"class": "12",
+"difficulty": 3,
+"answer": "Catalyst",
+"hints": [
+"I speed up a chemical reaction.",
+"I am not used up in the process.",
+"Enzymes are an example of me."
+],
+"ta_answer": "வினையூக்கி",
+"ta_hints": [
+"நான் ஒரு இரசாயன எதிர்வினையை விரைவுபடுத்துவேன்.",
+"நான் செயல்பாட்டில் பயன்படுத்தப்படுவதில்லை.",
+"நொதிகள் எனக்கு ஒரு எடுத்துக்காட்டு."
 ]
 }
 ]

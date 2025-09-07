@@ -1,7 +1,43 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
+import LanguageToggle from "../utils/LanguageToggle";
 import riddles from "../data/riddle.json";
 import BgImage from "../../assets/BgImage.png";
+
+const translations = {
+  en: {
+    title: "Riddle Master",
+    level: "Level",
+    time: "Time",
+    submit: "Submit Answer",
+    next: "Next 👉",
+    correct: "Correct!",
+    incorrect: "Incorrect!",
+    tryAgain: "Try Again 🧐",
+    quizComplete: "Quiz Completed!",
+    yourScore: "Your Score:",
+    restart: "Restart Game 🔄",
+    hint: "Another hint revealed! 💡",
+    placeholder: "Type your answer here",
+    theWordWas: "The word was:",
+  },
+  ta: {
+    title: "விடுகதை மாஸ்டர்",
+    level: "நிலை",
+    time: "நேரம்",
+    submit: "பதிலைச் சமர்ப்பிக்கவும்",
+    next: "அடுத்து 👉",
+    correct: "சரி!",
+    incorrect: "தவறு!",
+    tryAgain: "மீண்டும் முயற்சிக்கவும் 🧐",
+    quizComplete: "விடுகதை முடிந்தது!",
+    yourScore: "உங்கள் மதிப்பெண்:",
+    restart: "விளையாட்டை மீண்டும் தொடங்கு 🔄",
+    hint: "மற்றொரு குறிப்பு வெளிப்படுத்தப்பட்டது! 💡",
+    placeholder: "உங்கள் பதிலை இங்கே தட்டச்சு செய்யவும்",
+    theWordWas: "வார்த்தை:",
+  }
+};
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -14,10 +50,10 @@ const App = () => {
   const [timer, setTimer] = useState(90);
   const [gameOver, setGameOver] = useState(false);
   const [showHintMessage, setShowHintMessage] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState("en");
 
   const timerRef = useRef(null);
 
-  // Pick 3 random questions from riddles.json
   const getRandomQuestions = () => {
     const shuffled = [...riddles].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 3);
@@ -56,6 +92,10 @@ const App = () => {
     return () => clearInterval(timerRef.current);
   }, [timer, gameOver, correctAnswer, isIncorrectPopupVisible]);
 
+  const handleLanguageToggle = () => {
+    setCurrentLanguage(prevLang => prevLang === "en" ? "ta" : "en");
+  };
+
   const handleNextQuestion = () => {
     const nextIndex = currentQuestionIndex + 1;
     if (nextIndex < 3) {
@@ -93,7 +133,11 @@ const App = () => {
     e.preventDefault();
     if (!questions[currentQuestionIndex]) return;
 
-    if (userInput.trim().toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
+    const correctLanguageAnswer = currentLanguage === 'en' 
+      ? questions[currentQuestionIndex].answer 
+      : questions[currentQuestionIndex].ta_answer;
+
+    if (userInput.trim().toLowerCase() === correctLanguageAnswer.toLowerCase()) {
       setCorrectAnswer(true);
       setScore(score + 1);
     } else {
@@ -108,7 +152,16 @@ const App = () => {
     return starEmojis;
   };
 
-  const currentQuestion = useMemo(() => questions[currentQuestionIndex], [questions, currentQuestionIndex]);
+  const currentQuestion = useMemo(() => {
+    const question = questions[currentQuestionIndex];
+    if (!question) {
+      return null;
+    }
+    return {
+      answer: currentLanguage === 'en' ? question.answer : question.ta_answer,
+      hints: currentLanguage === 'en' ? question.hints : question.ta_hints,
+    };
+  }, [questions, currentQuestionIndex, currentLanguage]);
 
   if (!currentQuestion) {
     return (
@@ -129,16 +182,21 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center p-4 font-sans overflow-hidden">
+      {/* Language Toggle Button */}
+      <LanguageToggle 
+        currentLanguage={currentLanguage} 
+        onPress={handleLanguageToggle} 
+      />
+      
       {/* Background Image */}
       <img
         src={BgImage}
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
-
       {/* Main Quiz Box */}
       <div className="relative z-10 max-w-2xl w-full p-6 sm:p-8 md:p-10 bg-white/80 dark:bg-black/20 backdrop-blur-lg rounded-3xl shadow-2xl flex flex-col items-center gap-4 sm:gap-6 min-h-[500px] transition-all duration-300 border border-white/30 dark:border-white/10">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7164b4] dark:text-[#bca5d4] mb-2 sm:mb-4 text-center">Riddle Master</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7164b4] dark:text-[#bca5d4] mb-2 sm:mb-4 text-center">{translations[currentLanguage].title}</h1>
 
         {/* Levels + Timer */}
         <div className="flex flex-col sm:flex-row justify-between w-full text-base sm:text-lg font-semibold mb-2 sm:mb-4 items-center sm:items-start space-y-2 sm:space-y-0">
@@ -152,12 +210,12 @@ const App = () => {
                     : 'bg-[#bca5d4] dark:bg-[#7164b4] text-[#7164b4] dark:text-[#efe2fa]'
                 }`}
               >
-                Level {level + 1} 🧠
+                {translations[currentLanguage].level} {level + 1} 🧠
               </span>
             ))}
           </div>
           <div className="text-xl sm:text-2xl font-bold">
-            Time: <span className={`${timer <= 10 ? 'text-red-500 animate-pulse' : 'text-[#7164b4] dark:text-[#efe2fa]'}`}>{formatTimer(timer)}</span>
+            {translations[currentLanguage].time}: <span className={`${timer <= 10 ? 'text-red-500 animate-pulse' : 'text-[#7164b4] dark:text-[#efe2fa]'}`}>{formatTimer(timer)}</span>
           </div>
         </div>
 
@@ -198,14 +256,14 @@ const App = () => {
             onChange={(e) => setUserInput(e.target.value)}
             disabled={correctAnswer || gameOver}
             className="w-full px-4 py-2 sm:py-3 rounded-xl border-2 border-[#bca5d4] dark:border-[#8f9fe4] text-center text-base sm:text-lg bg-white/70 dark:bg-black/20 text-[#7164b4] dark:text-[#efe2fa]"
-            placeholder="Type your answer here"
+            placeholder={translations[currentLanguage].placeholder}
           />
           <button
             type="submit"
             disabled={correctAnswer || gameOver}
             className="w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#7164b4] to-[#8f9fe4] hover:from-[#8f9fe4] hover:to-[#bca5d4] text-base sm:text-lg"
           >
-            Submit Answer
+            {translations[currentLanguage].submit}
           </button>
         </form>
       </div>
@@ -215,13 +273,13 @@ const App = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
           <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
             <div className="text-5xl sm:text-6xl mb-4 animate-bounce">🎉</div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">Correct!</h2>
-            <p className="text-base sm:text-lg">The word was: <span className="font-semibold">{questions[currentQuestionIndex].answer}</span></p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">{translations[currentLanguage].correct}</h2>
+            <p className="text-base sm:text-lg">{translations[currentLanguage].theWordWas} <span className="font-semibold">{currentQuestion.answer}</span></p>
             <button
               onClick={handleNextFromPopup}
               className="mt-4 sm:mt-6 w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] text-base sm:text-lg"
             >
-              Next 👉
+              {translations[currentLanguage].next}
             </button>
           </div>
         </div>
@@ -231,11 +289,11 @@ const App = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
           <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
             <div className="text-5xl sm:text-6xl mb-4">❌</div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-red-600">Incorrect!</h2>
-            <p className="text-base sm:text-lg">Try again!</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-red-600">{translations[currentLanguage].incorrect}</h2>
+            <p className="text-base sm:text-lg">{translations[currentLanguage].tryAgain}</p>
             <div className="mt-4 sm:mt-6 flex justify-center space-x-2 sm:space-x-4">
-              <button onClick={handleTryAgain} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#bca5d4] text-sm sm:text-base">Try Again 🧐</button>
-              <button onClick={handleNextFromPopup} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#8f9fe4] text-sm sm:text-base">Next 👉</button>
+              <button onClick={handleTryAgain} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#bca5d4] text-sm sm:text-base">{translations[currentLanguage].tryAgain} 🧐</button>
+              <button onClick={handleNextFromPopup} className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-white bg-[#8f9fe4] text-sm sm:text-base">{translations[currentLanguage].next} 👉</button>
             </div>
           </div>
         </div>
@@ -245,17 +303,17 @@ const App = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
           <div className="bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl text-center max-w-xs w-full">
             <div className="text-5xl sm:text-6xl mb-4">🏆</div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">Quiz Completed!</h2>
-            <p className="text-lg sm:text-xl mb-4">Your Score: {score}/3</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">{translations[currentLanguage].quizComplete}</h2>
+            <p className="text-lg sm:text-xl mb-4">{translations[currentLanguage].yourScore} {score}/3</p>
             <div className="text-3xl sm:text-4xl mb-6">{renderStars()}</div>
-            <button onClick={startGame} className="w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-[#7164b4] text-base sm:text-lg">Restart Game 🔄</button>
+            <button onClick={startGame} className="w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-[#7164b4] text-base sm:text-lg">{translations[currentLanguage].restart} 🔄</button>
           </div>
         </div>
       )}
 
       {showHintMessage && (
         <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#7164b4] text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm sm:text-base">
-          <p>Another hint revealed! 💡</p>
+          <p>{translations[currentLanguage].hint}</p>
         </div>
       )}
     </div>
