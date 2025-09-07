@@ -1,7 +1,7 @@
 [
     {
     "class6":{
-        "tamil":["திருக்குறள்","பாடல்கள் மற்றும் ஆசிரியர்","தமிழ் பழமொழிகள் – பொருள்"],
+        "tamil":["திருக்குறள்","பாடல்கள் மற்றும் ஆசிரியர்","தமிழ் பழமொழிகள்"],
         "english":["Modal verbs","Active and Passive voice","Verbs"],
         "math":["NUMBERS","FRACTIONS","MEASUREMENTS, BILL, PROFIT AND LOSS"],
         "science":["Computer - An Introduction","Heat","Electricity"],
@@ -28,8 +28,8 @@
     },
     {
     "class9": {
-        "tamil": ["திருக்குறள்", "பாடல்கள் மற்றும் ஆசிரியர்", "பழமொழி"],
-        "english": ["Homophones", "Prefix/Suffix", "Tenses"],
+        "tamil": ["திருக்குறள்", "பாடல் - ஆசிரியர்", "பழமொழி"],
+        "english": ["Homophones", "Prefix Suffix", "Tenses"],
         "math": ["Mensuration", "Trigonometry", "Algebra"],
         "science": ["Matter around us", "Periodic classification of elements", "Organisation of tissues"],
         "social studies": ["Early Tamil Society and Culture", "Atmosphere", "Disaster Management: Responding to Disasters"]

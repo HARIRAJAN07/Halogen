@@ -1844,7 +1844,7 @@
     "difficulty": "hard",
     "subject": "English",
     "topic": "Adjective and Adverb",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the degree with correct form.",
     "matches": [
@@ -1861,7 +1861,7 @@
     "difficulty": "hard",
     "subject": "English",
     "topic": "Adjective and Adverb",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the sentence part with correct type.",
     "matches": [
@@ -1997,7 +1997,7 @@
     "difficulty": "medium",
     "subject": "English",
     "topic": "Preposition",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the preposition with correct opposite.",
     "matches": [
@@ -3570,7 +3570,7 @@
     { "term": "தூரமாக, சுதந்திரமாக நகரும்", "definition": "வாயு" },
     { "term": "அயனாக்கப்பட்ட, அதிக ஆற்றல் துகள்", "definition": "பிளாஸ்மா" }
   ],
-  "explanation": "துகள்களின் அடுக்கம் பொருளின் இயற்பியல் நிலையை தீர்மானிக்கிறது.",
+  "explanation": "துகள்களின் அடுக்கம் பொருளின் physics நிலையை தீர்மானிக்கிறது.",
   "language": "tamil"
 },
 {
@@ -4242,7 +4242,7 @@
     "difficulty": "hard",
     "subject": "Computer Science",
     "topic": "Object-Oriented Programming (OOP) with Python",
-    "subtopic": "Advanced OOP",
+    "subtopic": "hard OOP",
     "type": "match",
     "question": "Match the Python special method with its purpose.",
     "matches": [
@@ -4412,7 +4412,7 @@
     "difficulty": "hard",
     "subject": "Computer Science",
     "topic": "Database Concepts & SQL",
-    "subtopic": "Advanced Queries",
+    "subtopic": "hard Queries",
     "type": "match",
     "question": "Match the SQL concept with its description.",
     "matches": [
@@ -4421,7 +4421,7 @@
       { "term": "INDEX", "definition": "Speeds up data retrieval" },
       { "term": "TRIGGER", "definition": "Executes automatically on an event" }
     ],
-    "explanation": "Advanced SQL concepts optimize performance and automation.",
+    "explanation": "hard SQL concepts optimize performance and automation.",
     "language": "english"
   },
   {
@@ -5944,7 +5944,7 @@
     "topic": "Genetics and Plant Breeding",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
-    "question": "Match the advanced breeding technique with its use.",
+    "question": "Match the hard breeding technique with its use.",
     "matches": [
       { "term": "Tissue culture", "definition": "Mass multiplication of plants" },
       { "term": "Micropropagation", "definition": "Rapid cloning of plants" },
@@ -6636,11 +6636,11 @@
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "easy",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வகுப்புகள் மற்றும் பொருட்கள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "OOP சொற்களை அவற்றின் சரியான வரையறையுடன் பொருத்துக.",
     "matches": [
       { "term": "வகுப்பு (Class)", "definition": "பொருட்களை உருவாக்கும் வரைபடம்" },
@@ -6653,11 +6653,11 @@
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "easy",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வரிசைமுறை (Inheritance)",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வரிசைமுறையின் வகையை அதன் விளக்கத்துடன் பொருத்துக.",
     "matches": [
       { "term": "ஒற்றை (Single)", "definition": "ஒரு பெற்றோர் மற்றும் ஒரு பிள்ளை" },
@@ -6670,11 +6670,11 @@
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "easy",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "பன்முகத்தன்மை (Polymorphism)",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பன்முகத்தன்மை தொடர்பான சொற்களை அதன் சரியான எடுத்துக்காட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "முறை அதிக ஏற்றம் (Method Overloading)", "definition": "அதே முறை பெயர், வேறு அளவுருக்கள்" },
@@ -6688,10 +6688,10 @@
   {
     "class": 12,
     "difficulty": "மிதமானது",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வகுப்புகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "Python முக்கிய சொற்களை அதன் பயன்பாட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "class", "definition": "ஒரு புதிய வகுப்பை வரையறுக்கிறது" },
@@ -6705,10 +6705,10 @@
   {
     "class": 12,
     "difficulty": "மிதமானது",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "பொருட்கள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பொருளின் எடுத்துக்காட்டை அதற்கான வகுப்புடன் பொருத்துக.",
     "matches": [
       { "term": "car = Car()", "definition": "Car" },
@@ -6722,10 +6722,10 @@
   {
     "class": 12,
     "difficulty": "மிதமானது",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வரிசைமுறை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "Python குறியீட்டினை அதன் வரிசைமுறையில் பயன்பாட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "class Child(Parent):", "definition": "ஒற்றை வரிசைமுறை" },
@@ -6739,10 +6739,10 @@
   {
     "class": 12,
     "difficulty": "மிதமானது",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "பன்முகத்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பன்முகத்தன்மைக்கு சம்பந்தமான ஒவ்வொரு கருத்தையும் அதன் எடுத்துக்காட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "len('Hello')", "definition": "5 ஐத் திருப்புகிறது" },
@@ -6755,11 +6755,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "hard",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வகுப்புகள் மற்றும் பொருட்கள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பிழை நிகழ்வுகளை அதன் காரணத்துடன் பொருத்துக.",
     "matches": [
       { "term": "முறையில் self இல்லை", "definition": "முறை எடுத்துக்காட்டுடன் இணைக்கப்படவில்லை" },
@@ -6772,11 +6772,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "hard",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "வரிசைமுறை மற்றும் பல்முகத்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நிகழ்வுகளை அதன் பல்முகத்தன்மை வகையுடன் பொருத்துக.",
     "matches": [
       { "term": "இரண்டு வகுப்புகள் ஒரே முறை பெயரை செயல்படுத்துகின்றன", "definition": "முறை மீறல் (Method overriding)" },
@@ -6789,11 +6789,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "கணினி அறிவியல்",
+    "difficulty": "hard",
+    "subject" : "computer science",
     "topic": "Python மூலம் பொருள் சார்ந்த நிரலாக்கம் (OOP)",
     "subtopic": "மேம்பட்ட OOP",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "Python சிறப்பு முறையை அதன் நோக்கத்துடன் பொருத்துக.",
     "matches": [
       { "term": "__str__", "definition": "சரியான உரை பிரதிநிதித்துவத்தை வழங்குகிறது" },
@@ -6807,7 +6807,177 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணினி அறிவியல்",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "அடிப்படை SQL கட்டளைகள்",
+    "type": "match",
+    "question": "SQL கட்டளையை அதன் செயல்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "SELECT", "definition": "அட்டவணையிலிருந்து தரவை பெறும்" },
+      { "term": "INSERT", "definition": "அட்டவணையில் புதிய பதிவுகளைச் சேர்க்கும்" },
+      { "term": "UPDATE", "definition": "ஏற்கனவே உள்ள பதிவுகளை மாற்றும்" },
+      { "term": "DELETE", "definition": "அட்டவணையிலிருந்து பதிவுகளை நீக்கும்" }
+    ],
+    "explanation": "SELECT பெறும், INSERT சேர்க்கும், UPDATE மாற்றும், DELETE நீக்கும்.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "easy",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "தரவு வகைகள்",
+    "type": "match",
+    "question": "SQL தரவு வகையை அதன் பயன்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "INT", "definition": "முழு எண்களை சேமிக்கும்" },
+      { "term": "VARCHAR", "definition": "மாறும் நீள உரை சேமிக்கும்" },
+      { "term": "DATE", "definition": "தேதிகளை சேமிக்கும்" },
+      { "term": "BOOLEAN", "definition": "உண்மை அல்லது தவறு மதிப்புகளை சேமிக்கும்" }
+    ],
+    "explanation": "ஒவ்வொரு SQL தரவு வகையும் ஒரு நெடுவரிசையில் எந்த தகவல் சேமிக்கப்படும் என்பதை நிர்ணயிக்கிறது.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "easy",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "SQL பிரிவுகள்",
+    "type": "match",
+    "question": "SQL பிரிவை அதன் செயல்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "WHERE", "definition": "நிபந்தனை அடிப்படையில் வரிசைகளை வடிகட்டும்" },
+      { "term": "ORDER BY", "definition": "முடிவுகளை வரிசைப்படுத்தும்" },
+      { "term": "GROUP BY", "definition": "நெடுவரிசைகளை அடிப்படையாகக் கொண்டு குழுவாக்கும்" },
+      { "term": "HAVING", "definition": "குழுக்களுக்கு நிபந்தனைப் பயன்படுத்தும்" }
+    ],
+    "explanation": "SQL பிரிவுகள் முடிவுகளைத் துல்லியமாக்க மற்றும் குழுப்படுத்த உதவுகின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "medium",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "SQL தற்குறிகள்",
+    "type": "match",
+    "question": "SQL தற்குறியை அதன் விளக்கத்துடன் பொருத்துக.",
+    "matches": [
+      { "term": "PRIMARY KEY", "definition": "ஒவ்வொரு பதிவையும் தனித்தனியாக அடையாளப்படுத்தும்" },
+      { "term": "FOREIGN KEY", "definition": "இரண்டு அட்டவணைகளைக் இணைக்கும்" },
+      { "term": "UNIQUE", "definition": "எல்லா மதிப்புகளும் வேறுபட்டிருக்க வேண்டும் என்பதை உறுதி செய்கிறது" },
+      { "term": "NOT NULL", "definition": "காலியான மதிப்புகளைத் தடுக்கிறது" }
+    ],
+    "explanation": "தற்குறிகள் தனித்தன்மையையும் அட்டவணை தொடர்புகளையும் உறுதி செய்கின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "medium",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "சுருக்க செயல்பாடுகள்",
+    "type": "match",
+    "question": "SQL செயல்பாட்டை அதன் பயன்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "COUNT()", "definition": "வரிசைகளின் எண்ணிக்கை" },
+      { "term": "SUM()", "definition": "எண்ணியல் மதிப்புகளை கூடும்" },
+      { "term": "AVG()", "definition": "சராசரி மதிப்பை காணும்" },
+      { "term": "MAX()", "definition": "அதிக உயர்ந்த மதிப்பை காணும்" }
+    ],
+    "explanation": "சுருக்க செயல்பாடுகள் தரவுகளை சுருக்கமாக அளிக்கின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "medium",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "அட்டவணை உருவாக்கல்",
+    "type": "match",
+    "question": "SQL கட்டளையை அதன் அட்டவணை விளைவுடன் பொருத்துக.",
+    "matches": [
+      { "term": "CREATE TABLE", "definition": "புதிய அட்டவணை உருவாக்கும்" },
+      { "term": "ALTER TABLE", "definition": "அட்டவணை அமைப்பை மாற்றும்" },
+      { "term": "DROP TABLE", "definition": "அட்டவணையை நீக்கும்" },
+      { "term": "TRUNCATE TABLE", "definition": "எல்லா பதிவுகளையும் நீக்கி அமைப்பை விடும்" }
+    ],
+    "explanation": "இந்த கட்டளைகள் அட்டவணையின் அமைப்பு மற்றும் உள்ளடக்கத்தை நிர்வகிக்கின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "hard",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "இணைப்புகள்",
+    "type": "match",
+    "question": "SQL இணைப்பை அதன் விளக்கத்துடன் பொருத்துக.",
+    "matches": [
+      { "term": "INNER JOIN", "definition": "இரண்டு அட்டவணைகளில் பொருந்தும் தரவை மட்டும் காண்பிக்கும்" },
+      { "term": "LEFT JOIN", "definition": "இடது அட்டவணையின் எல்லா வரிசைகளையும், வலப்புற அட்டவணையிலிருந்து பொருந்தும் தரவையும் காண்பிக்கும்" },
+      { "term": "RIGHT JOIN", "definition": "வலது அட்டவணையின் எல்லா வரிசைகளையும், இடது அட்டவணையிலிருந்து பொருந்தும் தரவையும் காண்பிக்கும்" },
+      { "term": "FULL JOIN", "definition": "இரண்டு அட்டவணைகளில் எதிலும் பொருந்தும் இடங்களில் எல்லா வரிசைகளையும் காட்டும்" }
+    ],
+    "explanation": "இணைப்புகள் தொடர்புடைய நெடுவரிசைகளை அடிப்படையாகக் கொண்டு அட்டவணைகளை ஒன்றிணைக்கின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "hard",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "பரிவர்த்தனைகள்",
+    "type": "match",
+    "question": "SQL பரிவர்த்தனை கட்டளையை அதன் பயன்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "COMMIT", "definition": "மாற்றங்களை நிரந்தரமாக சேமிக்கும்" },
+      { "term": "ROLLBACK", "definition": "கடைசி commitக்கு பின்னர் செய்யப்பட்ட மாற்றங்களை திரும்ப எடுக்கும்" },
+      { "term": "SAVEPOINT", "definition": "திரும்ப செல்லும் ஒரு புள்ளியை அமைக்கும்" },
+      { "term": "SET TRANSACTION", "definition": "பரிவர்த்தனை பண்புகளை வரையறைக்கும்" }
+    ],
+    "explanation": "பரிவர்த்தனைகள் தரவு ஒருமைப்பாட்டையும் மாற்றக் கட்டுப்பாட்டையும் உறுதி செய்கின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "hard",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "கட்டுப்பாடுகள்",
+    "type": "match",
+    "question": "SQL கட்டுப்பாட்டை அதன் பயன்பாட்டுடன் பொருத்துக.",
+    "matches": [
+      { "term": "CHECK", "definition": "நெடுவரிசை மதிப்புகள் நிபந்தனை பூர்த்தி செய்யும் என்பதை உறுதி செய்கிறது" },
+      { "term": "DEFAULT", "definition": "மதிப்பு கொடுக்கப்படாதபோது இயல்புநிலை மதிப்பை அமைக்கும்" },
+      { "term": "INDEX", "definition": "வினவல்களை வேகமாக செய்கிறது" },
+      { "term": "AUTO_INCREMENT", "definition": "எண்ணியல் மதிப்பை தானாக அதிகரிக்கும்" }
+    ],
+    "explanation": "கட்டுப்பாடுகள் தரவு நம்பகத்தன்மையையும் செயல்திறனையும் மேம்படுத்துகின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "hard",
+    "subject": "computer science",
+    "topic": "தரவுத்தளக் கருத்துகள் & SQL",
+    "subtopic": "சிக்கலான கேள்விகள்",
+    "type": "match",
+    "question": "SQL கருத்தை அதன் விளக்கத்துடன் பொருத்துக.",
+    "matches": [
+      { "term": "SUBQUERY", "definition": "மற்றொரு கேள்விக்குள் உள்ள கேள்வி" },
+      { "term": "VIEW", "definition": "கேள்வியை அடிப்படையாகக் கொண்ட ஒரு மெய்நிகர் அட்டவணை" },
+      { "term": "INDEX", "definition": "தரவை வேகமாக பெற உதவுகிறது" },
+      { "term": "TRIGGER", "definition": "சம்பவம் நடந்தவுடன் தானாக இயங்கும்" }
+    ],
+    "explanation": "சிக்கலான SQL கருத்துகள் செயல்திறன் மற்றும் தானியக்கத்தை மேம்படுத்துகின்றன.",
+    "language": "tamil"
+  },
+  {
+    "class": 12,
+    "difficulty": "easy",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "ஸ்டாக்",
     "type": "match",
@@ -6824,7 +6994,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "க்யூ",
     "type": "match",
@@ -6841,7 +7011,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "இணைக்கப்பட்ட பட்டியல்",
     "type": "match",
@@ -6858,7 +7028,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "ஸ்டாக்",
     "type": "match",
@@ -6875,7 +7045,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "க்யூ",
     "type": "match",
@@ -6892,7 +7062,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "இணைக்கப்பட்ட பட்டியல்",
     "type": "match",
@@ -6909,7 +7079,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "ஸ்டாக்",
     "type": "match",
@@ -6926,7 +7096,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "க்யூ",
     "type": "match",
@@ -6943,7 +7113,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "இணைக்கப்பட்ட பட்டியல்",
     "type": "match",
@@ -6960,7 +7130,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணினி அறிவியல்",
+    "subject" : "computer science",
     "topic": "தரவு அமைப்புகள்",
     "subtopic": "ஸ்டாக் மற்றும் க்யூ",
     "type": "match",
@@ -6977,7 +7147,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -6994,7 +7164,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7011,7 +7181,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7028,7 +7198,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்திறன்",
     "type": "match",
@@ -7045,7 +7215,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7062,7 +7232,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7079,7 +7249,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்திறன்",
     "type": "match",
@@ -7096,7 +7266,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7113,7 +7283,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7130,7 +7300,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்மின்னியல்",
     "subtopic": "மின்திறன்",
     "type": "match",
@@ -7147,7 +7317,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7164,7 +7334,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7181,7 +7351,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7198,7 +7368,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்னழுத்தம்",
     "type": "match",
@@ -7215,7 +7385,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7232,7 +7402,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7249,7 +7419,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்னழுத்தம்",
     "type": "match",
@@ -7266,7 +7436,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்புலம்",
     "type": "match",
@@ -7283,7 +7453,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "கூலம்பின் விதி",
     "type": "match",
@@ -7300,7 +7470,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "பௌதிகவியல்",
+    "subject": "physics",
     "topic": "மின்நிலையியல்",
     "subtopic": "மின்னழுத்தம்",
     "type": "match",
@@ -7316,11 +7486,11 @@
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "இயற்பியல்",
+    "difficulty": "easy",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "ஓமின் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அளவீட்டினை அதன் சரியான SI அலகுடன் பொருத்துக.",
     "matches": [
       { "term": "மின்னோட்டம்", "definition": "அம்பியர் (A)" },
@@ -7328,16 +7498,16 @@
       { "term": "எதிர்ப்பு", "definition": "ஓம் (Ω)" },
       { "term": "சக்தி", "definition": "வாட் (W)" }
     ],
-    "explanation": "SI அலகுகள் இயற்பியல் அளவுகளை ஒரே மாதிரியாக்க உதவுகின்றன.",
+    "explanation": "SI அலகுகள் physics அளவுகளை ஒரே மாதிரியாக்க உதவுகின்றன.",
     "language": "தமிழ்"
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "இயற்பியல்",
+    "difficulty": "easy",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "ஓமின் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சட்டத்தினை அதன் கூற்றுடன் பொருத்துக.",
     "matches": [
       { "term": "ஓமின் சட்டம்", "definition": "V = IR" },
@@ -7351,10 +7521,10 @@
   {
     "class": 12,
     "difficulty": "மத்திய",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "எதிரிப்புகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "எதிர்ப்புகளின் இணைப்பினை அதன் பண்புடன் பொருத்துக.",
     "matches": [
       { "term": "தொடர்", "definition": "அனைத்திலும் ஒரே மின்னோட்டம் பாயும்" },
@@ -7368,10 +7538,10 @@
   {
     "class": 12,
     "difficulty": "மத்திய",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "கிர்காப் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பொருளை அதன் அர்த்தத்துடன் பொருத்துக.",
     "matches": [
       { "term": "சுற்று", "definition": "மின்சுற்றில் மூடிய பாதை" },
@@ -7384,11 +7554,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "இயற்பியல்",
+    "difficulty": "hard",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "ஓமின் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "கருவியினை அதன் செயல்பாட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "வோல்ட்மீட்டர்", "definition": "மின்னழுத்த வேறுபாட்டை அளக்கும்" },
@@ -7402,10 +7572,10 @@
   {
     "class": 12,
     "difficulty": "மத்திய",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "எதிரிப்புகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சமன்பாட்டினை அதன் பயன்பாட்டுடன் பொருத்துக.",
     "matches": [
       { "term": "V = IR", "definition": "ஓமின் சட்டம்" },
@@ -7418,11 +7588,11 @@
   },
   {
     "class": 12,
-    "difficulty": "எளியது",
-    "subject": "இயற்பியல்",
+    "difficulty": "easy",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "கிர்காப் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "கொள்கையை அதன் அடிப்படையுடன் பொருத்துக.",
     "matches": [
       { "term": "கிர்காப் மின்னோட்ட சட்டம்", "definition": "மின்கட்டண நிலைத்தன்மை" },
@@ -7435,11 +7605,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "இயற்பியல்",
+    "difficulty": "hard",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "எதிரிப்புகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பொருளை அதன் எதிர்ப்பு பண்புடன் பொருத்துக.",
     "matches": [
       { "term": "செம்பு", "definition": "குறைந்த எதிர்ப்பு" },
@@ -7453,10 +7623,10 @@
   {
     "class": 12,
     "difficulty": "மத்திய",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "ஓமின் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சின்னத்தினை அதன் அளவுடன் பொருத்துக.",
     "matches": [
       { "term": "I", "definition": "மின்னோட்டம்" },
@@ -7469,11 +7639,11 @@
   },
   {
     "class": 12,
-    "difficulty": "கடினம்",
-    "subject": "இயற்பியல்",
+    "difficulty": "hard",
+    "subject": "physics",
     "topic": "மின்சார ஓட்டம்",
     "subtopic": "கிர்காப் சட்டம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பயன்பாட்டினை பயன்படுத்தப்படும் சட்டத்துடன் பொருத்துக.",
     "matches": [
       { "term": "சுற்றில் மின்னோட்டம் கண்டறிதல்", "definition": "கிர்காப் மின்னழுத்த சட்டம்" },
@@ -7657,7 +7827,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "கிரிஸ்டல் வகைகள்",
     "type": "match",
@@ -7674,7 +7844,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "யூனிட் செல்கள்",
     "type": "match",
@@ -7691,7 +7861,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "பேக்கிங்",
     "type": "match",
@@ -7708,7 +7878,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "கிரிஸ்டல் வகைகள்",
     "type": "match",
@@ -7725,7 +7895,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "யூனிட் செல்கள்",
     "type": "match",
@@ -7742,7 +7912,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "பேக்கிங்",
     "type": "match",
@@ -7759,7 +7929,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "கிரிஸ்டல் வகைகள்",
     "type": "match",
@@ -7776,7 +7946,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "யூனிட் செல்கள்",
     "type": "match",
@@ -7793,7 +7963,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "பேக்கிங்",
     "type": "match",
@@ -7810,7 +7980,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
+    "subject": "chemistry",
     "topic": "கட்டமைப்பு நிலை",
     "subtopic": "கிரிஸ்டல் வகைகள்",
     "type": "match",
@@ -7827,8 +7997,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "கல்வானிக் செல்கள்",
     "type": "match",
     "question": "கல்வானிக் செலின் கூறுகளை அதன் பணியுடன் பொருத்துக.",
@@ -7844,8 +8014,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "மின்சாரம் ஊட்டுதல் (Electrolysis)",
     "type": "match",
     "question": "மின்சாரம் ஊட்டுதலில் உள்ள கூறுகளை அதன் விளக்கத்துடன் பொருத்துக.",
@@ -7855,14 +8025,14 @@
       { "term": "மின்விரைவு (Electrolyte)", "definition": "அயன்களின் ஓட்டத்திற்கு ஊடகம்" },
       { "term": "மின்சாரம்", "definition": "வெளிப்புற சுற்றில் எலக்ட்ரான்கள் ஓட்டம்" }
     ],
-    "explanation": "மின்சாரம் ஊட்டுதல் மின்சாரத்தைப் பயன்படுத்தி வேதியியல் மாற்றங்களை ஏற்படுத்தும்.",
+    "explanation": "மின்சாரம் ஊட்டுதல் மின்சாரத்தைப் பயன்படுத்தி chemistry மாற்றங்களை ஏற்படுத்தும்.",
     "language": "tamil"
   },
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "நெர்ன்ஸ்ட் சமன்பாடு",
     "type": "match",
     "question": "நெர்ன்ஸ்ட் சமன்பாட்டில் உள்ள கூறுகளை அதன் பொருளுடன் பொருத்துக.",
@@ -7878,8 +8048,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "கல்வானிக் செல்கள்",
     "type": "match",
     "question": "செல் வகையை அதன் உதாரணத்துடன் பொருத்துக.",
@@ -7889,14 +8059,14 @@
       { "term": "சாம்பல் சேமிப்பு பேட்டரி", "definition": "மீள்சேர்க்கக்கூடிய பேட்டரி" },
       { "term": "ஃப்யூயல் செல்", "definition": "H₂-O₂ செல்" }
     ],
-    "explanation": "வித்தியாசமான செல்கள், வேதியியல் தன்மையைப் பொறுத்து, குறிப்பிட்ட பயன்பாடுகள் கொண்டுள்ளன.",
+    "explanation": "வித்தியாசமான செல்கள், chemistry தன்மையைப் பொறுத்து, குறிப்பிட்ட பயன்பாடுகள் கொண்டுள்ளன.",
     "language": "tamil"
   },
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "மின்சாரம் ஊட்டுதல் (Electrolysis)",
     "type": "match",
     "question": "மின்சாரம் ஊட்டுதல் சட்டங்களை அதன் விளக்கத்துடன் பொருத்துக.",
@@ -7912,8 +8082,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "கல்வானிக் செல்கள்",
     "type": "match",
     "question": "எலக்ட்ரோடு மற்றும் அதன் ஸ்டாண்டர்ட் குறைவு திறனை பொருத்துக.",
@@ -7929,8 +8099,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "மின்சாரம் ஊட்டுதல் (Electrolysis)",
     "type": "match",
     "question": "மின்சாரம் ஊட்டுதலில் செயல்முறையை அதன் தயாரிப்புடன் பொருத்துக.",
@@ -7946,8 +8116,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "நெர்ன்ஸ்ட் சமன்பாடு",
     "type": "match",
     "question": "நெர்ன்ஸ்ட் சமன்பாட்டில் செலின் திறனை மாற்றும் காரணங்களை பொருத்துக.",
@@ -7963,8 +8133,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "கல்வானிக் செல்கள்",
     "type": "match",
     "question": "செல் செயலை அதன் செல் வகையுடன் பொருத்துக.",
@@ -7980,8 +8150,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "மின்சார வேதியியல்",
+    "subject": "chemistry",
+    "topic": "மின்வேதியியல்",
     "subtopic": "மின்சாரம் ஊட்டுதல் (Electrolysis)",
     "type": "match",
     "question": "தொழிற்துறை செயல்முறையை அதன் முக்கிய தயாரிப்புடன் பொருத்துக.",
@@ -7997,8 +8167,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "லிகண்ட்கள்",
     "type": "match",
     "question": "லிகண்டை அதன் டெண்டிசிட்டியுடன் பொருத்துக.",
@@ -8014,8 +8184,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "வர்னரின் கோட்பாடு",
     "type": "match",
     "question": "வர்னரின் கோட்பாட்டில் வாலன்ஸியின் வகைகளை அதன் விளக்கத்துடன் பொருத்துக.",
@@ -8031,8 +8201,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "லிகண்ட்கள்",
     "type": "match",
     "question": "லிகண்டை அதன் சார்ஜுடன் பொருத்துக.",
@@ -8048,8 +8218,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "சேர்க்கை எண்",
     "type": "match",
     "question": "சேர்க்கை எண்ணை அதன் பொதுவான ஜியோமெட்ரியுடன் பொருத்துக.",
@@ -8065,8 +8235,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "லிகண்ட்கள்",
     "type": "match",
     "question": "லிகண்ட் வகையை அதன் உதாரணத்துடன் பொருத்துக.",
@@ -8082,8 +8252,8 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "வர்னரின் கோட்பாடு",
     "type": "match",
     "question": "கம்பிளக்ஸ் மற்றும் அதன் சேர்க்கை எண்ணை பொருத்துக.",
@@ -8099,8 +8269,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "வர்னரின் கோட்பாடு",
     "type": "match",
     "question": "அறிஞர்களை மற்றும் அவர்களின் சேர்க்கை வேதியியலுக்கு பங்களிப்புகளை பொருத்துக.",
@@ -8116,8 +8286,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "லிகண்ட்கள்",
     "type": "match",
     "question": "அம்பிடெண்டேட் லிகண்டை அதன் சாத்தியமான டோனர் அணுக்களுடன் பொருத்துக.",
@@ -8133,8 +8303,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "வர்னரின் கோட்பாடு",
     "type": "match",
     "question": "கம்பிளக்ஸ் மற்றும் அதன் சரியான ஐசோமரிசம் வகையை பொருத்துக.",
@@ -8150,8 +8320,8 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "வேதியியல்",
-    "topic": "சேர்க்கை வேதியியல்",
+    "subject": "chemistry",
+    "topic": "ஒருங்கிணைவு வேதியியல்",
     "subtopic": "சேர்க்கை எண்",
     "type": "match",
     "question": "சேர்க்கை எண்ணை உதாரண கம்பிளக்ஸுடன் பொருத்துக.",
@@ -8167,7 +8337,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Photosystems",
     "type": "match",
@@ -8184,7 +8354,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Photosystems",
     "type": "match",
@@ -8201,7 +8371,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Glycolysis",
     "type": "match",
@@ -8218,7 +8388,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Krebs Cycle",
     "type": "match",
@@ -8235,7 +8405,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Glycolysis",
     "type": "match",
@@ -8252,7 +8422,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Photosystems",
     "type": "match",
@@ -8269,7 +8439,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Respiration",
     "type": "match",
@@ -8286,7 +8456,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Krebs Cycle",
     "type": "match",
@@ -8303,7 +8473,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Photosystems",
     "type": "match",
@@ -8320,7 +8490,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "செடியின் உயிரியல் (புகாஸ்தேசிஸ் & சுவாசம்)",
     "subtopic": "Glycolysis and Krebs cycle",
     "type": "match",
@@ -8337,7 +8507,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Mendelian Laws",
     "type": "match",
@@ -8354,7 +8524,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Mendelian Laws",
     "type": "match",
@@ -8371,7 +8541,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Mendelian Laws",
     "type": "match",
@@ -8388,7 +8558,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
@@ -8405,7 +8575,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
@@ -8422,7 +8592,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
@@ -8439,7 +8609,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Mendelian Laws",
     "type": "match",
@@ -8456,7 +8626,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
@@ -8473,7 +8643,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Mendelian Laws",
     "type": "match",
@@ -8490,7 +8660,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மரபியல் மற்றும் செடி வளர்ப்பு",
     "subtopic": "Plant Breeding Techniques",
     "type": "match",
@@ -8507,7 +8677,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Reproductive System",
     "type": "match",
@@ -8524,7 +8694,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Reproductive System",
     "type": "match",
@@ -8541,7 +8711,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Gametogenesis",
     "type": "match",
@@ -8558,7 +8728,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Gametogenesis",
     "type": "match",
@@ -8575,7 +8745,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Menstrual Cycle",
     "type": "match",
@@ -8592,7 +8762,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Menstrual Cycle",
     "type": "match",
@@ -8609,7 +8779,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Gametogenesis",
     "type": "match",
@@ -8626,7 +8796,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Menstrual Cycle",
     "type": "match",
@@ -8643,7 +8813,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Reproductive System",
     "type": "match",
@@ -8660,7 +8830,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "உயிரியல்",
+    "subject": "biology",
     "topic": "மனித இனப்பெருக்கம்",
     "subtopic": "Menstrual Cycle",
     "type": "match",
@@ -8677,8 +8847,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
-    "topic": "தரவு கணிதவியல் (Differential Calculus)",
+    "subject": "math",
+    "topic": "தரவு கணிதவியல்",
     "subtopic": "வேறுபாடுகள் (Derivatives)",
     "type": "match",
     "question": "நிரலினை அதன் வேறுபாட்டுடன் பொருத்துக.",
@@ -8694,7 +8864,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Applications",
     "type": "match",
@@ -8711,7 +8881,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Maxima மற்றும் Minima",
     "type": "match",
@@ -8728,7 +8898,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "வேறுபாடுகள்",
     "type": "match",
@@ -8745,7 +8915,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Applications",
     "type": "match",
@@ -8756,13 +8926,13 @@
       { "term": "வரம்பு செலவு", "definition": "செலவு நிரலின் வேறுபாடு" },
       { "term": "வெப்பநிலை மாற்ற விகிதம்", "definition": "நேரத்திற்கேற்ப வெப்பநிலையின் வேறுபாடு" }
     ],
-    "explanation": "வேறுபாடுகள் இயற்பியல், பொருளாதாரம் மற்றும் உயிரியல் ஆகியவற்றில் பரவலாக பயன்படுகின்றன.",
+    "explanation": "வேறுபாடுகள் physics, பொருளாதாரம் மற்றும் உயிரியல் ஆகியவற்றில் பரவலாக பயன்படுகின்றன.",
     "language": "tamil"
   },
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "வேறுபாடுகள்",
     "type": "match",
@@ -8779,7 +8949,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Maxima மற்றும் Minima",
     "type": "match",
@@ -8796,7 +8966,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Applications",
     "type": "match",
@@ -8813,7 +8983,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "வேறுபாடுகள்",
     "type": "match",
@@ -8830,7 +9000,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "தரவு கணிதவியல்",
     "subtopic": "Maxima மற்றும் Minima",
     "type": "match",
@@ -8847,7 +9017,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல் (Integral Calculus)",
     "subtopic": "அறிவிடாத இணைப்புகள் (Indefinite Integrals)",
     "type": "match",
@@ -8864,7 +9034,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "அறிவிடாத இணைப்புகள்",
     "type": "match",
@@ -8881,7 +9051,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "குறிப்பிடப்பட்ட இணைப்புகள் (Definite Integrals)",
     "type": "match",
@@ -8898,7 +9068,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "வளைவுகளின் கீழ் பரப்பு (Area under Curves)",
     "type": "match",
@@ -8915,7 +9085,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "அறிவிடாத இணைப்புகள்",
     "type": "match",
@@ -8932,7 +9102,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "குறிப்பிடப்பட்ட இணைப்புகள்",
     "type": "match",
@@ -8949,7 +9119,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "அறிவிடாத இணைப்புகள்",
     "type": "match",
@@ -8966,7 +9136,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "வளைவுகளின் கீழ் பரப்பு",
     "type": "match",
@@ -8983,7 +9153,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "குறிப்பிடப்பட்ட இணைப்புகள்",
     "type": "match",
@@ -9000,7 +9170,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "இணைக்கக்கூடிய கணிதவியல்",
     "subtopic": "வளைவுகளின் கீழ் பரப்பு",
     "type": "match",
@@ -9017,8 +9187,8 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
-    "topic": "பாத்தியமும் புள்ளியியல் (Probability & Statistics)",
+    "subject": "math",
+    "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Binomial பகிர்வு",
     "type": "match",
     "question": "Binomial பகிர்வுக்கான சொல்லையும் அதன் பொருளுடன் பொருத்துக.",
@@ -9034,7 +9204,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Poisson பகிர்வு",
     "type": "match",
@@ -9051,7 +9221,7 @@
   {
     "class": 12,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Normal பகிர்வு",
     "type": "match",
@@ -9068,7 +9238,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Binomial vs Poisson",
     "type": "match",
@@ -9085,7 +9255,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Normal பகிர்வு",
     "type": "match",
@@ -9102,7 +9272,7 @@
   {
     "class": 12,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Correlation",
     "type": "match",
@@ -9119,7 +9289,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Binomial பகிர்வு",
     "type": "match",
@@ -9136,7 +9306,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Poisson பகிர்வு",
     "type": "match",
@@ -9153,7 +9323,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Normal பகிர்வு",
     "type": "match",
@@ -9170,7 +9340,7 @@
   {
     "class": 12,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பாத்தியமும் புள்ளியியல்",
     "subtopic": "Correlation",
     "type": "match",
@@ -9325,7 +9495,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Tenses",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the sentence to its tense.",
     "matches": [
@@ -9512,7 +9682,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Active and Passive Voice",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the passive marker to its tense.",
     "matches": [
@@ -9683,7 +9853,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Direct and Indirect Speech",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the tense shift in indirect.",
     "matches": [
@@ -10720,7 +10890,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "World War I",
     "type": "match",
@@ -10737,7 +10907,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "World War II",
     "type": "match",
@@ -10754,7 +10924,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "Gandhian Era",
     "type": "match",
@@ -10771,9 +10941,9 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
-    "subtopic": "Social Reform",
+    "subtopic": "social studies Reform",
     "type": "match",
     "question": "Match the reformers with their contributions.",
     "matches": [
@@ -10782,13 +10952,13 @@
       { "term": "Periyar", "definition": "Self-Respect" },
       { "term": "Ishwar Vidyasagar", "definition": "Widow remarriage" }
     ],
-    "explanation": "Each reformer worked against social evils.",
+    "explanation": "Each reformer worked against social studies evils.",
     "language": "english"
   },
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "World War II",
     "type": "match",
@@ -10805,7 +10975,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "Nationalism in India",
     "type": "match",
@@ -10822,7 +10992,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "Tamil Nadu Freedom Movement",
     "type": "match",
@@ -10839,7 +11009,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "Post-War World",
     "type": "match",
@@ -10856,7 +11026,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
     "subtopic": "Early Revolts in TN",
     "type": "match",
@@ -10873,11 +11043,11 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "History",
-    "subtopic": "Social Transformation in TN",
+    "subtopic": "social studies Transformation in TN",
     "type": "match",
-    "question": "Match social movements with founders.",
+    "question": "Match social studies movements with founders.",
     "matches": [
       { "term": "Dravidian", "definition": "Periyar" },
       { "term": "Self-Respect", "definition": "Periyar" },
@@ -10890,7 +11060,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Location, Relief and Drainage",
     "type": "match",
@@ -10907,7 +11077,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "Climate and Natural Vegetation of India",
     "type": "match",
@@ -10924,7 +11094,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Agriculture",
     "type": "match",
@@ -10941,7 +11111,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Resources and Industries",
     "type": "match",
@@ -10958,7 +11128,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Population, Transport, Communication & Trade",
     "type": "match",
@@ -10975,7 +11145,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "Physical Geography of Tamil Nadu",
     "type": "match",
@@ -10992,7 +11162,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "Human Geography of Tamil Nadu",
     "type": "match",
@@ -11009,7 +11179,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "Industrial Clusters in Tamil Nadu",
     "type": "match",
@@ -11026,7 +11196,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Resources and Industries",
     "type": "match",
@@ -11043,7 +11213,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Geography",
     "subtopic": "India – Population, Transport, Communication & Trade",
     "type": "match",
@@ -11060,7 +11230,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Indian Constitution",
     "type": "match",
@@ -11077,7 +11247,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Parliament of India",
     "type": "match",
@@ -11094,7 +11264,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "State Government",
     "type": "match",
@@ -11111,7 +11281,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Local Self-Government",
     "type": "match",
@@ -11128,7 +11298,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Judiciary",
     "type": "match",
@@ -11145,7 +11315,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Elections",
     "type": "match",
@@ -11162,7 +11332,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Union Government",
     "type": "match",
@@ -11179,7 +11349,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Citizenship",
     "type": "match",
@@ -11196,7 +11366,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Constitutional Amendments",
     "type": "match",
@@ -11213,7 +11383,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "subtopic": "Democracy and Diversity",
     "type": "match",
@@ -11547,7 +11717,7 @@
       { "term": "அனைவர்", "definition": "தொகாநிலை" },
       { "term": "யாரும்", "definition": "தொகாநிலை" }
     ],
-    "explanation": "இரண்டின் வேறுபாடு புரிந்து கொள்ள கடினம்.",
+    "explanation": "இரண்டின் வேறுபாடு புரிந்து கொள்ள hard.",
     "language": "english"
   },
   {
@@ -11611,7 +11781,7 @@
     "question": "பாடலையும் ஆசிரியரையும் பொருத்துக.",
     "matches": [
       { "term": "சிலப்பதிகாரம்", "definition": "இளங்கோவடிகள்" },
-      { "term": "காலக்கணிதம்", "definition": "அவையம்பாட்டு கவிஞர்" },
+      { "term": "காலக்math", "definition": "அவையம்பாட்டு கவிஞர்" },
       { "term": "தேம்பாவணி", "definition": "வேதநாயகம் சாஸ்திரியார்" },
       { "term": "பெருமாள் திருமொழி", "definition": "பெரியாழ்வார்" }
     ],
@@ -11664,7 +11834,7 @@
       { "term": "முத்துக்குமாரசாமி பிள்ளைத்தமிழ்", "definition": "வீரமாமுனிவர்" },
       { "term": "சிலப்பதிகாரம்", "definition": "இளங்கோவடிகள்" },
       { "term": "அன்னை மொழியே", "definition": "புதுமைப்பித்தன்" },
-      { "term": "காலக்கணிதம்", "definition": "அவையம்பாட்டு கவிஞர்" }
+      { "term": "காலக்math", "definition": "அவையம்பாட்டு கவிஞர்" }
     ],
     "explanation": "சில பாடல்கள் இலக்கியப் பெருமையை எடுத்துக்காட்டுகின்றன.",
     "language": "english"
@@ -11878,7 +12048,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Tenses",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the sentence to its tense.",
     "matches": [
@@ -12065,7 +12235,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Active and Passive Voice",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the passive marker to its tense.",
     "matches": [
@@ -12236,7 +12406,7 @@
     "difficulty": "hard",
     "subject": "english",
     "topic": "Direct and Indirect Speech",
-    "subtopic": "Advanced",
+    "subtopic": "hard",
     "type": "match",
     "question": "Match the tense shift in indirect.",
     "matches": [
@@ -12731,8 +12901,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "இயக்க விதிகள்",
     "type": "match",
     "question": "இயக்க விதியை கண்டறிந்த விஞ்ஞானியுடன் பொருத்துக.",
@@ -12748,8 +12918,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "ஒளியியல்",
     "type": "match",
     "question": "ஒளி கருவிகளை அதன் பயன்பாட்டுடன் பொருத்துக.",
@@ -12765,9 +12935,9 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
-    "subtopic": "வெப்ப இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
+    "subtopic": "வெப்ப physics",
     "type": "match",
     "question": "வெப்ப அளவீடு அலகுகளை பொருத்துக.",
     "matches": [
@@ -12782,8 +12952,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "மின்சாரம்",
     "type": "match",
     "question": "மின் கூறுகளை அதன் செயலுடன் பொருத்துக.",
@@ -12799,8 +12969,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "ஒலியியல்",
     "type": "match",
     "question": "ஒலி தொடர்பான கூறுகளை பொருத்துக.",
@@ -12816,9 +12986,9 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
-    "subtopic": "வெப்ப இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
+    "subtopic": "வெப்ப physics",
     "type": "match",
     "question": "வெப்ப மாற்றங்களை பொருத்துக.",
     "matches": [
@@ -12833,8 +13003,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "மின்சாரம்",
     "type": "match",
     "question": "மின்சார அலகுகளை பொருத்துக.",
@@ -12850,9 +13020,9 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
-    "subtopic": "அணுவியல் இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
+    "subtopic": "அணுவியல் physics",
     "type": "match",
     "question": "அணுக்கரு கூறுகளை பொருத்துக.",
     "matches": [
@@ -12867,8 +13037,8 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "ஒளியியல்",
     "type": "match",
     "question": "கண்ணாடி வகைகளை அதன் உருவத்துடன் பொருத்துக.",
@@ -12884,8 +13054,8 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
-    "topic": "இயற்பியல்",
+    "subject" : "science",
+    "topic" : "இயற்பியல்",
     "subtopic": "மின்சாரம்",
     "type": "match",
     "question": "புகழ்பெற்ற விஞ்ஞானிகளை கண்டுபிடிப்புடன் பொருத்துக.",
@@ -12901,8 +13071,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "அணுக்கள் மற்றும் மூலக்கூறுகள்",
     "type": "match",
     "question": "அணுவியல் கூறுகளை அதன் அர்த்தத்துடன் பொருத்துக.",
@@ -12912,14 +13082,14 @@
       { "term": "அணு எண்", "definition": "புரோட்டான் எண்" },
       { "term": "அணு நிறை", "definition": "புரோட்டான்+நியூட்ரான்" }
     ],
-    "explanation": "அணு மற்றும் மூலக்கூறு வேதியியல் அடிப்படைகள்.",
+    "explanation": "அணு மற்றும் மூலக்கூறு chemistry அடிப்படைகள்.",
     "language": "tamil"
   },
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "அட்டவணை வகைப்பாடு",
     "type": "match",
     "question": "மூலக்கூறுகளை அதன் வகையுடன் பொருத்துக.",
@@ -12935,8 +13105,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "கரைவுகள்",
     "type": "match",
     "question": "கரைசலின் பகுதிகளை பொருத்துக.",
@@ -12952,8 +13122,8 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "வேதிப்பொருள் வினைகளின் வகைகள்",
     "type": "match",
     "question": "வினைகளின் வகையை எடுத்துக்காட்டுடன் பொருத்துக.",
@@ -12969,8 +13139,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "கார்பன் மற்றும் அதன் சேர்மங்கள்",
     "type": "match",
     "question": "கார்பன் சேர்மங்களை அதன் பயன்பாட்டுடன் பொருத்துக.",
@@ -12986,8 +13156,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "அணுக்கள் மற்றும் மூலக்கூறுகள்",
     "type": "match",
     "question": "புகழ்பெற்ற விஞ்ஞானிகளை அவர்களின் கண்டுபிடிப்புடன் பொருத்துக.",
@@ -13003,8 +13173,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "கரைவுகள்",
     "type": "match",
     "question": "கரைசலின் வகைகளை எடுத்துக்காட்டுடன் பொருத்துக.",
@@ -13020,8 +13190,8 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "வேதிப்பொருள் வினைகளின் வகைகள்",
     "type": "match",
     "question": "வினை குறியீடுகளை அதன் அர்த்தத்துடன் பொருத்துக.",
@@ -13031,14 +13201,14 @@
       { "term": "Δ", "definition": "வெப்பம்" },
       { "term": "↑", "definition": "வாயு வெளி" }
     ],
-    "explanation": "வேதியியல் சமன்பாடுகளில் குறியீடுகள் பயன்படுகின்றன.",
+    "explanation": "chemistry சமன்பாடுகளில் குறியீடுகள் பயன்படுகின்றன.",
     "language": "tamil"
   },
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "அட்டவணை வகைப்பாடு",
     "type": "match",
     "question": "குழுக்களை அதன் தன்மையுடன் பொருத்துக.",
@@ -13054,8 +13224,8 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
-    "topic": "வேதியியல்",
+    "subject" : "science",
+    "topic" : "வேதியியல்",
     "subtopic": "கார்பன் மற்றும் அதன் சேர்மங்கள்",
     "type": "match",
     "question": "பொலிமர்களை அதன் பயன்பாட்டுடன் பொருத்துக.",
@@ -13071,9 +13241,9 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
-    "subtopic": "தாவர அமைப்பியல் மற்றும் தாவர இயற்பியல்",
+    "subtopic": "தாவர அமைப்பியல் மற்றும் தாவர physics",
     "type": "match",
     "question": "தாவர பாகங்களை அதன் செயலுடன் பொருத்துக.",
     "matches": [
@@ -13088,7 +13258,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "விலங்குகளின் அமைப்பியல்",
     "type": "match",
@@ -13105,7 +13275,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "நரம்பியல் அமைப்பு",
     "type": "match",
@@ -13122,7 +13292,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "ஆரோக்கியம் மற்றும் நோய்கள்",
     "type": "match",
@@ -13139,7 +13309,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "தாவர மற்றும் விலங்கு ஹார்மோன்கள்",
     "type": "match",
@@ -13156,7 +13326,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "தாவரங்களில் போக்குவரத்து மற்றும் விலங்குகளில் இரத்த ஓட்டம்",
     "type": "match",
@@ -13173,7 +13343,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "மரபியல்",
     "type": "match",
@@ -13190,7 +13360,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "தாவர மற்றும் விலங்கு இனப்பெருக்கம்",
     "type": "match",
@@ -13207,7 +13377,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "மனித வாழ்வின் தோற்றம் மற்றும் பரிணாமம்",
     "type": "match",
@@ -13224,7 +13394,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "அறிவியல்",
+    "subject" : "science",
     "topic": "உயிரியல்",
     "subtopic": "இனப்பெருக்கம் மற்றும் உயிரி தொழில்நுட்பம்",
     "type": "match",
@@ -13241,7 +13411,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "முதல் உலகப் போர்",
     "type": "match",
@@ -13258,7 +13428,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "இரண்டாம் உலகப் போர்",
     "type": "match",
@@ -13275,7 +13445,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "சீர்திருத்த இயக்கங்கள்",
     "type": "match",
@@ -13292,7 +13462,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "தமிழ்நாடு கிளர்ச்சிகள்",
     "type": "match",
@@ -13309,7 +13479,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "காந்தியகாலம்",
     "type": "match",
@@ -13326,7 +13496,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "இரண்டாம் உலகப் போருக்குப் பின்",
     "type": "match",
@@ -13343,7 +13513,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "சமூக மாற்றம்",
     "type": "match",
@@ -13360,7 +13530,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "ஆரம்ப இயக்கங்கள்",
     "type": "match",
@@ -13377,7 +13547,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "உலகப் போர் காரணங்கள்",
     "type": "match",
@@ -13394,7 +13564,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "வரலாறு",
     "subtopic": "சுதந்திரம்",
     "type": "match",
@@ -13411,7 +13581,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "இந்தியா இருப்பிடம்",
     "type": "match",
@@ -13428,7 +13598,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "நதிகள்",
     "type": "match",
@@ -13445,7 +13615,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "காலநிலை",
     "type": "match",
@@ -13462,7 +13632,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "இயற்கை தாவரங்கள்",
     "type": "match",
@@ -13479,7 +13649,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "வேளாண்மை",
     "type": "match",
@@ -13496,7 +13666,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "தொழில்கள்",
     "type": "match",
@@ -13513,7 +13683,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "மக்கள் தொகை",
     "type": "match",
@@ -13530,7 +13700,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "போக்குவரத்து",
     "type": "match",
@@ -13547,7 +13717,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "தமிழ்நாடு புவியியல்",
     "type": "match",
@@ -13564,7 +13734,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "புவியியல்",
     "subtopic": "தொழில் குழுக்கள்",
     "type": "match",
@@ -13581,7 +13751,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "அரசு அமைப்பு",
     "type": "match",
@@ -13598,7 +13768,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "அமைவுச்சட்டம்",
     "type": "match",
@@ -13615,7 +13785,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "பாராளுமன்றம்",
     "type": "match",
@@ -13632,7 +13802,7 @@
   {
     "class": 10,
     "difficulty": "easy",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "தேர்தல்",
     "type": "match",
@@ -13649,7 +13819,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "நீதித்துறை",
     "type": "match",
@@ -13666,7 +13836,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "ஜனநாயகம்",
     "type": "match",
@@ -13683,7 +13853,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "நிர்வாகம்",
     "type": "match",
@@ -13700,7 +13870,7 @@
   {
     "class": 10,
     "difficulty": "medium",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "உள்ளாட்சி",
     "type": "match",
@@ -13717,7 +13887,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "அமைவுச்சட்ட நிறுவனர்",
     "type": "match",
@@ -13734,7 +13904,7 @@
   {
     "class": 10,
     "difficulty": "hard",
-    "subject": "சமூக அறிவியல்",
+    "subject" : "social studies",
     "topic": "அரசியல் அறிவியல்",
     "subtopic": "சர்வதேச அமைப்புகள்",
     "type": "match",
@@ -13792,7 +13962,7 @@
     "question": "பாடலையும் ஆசிரியரையும் பொருத்துக.",
     "matches": [
       { "term": "சிலப்பதிகாரம்", "definition": "இளங்கோவடிகள்" },
-      { "term": "காலக்கணிதம்", "definition": "அவையம்பாட்டு கவிஞர்" },
+      { "term": "காலக்math", "definition": "அவையம்பாட்டு கவிஞர்" },
       { "term": "தேம்பாவணி", "definition": "வேதநாயகம் சாஸ்திரியார்" },
       { "term": "பெருமாள் திருமொழி", "definition": "பெரியாழ்வார்" }
     ],
@@ -13846,7 +14016,7 @@
       { "term": "முத்துக்குமாரசாமி பிள்ளைத்தமிழ்", "definition": "வீரமாமுனிவர்" },
       { "term": "சிலப்பதிகாரம்", "definition": "இளங்கோவடிகள்" },
       { "term": "அன்னை மொழியே", "definition": "புதுமைப்பித்தன்" },
-      { "term": "காலக்கணிதம்", "definition": "அவையம்பாட்டு கவிஞர்" }
+      { "term": "காலக்math", "definition": "அவையம்பாட்டு கவிஞர்" }
     ],
     "explanation": "சில பாடல்கள் இலக்கியப் பெருமையை எடுத்துக்காட்டுகின்றன.",
     "language": "tamil"
@@ -14072,7 +14242,7 @@
       { "term": "அனைவர்", "definition": "தொகாநிலை" },
       { "term": "யாரும்", "definition": "தொகாநிலை" }
     ],
-    "explanation": "இரண்டின் வேறுபாடு புரிந்து கொள்ள கடினம்.",
+    "explanation": "இரண்டின் வேறுபாடு புரிந்து கொள்ள hard.",
     "language": "tamil"
   },
   {
@@ -14382,7 +14552,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
@@ -14411,7 +14581,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
@@ -14440,7 +14610,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
@@ -14469,7 +14639,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
@@ -14498,7 +14668,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
@@ -14527,13 +14697,13 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "matter around us",
     "subtopic": "kinetic theory",
     "type": "match",
-    "question": "Match the advanced property of gases with its explanation based on kinetic molecular theory.",
+    "question": "Match the hard property of gases with its explanation based on kinetic molecular theory.",
     "matches": [
       {
         "term": "High Compressibility",
@@ -14673,7 +14843,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14702,7 +14872,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14731,7 +14901,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14760,7 +14930,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14789,7 +14959,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14818,7 +14988,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "periodic classification of elements",
@@ -14964,7 +15134,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -14993,7 +15163,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -15022,7 +15192,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -15051,7 +15221,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -15080,7 +15250,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -15109,7 +15279,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
      "language" : "english",
     "topic": "organisation of tissues",
@@ -15172,13 +15342,13 @@
     "subject": "social studies",
      "language" : "english",
     "topic": "Early Tamil Society and Culture",
-    "subtopic": "Social Structure",
+    "subtopic": "social studies Structure",
     "type": "match",
-    "question": "Match the social group to its primary role in Early Tamil society.",
+    "question": "Match the social studies group to its primary role in Early Tamil society.",
     "matches": [
       {
         "term": "Aintinai",
-        "definition": "Five geographical and social divisions of land."
+        "definition": "Five geographical and social studies divisions of land."
       },
       {
         "term": "Pulavar",
@@ -15193,7 +15363,7 @@
         "definition": "A class of wealthy landowners and agriculturalists."
       }
     ],
-    "explanation": "The social structure of early Tamil society was organized into distinct groups based on occupation and geography."
+    "explanation": "The social studies structure of early Tamil society was organized into distinct groups based on occupation and geography."
   },
   {
     "class": 9,
@@ -15215,14 +15385,14 @@
       },
       {
         "term": "Iron Technology",
-        "definition": "Advanced skills in iron smelting and the production of weaponry and tools."
+        "definition": "hard skills in iron smelting and the production of weaponry and tools."
       },
       {
         "term": "Uraiyur",
         "definition": "A renowned center for cotton textiles."
       }
     ],
-    "explanation": "Early Tamilakam had a thriving economy supported by internal and external trade and advanced technology."
+    "explanation": "Early Tamilakam had a thriving economy supported by internal and external trade and hard technology."
   },
   {
     "class": 9,
@@ -15255,7 +15425,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
@@ -15284,7 +15454,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
@@ -15313,7 +15483,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
@@ -15342,7 +15512,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
@@ -15371,11 +15541,11 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
-    "subtopic": "Social and Economic Nuances",
+    "subtopic": "social studies and Economic Nuances",
     "type": "match",
     "question": "Match the nuanced term to its specific significance in Early Tamilakam.",
     "matches": [
@@ -15396,11 +15566,11 @@
         "definition": "An ancient Tamil poet whose work is considered a precursor to later classical literature."
       }
     ],
-    "explanation": "This question requires a deeper understanding of specific terms related to social structure, art, and literature."
+    "explanation": "This question requires a deeper understanding of specific terms related to social studies structure, art, and literature."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "social studies",
     "topic": "Early Tamil Society and Culture",
@@ -15546,7 +15716,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15575,7 +15745,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15604,7 +15774,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15633,7 +15803,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15662,7 +15832,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15691,7 +15861,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
      "language" : "english",
     "topic": "Atmosphere",
@@ -15837,7 +16007,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -15866,7 +16036,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -15895,7 +16065,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -15924,7 +16094,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -15949,11 +16119,11 @@
         "definition": "Used for tracking and predicting the path of cyclones and storms."
       }
     ],
-    "explanation": "Modern disaster management relies heavily on advanced technology for effective planning, monitoring, and response."
+    "explanation": "Modern disaster management relies heavily on hard technology for effective planning, monitoring, and response."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -15982,7 +16152,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
      "language" : "english",
     "topic": "Disaster Management: Responding to Disasters",
@@ -16080,7 +16250,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
      "language" : "english",
     "topic": "Mensuration",
@@ -16097,7 +16267,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
      "language" : "english",
     "topic": "Mensuration",
@@ -16114,7 +16284,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
      "language" : "english",
     "topic": "Mensuration",
@@ -16131,7 +16301,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Mensuration",
@@ -16148,7 +16318,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
      "language" : "english",
     "topic": "Mensuration",
@@ -16165,7 +16335,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "math",
     "topic": "Mensuration",
@@ -16251,7 +16421,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16268,7 +16438,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16285,7 +16455,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16302,7 +16472,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16319,7 +16489,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16336,7 +16506,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "math",
     "topic": "Algebra",
@@ -16470,7 +16640,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
@@ -16499,7 +16669,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
@@ -16528,7 +16698,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
@@ -16557,7 +16727,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
@@ -16586,13 +16756,13 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
-    "subtopic": "Advanced Identities",
+    "subtopic": "hard Identities",
     "type": "match",
-    "question": "Match the advanced trigonometric identity with its correct formula.",
+    "question": "Match the hard trigonometric identity with its correct formula.",
     "matches": [
       {
         "term": "sin(A+B)",
@@ -16611,11 +16781,11 @@
         "definition": "(1 + cos2θ)/2"
       }
     ],
-    "explanation": "Advanced trigonometric identities help in solving complex problems and simplifying expressions."
+    "explanation": "hard trigonometric identities help in solving complex problems and simplifying expressions."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "math",
     "topic": "Trigonometry",
@@ -16665,7 +16835,7 @@
     "difficulty": "easy",
      "language" : "english",
     "subject": "English",
-    "topic": "Prefix/Suffix",
+    "topic": "Prefix Suffix",
     "subtopic": "Word formation",
     "type": "match",
     "question": "Match the prefix with the correct meaning.",
@@ -16850,7 +17020,7 @@
 ,
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Homonyms",
@@ -16867,10 +17037,10 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
-    "topic": "Prefix/Suffix",
+    "topic": "Prefix Suffix",
     "subtopic": "Word formation",
     "type": "match",
     "question": "Match the suffix with the type of word it forms.",
@@ -16884,7 +17054,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Prepositions",
@@ -16901,7 +17071,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Phrasal Verbs",
@@ -16918,7 +17088,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Clauses and Phrases",
@@ -16935,7 +17105,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Non-finite Verbs",
@@ -16952,7 +17122,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Idioms",
@@ -16969,7 +17139,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Degrees of Comparison",
@@ -16986,7 +17156,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Connectors",
@@ -17003,7 +17173,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Determiners",
@@ -17020,7 +17190,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Reported Speech",
@@ -17037,11 +17207,11 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
      "language" : "english",
     "subject": "English",
     "topic": "Active and Passive Voice",
-    "subtopic": "Intermediate",
+    "subtopic": "medium",
     "type": "match",
     "question": "Match the sentence with its passive form.",
     "matches": [
@@ -17055,11 +17225,11 @@
 ,
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Non-finite Verbs",
-    "subtopic": "Advanced usage",
+    "subtopic": "hard usage",
     "type": "match",
     "question": "Match the sentence with the type of non-finite verb used.",
     "matches": [
@@ -17072,7 +17242,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Clauses and Phrases",
@@ -17089,11 +17259,11 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Connectors",
-    "subtopic": "Advanced usage",
+    "subtopic": "hard usage",
     "type": "match",
     "question": "Match the connector with its function in complex sentences.",
     "matches": [
@@ -17102,11 +17272,11 @@
       { "term": "Provided that", "definition": "Expresses condition" },
       { "term": "In order that", "definition": "Expresses purpose" }
     ],
-    "explanation": "Advanced connectors link clauses with nuanced relationships like condition, purpose, or contrast."
+    "explanation": "hard connectors link clauses with nuanced relationships like condition, purpose, or contrast."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Reported Speech",
@@ -17123,11 +17293,11 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Active and Passive Voice",
-    "subtopic": "Advanced transformations",
+    "subtopic": "hard transformations",
     "type": "match",
     "question": "Match the active voice sentences with their passive equivalents.",
     "matches": [
@@ -17136,11 +17306,11 @@
       { "term": "We expect them to arrive soon.", "definition": "They are expected to arrive soon." },
       { "term": "Someone has stolen my wallet.", "definition": "My wallet has been stolen." }
     ],
-    "explanation": "Advanced passive forms often use impersonal subjects like 'It is said…' or infinitive structures."
+    "explanation": "hard passive forms often use impersonal subjects like 'It is said…' or infinitive structures."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
      "language" : "english",
     "subject": "English",
     "topic": "Idioms",
@@ -17153,7 +17323,7 @@
       { "term": "Throw in the towel", "definition": "Give up" },
       { "term": "Cut to the chase", "definition": "Get to the main point quickly" }
     ],
-    "explanation": "Advanced idioms are often metaphorical and require contextual understanding."
+    "explanation": "hard idioms are often metaphorical and require contextual understanding."
   }
 ,
   {
@@ -17241,7 +17411,7 @@
         "definition": "குழு 18 இல் காணப்படுகின்றன (வலதுபுறத்தில் உள்ள நெடுவரிசை)"
       }
     ],
-    "explanation": "தனிமங்கள் அவற்றின் இயற்பியல் மற்றும் வேதியியல் பண்புகளின் அடிப்படையில் உலோகங்கள், அலோகங்கள் மற்றும் உலோகக்களிமண் தனிமங்கள் என பரந்த அளவில் வகைப்படுத்தப்படுகின்றன, இவை அட்டவணையில் அவற்றின் நிலையுடன் தொடர்புடையவை."
+    "explanation": "தனிமங்கள் அவற்றின் physics மற்றும் chemistry பண்புகளின் அடிப்படையில் உலோகங்கள், அலோகங்கள் மற்றும் உலோகக்களிமண் தனிமங்கள் என பரந்த அளவில் வகைப்படுத்தப்படுகின்றன, இவை அட்டவணையில் அவற்றின் நிலையுடன் தொடர்புடையவை."
   },
   {
     "class": 9,
@@ -17270,11 +17440,11 @@
         "definition": "உன்ன gas கள்; மந்தமான, வினைப்பாட்டில்லாத"
       }
     ],
-    "explanation": "ஒரே குழுவில் உள்ள தனிமங்கள் ஒரே எண்ணிக்கையிலான வேலன்ஸ் எலக்ட்ரான்களைக் கொண்டிருக்கின்றன, இது ஒத்த வேதியியல் பண்புகள் மற்றும் வினைத்திறன் போக்குகளுக்கு வழிவகுக்கிறது."
+    "explanation": "ஒரே குழுவில் உள்ள தனிமங்கள் ஒரே எண்ணிக்கையிலான வேலன்ஸ் எலக்ட்ரான்களைக் கொண்டிருக்கின்றன, இது ஒத்த chemistry பண்புகள் மற்றும் வினைத்திறன் போக்குகளுக்கு வழிவகுக்கிறது."
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17303,7 +17473,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17332,7 +17502,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17349,7 +17519,7 @@
         "definition": "அதிகரிக்கிறது (பிரதிநிதித்துவ தனிமங்களில்)"
       },
       {
-        "term": "வேதியியல் வினைத்திறன் (உலோகங்கள்)",
+        "term": "chemistry வினைத்திறன் (உலோகங்கள்)",
         "definition": "அதிகரிக்கிறது"
       },
       {
@@ -17361,7 +17531,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17390,7 +17560,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17419,7 +17589,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "தனிமங்களின் ஆவர்த்தன வகைப்பாடு",
@@ -17502,7 +17672,7 @@
         "definition": "திரவம் முதல் திண்மம்"
       }
     ],
-    "explanation": "நிலை மாற்றங்கள் என்பது வெப்ப ஆற்றல் ஈட்டப்படுவதாலோ இழப்பதாலோ ஏற்படும் இயற்பியல் செயல்முறைகளாகும், இது துகள்களின் இயக்கம் மற்றும் அமைப்பை மாற்றுகிறது."
+    "explanation": "நிலை மாற்றங்கள் என்பது வெப்ப ஆற்றல் ஈட்டப்படுவதாலோ இழப்பதாலோ ஏற்படும் physics செயல்முறைகளாகும், இது துகள்களின் இயக்கம் மற்றும் அமைப்பை மாற்றுகிறது."
   },
   {
     "class": 9,
@@ -17564,7 +17734,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
@@ -17593,7 +17763,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
@@ -17606,7 +17776,7 @@
         "definition": "துகள்கள் இயக்க ஆற்றலைக் கொண்டுள்ளன மற்றும் சீரற்று நகரும்"
       },
       {
-        "term": "திண்மங்கள் அமுக்குவது கடினம்",
+        "term": "திண்மங்கள் அமுக்குவது hard",
         "definition": "துகள்கள் இடைவெளி இல்லாமல் நெருக்கமாக அடுக்கப்பட்டுள்ளன"
       },
       {
@@ -17622,7 +17792,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
@@ -17651,7 +17821,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
@@ -17680,7 +17850,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
@@ -17709,13 +17879,13 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "நம்மைச் சுற்றியுள்ள பருப்பொருள்",
     "subtopic": "இயக்கக் கோட்பாடு",
     "type": "match",
-    "question": "வாயுக்களின் advanced பண்பை அதன் இயக்க மூலக்கூறு கோட்பாட்டின் அடிப்படையிலான விளக்கத்துடன் பொருத்துக.",
+    "question": "வாயுக்களின் hard பண்பை அதன் இயக்க மூலக்கூறு கோட்பாட்டின் அடிப்படையிலான விளக்கத்துடன் பொருத்துக.",
     "matches": [
       {
         "term": "உயர் அமுக்குதிறன்",
@@ -17855,7 +18025,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -17884,7 +18054,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -17913,7 +18083,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -17942,7 +18112,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -17971,7 +18141,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -18000,7 +18170,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "science",
     "language":"tamil",
     "topic": "திசுக்களின் அமைப்பு",
@@ -18106,14 +18276,14 @@
       },
       {
         "term": "இரும்புத் தொழில்நுட்பம்",
-        "definition": "இரும்பு உருக்குதல் மற்றும் ஆயுதங்கள், கருவிகள் தயாரிப்பதில் advanced திறன்கள்."
+        "definition": "இரும்பு உருக்குதல் மற்றும் ஆயுதங்கள், கருவிகள் தயாரிப்பதில் hard திறன்கள்."
       },
       {
         "term": "உறையூர்",
         "definition": "பருத்தித் துணிகளுக்குப் புகழ்பெற்ற ஒரு மையம்."
       }
     ],
-    "explanation": "சங்க காலத் தமிழ்நாடு உள்நாட்டு மற்றும் வெளிநாட்டு வர்த்தகம் மற்றும் advanced தொழில்நுட்பத்தால் செழிப்பான பொருளாதாரத்தைக் கொண்டிருந்தது."
+    "explanation": "சங்க காலத் தமிழ்நாடு உள்நாட்டு மற்றும் வெளிநாட்டு வர்த்தகம் மற்றும் hard தொழில்நுட்பத்தால் செழிப்பான பொருளாதாரத்தைக் கொண்டிருந்தது."
   },
   {
     "class": 9,
@@ -18146,7 +18316,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18175,7 +18345,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18204,7 +18374,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "siocial science",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18233,7 +18403,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18262,7 +18432,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18291,7 +18461,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "சங்க காலத் தமிழ் சமூகமும் பண்பாடும்",
@@ -18437,7 +18607,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18466,7 +18636,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18495,7 +18665,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18524,7 +18694,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18553,7 +18723,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18582,7 +18752,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "வளிமண்டலம்",
@@ -18629,7 +18799,7 @@
         "definition": "ஒரு இயற்கையான அல்லது மனிதனால் உருவாக்கப்பட்ட பேரிடராக இருக்கலாம்."
       },
       {
-        "term": "வேதியியல் கசிவு",
+        "term": "chemistry கசிவு",
         "definition": "மனிதனால் உருவாக்கப்பட்ட ஒரு பேரிடர்."
       },
       {
@@ -18728,7 +18898,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18757,7 +18927,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18786,7 +18956,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18815,7 +18985,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18840,11 +19010,11 @@
         "definition": "சூறாவளி மற்றும் புயல்களின் பாதையை கண்காணிப்பதற்கும் முன்னறிவிப்பதற்கும் பயன்படுத்தப்படுகிறது."
       }
     ],
-    "explanation": "நவீன பேரிடர் மேலாண்மை பயனுள்ள திட்டமிடல், கண்காணிப்பு மற்றும் பதிலளிப்புக்கு advanced தொழில்நுட்பத்தை பெரிதும் சார்ந்துள்ளது."
+    "explanation": "நவீன பேரிடர் மேலாண்மை பயனுள்ள திட்டமிடல், கண்காணிப்பு மற்றும் பதிலளிப்புக்கு hard தொழில்நுட்பத்தை பெரிதும் சார்ந்துள்ளது."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18873,7 +19043,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "social studies",
     "language":"tamil",
     "topic": "பேரிடர் மேலாண்மை: பேரிடர்களுக்கு பதிலளித்தல்",
@@ -18908,7 +19078,7 @@
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "கனசதுரம் மற்றும் செங்கனசதுரத்தின் மேற்பரப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வடிவத்தையும் அதன் மேற்பரப்பு சூத்திரத்தையும் பொருத்துக.",
     "matches": [
       { "term": "கனசதுரம்", "definition": "6a²" },
@@ -18925,7 +19095,7 @@
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "சிலிண்டர், கூம்பு, கோளம் மற்றும் அரைகோளத்தின் மேற்பரப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வடிவத்தையும் அதன் வளைந்த மேற்பரப்பு சூத்திரத்தையும் பொருத்துக.",
     "matches": [
       { "term": "சிலிண்டர்", "definition": "2πrh" },
@@ -18942,7 +19112,7 @@
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "கனசதுரம், செங்கனசதுரம், சிலிண்டர், கூம்பு, கோளம் ஆகியவற்றின் கன அளவு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வடிவத்தையும் அதன் கன அளவு சூத்திரத்தையும் பொருத்துக.",
     "matches": [
       { "term": "கனசதுரம்", "definition": "a³" },
@@ -18959,7 +19129,7 @@
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "கோனின் துருவம் (Frustum of a cone)",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "கோனின் துருவத்தின் பண்பையும் அதன் சூத்திரத்தையும் பொருத்துக.",
     "matches": [
       { "term": "வளைந்த மேற்பரப்பு", "definition": "π(R + r)l" },
@@ -18971,12 +19141,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "வடிவங்களை மாற்றுதல்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "ஒரு வடிவத்தை மற்றொரு வடிவமாக மாற்றும்போது பயன்படுத்தப்படும் கொள்கையை பொருத்துக.",
     "matches": [
       { "term": "கனசதுரத்தை உருக வைத்து கோளம் ஆக்குதல்", "definition": "கன அளவு மாறாது" },
@@ -18988,12 +19158,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "வடிவங்களின் சேர்க்கை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "இரண்டு வடிவங்களையும் அதன் சேர்க்கையால் உருவாகும் பொருளையும் பொருத்துக.",
     "matches": [
       { "term": "சிலிண்டர் + அரைகோளம்", "definition": "ஐஸ்கிரீம் கிண்ணம்" },
@@ -19005,12 +19175,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "தினசரி வாழ்வில் பயன்பாடுகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "உண்மைப் பொருளையும் அதற்கு ஏற்ற வடிவத்தையும் பொருத்துக.",
     "matches": [
       { "term": "பந்து", "definition": "கோளம்" },
@@ -19022,12 +19192,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "ஹெரானின் சூத்திரம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "முக்கோண வகையையும் ஹெரானின் சூத்திரம் பயன்பாட்டையும் பொருத்துக.",
     "matches": [
       { "term": "சமச்சீரற்ற முக்கோணம்", "definition": "மூன்று பக்கங்களும் கொண்டு பரப்பளவு" },
@@ -19039,12 +19209,12 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "நான்கு பக்கங்கள் - ஹெரான் சூத்திரம் பயன்பாடு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நான்கு பக்க வடிவத்தையும் ஹெரான் சூத்திரம் பயன்பாட்டையும் பொருத்துக.",
     "matches": [
       { "term": "சுழற்கோணம் (Cyclic Quadrilateral)", "definition": "பரப்பளவு = √((s-a)(s-b)(s-c)(s-d))" },
@@ -19056,12 +19226,12 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "அளவியல்",
     "subtopic": "கலந்த பிரச்சினைகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நிகழ்வு சார்ந்த பிரச்சினையையும் பயன்படுத்தப்படும் கருத்தையும் பொருத்துக.",
     "matches": [
       { "term": "சுவரை வண்ணம் பூசும் செலவு", "definition": "மேற்பரப்பு" },
@@ -19079,7 +19249,7 @@
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல் அறிமுகம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியலின் வகையை அதன் 'டிகிரி' உடன் பொருத்துக.",
     "matches": [
       { "term": "மாறாத பாலினோமியல்", "definition": "டிகிரி 0" },
@@ -19096,7 +19266,7 @@
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல்களின் வகைகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியலை அதன் வகையுடன் பொருத்துக.",
     "matches": [
       { "term": "x + 5", "definition": "நேரியல் பாலினோமியல்" },
@@ -19113,7 +19283,7 @@
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல்களின் கூட்டல் மற்றும் கழித்தல்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியல்களை எளிமைப்படுத்திய விடையுடன் பொருத்துக.",
     "matches": [
       { "term": "(x + 2) + (x + 3)", "definition": "2x + 5" },
@@ -19130,7 +19300,7 @@
     "topic": "அல்ஜீப்ரா",
     "language":"tamil",
     "subtopic": "பாலினோமியல்களின் பெருக்கல்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியல்களின் பெருக்கலை அதன் விரிவாக்கப்பட்ட வடிவத்துடன் பொருத்துக.",
     "matches": [
       { "term": "(x + 2)(x + 3)", "definition": "x² + 5x + 6" },
@@ -19142,12 +19312,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல்களின் வகுத்தல்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியல்களின் வகுத்தலை அதன் விடையுடன் பொருத்துக.",
     "matches": [
       { "term": "(x² - 1) ÷ (x - 1)", "definition": "x + 1" },
@@ -19159,12 +19329,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "மீதிப் பிரமாணம் (Remainder theorem)",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "(x - a) கொண்டு வகுத்தபோது பாலினோமியலையும் அதன் மீதியையும் பொருத்துக.",
     "matches": [
       { "term": "f(x) = x² - 4, வகுத்தி (x - 2)", "definition": "0" },
@@ -19176,12 +19346,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "காரணி பிரமாணம் (Factor theorem)",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியலையும் அதற்கான காரணியையும் பொருத்துக.",
     "matches": [
       { "term": "x² - 9", "definition": "x - 3" },
@@ -19193,12 +19363,12 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியலின் பூஜ்யங்கள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியலையும் அதன் பூஜ்யங்களையும் பொருத்துக.",
     "matches": [
       { "term": "x² - 4", "definition": "±2" },
@@ -19210,12 +19380,12 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல்களின் வரைபட வடிவம்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பாலினோமியலையும் அதன் வரைபடத்தின் தன்மையையும் பொருத்துக.",
     "matches": [
       { "term": "நேரியல் பாலினோமியல்", "definition": "நேர்கோடு" },
@@ -19227,12 +19397,12 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "அல்ஜீப்ரா",
     "subtopic": "பாலினோமியல் அடிப்படையிலான சொல் பிரச்சினைகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சொல் பிரச்சினையையும் அதற்கான பாலினோமியல் வெளிப்பாட்டையும் பொருத்துக.",
     "matches": [
       { "term": "பக்கம் (x + 2) கொண்ட சதுரத்தின் பரப்பளவு", "definition": "(x + 2)²" },
@@ -19361,7 +19531,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
@@ -19390,7 +19560,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
@@ -19419,7 +19589,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
@@ -19448,7 +19618,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
@@ -19477,13 +19647,13 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
-    "subtopic": "advanced அடையாளங்கள்",
+    "subtopic": "hard அடையாளங்கள்",
     "type": "match",
-    "question": "advanced திரிகோணமிதி அடையாளத்தை அதன் சரியான சூத்திரத்துடன் பொருத்துக.",
+    "question": "hard திரிகோணமிதி அடையாளத்தை அதன் சரியான சூத்திரத்துடன் பொருத்துக.",
     "matches": [
       {
         "term": "sin(A+B)",
@@ -19502,11 +19672,11 @@
         "definition": "(1 + cos2θ)/2"
       }
     ],
-    "explanation": "advanced திரிகோணமிதி அடையாளங்கள் சிக்கலான சிக்கல்களைத் தீர்ப்பதற்கும் வெளிப்பாடுகளை எளிதாக்குவதற்கும் உதவுகின்றன."
+    "explanation": "hard திரிகோணமிதி அடையாளங்கள் சிக்கலான சிக்கல்களைத் தீர்ப்பதற்கும் வெளிப்பாடுகளை எளிதாக்குவதற்கும் உதவுகின்றன."
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "math",
     "language":"tamil",
     "topic": "திரிகோணமிதி",
@@ -19605,7 +19775,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19622,7 +19792,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19639,7 +19809,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19656,7 +19826,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19673,7 +19843,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19690,7 +19860,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "திருக்குறள்",
@@ -19776,7 +19946,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19793,7 +19963,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19810,7 +19980,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19827,7 +19997,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19844,7 +20014,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19861,7 +20031,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பழமொழி",
@@ -19913,7 +20083,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பாடல் - ஆசிரியர்",
@@ -19930,7 +20100,7 @@
   },
   {
     "class": 9,
-    "difficulty": "intermediate",
+    "difficulty": "medium",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பாடல் - ஆசிரியர்",
@@ -19947,7 +20117,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பாடல் - ஆசிரியர்",
@@ -19964,7 +20134,7 @@
   },
   {
     "class": 9,
-    "difficulty": "advanced",
+    "difficulty": "hard",
     "subject": "Tamil",
     "language": "tamil",
     "topic": "பாடல் - ஆசிரியர்",
@@ -20753,14 +20923,14 @@
     "subject": "english",
     "topic": "Tenses",
     "type": "match",
-    "question": "Match the sentence to its advanced tense",
+    "question": "Match the sentence to its hard tense",
     "matches": [
       { "term": "She will have been waiting for an hour when the train arrives", "definition": "Future Perfect Continuous" },
       { "term": "They had been studying before the bell rang", "definition": "Past Perfect Continuous" },
       { "term": "I have been living here for five years", "definition": "Present Perfect Continuous" },
       { "term": "By 2026, he will have completed his PhD", "definition": "Future Perfect" }
     ],
-    "explanation": "Advanced tenses show duration and completion across timelines.",
+    "explanation": "hard tenses show duration and completion across timelines.",
     "language": "english"
   },
   {
@@ -21086,7 +21256,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "வடிவத்தையும் அதன் பண்பையும் பொருத்துக.",
@@ -21102,7 +21272,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "பலகோணங்களையும் பக்கங்களையும் பொருத்துக.",
@@ -21118,7 +21288,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "3D வடிவத்தையும் அதன் அடிப்படையையும் பொருத்துக.",
@@ -21134,7 +21304,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "வடிவத்தையும் அதன் கோடுருள்களையும் பொருத்துக.",
@@ -21150,7 +21320,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "வடிவத்தையும் அதன் இணை பக்கங்களையும் பொருத்துக.",
@@ -21166,7 +21336,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "3D வடிவத்தையும் அதன் முகங்களையும் பொருத்துக.",
@@ -21182,7 +21352,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "3D வடிவத்தையும் அதன் விளிம்புகளையும் பொருத்துக.",
@@ -21198,7 +21368,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "பலகோணத்தையும் அதன் கோண கூட்டத்தையும் பொருத்துக.",
@@ -21214,7 +21384,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "வடிவங்கள்",
     "type": "match",
     "question": "வடிவத்தையும் அதன் சமச்சீரியல் கோடுகளையும் பொருத்துக.",
@@ -21390,7 +21560,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "பொருளையும் அதன் பரிமாணத்தையும் பொருத்துக.",
@@ -21406,7 +21576,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "வடிவத்தையும் அதன் பரிமாணத்தையும் பொருத்துக.",
@@ -21422,7 +21592,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "படிமத்தையும் அதன் பரிமாணத்தையும் பொருத்துக.",
@@ -21438,7 +21608,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "பரிமாணத்தையும் அதன் எடுத்துக்காட்டையும் பொருத்துக.",
@@ -21454,7 +21624,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "பொருளையும் அதன் அளவீட்டு பண்பையும் பொருத்துக.",
@@ -21470,7 +21640,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "3D வடிவத்தையும் அதன் முகங்களையும் பொருத்துக.",
@@ -21486,7 +21656,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "3D பொருளையும் அதன் விளிம்புகளையும் பொருத்துக.",
@@ -21502,7 +21672,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "பரிமாணத்தையும் அது குறிக்கும் பொருளையும் பொருத்துக.",
@@ -21518,7 +21688,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "3D வடிவத்தையும் அதன் சிகரங்களையும் பொருத்துக.",
@@ -21534,7 +21704,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "கணிதம்",
+    "subject": "math",
     "topic": "பரிமாணங்கள்",
     "type": "match",
     "question": "பரிமாணத்தையும் அதன் சூத்திர உறவையும் பொருத்துக.",
@@ -22321,7 +22491,7 @@
     "subject": "science",
     "topic": "Scientific Laws",
     "type": "match",
-    "question": "Match advanced scientists to laws.",
+    "question": "Match hard scientists to laws.",
     "matches": [
       { "term": "Maxwell", "definition": "Equations" },
       { "term": "Heisenberg", "definition": "Matrix" },
@@ -22424,7 +22594,7 @@
       { "term": "பாரடே", "definition": "மின்னோட்டம்" },
       { "term": "கேப்லர்", "definition": "நெடுவரை" }
     ],
-    "explanation": "சற்று ஆழமான இயற்பியல் சட்டங்கள்.",
+    "explanation": "சற்று ஆழமான physics சட்டங்கள்.",
     "language": "tamil"
   },
   {
@@ -22456,7 +22626,7 @@
       { "term": "அம்பியர்", "definition": "மின்சாரம்" },
       { "term": "அவோகாட்ரோ", "definition": "அணுக்கள்" }
     ],
-    "explanation": "இவை இயற்பியல் மற்றும் வேதியியலுடன் தொடர்புடையவை.",
+    "explanation": "இவை physics மற்றும் வேதியியலுடன் தொடர்புடையவை.",
     "language": "tamil"
   },
   {
@@ -22488,7 +22658,7 @@
       { "term": "டிராக்", "definition": "சமன்பாடு" },
       { "term": "ஸ்ரோடிங்கர்", "definition": "பூனை" }
     ],
-    "explanation": "மேம்பட்ட இயற்பியல் தொடர்பானவை.",
+    "explanation": "மேம்பட்ட physics தொடர்பானவை.",
     "language": "tamil"
   },
   {
@@ -22830,7 +23000,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the map type with its use",
@@ -22846,7 +23016,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the direction with its opposite",
@@ -22856,13 +23026,13 @@
       { "term": "North-East", "definition": "South-West" },
       { "term": "North-West", "definition": "South-East" }
     ],
-    "explanation": "Understanding cardinal and intermediate directions.",
+    "explanation": "Understanding cardinal and medium directions.",
     "language": "english"
   },
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the tool with its use in maps",
@@ -22878,7 +23048,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the symbol with its meaning",
@@ -22894,7 +23064,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the continent with its position",
@@ -22910,7 +23080,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the latitude with its description",
@@ -22926,7 +23096,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the longitude with its importance",
@@ -22942,7 +23112,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the map scale type with example",
@@ -22958,7 +23128,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the geographer with contribution",
@@ -22974,7 +23144,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Maps",
     "type": "match",
     "question": "Match the line with its feature",
@@ -22993,7 +23163,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "வரைபட வகையையும் அதன் பயன்பாட்டையும் பொருத்துக",
@@ -23009,7 +23179,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "திசையையும் எதிர்திசையையும் பொருத்துக",
@@ -23025,7 +23195,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "கருவியையும் அதன் பயன்பாட்டையும் பொருத்துக",
@@ -23041,7 +23211,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "சின்னத்தையும் அதன் பொருளையும் பொருத்துக",
@@ -23057,7 +23227,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "கண்டத்தையும் அதன் நிலையைப் பொருத்துக",
@@ -23073,7 +23243,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "அட்சரேகையையும் அதன் விவரத்தையும் பொருத்துக",
@@ -23089,7 +23259,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "நெட்டரேகையையும் அதன் முக்கியத்துவத்தையும் பொருத்துக",
@@ -23105,7 +23275,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "வரைபட அளவீட்டு வகையையும் எடுத்துக்காட்டையும் பொருத்துக",
@@ -23121,7 +23291,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "புவியியலாளரையும் அவரது பங்களிப்பையும் பொருத்துக",
@@ -23137,7 +23307,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "வரைபடங்கள்",
     "type": "match",
     "question": "கோட்டையும் அதன் அம்சத்தையும் பொருத்துக",
@@ -23153,7 +23323,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the mountain with its location.",
@@ -23169,7 +23339,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the type of rainfall with its cause.",
@@ -23185,7 +23355,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the mountain with its peak.",
@@ -23201,7 +23371,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the monsoon with its season.",
@@ -23217,7 +23387,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the mountain with its nickname.",
@@ -23233,7 +23403,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the rainfall region with its feature.",
@@ -23249,7 +23419,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the mountain with the state.",
@@ -23265,7 +23435,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the monsoon with its direction.",
@@ -23281,7 +23451,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the place with its rainfall pattern.",
@@ -23297,7 +23467,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Rainfall and Mountains",
     "type": "match",
     "question": "Match the global mountain with its continent.",
@@ -23313,7 +23483,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மலையையும் அதன் இடத்தையும் பொருத்துக.",
@@ -23329,7 +23499,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மழையின் வகையையும் காரணத்தையும் பொருத்துக.",
@@ -23345,7 +23515,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மலைத்தொடரையும் அதன் உச்சியையும் பொருத்துக.",
@@ -23361,7 +23531,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மூசும் மழையையும் பருவத்தையும் பொருத்துக.",
@@ -23377,7 +23547,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மலையையும் அதன் பெயரையும் பொருத்துக.",
@@ -23393,7 +23563,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மழைப் பகுதிகளையும் அதன் சிறப்பையும் பொருத்துக.",
@@ -23409,7 +23579,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மலையையும் மாநிலத்தையும் பொருத்துக.",
@@ -23425,7 +23595,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "மூசுமையும் அதன் திசையையும் பொருத்துக.",
@@ -23441,7 +23611,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "இடத்தையும் அதன் மழை வகையையும் பொருத்துக.",
@@ -23457,7 +23627,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "மழை மற்றும் மலைகள்",
     "type": "match",
     "question": "உலக மலையையும் கண்டத்தையும் பொருத்துக.",
@@ -23473,7 +23643,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the civic concept with its meaning.",
@@ -23489,7 +23659,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the civic rights with examples.",
@@ -23505,7 +23675,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the duties with their civic sense.",
@@ -23521,7 +23691,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the leaders with their civic role.",
@@ -23537,7 +23707,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the forms of government with their features.",
@@ -23553,7 +23723,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the institutions with their role.",
@@ -23569,7 +23739,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the terms of governance with their meaning.",
@@ -23585,7 +23755,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the civic bodies with their level.",
@@ -23601,7 +23771,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the constitution makers with their role.",
@@ -23617,7 +23787,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "social",
+    "subject": "social studies",
     "topic": "Civics",
     "type": "match",
     "question": "Match the parts of constitution with their subject.",
@@ -23633,7 +23803,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "ஆட்சிமுறைகளை பொருத்துக.",
@@ -23649,7 +23819,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "அடிப்படை உரிமைகளை பொருத்துக.",
@@ -23665,7 +23835,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "கடமைகளை பொருத்துக.",
@@ -23681,7 +23851,7 @@
   {
     "class": 8,
     "difficulty": "easy",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "தலைவர்களை பொருத்துக.",
@@ -23697,7 +23867,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "ஆட்சிமுறைகள் மற்றும் அம்சங்கள் பொருத்துக.",
@@ -23713,7 +23883,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "நிறுவனங்களை பொருத்துக.",
@@ -23729,7 +23899,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "கொள்கைகளை பொருத்துக.",
@@ -23745,7 +23915,7 @@
   {
     "class": 8,
     "difficulty": "medium",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "உள்ளூர் நிறுவனங்களை பொருத்துக.",
@@ -23761,7 +23931,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "அரசியலமைப்பு வல்லுநர்களை பொருத்துக.",
@@ -23777,7 +23947,7 @@
   {
     "class": 8,
     "difficulty": "hard",
-    "subject": "சமூகம்",
+    "subject": "social studies",
     "topic": "சிவிக்ஸ்",
     "type": "match",
     "question": "அரசியலமைப்புப் பகுதிகளை பொருத்துக.",
@@ -23954,7 +24124,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "மாற்றமான பொருளை அதன் SI அலகுடன் பொருத்துக",
@@ -23964,16 +24134,16 @@
       { "term": "நேரம்", "definition": "விநாடி" },
       { "term": "மின்சாரக் கurrent்", "definition": "ஆம்பியர்" }
     ],
-    "explanation": "அடிப்படை இயற்பியல் அளவுகள் மற்றும் அவற்றின் SI அலகுகள்.",
+    "explanation": "அடிப்படை physics அளவுகள் மற்றும் அவற்றின் SI அலகுகள்.",
     "language": "tamil"
   },
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
-    "question": "மாத்திரை கருவியுடன் அதனால் அளவிடப்படும் இயற்பியல் பொருளை பொருத்துக",
+    "question": "மாத்திரை கருவியுடன் அதனால் அளவிடப்படும் physics பொருளை பொருத்துக",
     "matches": [
       { "term": "வெர்னியர் காலிபர்", "definition": "நீளம்" },
       { "term": "ஸ்டாப்வாட்ச்", "definition": "நேரம்" },
@@ -23986,7 +24156,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "மாற்றப்பட்ட பொருளை அதன் SI அலகுடன் பொருத்துக",
@@ -24002,7 +24172,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "அலகை அதன் வகையுடன் பொருத்துக",
@@ -24018,7 +24188,7 @@
   {
     "class": 11,
     "difficulty": "medium",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "பிழை வகையை அதன் விளக்கத்துடன் பொருத்துக",
@@ -24034,10 +24204,10 @@
   {
     "class": 11,
     "difficulty": "medium",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
-    "question": "இயற்பியல் அளவை அதன் பரிமாண சூத்திரத்துடன் பொருத்துக",
+    "question": "physics அளவை அதன் பரிமாண சூத்திரத்துடன் பொருத்துக",
     "matches": [
       { "term": "வேகம்", "definition": "M⁰L¹T⁻¹" },
       { "term": "துரிதம்", "definition": "M⁰L¹T⁻²" },
@@ -24050,10 +24220,10 @@
   {
     "class": 11,
     "difficulty": "medium",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
-    "question": "Derived அலகை அதன் இயற்பியல் அளவுடன் பொருத்துக",
+    "question": "Derived அலகை அதன் physics அளவுடன் பொருத்துக",
     "matches": [
       { "term": "ஜூல்", "definition": "வேலை" },
       { "term": "பாஸ்கல்", "definition": "மடக்கெடை" },
@@ -24066,7 +24236,7 @@
   {
     "class": 11,
     "difficulty": "medium",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "அளவீடு அளவுகோல் மற்றும் அதன் பயன்பாட்டை பொருத்துக",
@@ -24082,23 +24252,23 @@
   {
     "class": 11,
     "difficulty": "hard",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
-    "question": "இயற்பியல் நிலையானை அதன் பரிமாண சூத்திரத்துடன் பொருத்துக",
+    "question": "physics நிலையானை அதன் பரிமாண சூத்திரத்துடன் பொருத்துக",
     "matches": [
       { "term": "பிளாங்க் நிலையானம் (h)", "definition": "M¹L²T⁻¹" },
       { "term": "கிராவிடேஷனல் நிலையானம் (G)", "definition": "M⁻¹L³T⁻²" },
       { "term": "ஒளியின் வேகம் (c)", "definition": "M⁰L¹T⁻¹" },
       { "term": "போல்ட்ஸ்மேன் நிலையானம் (k)", "definition": "M¹L²T⁻²K⁻¹" }
     ],
-    "explanation": "இயற்பியல் நிலையான்களுக்கு தனித்துவமான பரிமாண சூத்திரங்கள் உள்ளன.",
+    "explanation": "physics நிலையான்களுக்கு தனித்துவமான பரிமாண சூத்திரங்கள் உள்ளன.",
     "language": "tamil"
   },
   {
     "class": 11,
     "difficulty": "hard",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "அளவீடு",
     "type": "match",
     "question": "அளவீடு முறை மற்றும் அதன் பண்பை பொருத்துக",
@@ -24274,7 +24444,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "இயக்கவியல்",
     "type": "match",
     "question": "இயக்கத்தின் வகைகளையும் அவற்றின் எடுத்துக்காட்டுகளையும் பொருத்துக",
@@ -24290,7 +24460,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "இயக்கவியல்",
     "type": "match",
     "question": "அளவுகளையும் அவற்றின் அலகுகளையும் பொருத்துக",
@@ -24306,7 +24476,7 @@
   {
     "class": 11,
     "difficulty": "easy",
-    "subject": "இயற்பியல்",
+    "subject": "physics",
     "topic": "இயக்கவியல்",
     "type": "match",
     "question": "பொருத்துக: இயக்கத்தை விவரிக்கும் சொற்கள்",
@@ -24596,7 +24766,7 @@
     "difficulty": "easy",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நியூட்டனின் விதிகளை அதன் கூற்றுகளுடன் பொருத்துக",
     "matches": [
       { "term": "முதல் விதி", "definition": "வெளிப்புற விசை இல்லையெனில் பொருள் ஓய்விலோ சீரான இயக்கத்திலோ இருக்கும்" },
@@ -24612,7 +24782,7 @@
     "difficulty": "easy",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பொருள்களை அவற்றின் SI அலகுகளுடன் பொருத்துக",
     "matches": [
       { "term": "விசை", "definition": "நியூட்டன்" },
@@ -24628,7 +24798,7 @@
     "difficulty": "easy",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "விசை வகைகளை உதாரணங்களுடன் பொருத்துக",
     "matches": [
       { "term": "உராய்வு விசை", "definition": "மேசையில் சொருகும் கட்டம்" },
@@ -24644,7 +24814,7 @@
     "difficulty": "easy",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நிகழ்வுகளை நியூட்டனின் விதிகளுடன் பொருத்துக",
     "matches": [
       { "term": "ராக்கெட் ஏவுதல்", "definition": "மூன்றாம் விதி" },
@@ -24660,7 +24830,7 @@
     "difficulty": "medium",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சோம்பல் வகைகளை உதாரணங்களுடன் பொருத்துக",
     "matches": [
       { "term": "ஓய்வு சோம்பல்", "definition": "மேசையில் புத்தகம் அசையாமல் இருப்பது" },
@@ -24676,7 +24846,7 @@
     "difficulty": "medium",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "விசை வகைகளை அவற்றின் திசையுடன் பொருத்துக",
     "matches": [
       { "term": "உராய்வு", "definition": "இயக்கத்துக்கு எதிராக" },
@@ -24692,7 +24862,7 @@
     "difficulty": "medium",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சமன்பாடுகளை அதன் பொருளுடன் பொருத்துக",
     "matches": [
       { "term": "F = ma", "definition": "விசையை அளவிடுகிறது" },
@@ -24708,7 +24878,7 @@
     "difficulty": "medium",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அறிஞரை அவருடைய பங்களிப்புடன் பொருத்துக",
     "matches": [
       { "term": "கலிலியோ", "definition": "சோம்பல் கருத்து" },
@@ -24724,7 +24894,7 @@
     "difficulty": "hard",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "இயக்க நிலைகளை அதன் விளைவுகளுடன் பொருத்துக",
     "matches": [
       { "term": "சம விசைகள்", "definition": "துரிதம் இல்லை" },
@@ -24740,7 +24910,7 @@
     "difficulty": "hard",
     "subject": "Physics",
     "topic": "இயக்க விதிகள்",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "நிலைகளை சரியான நியூட்டன் விதியுடன் பொருத்துக",
     "matches": [
       { "term": "வெளிப்புற விசை இல்லை → நிலையான வேகம்", "definition": "முதல் விதி" },
@@ -24909,7 +25079,7 @@
     "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அணுக்கூறுகளை அவற்றின் மின்னுசுமையுடன் பொருத்துக",
     "matches": [
       { "term": "புரோட்டான்", "definition": "நேர்மறை மின்னுசுமை" },
@@ -24917,14 +25087,15 @@
       { "term": "நியூட்ரான்", "definition": "மின்னுசுமை இல்லை" },
       { "term": "நியூக்ளியஸ்", "definition": "புரோட்டான்கள் மற்றும் நியூட்ரான்கள் அடங்கிய மையம்" }
     ],
-    "explanation": "அணுக்கட்டமைப்பின் அடிப்படை கூறுகள்."
+    "explanation": "அணுக்கட்டமைப்பின் அடிப்படை கூறுகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அறிஞரை அவருடைய அணு மாதிரியுடன் பொருத்துக",
     "matches": [
       { "term": "டால்டன்", "definition": "திட உருண்டை மாதிரி" },
@@ -24932,14 +25103,15 @@
       { "term": "ரதர்ஃபோர்டு", "definition": "அணுக்கரு மாதிரி" },
       { "term": "போர்", "definition": "கோள் மாதிரி" }
     ],
-    "explanation": "அணு மாதிரிகளின் வளர்ச்சி."
+    "explanation": "அணு மாதிரிகளின் வளர்ச்சி.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அணுக்கணக்குகளை அதன் விளக்கத்துடன் பொருத்துக",
     "matches": [
       { "term": "அணு எண்", "definition": "புரோட்டான்களின் எண்ணிக்கை" },
@@ -24947,14 +25119,15 @@
       { "term": "இசோடோப்", "definition": "ஒரே அணு எண், வேறு நிறை எண்" },
       { "term": "இசோபார்", "definition": "வேறு அணு எண், ஒரே நிறை எண்" }
     ],
-    "explanation": "அணுவின் அடிப்படை கணக்குகள்."
+    "explanation": "அணுவின் அடிப்படை கணக்குகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "கருவியை அதன் பயன்பாட்டுடன் பொருத்துக",
     "matches": [
       { "term": "கேத்தோடு கதிர் குழாய்", "definition": "எலக்ட்ரான் கண்டுபிடிப்பு" },
@@ -24962,14 +25135,15 @@
       { "term": "மாஸ் ஸ்பெக்ட்ரோமீட்டர்", "definition": "இசோடோப்புகளை கண்டறிதல்" },
       { "term": "ஆயில்-ட்ராப் பரிசோதனை", "definition": "எலக்ட்ரான் மின்சுமை அளவிடுதல்" }
     ],
-    "explanation": "அணுவை அறிய பயன்படுத்திய கருவிகள்."
+    "explanation": "அணுவை அறிய பயன்படுத்திய கருவிகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பிரபலமான சோதனைகளை அதன் முடிவுகளுடன் பொருத்துக",
     "matches": [
       { "term": "தாம்சன் சோதனை", "definition": "எலக்ட்ரான் இருப்பை நிரூபித்தது" },
@@ -24977,14 +25151,15 @@
       { "term": "மில்லிகன் ஆயில் ட்ராப் சோதனை", "definition": "எலக்ட்ரானின் மின்சுமையை கண்டறிந்தது" },
       { "term": "போர் மாதிரி", "definition": "எலக்ட்ரான் பாதை விளக்கம்" }
     ],
-    "explanation": "அணுக்கட்டமைப்பில் முக்கிய சோதனைகள்."
+    "explanation": "அணுக்கட்டமைப்பில் முக்கிய சோதனைகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "அணு மாதிரியை அதன் வரம்புகளுடன் பொருத்துக",
     "matches": [
       { "term": "தாம்சன் மாதிரி", "definition": "அணுக்கருவை விளக்க முடியவில்லை" },
@@ -24992,14 +25167,15 @@
       { "term": "போர் மாதிரி", "definition": "பல எலக்ட்ரான் அணுக்களுக்கு பொருந்தாது" },
       { "term": "டால்டன் மாதிரி", "definition": "இசோடோப்புகளை விளக்க முடியவில்லை" }
     ],
-    "explanation": "அணு மாதிரிகளின் குறைகள்."
+    "explanation": "அணு மாதிரிகளின் குறைகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "குவாண்டம் எண்களை அதன் விளக்கத்துடன் பொருத்துக",
     "matches": [
       { "term": "முதன்மை குவாண்டம் எண் (n)", "definition": "ஆற்றல் நிலையை குறிக்கும்" },
@@ -25007,14 +25183,15 @@
       { "term": "காந்த குவாண்டம் எண் (m)", "definition": "ஆர்பிட்டலின் திசை" },
       { "term": "ஸ்பின் குவாண்டம் எண் (s)", "definition": "எலக்ட்ரான் சுழற்சி" }
     ],
-    "explanation": "குவாண்டம் எண்களின் முக்கியத்துவம்."
+    "explanation": "குவாண்டம் எண்களின் முக்கியத்துவம்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "எலக்ட்ரான் அடுக்கு விதிகளை அதன் விளக்கத்துடன் பொருத்துக",
     "matches": [
       { "term": "ஆவ்பாவ் விதி", "definition": "குறைந்த ஆற்றல் நிலை முதலில் நிரம்பும்" },
@@ -25022,14 +25199,15 @@
       { "term": "ஹண்ட் விதி", "definition": "எலக்ட்ரான்கள் முதலில் தனித்தனியாக நிரம்பும்" },
       { "term": "மாட்லுங் விதி", "definition": "ஆர்பிட்டல் நிரம்பும் வரிசை" }
     ],
-    "explanation": "எலக்ட்ரான் அடுக்கு விதிகள்."
+    "explanation": "எலக்ட்ரான் அடுக்கு விதிகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "hard",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "குவாண்டம் இயற்பியலின் முக்கிய பங்களிப்புகளை பொருத்துக",
     "matches": [
       { "term": "டே பிரோக்லி", "definition": "எலக்ட்ரானுக்கு அலை இயல்பு உண்டு" },
@@ -25037,14 +25215,15 @@
       { "term": "ஷ்ரோடிங்கர்", "definition": "அலை சமன்பாடு" },
       { "term": "மேக்ஸ் பிளாங்க்", "definition": "குவாண்டம் கோட்பாட்டின் தொடக்கம்" }
     ],
-    "explanation": "குவாண்டம் இயற்பியலின் கண்டுபிடிப்புகள்."
+    "explanation": "குவாண்டம் இயற்பியலின் கண்டுபிடிப்புகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
     "difficulty": "hard",
     "subject": "Chemistry",
     "topic": "அணுக்கட்டமைப்பு",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "ஹைட்ரஜன் அணுவின் வரிசையை அதன் ஒளி பகுதியுடன் பொருத்துக",
     "matches": [
       { "term": "லைமன் வரிசை", "definition": "அல்ட்ரா வைலட் பகுதி" },
@@ -25052,7 +25231,8 @@
       { "term": "பாஷன் வரிசை", "definition": "இன்ஃப்ராரெட் பகுதி" },
       { "term": "ப்ராக்கெட் வரிசை", "definition": "இன்ஃப்ராரெட் பகுதி (அதிக அலைநீளம்)" }
     ],
-    "explanation": "ஹைட்ரஜன் அணுவின் ஸ்பெக்ட்ரம் வரிசைகள்."
+    "explanation": "ஹைட்ரஜன் அணுவின் ஸ்பெக்ட்ரம் வரிசைகள்.",
+    "language":"tamil"
   },
   {
     "class": 11,
@@ -25516,7 +25696,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25532,7 +25712,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25548,7 +25728,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25564,7 +25744,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25580,7 +25760,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25596,7 +25776,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25612,7 +25792,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25628,7 +25808,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25644,7 +25824,7 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25655,12 +25835,12 @@
       { "term": "C + O2 → CO2", "definition": "1 மோல் C + 1 மோல் O2 → 1 மோல் CO2" },
       { "term": "2Na + Cl2 → 2NaCl", "definition": "2 மோல் Na + 1 மோல் Cl2 → 2 மோல் NaCl" }
     ],
-    "explanation": "வேதியியல் செயல்களில் மோல்கள் விகிதங்களை கணக்கிடுதல்.",
+    "explanation": "chemistry செயல்களில் மோல்கள் விகிதங்களை கணக்கிடுதல்.",
     "language": "tamil"
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "Chemistry",
     "topic": "மோல் கருத்து",
     "type": "match",
@@ -25831,14 +26011,14 @@
       { "term": "Adaptive radiation", "definition": "Rapid evolution of species to occupy niches" },
       { "term": "Coevolution", "definition": "Two species evolve in response to each other" }
     ],
-    "explanation": "Advanced evolutionary concepts for deep understanding.",
+    "explanation": "hard evolutionary concepts for deep understanding.",
     "language": "english"
   },
   {
     "class": 11,
     "difficulty": "easy",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களை அவர்களின் முக்கிய வகைகளுடன் பொருத்துக",
     "matches": [
@@ -25854,7 +26034,7 @@
     "class": 11,
     "difficulty": "easy",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களை அவர்களின் செல்கள் அமைப்புடன் பொருத்துக",
     "matches": [
@@ -25870,7 +26050,7 @@
     "class": 11,
     "difficulty": "easy",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களை உணவுத் திறன் வகைகளுடன் பொருத்துக",
     "matches": [
@@ -25886,7 +26066,7 @@
     "class": 11,
     "difficulty": "easy",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களின் உயிரியல் செயல்பாடுகளை அவர்களின் வகைகளுடன் பொருத்துக",
     "matches": [
@@ -25902,7 +26082,7 @@
     "class": 11,
     "difficulty": "medium",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "பரிணாம விதிகளை பிரபல உயிரியலாளர்களுடன் பொருத்துக",
     "matches": [
@@ -25918,7 +26098,7 @@
     "class": 11,
     "difficulty": "medium",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "செல் அடிப்படையிலான உயிரின வகைகளையும் பொருத்துக",
     "matches": [
@@ -25934,7 +26114,7 @@
     "class": 11,
     "difficulty": "medium",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களை மறைமுகச் செயல்பாடுகளுடன் பொருத்துக",
     "matches": [
@@ -25950,7 +26130,7 @@
     "class": 11,
     "difficulty": "hard",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "பரிணாம விதிகளை எடுத்துக்காட்டுகளுடன் பொருத்துக",
     "matches": [
@@ -25966,7 +26146,7 @@
     "class": 11,
     "difficulty": "hard",
     "subject": "Biology",
-    "topic": "உயிருலகம்",
+    "topic": "உயிர்கள் உலகம்",
     "type": "match",
     "question": "உயிரினங்களை செயல்பாடுகள் மற்றும் உணவுத் திறன் அடிப்படையில் பொருத்துக",
     "matches": [
@@ -26414,10 +26594,10 @@
   
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை அவற்றின் தனிச்சிறப்புகளுடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "ஸ்பாங்கள், உடல் துவாரங்கள் கொண்டது" },
@@ -26430,10 +26610,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை எடுத்துக்காட்டுகளுடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "ஸ்பாஙில்லா, சிகான்" },
@@ -26446,10 +26626,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை உடல் சமமுடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "சமமற்றது" },
@@ -26462,10 +26642,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை பசியோட்ட அமைப்புடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "உணவு அமைப்பு இல்லை" },
@@ -26478,10 +26658,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை ரத்தசங்கம அமைப்புடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "ரத்தசங்கம அமைப்பு இல்லை" },
@@ -26494,10 +26674,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை நரம்பு அமைப்புடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "நரம்பு அமைப்பு இல்லை" },
@@ -26510,10 +26690,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை சிறுநீரக அமைப்புடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "பரவல் மூலம் வெளியேற்றம்" },
@@ -26526,10 +26706,10 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை உடல் குழாய் வகையுடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "அசோலோமேட்" },
@@ -26542,10 +26722,10 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "Biology",
-    "topic": "சிங்கார உலகம்",
-    "type": "பொருத்துக",
+    "topic": "விலங்கு அரசாண்டம்",
+    "type": "match",
     "question": "மிருக வகைகளை இனப்பெருக்கத்துடன் பொருத்துக",
     "matches": [
       { "term": "போரிபெரா", "definition": "அசெக்சுவல் மற்றும் செக்சுவல்" },
@@ -26719,7 +26899,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26735,7 +26915,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26751,7 +26931,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26767,7 +26947,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26783,7 +26963,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26799,7 +26979,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26815,7 +26995,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26831,7 +27011,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26847,7 +27027,7 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26863,7 +27043,7 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "செட்டுகள் மற்றும் செயல்பாடுகள்",
     "type": "match",
@@ -26879,7 +27059,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26895,7 +27075,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26911,7 +27091,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26927,7 +27107,7 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26943,7 +27123,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26959,7 +27139,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26975,7 +27155,7 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -26991,7 +27171,7 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -27007,7 +27187,7 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "அல்ஜெப்ரா மற்றும் டிரிகோனோமெட்ரி",
     "type": "match",
@@ -27301,7 +27481,7 @@
     "type": "match",
     "question": "Match the theorem with its significance",
     "matches": [
-      { "term": "Intermediate Value Theorem", "definition": "Function takes all values between f(a) and f(b) if continuous" },
+      { "term": "medium Value Theorem", "definition": "Function takes all values between f(a) and f(b) if continuous" },
       { "term": "Sandwich Theorem", "definition": "Limit of a function trapped between two others" },
       { "term": "Limits at infinity", "definition": "Describes behavior as x→∞ or x→-∞" },
       { "term": "Continuity theorem", "definition": "Sum, product, and quotient of continuous functions are continuous" }
@@ -27605,7 +27785,7 @@
     "type": "match",
     "question": "Match the theorems with their significance",
     "matches": [
-      { "term": "Intermediate Value Theorem", "definition": "Continuous function takes all values between f(a) and f(b)" },
+      { "term": "medium Value Theorem", "definition": "Continuous function takes all values between f(a) and f(b)" },
       { "term": "Rolle’s Theorem", "definition": "f'(c)=0 for some c in interval" },
       { "term": "Continuity Theorem", "definition": "Ensures existence of limits in continuous functions" },
       { "term": "Limit laws", "definition": "Rules applied for combined limits and operations" }
@@ -27631,10 +27811,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "பTerms-ஐ அவற்றின் வரையறைகளுடன் பொருத்துக",
     "matches": [
       { "term": "வரம்பு", "definition": "x ஒரு புள்ளிக்கு சென்ற போது செயல்பாடு அணுகும் மதிப்பு" },
@@ -27647,10 +27827,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வரம்புகளின் பண்புகளை அவற்றின் சூத்திரத்துடன் பொருத்துக",
     "matches": [
       { "term": "கூட்டல் விதி", "definition": "lim(f+g) = lim f + lim g" },
@@ -27663,10 +27843,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "தொடர்ச்சியற்ற தன்மைகளின் வகைகளை எடுத்துக்காட்டுகளுடன் பொருத்துக",
     "matches": [
       { "term": "Jump discontinuity", "definition": "ஒரு புள்ளியில் செயல்பாடு குதிக்கும்" },
@@ -27679,10 +27859,10 @@
   },
   {
     "class": 11,
-    "difficulty": "எளியது",
+    "difficulty": "easy",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சின்ன குறியீடுகளை அவற்றின் பொருளுடன் பொருத்துக",
     "matches": [
       { "term": "lim x→a f(x)", "definition": "x → a என்ற போது f(x) வரம்பு" },
@@ -27695,10 +27875,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "வரம்புகளை தீர்க்கும் முறைகளை அவற்றின் விளக்கத்துடன் பொருத்துக",
     "matches": [
       { "term": "அல்ஜீப்ரா எளிதாக்கல்", "definition": "வரம்புக்கு முன் செயல்பாட்டை எளிதாக்குதல்" },
@@ -27711,10 +27891,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "தொடர்ச்சித்தன்மை வகைகளுடன் அவற்றின் நிபந்தனைகளை பொருத்துக",
     "matches": [
       { "term": "ஒரு புள்ளியில் தொடர்ச்சியாக", "definition": "lim x→a f(x) = f(a)" },
@@ -27727,10 +27907,10 @@
   },
   {
     "class": 11,
-    "difficulty": "நடுத்தரம்",
+    "difficulty": "medium",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "Indeterminate வடிவங்களை எடுத்துக்காட்டுகளுடன் பொருத்துக",
     "matches": [
       { "term": "0/0", "definition": "lim x→0 (sin x)/x" },
@@ -27743,13 +27923,13 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "தியோரீம்களை அவற்றின் முக்கியத்துவத்துடன் பொருத்துக",
     "matches": [
-      { "term": "Intermediate Value Theorem", "definition": "தொடர்ச்சியான செயல்பாடு f(a) மற்றும் f(b) இடையேயான எல்லா மதிப்புகளையும் எடுக்கும்" },
+      { "term": "medium Value Theorem", "definition": "தொடர்ச்சியான செயல்பாடு f(a) மற்றும் f(b) இடையேயான எல்லா மதிப்புகளையும் எடுக்கும்" },
       { "term": "Rolle’s Theorem", "definition": "இடைவெளியில் சில c-க்காக f'(c)=0" },
       { "term": "Continuity Theorem", "definition": "தொடர்ச்சியான செயல்பாடுகளில் வரம்புகளின் இருப்பை உறுதி செய்கிறது" },
       { "term": "Limit laws", "definition": "ஒருங்கிணைந்த வரம்புகள் மற்றும் செயல்பாடுகளுக்கு விதிகள்" }
@@ -27759,10 +27939,10 @@
   },
   {
     "class": 11,
-    "difficulty": "கடினம்",
+    "difficulty": "hard",
     "subject": "math",
     "topic": "வரம்புகள் மற்றும் தொடர்ச்சித்தன்மை",
-    "type": "பொருத்துக",
+    "type": "match",
     "question": "சிரமமான வரம்புகளை எடுத்துக்காட்டுகளுடன் பொருத்துக",
     "matches": [
       { "term": "lim x→0 (1-cos x)/x²", "definition": "1/2" },
@@ -30262,7 +30442,7 @@
       { "term": "No school", "definition": "Education" },
       { "term": "Discrimination", "definition": "Equality" }
     ],
-    "explanation": "Rights can correct social injustice.",
+    "explanation": "Rights can correct social studies injustice.",
     "language": "english"
   },
   {
@@ -30893,7 +31073,7 @@
     "type": "match",
     "question": "பழமொழிகளை பொருளுடன் பொருத்துக.",
     "matches": [
-      { "term": "இடையன் குரல்", "definition": "கடினம்" },
+      { "term": "இடையன் குரல்", "definition": "hard" },
       { "term": "தீண்டுபவர்க்கே தீங்கு", "definition": "தீ குணம்" },
       { "term": "ஆற்றின் மீன்", "definition": "சூழல் தாக்கம்" },
       { "term": "உழவன் கை", "definition": "தொழில்" }
@@ -31141,7 +31321,7 @@
     "difficulty": "hard",
     "subject": "tamil",
     "topic": "பாடல்கள் மற்றும் ஆசிரியர்",
-    "subtopic": "கடினம்",
+    "subtopic": "hard",
     "type": "match",
     "question": "கடின பாடல்-ஆசிரியரை பொருத்துக.",
     "matches": [
@@ -31303,9 +31483,9 @@
     "difficulty": "hard",
     "subject": "tamil",
     "topic": "திருக்குறள்",
-    "subtopic": "அறம் கடினம்",
+    "subtopic": "அறம் hard",
     "type": "match",
-    "question": "திருக்குறள் கடினம் – பொருளுடன் பொருத்துக.",
+    "question": "திருக்குறள் hard – பொருளுடன் பொருத்துக.",
     "matches": [
       { "term": "அறம்", "definition": "நித்யம்" },
       { "term": "அன்பு", "definition": "என்றும்" },
@@ -31321,7 +31501,7 @@
     "difficulty": "hard",
     "subject": "tamil",
     "topic": "திருக்குறள்",
-    "subtopic": "பொருள் கடினம்",
+    "subtopic": "பொருள் hard",
     "type": "match",
     "question": "கடின குறள் பொருத்துக.",
     "matches": [
@@ -32762,12 +32942,3 @@
   "language": "tamil"
 }
 ]
-
-
-
-
-
-
-
-
-
