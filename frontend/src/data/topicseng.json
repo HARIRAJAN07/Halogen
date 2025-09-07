@@ -57,7 +57,7 @@
 
   {
     "class12": {
-        "computer_science": ["Object-Oriented Programming (OOP) with Python", "Database Concepts & SQL", "Data Structures"],
+        "computer science": ["Object-Oriented Programming (OOP) with Python", "Database Concepts & SQL", "Data Structures"],
         "physics": ["Electrostatics", "Current Electricity", "Dual Nature of Radiation & Matter"],
         "chemistry": ["Solid State", "Electrochemistry", "Coordination Chemistry"],
         "biology": ["Plant Physiology", "Genetics and Plant Breeding", "Human Reproduction"],
