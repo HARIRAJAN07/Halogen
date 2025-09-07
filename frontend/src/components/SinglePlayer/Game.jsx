@@ -7,7 +7,7 @@ import Riddle from '../Games/Riddle';
 import WordSearchGame from '../Games/WordSearchGame';
 
 const Game = () => {
-  const {subject}=useParams();
+  const {classId,subject}=useParams();
   return (
     <div>
       {subject==="tamil" && <CardflippingT />}
@@ -15,6 +15,8 @@ const Game = () => {
       {subject==="math" && <SaveTheGirl />}
       {subject==="science" && <Riddle />}
       {subject==="social studies" && <WordSearchGame /> }
+      {classId>10 && <SaveTheGirl />}
+
     </div>
   )
 }

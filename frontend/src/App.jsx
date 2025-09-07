@@ -7,8 +7,8 @@ import SelectMode from './components/SinglePlayer/selectMode';
 import Game from './components/SinglePlayer/Game';
 import TopicSelection from './components/SinglePlayer/TopicSelection';
 import Match from './components/SinglePlayer/Match';
-import SaveTheGirl from './components/Games/SaveTheGirl';
-import MultiplayerInput from './components/MultiPlayer/MultiPlayerInput';
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,16 +16,14 @@ const App = () => {
       <Route path="/"  element={<ChooseSorM />}/>
       <Route path='/single' element={<Input />}/>
       <Route path="/subject" element={<SubjectSelection />} />
-      <Route path="/xo" element={<XO />} />
-      <Route path="/multiplayer-input" element={<MultiplayerInput />} />
-      <Route path="/single/:classId/:displayName" element={<SubjectSelection />} />
-      <Route path="/single/:classId/:displayName/:subject" element={<SelectMode />} />
-      <Route path="/single/:classId/:displayName/:subject/game" element={<Game />} />
-      <Route path="/single/:classId/:displayName/:subject/:topic" element={<TopicSelection />} />
-      <Route path="/single/:classId/:displayName/:subject/topic/match" element={<Match />} />
+      <Route path="/multi" element={<XO />} />
+      <Route path="/single/:classId/:displayName/:schoolName" element={<SubjectSelection />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject" element={<SelectMode />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/game" element={<Game />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/match" element={<TopicSelection />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/match/:topic/ma" element={<Match />} />
     </Routes >
     </BrowserRouter>
-
   )
 }
 
