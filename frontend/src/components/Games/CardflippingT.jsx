@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import cardsJSON from "../../data/cardsDataT.json"; // Tamil data
 import BgImage from "../../assets/BgImage.png";
+import TablaCelebration from '../utils/Celeb'; // Your celebration component
 
-const CardflippingT= () => {
+const CardflippingT = () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -11,8 +12,13 @@ const CardflippingT= () => {
   const [gameMode, setGameMode] = useState('மொழியியல்');
   const [showAllCardsTemporarily, setShowAllCardsTemporarily] = useState(false);
   const [timer, setTimer] = useState(90);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [stopCelebration, setStopCelebration] = useState(false);
 
   const initializeGame = useCallback(() => {
+    setStopCelebration(true);
+    setTimeout(() => setStopCelebration(false), 50);
+
     if (!cardsJSON || !cardsJSON.length) return;
 
     const gamePairs = cardsJSON.find(data => data.type === gameMode)?.pairs || [];
@@ -34,6 +40,7 @@ const CardflippingT= () => {
     setMessage('');
     setIsGameActive(true);
     setTimer(90);
+    setShowCelebration(false);
 
     setShowAllCardsTemporarily(true);
     setTimeout(() => setShowAllCardsTemporarily(false), 4000);
@@ -96,6 +103,7 @@ const CardflippingT= () => {
     if (matchedCards.length === cards.length && cards.length > 0) {
       setMessage('விளையாட்டு வெற்றி!');
       setIsGameActive(false);
+      setShowCelebration(true); // trigger celebration
     }
   }, [matchedCards, cards]);
 
@@ -156,6 +164,7 @@ const CardflippingT= () => {
         </div>
       )}
 
+      {/* Card Grid */}
       <div className="grid grid-cols-4 gap-6 w-full max-w-4xl p-4 mb-8" style={{ perspective: '1000px' }}>
         {cards.map(card => (
           <div
@@ -187,6 +196,9 @@ const CardflippingT= () => {
       >
         விளையாட்டை மீண்டும் தொடங்கவும்
       </button>
+
+      {/* Celebration Component */}
+      <TablaCelebration show={showCelebration} stop={stopCelebration} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { createRoot } from 'react-dom/client';
 import LanguageToggle from "../utils/LanguageToggle";
 import riddles from "../../data/riddle.json";
 import BgImage from "../../assets/BgImage.png";
+import TablaCelebration from '../utils/Celeb';  
 
 const translations = {
   en: {
@@ -51,6 +51,7 @@ const Riddle = () => {
   const [gameOver, setGameOver] = useState(false);
   const [showHintMessage, setShowHintMessage] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [stopCelebration, setStopCelebration] = useState(false);
 
   const timerRef = useRef(null);
 
@@ -60,22 +61,25 @@ const Riddle = () => {
   };
 
   const startGame = useCallback(() => {
-    const selectedQuestions = getRandomQuestions();
-    setQuestions(selectedQuestions);
-    setCurrentQuestionIndex(0);
-    setRevealedHints([true, false, false]);
-    setUserInput('');
-    setCorrectAnswer(false);
-    setIsIncorrectPopupVisible(false);
-    setScore(0);
-    setTimer(90);
-    setGameOver(false);
-    setShowHintMessage(false);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-  }, []);
+  setStopCelebration(true); // stop any running celebration immediately
 
+  const selectedQuestions = getRandomQuestions();
+  setQuestions(selectedQuestions);
+  setCurrentQuestionIndex(0);
+  setRevealedHints([true, false, false]);
+  setUserInput('');
+  setCorrectAnswer(false);
+  setIsIncorrectPopupVisible(false);
+  setScore(0);
+  setTimer(90);
+  setGameOver(false);
+  setShowHintMessage(false);
+
+  if (timerRef.current) clearInterval(timerRef.current);
+
+  // reset stopCelebration after a tick
+  setTimeout(() => setStopCelebration(false), 50);
+}, []);
   useEffect(() => {
     startGame();
   }, [startGame]);
@@ -88,7 +92,6 @@ const Riddle = () => {
     } else if (timer === 0) {
       setGameOver(true);
     }
-
     return () => clearInterval(timerRef.current);
   }, [timer, gameOver, correctAnswer, isIncorrectPopupVisible]);
 
@@ -110,10 +113,7 @@ const Riddle = () => {
     }
   };
 
-  const handleNextFromPopup = () => {
-    handleNextQuestion();
-  };
-
+  const handleNextFromPopup = () => handleNextQuestion();
   const handleTryAgain = () => {
     setUserInput('');
     setIsIncorrectPopupVisible(false);
@@ -148,15 +148,12 @@ const Riddle = () => {
   const renderStars = () => {
     const totalStars = 3;
     const filledStars = score;
-    const starEmojis = '⭐'.repeat(filledStars) + '✨'.repeat(totalStars - filledStars);
-    return starEmojis;
+    return '⭐'.repeat(filledStars) + '☆'.repeat(totalStars - filledStars);
   };
 
   const currentQuestion = useMemo(() => {
     const question = questions[currentQuestionIndex];
-    if (!question) {
-      return null;
-    }
+    if (!question) return null;
     return {
       answer: currentLanguage === 'en' ? question.answer : question.ta_answer,
       hints: currentLanguage === 'en' ? question.hints : question.ta_hints,
@@ -182,19 +179,9 @@ const Riddle = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center p-4 font-sans overflow-hidden">
-      {/* Language Toggle Button */}
-      <LanguageToggle 
-        currentLanguage={currentLanguage} 
-        onPress={handleLanguageToggle} 
-      />
-      
-      {/* Background Image */}
-      <img
-        src={BgImage}
-        alt="Background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-      {/* Main Quiz Box */}
+      <LanguageToggle currentLanguage={currentLanguage} onPress={handleLanguageToggle} />
+      <img src={BgImage} alt="Background" className="absolute inset-0 w-full h-full object-cover z-0" />
+
       <div className="relative z-10 max-w-2xl w-full p-6 sm:p-8 md:p-10 bg-white/80 dark:bg-black/20 backdrop-blur-lg rounded-3xl shadow-2xl flex flex-col items-center gap-4 sm:gap-6 min-h-[500px] transition-all duration-300 border border-white/30 dark:border-white/10">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7164b4] dark:text-[#bca5d4] mb-2 sm:mb-4 text-center">{translations[currentLanguage].title}</h1>
 
@@ -202,32 +189,17 @@ const Riddle = () => {
         <div className="flex flex-col sm:flex-row justify-between w-full text-base sm:text-lg font-semibold mb-2 sm:mb-4 items-center sm:items-start space-y-2 sm:space-y-0">
           <div className="flex space-x-2">
             {[0, 1, 2].map(level => (
-              <span
-                key={level}
-                className={`py-1 px-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 ${
-                  currentQuestionIndex === level
-                    ? 'bg-[#8f9fe4] text-[#efe2fa] shadow-md transform scale-110 animate-pulse'
-                    : 'bg-[#bca5d4] dark:bg-[#7164b4] text-[#7164b4] dark:text-[#efe2fa]'
-                }`}
-              >
+              <span key={level} className={`py-1 px-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 ${currentQuestionIndex === level ? 'bg-[#8f9fe4] text-[#efe2fa] shadow-md transform scale-110 animate-pulse' : 'bg-[#bca5d4] dark:bg-[#7164b4] text-[#7164b4] dark:text-[#efe2fa]'}`}>
                 {translations[currentLanguage].level} {level + 1} 🧠
               </span>
             ))}
           </div>
-          <div className="text-xl sm:text-2xl font-bold">
-            {translations[currentLanguage].time}: <span className={`${timer <= 10 ? 'text-red-500 animate-pulse' : 'text-[#7164b4] dark:text-[#efe2fa]'}`}>{formatTimer(timer)}</span>
-          </div>
+          <div className="text-xl sm:text-2xl font-bold">{translations[currentLanguage].time}: <span className={`${timer <= 10 ? 'text-red-500 animate-pulse' : 'text-[#7164b4] dark:text-[#efe2fa]'}`}>{formatTimer(timer)}</span></div>
         </div>
 
         {/* Hints */}
         <div className="w-full text-center min-h-[80px] sm:min-h-[100px] mb-2 sm:mb-4">
-          {revealedHints.map((show, idx) =>
-            show ? (
-              <p key={idx} className="mb-1 sm:mb-2 italic text-[#7164b4] dark:text-[#bca5d4] text-base sm:text-lg">
-                "{currentQuestion.hints[idx]}"
-              </p>
-            ) : null
-          )}
+          {revealedHints.map((show, idx) => show ? <p key={idx} className="mb-1 sm:mb-2 italic text-[#7164b4] dark:text-[#bca5d4] text-base sm:text-lg">"{currentQuestion.hints[idx]}"</p> : null)}
         </div>
 
         {/* Hint buttons */}
@@ -237,11 +209,7 @@ const Riddle = () => {
               key={idx}
               onClick={() => handleHintClick(idx)}
               disabled={revealedHints[idx] || correctAnswer || idx === 0}
-              className={`px-4 py-2 sm:px-6 sm:py-2 rounded-full font-bold text-sm sm:text-base text-white transition-all duration-200 shadow-lg ${
-                revealedHints[idx]
-                  ? 'hint-used-style'
-                  : 'bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] hover:from-[#bca5d4] hover:to-[#8f9fe4]'
-              }`}
+              className={`px-4 py-2 sm:px-6 sm:py-2 rounded-full font-bold text-sm sm:text-base text-white transition-all duration-200 shadow-lg ${revealedHints[idx] ? 'hint-used-style' : 'bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] hover:from-[#bca5d4] hover:to-[#8f9fe4]'}`}
             >
               {label}
             </button>
@@ -275,12 +243,7 @@ const Riddle = () => {
             <div className="text-5xl sm:text-6xl mb-4 animate-bounce">🎉</div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-[#7164b4]">{translations[currentLanguage].correct}</h2>
             <p className="text-base sm:text-lg">{translations[currentLanguage].theWordWas} <span className="font-semibold">{currentQuestion.answer}</span></p>
-            <button
-              onClick={handleNextFromPopup}
-              className="mt-4 sm:mt-6 w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] text-base sm:text-lg"
-            >
-              {translations[currentLanguage].next}
-            </button>
+            <button onClick={handleNextFromPopup} className="mt-4 sm:mt-6 w-full px-6 py-2 sm:px-8 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-br from-[#8f9fe4] to-[#7164b4] text-base sm:text-lg">{translations[currentLanguage].next}</button>
           </div>
         </div>
       )}
@@ -316,6 +279,8 @@ const Riddle = () => {
           <p>{translations[currentLanguage].hint}</p>
         </div>
       )}
+
+      <TablaCelebration show={gameOver && score > 0} stop={stopCelebration} />
     </div>
   );
 };

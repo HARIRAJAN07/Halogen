@@ -1,21 +1,16 @@
+// SaveTheGirl.js
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import women from "../../assets/womann.png";
 import bg from "../../assets/bg.jpg";
-import ConfettiExplosion from "react-confetti-explosion";
-import { Fireworks } from "@fireworks-js/react";
-import Confetti from "react-confetti";
 import drownData from "../../data/drown.json";
 import { useParams } from "react-router-dom";
+import TablaCelebration from "../utils/Celeb"; // ✅ your celebration component
 
 const SaveTheGirl = () => {
-  const { classId, subject } = useParams(); 
-  // example route: /single/9/Dedicated%20Dhanesh/math/game
-  // grade = "9", subject = "math"
-
+  const { classId, subject } = useParams();
   const [lang, setLang] = useState("en");
   const [questions, setQuestions] = useState([]);
-
   const [currentQ, setCurrentQ] = useState(0);
   const [answer, setAnswer] = useState("");
   const [timeLeft, setTimeLeft] = useState(60);
@@ -23,40 +18,32 @@ const SaveTheGirl = () => {
   const [win, setWin] = useState(false);
   const [score, setScore] = useState(0);
 
-
   // 🔹 Shuffle helper
   const getRandomFive = (arr) => {
-  return arr.sort(() => 0.5 - Math.random()).slice(0, 5);
-};
+    return arr.sort(() => 0.5 - Math.random()).slice(0, 5);
+  };
 
-useEffect(() => {
-  if (drownData && classId) {
-    let selectedQuestions = [];
-
-    if (parseInt(classId) >= 6 && parseInt(classId) <= 10) {
-      // For 6–10 always math
-      const data = drownData.find(
-        (item) => item.grade === classId && item.subject === "math"
-      );
-      if (data) {
-        selectedQuestions = getRandomFive(data[lang]);
+  useEffect(() => {
+    if (drownData && classId) {
+      let selectedQuestions = [];
+      if (parseInt(classId) >= 6 && parseInt(classId) <= 10) {
+        const data = drownData.find(
+          (item) => item.grade === classId && item.subject === "math"
+        );
+        if (data) selectedQuestions = getRandomFive(data[lang]);
+      } else if (parseInt(classId) >= 11 && parseInt(classId) <= 12) {
+        const data = drownData.find(
+          (item) =>
+            item.grade === classId &&
+            item.subject.toLowerCase() === subject.toLowerCase()
+        );
+        if (data) selectedQuestions = getRandomFive(data[lang]);
       }
-    } else if (parseInt(classId) >= 11 && parseInt(classId) <= 12) {
-      // For 11–12 subject-specific
-      const data = drownData.find(
-        (item) =>
-          item.grade === classId &&
-          item.subject.toLowerCase() === subject.toLowerCase()
-      );
-      if (data) {
-        selectedQuestions = getRandomFive(data[lang]);
-      }
+      setQuestions(selectedQuestions);
     }
+  }, [classId, subject, lang]);
 
-    setQuestions(selectedQuestions);
-  }
-}, [classId, subject, lang]);
-
+  // Timer
   useEffect(() => {
     if (timeLeft <= 0) {
       setGameOver(true);
@@ -66,10 +53,9 @@ useEffect(() => {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
+  // Answer Submit
   const handleSubmit = () => {
-    if (
-      answer.trim().toLowerCase() === questions[currentQ].a.toLowerCase()
-    ) {
+    if (answer.trim().toLowerCase() === questions[currentQ].a.toLowerCase()) {
       setScore(score + 100);
       if (currentQ === questions.length - 1) {
         setWin(true);
@@ -101,7 +87,7 @@ useEffect(() => {
       </div>
     );
   }
-  
+
   return (
     <div
       className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
@@ -132,13 +118,23 @@ useEffect(() => {
                   textShadow: "0px 2px 6px rgba(0,0,0,0.6)",
                 }}
               >
-                🛡️ {lang === "en" ? "SAVE THE GIRL!!!" : "பெண்ணை காப்பாற்றுங்கள்!!!"}
+                🛡️{" "}
+                {lang === "en"
+                  ? "SAVE THE GIRL!!!"
+                  : "பெண்ணை காப்பாற்றுங்கள்!!!"}
               </motion.h1>
 
               {/* Level & Progress */}
               <div style={{ marginTop: "2%", textAlign: "center" }}>
-                <p style={{ fontSize: "2.5vh", fontWeight: "700", color: "white" }}>
-                  {lang === "en" ? "Level" : "நிலை"} {currentQ + 1}/{questions.length}
+                <p
+                  style={{
+                    fontSize: "2.5vh",
+                    fontWeight: "700",
+                    color: "white",
+                  }}
+                >
+                  {lang === "en" ? "Level" : "நிலை"} {currentQ + 1}/
+                  {questions.length}
                 </p>
                 <div
                   style={{
@@ -177,12 +173,12 @@ useEffect(() => {
               </p>
             </div>
 
-            {/* Tank (increased 10%) */}
+            {/* Tank */}
             <div
               style={{
                 position: "relative",
-                width: "77%", // increased from 70%
-                height: "55%", // increased from 55%
+                width: "77%",
+                height: "55%",
                 borderWidth: "6px",
                 borderColor: "#BCA5D4",
                 borderRadius: "20px",
@@ -192,14 +188,14 @@ useEffect(() => {
                 marginTop: "4%",
               }}
             >
-              {/* Water rising (blue gradient) */}
+              {/* Water rising */}
               <motion.div
                 style={{
                   position: "absolute",
                   bottom: 0,
                   left: 0,
                   width: "100%",
-                  background: "linear-gradient(to top, #1E3A8A, #3B82F6)", // 🔵 blue tones
+                  background: "linear-gradient(to top, #1E3A8A, #3B82F6)",
                   zIndex: 20,
                   height: `${waterLevel}%`,
                   opacity: 0.7,
@@ -230,7 +226,7 @@ useEffect(() => {
               padding: "3%",
             }}
           >
-            {/* ✅ Timer moved to top-right */}
+            {/* Timer */}
             <div
               style={{
                 width: "100%",
@@ -259,10 +255,12 @@ useEffect(() => {
               </div>
             </div>
 
-              <p style={{ fontSize: "4vh", fontWeight: "700", marginBottom: "4%" }}>
-        {questions[currentQ].q}
-      </p>
+            {/* Question */}
+            <p style={{ fontSize: "4vh", fontWeight: "700", marginBottom: "4%" }}>
+              {questions[currentQ].q}
+            </p>
 
+            {/* Options */}
             <div
               style={{
                 display: "grid",
@@ -301,6 +299,7 @@ useEffect(() => {
               })}
             </div>
 
+            {/* Submit */}
             <motion.button
               whileTap={{ scale: 0.9 }}
               className="mt-[5%]"
@@ -321,80 +320,54 @@ useEffect(() => {
           </div>
         </div>
       ) : (
-        <div className="text-center bg-white p-[5%] rounded-[3vh] shadow-2xl">
+        <div className="text-center bg-white p-[5%] rounded-[3vh] shadow-2xl relative">
           {win ? (
             <>
-            <Confetti />
-              <div style={{ position: "absolute", zIndex: 10 }}>
-                <ConfettiExplosion force={0.7} duration={4500} particleCount={150} width={1200} />
-              </div>
-              <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-                <Fireworks
-                  options={{
-                    rocketsPoint: { min: 50, max: 50 },
-                    hue: { min: 0, max: 360 },
-                    delay: { min: 30, max: 60 },
-                    speed: 5,
-                    acceleration: 1.05,
-                    friction: 0.95,
-                    gravity: 1.5,
-                    particles: 100,
-                    trace: 3,
-                    explosion: 6,
-                  }}
-                  style={{
-                    position: "fixed",
-                    width: "100%",
-                    height: "100%",
-                    top: 0,
-                    left: 0,
-                  }}
-                />
-              </div>
-              <h1 className="text-[5vh] font-bold text-green-600 mb-[2%]">
+              {/* 🎉 Tabla Celebration for 5s */}
+              <TablaCelebration show={true} />
+
+              <h1 className="text-[5vh] font-bold text-green-600 mb-[2%] relative z-50">
                 🎉 {lang === "en" ? "You Saved Her!" : "நீங்கள் காப்பாற்றினீர்கள்!"}
               </h1>
-              
+
               <button
-            className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold"
-            onClick={() => {
-              setCurrentQ(0);
-              setAnswer("");
-              setTimeLeft(60);
-              setGameOver(false);
-              setWin(false);
-              setScore(0);
-            }}
-          >
-            🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
-          </button>
+                className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold relative z-50"
+                onClick={() => {
+                  setCurrentQ(0);
+                  setAnswer("");
+                  setTimeLeft(60);
+                  setGameOver(false);
+                  setWin(false);
+                  setScore(0);
+                }}
+              >
+                🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
+              </button>
             </>
           ) : (
             <>
-            <h1 className="text-[5vh] font-bold text-red-600">
-              💀 {lang === "en" ? "The Character Drowned!" : "பாத்திரம் மூழ்கியது!"}
-            </h1>
-            <button
-            className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold"
-            onClick={() => {
-              setCurrentQ(0);
-              setAnswer("");
-              setTimeLeft(60);
-              setGameOver(false);
-              setWin(false);
-              setScore(0);
-            }}
-          >
-            🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
-          </button>
+              <h1 className="text-[5vh] font-bold text-red-600">
+                💀 {lang === "en" ? "The Character Drowned!" : "பாத்திரம் மூழ்கியது!"}
+              </h1>
+              <button
+                className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold"
+                onClick={() => {
+                  setCurrentQ(0);
+                  setAnswer("");
+                  setTimeLeft(60);
+                  setGameOver(false);
+                  setWin(false);
+                  setScore(0);
+                }}
+              >
+                🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
+              </button>
             </>
-            
           )}
-          
         </div>
       )}
 
-      {/* 🔘 Toggle Button Bottom-Right */}
+      {/* 🔘 Toggle Language */}
       <button
         onClick={() => setLang(lang === "en" ? "ta" : "en")}
         className="absolute bottom-5 right-5 px-5 py-3 rounded-[2vh] text-[2.5vh] font-bold text-white"
