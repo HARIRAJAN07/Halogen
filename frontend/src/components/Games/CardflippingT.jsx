@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import cardsJSON from "../data/cardsDataT.json"; // Tamil data
+import cardsJSON from "../../data/cardsDataT.json"; // Tamil data
 import BgImage from "../../assets/BgImage.png";
 
-const App = () => {
+const CardflippingT= () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -191,4 +191,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CardflippingT;

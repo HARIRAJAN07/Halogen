@@ -1,4 +1,3 @@
-// ✅ UPDATED SaveTheGirl with requested changes
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import women from "../../assets/womann.png";
@@ -6,29 +5,16 @@ import bg from "../../assets/bg.jpg";
 import ConfettiExplosion from "react-confetti-explosion";
 import { Fireworks } from "@fireworks-js/react";
 import Confetti from "react-confetti";
-
-
-// English & Tamil Questions
-const questionsData = {
-  en: [
-    { q: "What is 2 + 2?", options: ["3", "4", "5", "6"], a: "4" },
-    { q: "Capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], a: "Paris" },
-    { q: "5 × 6 = ?", options: ["25", "30", "35", "40"], a: "30" },
-    { q: "React library is mainly used for?", options: ["Database", "UI", "Networking", "AI"], a: "UI" },
-    { q: "HTML stands for?", options: ["Hyper Trainer Marking Language", "HyperText Markup Language", "HighText Machine Language", "HyperTool Multi Language"], a: "HyperText Markup Language" },
-  ],
-  ta: [
-    { q: "2 + 2 = ?", options: ["3", "4", "5", "6"], a: "4" },
-    { q: "பிரான்சின் தலைநகர்?", options: ["பெர்லின்", "மாட்ரிட்", "பாரிஸ்", "ரோம்"], a: "பாரிஸ்" },
-    { q: "5 × 6 = ?", options: ["25", "30", "35", "40"], a: "30" },
-    { q: "React நூலகம் எதற்காக?", options: ["தரவுத்தளம்", "UI", "நெட்வொர்க்", "AI"], a: "UI" },
-    { q: "HTML என்பதன் விரிவாக்கம்?", options: ["Hyper Trainer Marking Language", "HyperText Markup Language", "HighText Machine Language", "HyperTool Multi Language"], a: "HyperText Markup Language" },
-  ],
-};
+import drownData from "../../data/drown.json";
+import { useParams } from "react-router-dom";
 
 const SaveTheGirl = () => {
-  const [lang, setLang] = useState("en"); 
-  const questions = questionsData[lang];
+  const { classId, subject } = useParams(); 
+  // example route: /single/9/Dedicated%20Dhanesh/math/game
+  // grade = "9", subject = "math"
+
+  const [lang, setLang] = useState("en");
+  const [questions, setQuestions] = useState([]);
 
   const [currentQ, setCurrentQ] = useState(0);
   const [answer, setAnswer] = useState("");
@@ -36,6 +22,40 @@ const SaveTheGirl = () => {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [score, setScore] = useState(0);
+
+
+  // 🔹 Shuffle helper
+  const getRandomFive = (arr) => {
+  return arr.sort(() => 0.5 - Math.random()).slice(0, 5);
+};
+
+useEffect(() => {
+  if (drownData && classId) {
+    let selectedQuestions = [];
+
+    if (parseInt(classId) >= 6 && parseInt(classId) <= 10) {
+      // For 6–10 always math
+      const data = drownData.find(
+        (item) => item.grade === classId && item.subject === "math"
+      );
+      if (data) {
+        selectedQuestions = getRandomFive(data[lang]);
+      }
+    } else if (parseInt(classId) >= 11 && parseInt(classId) <= 12) {
+      // For 11–12 subject-specific
+      const data = drownData.find(
+        (item) =>
+          item.grade === classId &&
+          item.subject.toLowerCase() === subject.toLowerCase()
+      );
+      if (data) {
+        selectedQuestions = getRandomFive(data[lang]);
+      }
+    }
+
+    setQuestions(selectedQuestions);
+  }
+}, [classId, subject, lang]);
 
   useEffect(() => {
     if (timeLeft <= 0) {
@@ -47,7 +67,9 @@ const SaveTheGirl = () => {
   }, [timeLeft]);
 
   const handleSubmit = () => {
-    if (answer.trim().toLowerCase() === questions[currentQ].a.toLowerCase()) {
+    if (
+      answer.trim().toLowerCase() === questions[currentQ].a.toLowerCase()
+    ) {
       setScore(score + 100);
       if (currentQ === questions.length - 1) {
         setWin(true);
@@ -57,14 +79,29 @@ const SaveTheGirl = () => {
         setAnswer("");
       }
     } else {
-      alert(lang === "en" ? "❌ Wrong Answer! Try again." : "❌ தவறான பதில்! மீண்டும் முயற்சி செய்யவும்.");
+      alert(
+        lang === "en"
+          ? "❌ Wrong Answer! Try again."
+          : "❌ தவறான பதில்! மீண்டும் முயற்சி செய்யவும்."
+      );
     }
   };
 
   const waterLevel = ((60 - timeLeft) / 60) * 100;
-  const levelProgress = ((currentQ + 1) / questions.length) * 100;
-  const timerColor = timeLeft > 30 ? "#BCA5D4" : timeLeft > 15 ? "#EFE2FA" : "red";
+  const levelProgress = ((currentQ + 1) / (questions.length || 1)) * 100;
+  const timerColor =
+    timeLeft > 30 ? "#BCA5D4" : timeLeft > 15 ? "#EFE2FA" : "red";
 
+  if (!questions.length) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-xl font-bold">
+          {lang === "en" ? "Loading questions..." : "கேள்விகள் ஏற்றப்படுகிறது..."}
+        </p>
+      </div>
+    );
+  }
+  
   return (
     <div
       className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
@@ -222,9 +259,9 @@ const SaveTheGirl = () => {
               </div>
             </div>
 
-            <p style={{ fontSize: "4vh", fontWeight: "700", marginBottom: "4%" }}>
-              {questions[currentQ].q}
-            </p>
+              <p style={{ fontSize: "4vh", fontWeight: "700", marginBottom: "4%" }}>
+        {questions[currentQ].q}
+      </p>
 
             <div
               style={{
@@ -287,10 +324,7 @@ const SaveTheGirl = () => {
         <div className="text-center bg-white p-[5%] rounded-[3vh] shadow-2xl">
           {win ? (
             <>
-              <h1 className="text-[5vh] font-bold text-green-600 mb-[2%]">
-                🎉 {lang === "en" ? "You Saved Her!" : "நீங்கள் காப்பாற்றினீர்கள்!"}
-              </h1>
-              <Confetti />
+            <Confetti />
               <div style={{ position: "absolute", zIndex: 10 }}>
                 <ConfettiExplosion force={0.7} duration={4500} particleCount={150} width={1200} />
               </div>
@@ -317,13 +351,11 @@ const SaveTheGirl = () => {
                   }}
                 />
               </div>
-            </>
-          ) : (
-            <h1 className="text-[5vh] font-bold text-red-600">
-              💀 {lang === "en" ? "The Character Drowned!" : "பாத்திரம் மூழ்கியது!"}
-            </h1>
-          )}
-          <button
+              <h1 className="text-[5vh] font-bold text-green-600 mb-[2%]">
+                🎉 {lang === "en" ? "You Saved Her!" : "நீங்கள் காப்பாற்றினீர்கள்!"}
+              </h1>
+              
+              <button
             className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold"
             onClick={() => {
               setCurrentQ(0);
@@ -336,6 +368,29 @@ const SaveTheGirl = () => {
           >
             🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
           </button>
+            </>
+          ) : (
+            <>
+            <h1 className="text-[5vh] font-bold text-red-600">
+              💀 {lang === "en" ? "The Character Drowned!" : "பாத்திரம் மூழ்கியது!"}
+            </h1>
+            <button
+            className="bg-gradient-to-r from-[#BCA5D4] to-[#EFE2FA] text-white px-[6%] py-[2%] rounded-[2vh] mt-[5%] text-[2.5vh] font-bold"
+            onClick={() => {
+              setCurrentQ(0);
+              setAnswer("");
+              setTimeLeft(60);
+              setGameOver(false);
+              setWin(false);
+              setScore(0);
+            }}
+          >
+            🔄 {lang === "en" ? "Play Again" : "மீண்டும் விளையாடவும்"}
+          </button>
+            </>
+            
+          )}
+          
         </div>
       )}
 

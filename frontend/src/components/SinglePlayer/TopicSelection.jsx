@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import topicsEngData from "../../data/topicseng.json";
 import topicsTamData from "../../data/topicstam.json";
 import bg from "../../assets/bg.jpg";
 
 const TopicSelection = () => {
-  const classId = 6;
-  const subject = "maths";
-//   const navigate = useNavigate();
+  const { classId , displaName ,subject } = useParams();
+  const navigate = useNavigate();
 
   // ✅ State for language toggle
   const [language, setLanguage] = useState("english"); // "english" | "tamil"
@@ -19,25 +18,22 @@ const TopicSelection = () => {
 
   // ✅ Correct way to fetch topics based on language
     const classKey = `class${classId}`;
-
     // pick dataset based on language
     const dataset = language === "english" ? topicsEngData : topicsTamData;
-
     // find the object in the array that has classKey
     const classObj = dataset.find((item) => item[classKey]);
-
     // then get topics from that object
     const topics = classObj ? classObj[classKey]?.[subject.toLowerCase()] || [] : [];
 
 
   // ✅ Navigate to next page
-//   const goNext = (topic) => {
-//     navigate(
-//       `/difficulty/${classId}/${encodeURIComponent(subject)}/${encodeURIComponent(
-//         topic
-//       )}`
-//     );
-//   };
+  const goNext = (topic) => {
+    navigate(
+      `/difficulty/${classId}/${encodeURIComponent(displaName)}/${encodeURIComponent(subject)}/${encodeURIComponent(
+        topic
+      )}`
+    );
+  };
 
   // ✅ Content translations
   const content = {
@@ -64,7 +60,7 @@ const TopicSelection = () => {
         >
           {content[language].toggle}
         </button>
-      <div className="bg-[#fbfbfb] opacity-85 rounded-[3vh] shadow-2xl p-[5%] w-full max-w-5xl relative">
+      <div className="bg-[#fbfbfb] opacity-85 rounded-[3vh] shadow-2xl p-[5%] w-full max-w-[70%] relative">
         {/* Language Toggle Button */}
         
 
