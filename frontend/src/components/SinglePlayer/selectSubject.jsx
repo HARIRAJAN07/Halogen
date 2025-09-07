@@ -23,16 +23,18 @@ const subjectsForHigherGrades = [
   { en: "Chemistry", ta: "வேதியியல்", gif: chemistryGif, color: "bg-[#BCA5D4]" },
   { en: "Biology", ta: "உயிரியல்", gif: biologyGif, color: "bg-[#BCA5D4]" },
   { en: "Computer Science", ta: "கணினி அறிவியல்", gif: csGif, color: "bg-[#BCA5D4]" },
-  { en: "English", ta: "ஆங்கிலம்", gif: englishGif, color: "bg-[#BCA5D4]" },
+  { en: "Math", ta: "கணிதம்", gif: englishGif, color: "bg-[#BCA5D4]" },
 ];
 
 const SubjectSelection = () => {
   const [flipped, setFlipped] = useState({});
   const [language, setLanguage] = useState("en");
-  const navigate = useNavigate(); // ✅ hook for navigation
+  const navigate = useNavigate();
+  const { classId, displayName,schoolName } = useParams();
 
-  const { classId , displayName , schoolName} = useParams(); 
- 
+  // 📝 Select the correct subject list based on classId
+  const isHigherGrade = parseInt(classId) >= 11;
+  const subjectsToDisplay = isHigherGrade ? subjectsForHigherGrades : subjectsForGrades6to10;
 
   const toggleFlip = (subjectName) => {
     setFlipped((prev) => ({
@@ -104,23 +106,17 @@ const SubjectSelection = () => {
                     : `${subject.ta} கொண்டு தொடர கீழே கிளிக் செய்யவும்.`}
                 </p>
                 <button
-  onClick={(e) => {
-    e.stopPropagation();
-    // ✅ Suppose you already know classId (can be passed via props or state)
-    
-    // example: replace with dynamic id later
-
-    // ✅ Navigate correctly to dashboard route with subject
-    navigate(`/single/${classId}/${displayName}/${schoolName}/${subject.en.toLowerCase()}`, {
-      state: { subject: subject.en }, // optional, extra data
-    });
-  }}
-  className="px-6 py-2 sm:px-8 sm:py-3 bg-white font-bold rounded-full shadow-md hover:bg-gray-100 transition-all transform hover:scale-105 2xl:text-xl"
-  style={{ color: "#2c2c2c" }}
->
-  {language === "en" ? "Choose Topic" : "பாடத்தைத் தேர்ந்தெடுக்கவும்"}
-</button>
-
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/single/${classId}/${displayName}/${schoolName}/${subject.en.toLowerCase()}`, {
+                      state: { subject: subject.en },
+                    });
+                  }}
+                  className="px-6 py-2 sm:px-8 sm:py-3 bg-white font-bold rounded-full shadow-md hover:bg-gray-100 transition-all transform hover:scale-105 2xl:text-xl"
+                  style={{ color: "#2c2c2c" }}
+                >
+                  {language === "en" ? "Play" : "விளையாடு"}
+                </button>
               </div>
             </div>
           </div>
