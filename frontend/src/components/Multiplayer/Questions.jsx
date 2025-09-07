@@ -1,4 +1,3 @@
-// src/components/Questions.js
 import React, { useState, useEffect, useRef } from "react";
 import { Paper, Typography, Button } from "@mui/material";
 
@@ -74,7 +73,7 @@ const questionDataO = [
 ];
 
 
-const Questions = ({ player = "X", onCorrectAnswer = () => {}, activeTurn = null }) => {
+const Questions = ({ player = "X", playerName = "", onCorrectAnswer = () => {}, activeTurn = null }) => {
   const [language, setLanguage] = useState("en");
 
   // pick correct dataset for X or O
@@ -138,9 +137,9 @@ const Questions = ({ player = "X", onCorrectAnswer = () => {}, activeTurn = null
       <Typography
         variant="h6"
         gutterBottom
-        style={{ fontSize: "2.2vh", marginBottom: "2vh" }}
+        style={{ fontSize: "2.2vh", marginBottom: "2vh", fontWeight: "bold" }}
       >
-        {language === "ta" ? `வீரர் ${player}` : `Player ${player}`}
+        {playerName || (language === "ta" ? `வீரர் ${player}` : `Player ${player}`)}
       </Typography>
 
       <Typography

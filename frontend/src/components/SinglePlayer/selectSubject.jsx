@@ -1,16 +1,28 @@
 import React, { useState } from "react";
-import { useNavigate , useParams} from "react-router-dom"; // ✅ import router hook
+import { useNavigate, useParams } from "react-router-dom";
 import scienceGif from "../../assets/science.gif";
 import mathGif from "../../assets/math.gif";
 import socialGif from "../../assets/social.gif";
 import tamilGif from "../../assets/tamil.gif";
 import englishGif from "../../assets/english.gif";
+import physicsGif from "../../assets/physics.gif"; 
+import chemistryGif from "../../assets/chemistry.gif"; 
+import biologyGif from "../../assets/biology.gif"; 
+import csGif from "../../assets/cs.gif"; 
 
-const subjects = [
+const subjectsForGrades6to10 = [
   { en: "Science", ta: "அறிவியல்", gif: scienceGif, color: "bg-[#BCA5D4]" },
   { en: "Math", ta: "கணிதம்", gif: mathGif, color: "bg-[#BCA5D4]" },
   { en: "Social Studies", ta: "சமூக அறிவியல்", gif: socialGif, color: "bg-[#BCA5D4]" },
   { en: "Tamil", ta: "தமிழ்", gif: tamilGif, color: "bg-[#BCA5D4]" },
+  { en: "English", ta: "ஆங்கிலம்", gif: englishGif, color: "bg-[#BCA5D4]" },
+];
+
+const subjectsForHigherGrades = [
+  { en: "Physics", ta: "இயற்பியல்", gif: physicsGif, color: "bg-[#BCA5D4]" },
+  { en: "Chemistry", ta: "வேதியியல்", gif: chemistryGif, color: "bg-[#BCA5D4]" },
+  { en: "Biology", ta: "உயிரியல்", gif: biologyGif, color: "bg-[#BCA5D4]" },
+  { en: "Computer Science", ta: "கணினி அறிவியல்", gif: csGif, color: "bg-[#BCA5D4]" },
   { en: "English", ta: "ஆங்கிலம்", gif: englishGif, color: "bg-[#BCA5D4]" },
 ];
 
@@ -54,7 +66,7 @@ const SubjectSelection = () => {
 
       {/* Flip Cards Row */}
       <div className="flex gap-6 sm:gap-10 overflow-x-auto px-4 w-full justify-center">
-        {subjects.map((subject) => (
+        {subjectsToDisplay.map((subject) => (
           <div
             key={subject.en}
             className="relative w-48 h-64 sm:w-64 sm:h-80 md:w-72 md:h-96 2xl:w-[18vw] 2xl:h-[40vh] [perspective:1000px] flex-shrink-0"

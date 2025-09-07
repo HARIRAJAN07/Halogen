@@ -1,4 +1,3 @@
-import React from 'react';
 import XO from './components/Multiplayer/XO';
 import ChooseSorM from './components/chooseSorM';
 import Input from './components/SinglePlayer/input';
