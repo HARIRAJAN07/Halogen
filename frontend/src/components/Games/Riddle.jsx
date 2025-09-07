@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 import LanguageToggle from "../utils/LanguageToggle";
-import riddles from "../data/riddle.json";
+import riddles from "../../data/riddle.json";
 import BgImage from "../../assets/BgImage.png";
 
 const translations = {
@@ -39,7 +39,7 @@ const translations = {
   }
 };
 
-const App = () => {
+const Riddle = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [revealedHints, setRevealedHints] = useState([true, false, false]);
@@ -320,8 +320,4 @@ const App = () => {
   );
 };
 
-export default App;
-
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(<App />);
+export default Riddle;

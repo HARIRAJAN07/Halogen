@@ -224,7 +224,7 @@ const navigate = useNavigate();
               <CustomClassDropdown value={className} onChange={setClassName} />
              <button
   onClick={() =>
-    navigate(`/single/${className}`, {
+    navigate(`/single/${className}/${displayName}`, {
       state: { nickname: displayName, avatar },
     })
   }

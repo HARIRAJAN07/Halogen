@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import router hook
+import { useNavigate , useParams} from "react-router-dom"; // ✅ import router hook
 import scienceGif from "../../assets/science.gif";
 import mathGif from "../../assets/math.gif";
 import socialGif from "../../assets/social.gif";
@@ -18,6 +18,9 @@ const SubjectSelection = () => {
   const [flipped, setFlipped] = useState({});
   const [language, setLanguage] = useState("en");
   const navigate = useNavigate(); // ✅ hook for navigation
+
+  const { classId , displayName } = useParams(); 
+ 
 
   const toggleFlip = (subjectName) => {
     setFlipped((prev) => ({
@@ -92,10 +95,11 @@ const SubjectSelection = () => {
   onClick={(e) => {
     e.stopPropagation();
     // ✅ Suppose you already know classId (can be passed via props or state)
-    const classId = "class10"; // example: replace with dynamic id later
+    
+    // example: replace with dynamic id later
 
     // ✅ Navigate correctly to dashboard route with subject
-    navigate(`/single/${classId}/${subject.en.toLowerCase()}`, {
+    navigate(`/single/${classId}/${displayName}/${subject.en.toLowerCase()}`, {
       state: { subject: subject.en }, // optional, extra data
     });
   }}

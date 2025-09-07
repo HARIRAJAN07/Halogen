@@ -3,36 +3,36 @@
     "class6":{
         "tamil":["திருக்குறள்","பாடல்கள் மற்றும் ஆசிரியர்","தமிழ் பழமொழிகள் – பொருள்"],
         "english":["Modal verbs","Active and Passive voice","Verbs"],
-        "maths":["NUMBERS","FRACTIONS","MEASUREMENTS, BILL, PROFIT AND LOSS"],
+        "math":["NUMBERS","FRACTIONS","MEASUREMENTS, BILL, PROFIT AND LOSS"],
         "science":["Computer - An Introduction","Heat","Electricity"],
-        "social science":["Resources","National Symbols","The Constitution of India"]
+        "social studies":["Resources","National Symbols","The Constitution of India"]
     }
     },
     {
     "class7":{
         "tamil":["திருக்குறள்","பாடல்கள் மற்றும் ஆசிரியர்","தமிழ் பழமொழிகள் – பொருள்"],
         "english":["Noun and Pronoun","Adjective and Adverb","Preposition"],
-        "maths":["number system","measurements","algebra"],
+        "math":["number system","measurements","algebra"],
         "science":["measurement","force and motion","matter around us"],
-        "social science":["vijayanagar and bahmani kingdoms","the mughal empire","the mughal empire"]
+        "social studies":["vijayanagar and bahmani kingdoms","the mughal empire","the mughal empire"]
     }
     },
     {
     "class8":{
         "tamil":["திருக்குறள்","பாடல்கள் மற்றும் ஆசிரியர்","பிரபலமான பாத்திரங்கள் மற்றும் குணாதிசயங்கள்"],
         "english":[ "Verbs","Tenses","Nouns"],
-        "maths":["Shapes","Dimensions","Area "],
+        "math":["Shapes","Dimensions","Area "],
         "science":["SI Units","Scientific Laws","Current and Pressure"],
-        "social science":["Maps","Rainfall and Mountains","Civics"]
+        "social studies":["Maps","Rainfall and Mountains","Civics"]
     }
     },
     {
     "class9": {
         "tamil": ["திருக்குறள்", "பாடல்கள் மற்றும் ஆசிரியர்", "பழமொழி"],
-        "english": ["Homophones", "Prefix/Suffix", "Tenses","Clauses and Phrases"],
-        "maths": ["Mensuration", "Trigonometry", "Algebra"],
+        "english": ["Homophones", "Prefix/Suffix", "Tenses"],
+        "math": ["Mensuration", "Trigonometry", "Algebra"],
         "science": ["Matter around us", "Periodic classification of elements", "Organisation of tissues"],
-        "social science": ["Early Tamil Society and Culture", "Atmosphere", "Disaster Management: Responding to Disasters"]
+        "social studies": ["Early Tamil Society and Culture", "Atmosphere", "Disaster Management: Responding to Disasters"]
     }
     },
 
@@ -40,9 +40,9 @@
     "class10":{
         "tamil":["கவிதைகள்","இலக்கணம்","திருக்குறள்"],
         "english":["Tenses","Active and Passive Voice","Direct and Indirect Speech"],
-        "maths":["Algebra","Geometry","Trigonometry"],
+        "math":["Algebra","Geometry","Trigonometry"],
         "science":["Physics","Chemistry","Biology"],
-        "social science":["History","Geography","Civics"]
+        "social studies":["History","Geography","Civics"]
     }
     },
     {
@@ -51,7 +51,7 @@
         "chemistry": ["Atomic Structure", "Periodic Table", "Mole Concept"],
         "biology": ["Living World", "Plant Kingdom", "Kingdom Animalia"],
         "computer science": ["Algorithmic problem solving", "Introduction to C++", "Webpage Development using HTML and CSS"],
-        "mathematics": ["Sets and Functions", "Algebra and Trigonometry", "Limits and Continuity"]
+        "math": ["Sets and Functions", "Algebra and Trigonometry", "Limits and Continuity"]
     }
 },
 
@@ -61,7 +61,7 @@
         "physics": ["Electrostatics", "Current Electricity", "Dual Nature of Radiation & Matter"],
         "chemistry": ["Solid State", "Electrochemistry", "Coordination Chemistry"],
         "biology": ["Plant Physiology", "Genetics and Plant Breeding", "Human Reproduction"],
-        "mathematics": ["Differential Calculus", "Integral Calculus", "Probability & Statistics"]
+        "math": ["Differential Calculus", "Integral Calculus", "Probability & Statistics"]
     }
 }
 

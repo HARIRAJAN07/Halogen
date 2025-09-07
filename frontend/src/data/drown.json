@@ -1,0 +1,870 @@
+[
+    {
+  "grade": "6",
+  "subject":"math",
+  "en": [
+    { "q": "What is 25 × 4?", "options": ["50", "75", "100", "125"], "a": "100" },
+    { "q": "The place value of 7 in 5723 is?", "options": ["7", "70", "700", "7000"], "a": "700" },
+    { "q": "Simplify: 45 ÷ 5", "options": ["5", "8", "9", "10"], "a": "9" },
+    { "q": "What is the perimeter of a square with side 6 cm?", "options": ["12 cm", "18 cm", "24 cm", "36 cm"], "a": "24 cm" },
+    { "q": "Which is the smallest prime number?", "options": ["0", "1", "2", "3"], "a": "2" },
+    { "q": "LCM of 4 and 6 is?", "options": ["10", "12", "14", "24"], "a": "12" },
+    { "q": "What is 3/4 of 100?", "options": ["25", "50", "75", "100"], "a": "75" },
+    { "q": "The radius of a circle is 7 cm. Its diameter is?", "options": ["7 cm", "14 cm", "21 cm", "28 cm"], "a": "14 cm" },
+    { "q": "Simplify: 5²", "options": ["10", "15", "20", "25"], "a": "25" },
+    { "q": "The average of 10, 20, 30 is?", "options": ["15", "20", "25", "30"], "a": "20" },
+    { "q": "Roman numeral for 40 is?", "options": ["XL", "LX", "IL", "VL"], "a": "XL" },
+    { "q": "Value of π (pi) up to 2 decimals is?", "options": ["3.12", "3.14", "3.16", "3.18"], "a": "3.14" }
+  ],
+  "ta": [
+    { "q": "25 × 4 எவ்வளவு?", "options": ["50", "75", "100", "125"], "a": "100" },
+    { "q": "5723 இல் 7 இன் இடமதிப்பு எது?", "options": ["7", "70", "700", "7000"], "a": "700" },
+    { "q": "எளிமைப்படுத்துக: 45 ÷ 5", "options": ["5", "8", "9", "10"], "a": "9" },
+    { "q": "ஒரு பக்கத்தின் நீளம் 6 செ.மீ. உள்ள சதுரத்தின் சுற்றளவு எவ்வளவு?", "options": ["12 செ.மீ", "18 செ.மீ", "24 செ.மீ", "36 செ.மீ"], "a": "24 செ.மீ" },
+    { "q": "சிறிய எண் பகாத்தொகை எது?", "options": ["0", "1", "2", "3"], "a": "2" },
+    { "q": "4 மற்றும் 6 இன் குறைந்த பொதுப் பெருக்கல் (LCM) எது?", "options": ["10", "12", "14", "24"], "a": "12" },
+    { "q": "100 இன் 3/4 எவ்வளவு?", "options": ["25", "50", "75", "100"], "a": "75" },
+    { "q": "ஒரு வட்டத்தின் அரை விட்டம் 7 செ.மீ. என்றால், விட்டம் எவ்வளவு?", "options": ["7 செ.மீ", "14 செ.மீ", "21 செ.மீ", "28 செ.மீ"], "a": "14 செ.மீ" },
+    { "q": "எளிமைப்படுத்துக: 5²", "options": ["10", "15", "20", "25"], "a": "25" },
+    { "q": "10, 20, 30 இன் சராசரி எவ்வளவு?", "options": ["15", "20", "25", "30"], "a": "20" },
+    { "q": "40 க்கு உரோம எண் எது?", "options": ["XL", "LX", "IL", "VL"], "a": "XL" },
+    { "q": "π (பை) இன் மதிப்பு 2 தசமங்களில்?", "options": ["3.12", "3.14", "3.16", "3.18"], "a": "3.14" }
+  ]
+}
+,
+{
+  "grade": "7",
+  "subject":"math",
+  "en": [
+    {
+      "q": "What is the value of 12 × 8?",
+      "options": ["96", "108", "88", "86"],
+      "a": "96"
+    },
+    {
+      "q": "If a triangle has angles 90°, 45°, and 45°, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles right triangle", "Scalene", "Obtuse"],
+      "a": "Isosceles right triangle"
+    },
+    {
+      "q": "Simplify: (15 ÷ 3) + (18 ÷ 6)",
+      "options": ["9", "8", "10", "7"],
+      "a": "9"
+    },
+    {
+      "q": "The perimeter of a square is 48 cm. What is the length of one side?",
+      "options": ["10 cm", "11 cm", "12 cm", "13 cm"],
+      "a": "12 cm"
+    },
+    {
+      "q": "The HCF of 36 and 60 is:",
+      "options": ["6", "12", "18", "24"],
+      "a": "12"
+    },
+    {
+      "q": "Which number is a prime number?",
+      "options": ["21", "33", "29", "39"],
+      "a": "29"
+    },
+    {
+      "q": "Find the value of 3² + 4².",
+      "options": ["12", "24", "25", "20"],
+      "a": "25"
+    },
+    {
+      "q": "The area of a rectangle is 84 cm². If the length is 12 cm, what is the breadth?",
+      "options": ["5 cm", "6 cm", "7 cm", "8 cm"],
+      "a": "7 cm"
+    },
+    {
+      "q": "Convert 2.5 into a fraction.",
+      "options": ["25/100", "5/2", "3/2", "7/2"],
+      "a": "5/2"
+    },
+    {
+      "q": "A box contains 5 red balls and 3 blue balls. Probability of picking a red ball is:",
+      "options": ["5/8", "3/8", "1/2", "2/5"],
+      "a": "5/8"
+    },
+    {
+      "q": "The average of 12, 16, 20, and 24 is:",
+      "options": ["16", "18", "20", "22"],
+      "a": "18"
+    },
+    {
+      "q": "Simplify: 7x + 3x - 5",
+      "options": ["10x - 5", "4x - 5", "7x - 5", "3x - 5"],
+      "a": "10x - 5"
+    }
+  ],
+  "ta": [
+    {
+      "q": "12 × 8 இன் மதிப்பு என்ன?",
+      "options": ["96", "108", "88", "86"],
+      "a": "96"
+    },
+    {
+      "q": "ஒரு முக்கோணத்தின் கோணங்கள் 90°, 45°, 45° ஆக இருந்தால் அது எந்த வகை முக்கோணம்?",
+      "options": ["சமமுக்கோணம்", "சமச்சீர் நேர்கோண முக்கோணம்", "ஒற்றுமையற்ற முக்கோணம்", "மிகுதி கோண முக்கோணம்"],
+      "a": "சமச்சீர் நேர்கோண முக்கோணம்"
+    },
+    {
+      "q": "(15 ÷ 3) + (18 ÷ 6) = ?",
+      "options": ["9", "8", "10", "7"],
+      "a": "9"
+    },
+    {
+      "q": "ஒரு சதுரத்தின் சுற்றளவு 48 செ.மீ. ஆகும். அதன் ஒரு பக்கத்தின் நீளம் என்ன?",
+      "options": ["10 செ.மீ", "11 செ.மீ", "12 செ.மீ", "13 செ.மீ"],
+      "a": "12 செ.மீ"
+    },
+    {
+      "q": "36 மற்றும் 60 இன் மிகப்பெரிய பொதுவான வகுத்தி (HCF) என்ன?",
+      "options": ["6", "12", "18", "24"],
+      "a": "12"
+    },
+    {
+      "q": "கீழ்க்கண்ட எண்களில் எது பகா எண்?",
+      "options": ["21", "33", "29", "39"],
+      "a": "29"
+    },
+    {
+      "q": "3² + 4² = ?",
+      "options": ["12", "24", "25", "20"],
+      "a": "25"
+    },
+    {
+      "q": "ஒரு செவ்வகத்தின் பரப்பளவு 84 செ.மீ². அதன் நீளம் 12 செ.மீ என்றால் அகலம் எவ்வளவு?",
+      "options": ["5 செ.மீ", "6 செ.மீ", "7 செ.மீ", "8 செ.மீ"],
+      "a": "7 செ.மீ"
+    },
+    {
+      "q": "2.5 ஐ எளிய பகுத்தெண்ணாக மாற்றவும்.",
+      "options": ["25/100", "5/2", "3/2", "7/2"],
+      "a": "5/2"
+    },
+    {
+      "q": "ஒரு பெட்டியில் 5 சிவப்பு பந்துகள் மற்றும் 3 நீல பந்துகள் உள்ளன. சிவப்பு பந்து எடுக்கும் வாய்ப்பு என்ன?",
+      "options": ["5/8", "3/8", "1/2", "2/5"],
+      "a": "5/8"
+    },
+    {
+      "q": "12, 16, 20, 24 ஆகியவற்றின் சராசரி என்ன?",
+      "options": ["16", "18", "20", "22"],
+      "a": "18"
+    },
+    {
+      "q": "7x + 3x - 5 = ?",
+      "options": ["10x - 5", "4x - 5", "7x - 5", "3x - 5"],
+      "a": "10x - 5"
+    }
+  ]
+}
+,
+{
+  "grade": "8",
+  "subject":"math",
+  "en": [
+    {
+      "q": "Simplify: (x + 5)(x - 5)",
+      "options": ["x² - 25", "x² + 25", "x² + 10x - 25", "x² - 10x + 25"],
+      "a": "x² - 25"
+    },
+    {
+      "q": "The value of 2³ × 2² is:",
+      "options": ["32", "16", "8", "64"],
+      "a": "32"
+    },
+    {
+      "q": "Find the square root of 196.",
+      "options": ["12", "13", "14", "15"],
+      "a": "14"
+    },
+    {
+      "q": "The solution of the equation 3x - 7 = 11 is:",
+      "options": ["x = 5", "x = 6", "x = 7", "x = 8"],
+      "a": "x = 6"
+    },
+    {
+      "q": "Perimeter of a circle is also called:",
+      "options": ["Area", "Circumference", "Diameter", "Radius"],
+      "a": "Circumference"
+    },
+    {
+      "q": "The LCM of 18 and 24 is:",
+      "options": ["36", "48", "54", "72"],
+      "a": "72"
+    },
+    {
+      "q": "What is the value of (0.5)²?",
+      "options": ["0.05", "0.5", "0.25", "0.75"],
+      "a": "0.25"
+    },
+    {
+      "q": "If the ratio of boys to girls in a class is 3:5 and there are 24 boys, how many girls are there?",
+      "options": ["30", "36", "40", "42"],
+      "a": "40"
+    },
+    {
+      "q": "Convert 7/20 into percentage.",
+      "options": ["35%", "30%", "25%", "40%"],
+      "a": "35%"
+    },
+    {
+      "q": "The volume of a cube of side 6 cm is:",
+      "options": ["216 cm³", "126 cm³", "36 cm³", "96 cm³"],
+      "a": "216 cm³"
+    },
+    {
+      "q": "What is the probability of getting a head when tossing a coin?",
+      "options": ["1/3", "1/2", "1/4", "2/3"],
+      "a": "1/2"
+    },
+    {
+      "q": "Solve: 5x + 2 = 17",
+      "options": ["x = 3", "x = 4", "x = 5", "x = 6"],
+      "a": "x = 3"
+    }
+  ],
+  "ta": [
+    {
+      "q": "(x + 5)(x - 5) = ?",
+      "options": ["x² - 25", "x² + 25", "x² + 10x - 25", "x² - 10x + 25"],
+      "a": "x² - 25"
+    },
+    {
+      "q": "2³ × 2² இன் மதிப்பு என்ன?",
+      "options": ["32", "16", "8", "64"],
+      "a": "32"
+    },
+    {
+      "q": "196 இன் வரிசை வேர் என்ன?",
+      "options": ["12", "13", "14", "15"],
+      "a": "14"
+    },
+    {
+      "q": "3x - 7 = 11 என்ற சமன்பாட்டின் தீர்வு என்ன?",
+      "options": ["x = 5", "x = 6", "x = 7", "x = 8"],
+      "a": "x = 6"
+    },
+    {
+      "q": "ஒரு வட்டத்தின் சுற்றளவுக்கு வேறு பெயர் என்ன?",
+      "options": ["பரப்பளவு", "சுற்றளவு", "விட்டம்", "அரை விட்டம்"],
+      "a": "சுற்றளவு"
+    },
+    {
+      "q": "18 மற்றும் 24 இன் LCM என்ன?",
+      "options": ["36", "48", "54", "72"],
+      "a": "72"
+    },
+    {
+      "q": "(0.5)² = ?",
+      "options": ["0.05", "0.5", "0.25", "0.75"],
+      "a": "0.25"
+    },
+    {
+      "q": "ஒரு வகுப்பில் ஆண்கள்:பெண்கள் விகிதம் 3:5. 24 ஆண்கள் இருந்தால் எத்தனை பெண்கள் உள்ளனர்?",
+      "options": ["30", "36", "40", "42"],
+      "a": "40"
+    },
+    {
+      "q": "7/20 ஐ சதவீதமாக மாற்றவும்.",
+      "options": ["35%", "30%", "25%", "40%"],
+      "a": "35%"
+    },
+    {
+      "q": "பக்க அளவு 6 செ.மீ கொண்ட கன சதுரத்தின் பருமன் என்ன?",
+      "options": ["216 செ.மீ³", "126 செ.மீ³", "36 செ.மீ³", "96 செ.மீ³"],
+      "a": "216 செ.மீ³"
+    },
+    {
+      "q": "ஒரு நாணயத்தை சுழற்றும் போது தலை வரும் வாய்ப்பு என்ன?",
+      "options": ["1/3", "1/2", "1/4", "2/3"],
+      "a": "1/2"
+    },
+    {
+      "q": "5x + 2 = 17 என்றால் x இன் மதிப்பு என்ன?",
+      "options": ["x = 3", "x = 4", "x = 5", "x = 6"],
+      "a": "x = 3"
+    }
+  ]
+}
+,
+{
+  "grade": "9",
+  "subject":"math",
+  "en": [
+    {
+      "q": "Simplify: (a + b)²",
+      "options": ["a² + b²", "a² + 2ab + b²", "a² - 2ab + b²", "2a² + b²"],
+      "a": "a² + 2ab + b²"
+    },
+    {
+      "q": "The value of (x² - 16) ÷ (x - 4) is:",
+      "options": ["x + 4", "x - 4", "x² + 4", "x² - 4"],
+      "a": "x + 4"
+    },
+    {
+      "q": "If sin θ = 3/5, then cos θ = ?",
+      "options": ["4/5", "5/4", "3/4", "1/2"],
+      "a": "4/5"
+    },
+    {
+      "q": "The roots of x² - 5x + 6 = 0 are:",
+      "options": ["2, 3", "1, 6", "3, 6", "2, 6"],
+      "a": "2, 3"
+    },
+    {
+      "q": "The distance between (3,4) and (0,0) is:",
+      "options": ["5", "4", "3", "7"],
+      "a": "5"
+    },
+    {
+      "q": "The solution of 7x + 2 = 30 is:",
+      "options": ["x = 3", "x = 4", "x = 5", "x = 6"],
+      "a": "x = 4"
+    },
+    {
+      "q": "If the mean of 10, 20, 30, 40, 50 is M, then M = ?",
+      "options": ["20", "25", "30", "35"],
+      "a": "30"
+    },
+    {
+      "q": "Surface area of a sphere of radius 7 cm is:",
+      "options": ["616 cm²", "154 cm²", "308 cm²", "462 cm²"],
+      "a": "616 cm²"
+    },
+    {
+      "q": "If a card is drawn from a pack of 52 cards, probability of getting a spade is:",
+      "options": ["1/4", "1/13", "1/26", "1/2"],
+      "a": "1/4"
+    },
+    {
+      "q": "Convert 0.125 into fraction in lowest form.",
+      "options": ["1/2", "1/4", "1/6", "1/8"],
+      "a": "1/8"
+    },
+    {
+      "q": "The value of ³√64 is:",
+      "options": ["2", "3", "4", "8"],
+      "a": "4"
+    },
+    {
+      "q": "The height of an equilateral triangle of side 10 cm is:",
+      "options": ["5 cm", "7 cm", "5√3 cm", "10 cm"],
+      "a": "5√3 cm"
+    }
+  ],
+  "ta": [
+    {
+      "q": "(a + b)² = ?",
+      "options": ["a² + b²", "a² + 2ab + b²", "a² - 2ab + b²", "2a² + b²"],
+      "a": "a² + 2ab + b²"
+    },
+    {
+      "q": "(x² - 16) ÷ (x - 4) = ?",
+      "options": ["x + 4", "x - 4", "x² + 4", "x² - 4"],
+      "a": "x + 4"
+    },
+    {
+      "q": "sin θ = 3/5 என்றால் cos θ = ?",
+      "options": ["4/5", "5/4", "3/4", "1/2"],
+      "a": "4/5"
+    },
+    {
+      "q": "x² - 5x + 6 = 0 என்ற சமன்பாட்டின் வேர்:",
+      "options": ["2, 3", "1, 6", "3, 6", "2, 6"],
+      "a": "2, 3"
+    },
+    {
+      "q": "(3,4) மற்றும் (0,0) இடையிலான தூரம்:",
+      "options": ["5", "4", "3", "7"],
+      "a": "5"
+    },
+    {
+      "q": "7x + 2 = 30 என்ற சமன்பாட்டின் தீர்வு:",
+      "options": ["x = 3", "x = 4", "x = 5", "x = 6"],
+      "a": "x = 4"
+    },
+    {
+      "q": "10, 20, 30, 40, 50 இன் சராசரி = ?",
+      "options": ["20", "25", "30", "35"],
+      "a": "30"
+    },
+    {
+      "q": "அரை விட்டம் 7 செ.மீ கொண்ட உருண்டையின் மேற்பரப்பளவு:",
+      "options": ["616 செ.மீ²", "154 செ.மீ²", "308 செ.மீ²", "462 செ.மீ²"],
+      "a": "616 செ.மீ²"
+    },
+    {
+      "q": "52 சீட்டுகளில் இருந்து ஒரு சீட்டை எடுத்தால், 'spade' வரும் வாய்ப்பு என்ன?",
+      "options": ["1/4", "1/13", "1/26", "1/2"],
+      "a": "1/4"
+    },
+    {
+      "q": "0.125 ஐ எளிய பாகுபாட்டில் மாற்றவும்.",
+      "options": ["1/2", "1/4", "1/6", "1/8"],
+      "a": "1/8"
+    },
+    {
+      "q": "³√64 இன் மதிப்பு:",
+      "options": ["2", "3", "4", "8"],
+      "a": "4"
+    },
+    {
+      "q": "பக்க அளவு 10 செ.மீ கொண்ட சமபக்க முக்கோணத்தின் உயரம்:",
+      "options": ["5 செ.மீ", "7 செ.மீ", "5√3 செ.மீ", "10 செ.மீ"],
+      "a": "5√3 செ.மீ"
+    }
+  ]
+}
+,
+{
+  "grade": "10",
+  "subject":"math",
+  "en": [
+    {
+      "q": "The zeros of the polynomial x² − 5x + 6 are:",
+      "options": ["2, 3", "1, 6", "−2, −3", "0, 6"],
+      "a": "2, 3"
+    },
+    {
+      "q": "If the sum of roots of a quadratic equation is 7 and product is 10, the equation is:",
+      "options": ["x² − 7x + 10 = 0", "x² + 7x + 10 = 0", "x² − 10x + 7 = 0", "x² + 10x − 7 = 0"],
+      "a": "x² − 7x + 10 = 0"
+    },
+    {
+      "q": "The distance between the points (1,2) and (4,6) is:",
+      "options": ["3", "4", "5", "6"],
+      "a": "5"
+    },
+    {
+      "q": "If sin A = 12/13, then cos A = ?",
+      "options": ["5/13", "12/13", "13/12", "1/2"],
+      "a": "5/13"
+    },
+    {
+      "q": "In an AP, if a = 2, d = 3, find the 10th term.",
+      "options": ["29", "30", "32", "35"],
+      "a": "29"
+    },
+    {
+      "q": "If 5 pencils cost ₹25, the cost of 12 pencils is:",
+      "options": ["₹50", "₹55", "₹60", "₹65"],
+      "a": "₹60"
+    },
+    {
+      "q": "The surface area of a cube of side 6 cm is:",
+      "options": ["144 cm²", "216 cm²", "256 cm²", "288 cm²"],
+      "a": "216 cm²"
+    },
+    {
+      "q": "The probability of getting a prime number on a dice is:",
+      "options": ["1/2", "1/3", "2/3", "5/6"],
+      "a": "1/2"
+    },
+    {
+      "q": "The value of (1 + tan² θ) is:",
+      "options": ["sec² θ", "cosec² θ", "cos² θ", "sin² θ"],
+      "a": "sec² θ"
+    },
+    {
+      "q": "The sum of first 20 natural numbers is:",
+      "options": ["190", "200", "210", "220"],
+      "a": "210"
+    },
+    {
+      "q": "The curved surface area of a cylinder with radius 7 cm and height 10 cm is:",
+      "options": ["440 cm²", "220 cm²", "440π cm²", "220π cm²"],
+      "a": "440π cm²"
+    },
+    {
+      "q": "If a card is drawn from a deck of 52 cards, the probability of getting a red card is:",
+      "options": ["1/2", "1/3", "1/4", "1/13"],
+      "a": "1/2"
+    }
+  ],
+  "ta": [
+    {
+      "q": "x² − 5x + 6 என்ற பின்புலத்தின் வேர்கள்:",
+      "options": ["2, 3", "1, 6", "−2, −3", "0, 6"],
+      "a": "2, 3"
+    },
+    {
+      "q": "ஒரு இரண்டடுக்குச் சமன்பாட்டின் வேர்களின் கூட்டுத்தொகை 7, பெருக்கல் 10 என்றால் சமன்பாடு:",
+      "options": ["x² − 7x + 10 = 0", "x² + 7x + 10 = 0", "x² − 10x + 7 = 0", "x² + 10x − 7 = 0"],
+      "a": "x² − 7x + 10 = 0"
+    },
+    {
+      "q": "(1,2) மற்றும் (4,6) இடையிலான தூரம்:",
+      "options": ["3", "4", "5", "6"],
+      "a": "5"
+    },
+    {
+      "q": "sin A = 12/13 என்றால் cos A = ?",
+      "options": ["5/13", "12/13", "13/12", "1/2"],
+      "a": "5/13"
+    },
+    {
+      "q": "ஒரு சரிசம தொடரில், a = 2, d = 3 என்றால் 10வது பதிப்பு:",
+      "options": ["29", "30", "32", "35"],
+      "a": "29"
+    },
+    {
+      "q": "5 பேனாக்களின் விலை ₹25 என்றால், 12 பேனாக்களின் விலை:",
+      "options": ["₹50", "₹55", "₹60", "₹65"],
+      "a": "₹60"
+    },
+    {
+      "q": "பக்க அளவு 6 செ.மீ கொண்ட கன சதுரத்தின் மேற்பரப்பளவு:",
+      "options": ["144 செ.மீ²", "216 செ.மீ²", "256 செ.மீ²", "288 செ.மீ²"],
+      "a": "216 செ.மீ²"
+    },
+    {
+      "q": "சூதாட்டத்தில் (dice) ஒரு பிரதம எண் வரும் வாய்ப்பு:",
+      "options": ["1/2", "1/3", "2/3", "5/6"],
+      "a": "1/2"
+    },
+    {
+      "q": "(1 + tan² θ) இன் மதிப்பு:",
+      "options": ["sec² θ", "cosec² θ", "cos² θ", "sin² θ"],
+      "a": "sec² θ"
+    },
+    {
+      "q": "முதல் 20 இயற்கை எண்களின் கூட்டுத்தொகை:",
+      "options": ["190", "200", "210", "220"],
+      "a": "210"
+    },
+    {
+      "q": "அரை விட்டம் 7 செ.மீ, உயரம் 10 செ.மீ கொண்ட உருளையின் வளைந்த மேற்பரப்பளவு:",
+      "options": ["440 செ.மீ²", "220 செ.மீ²", "440π செ.மீ²", "220π செ.மீ²"],
+      "a": "440π செ.மீ²"
+    },
+    {
+      "q": "52 சீட்டுகளில் இருந்து ஒரு சீட்டை எடுத்தால், சிவப்பு சீட்டு வரும் வாய்ப்பு:",
+      "options": ["1/2", "1/3", "1/4", "1/13"],
+      "a": "1/2"
+    }
+  ]
+},
+  {
+    "grade": "11",
+    "subject": "math",
+    "en": [
+      { "q": "If f(x) = 2x + 3, what is f(5)?", "options": ["10", "13", "15", "20"], "a": "13" },
+      { "q": "The value of (x + y)² is?", "options": ["x² + y²", "x² + y² + 2xy", "x² - y²", "x² + 2xy"], "a": "x² + y² + 2xy" },
+      { "q": "What is the slope of the line y = 3x + 2?", "options": ["2", "3", "1/3", "-3"], "a": "3" },
+      { "q": "Simplify: (x³)(x²)", "options": ["x⁵", "x⁶", "x²", "x³"], "a": "x⁵" },
+      { "q": "The roots of x² - 5x + 6 = 0 are?", "options": ["2, 3", "1, 6", "−2, −3", "5, 6"], "a": "2, 3" },
+      { "q": "If sin θ = 1/2, what is θ in degrees?", "options": ["30°", "45°", "60°", "90°"], "a": "30°" },
+      { "q": "What is log₁₀(1000)?", "options": ["1", "2", "3", "10"], "a": "3" },
+      { "q": "If A = {1,2,3} and B = {2,3,4}, what is A ∩ B?", "options": ["{1,2,3,4}", "{2,3}", "{1,4}", "{1,2}"], "a": "{2,3}" },
+      { "q": "What is the distance between points (0,0) and (3,4)?", "options": ["3", "4", "5", "7"], "a": "5" },
+      { "q": "If probability of an event is 0.7, then probability of its complement is?", "options": ["0.3", "0.7", "1", "0.5"], "a": "0.3" },
+      { "q": "The sum of the first 10 natural numbers is?", "options": ["45", "50", "55", "60"], "a": "55" },
+      { "q": "If cos θ = 0, then θ = ?", "options": ["0°", "45°", "90°", "180°"], "a": "90°" }
+    ],
+    "ta": [
+      { "q": "f(x) = 2x + 3 என்றால், f(5) = ?", "options": ["10", "13", "15", "20"], "a": "13" },
+      { "q": "(x + y)² இன் மதிப்பு?", "options": ["x² + y²", "x² + y² + 2xy", "x² - y²", "x² + 2xy"], "a": "x² + y² + 2xy" },
+      { "q": "y = 3x + 2 என்ற கோட்டின் சாய்வு?", "options": ["2", "3", "1/3", "-3"], "a": "3" },
+      { "q": "எளிமைப்படுத்துக: (x³)(x²)", "options": ["x⁵", "x⁶", "x²", "x³"], "a": "x⁵" },
+      { "q": "x² - 5x + 6 = 0 என்ற சமன்பாட்டின் வேர்?", "options": ["2, 3", "1, 6", "−2, −3", "5, 6"], "a": "2, 3" },
+      { "q": "sin θ = 1/2 என்றால், θ = ?", "options": ["30°", "45°", "60°", "90°"], "a": "30°" },
+      { "q": "log₁₀(1000) = ?", "options": ["1", "2", "3", "10"], "a": "3" },
+      { "q": "A = {1,2,3}, B = {2,3,4} என்றால், A ∩ B = ?", "options": ["{1,2,3,4}", "{2,3}", "{1,4}", "{1,2}"], "a": "{2,3}" },
+      { "q": "(0,0) மற்றும் (3,4) புள்ளிகளுக்கு இடையிலான தூரம்?", "options": ["3", "4", "5", "7"], "a": "5" },
+      { "q": "ஒரு நிகழ்வின் probability = 0.7 என்றால், அதன் எதிர்மறை probability?", "options": ["0.3", "0.7", "1", "0.5"], "a": "0.3" },
+      { "q": "முதல் 10 இயற்கை எண்களின் கூட்டுத்தொகை?", "options": ["45", "50", "55", "60"], "a": "55" },
+      { "q": "cos θ = 0 என்றால், θ = ?", "options": ["0°", "45°", "90°", "180°"], "a": "90°" }
+    ]
+  },
+  {
+    "grade": "12",
+    "subject": "math",
+    "en": [
+      { "q": "The derivative of sin(x) is?", "options": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"], "a": "cos(x)" },
+      { "q": "If ∫ x dx = ?", "options": ["x²", "x²/2 + C", "2x", "ln(x) + C"], "a": "x²/2 + C" },
+      { "q": "The roots of x² - 4x + 4 = 0 are?", "options": ["2, 2", "2, -2", "4, 0", "−2, −2"], "a": "2, 2" },
+      { "q": "What is the derivative of e^x?", "options": ["1", "e^x", "ln(x)", "x·e^x"], "a": "e^x" },
+      { "q": "If A = [ [1,2], [3,4] ], then det(A) = ?", "options": ["-2", "2", "10", "0"], "a": "-2" },
+      { "q": "If tan θ = 1, then θ = ?", "options": ["30°", "45°", "60°", "90°"], "a": "45°" },
+      { "q": "Limit of (sin x)/x as x → 0 is?", "options": ["0", "1", "∞", "Does not exist"], "a": "1" },
+      { "q": "The slope of line 2x - 3y + 6 = 0 is?", "options": ["2/3", "3/2", "-2/3", "-3/2"], "a": "2/3" },
+      { "q": "If mean of numbers 2, 4, 6, 8 is?", "options": ["4", "5", "6", "7"], "a": "5" },
+      { "q": "∫ cos(x) dx = ?", "options": ["sin(x) + C", "-sin(x) + C", "cos(x) + C", "-cos(x) + C"], "a": "sin(x) + C" },
+      { "q": "What is the probability of getting a 6 on a fair die?", "options": ["1/2", "1/3", "1/6", "1/12"], "a": "1/6" },
+      { "q": "If x = 2 is a root of polynomial x² - kx + 2 = 0, then k = ?", "options": ["2", "3", "4", "5"], "a": "4" }
+    ],
+    "ta": [
+      { "q": "sin(x) இன் வேறுபாடு (derivative)?", "options": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"], "a": "cos(x)" },
+      { "q": "∫ x dx = ?", "options": ["x²", "x²/2 + C", "2x", "ln(x) + C"], "a": "x²/2 + C" },
+      { "q": "x² - 4x + 4 = 0 என்ற சமன்பாட்டின் வேர்?", "options": ["2, 2", "2, -2", "4, 0", "−2, −2"], "a": "2, 2" },
+      { "q": "e^x இன் வேறுபாடு?", "options": ["1", "e^x", "ln(x)", "x·e^x"], "a": "e^x" },
+      { "q": "A = [ [1,2], [3,4] ] என்றால் det(A) = ?", "options": ["-2", "2", "10", "0"], "a": "-2" },
+      { "q": "tan θ = 1 என்றால், θ = ?", "options": ["30°", "45°", "60°", "90°"], "a": "45°" },
+      { "q": "x → 0 ஆக (sin x)/x இன் வரம்பு (limit)?", "options": ["0", "1", "∞", "உள்ளதில்லை"], "a": "1" },
+      { "q": "2x - 3y + 6 = 0 என்ற கோட்டின் சாய்வு?", "options": ["2/3", "3/2", "-2/3", "-3/2"], "a": "2/3" },
+      { "q": "எண்கள் 2, 4, 6, 8 இன் சராசரி (mean)?", "options": ["4", "5", "6", "7"], "a": "5" },
+      { "q": "∫ cos(x) dx = ?", "options": ["sin(x) + C", "-sin(x) + C", "cos(x) + C", "-cos(x) + C"], "a": "sin(x) + C" },
+      { "q": "ஒரு பாச்சையில் (die) 6 வரும் probability?", "options": ["1/2", "1/3", "1/6", "1/12"], "a": "1/6" },
+      { "q": "x² - kx + 2 = 0 இன் வேர் x = 2 என்றால், k = ?", "options": ["2", "3", "4", "5"], "a": "4" }
+    ]
+  },
+  {
+    "grade": "11",
+    "subject": "Chemistry",
+    "en": [
+      { "q": "Atomic number of Oxygen is?", "options": ["6", "7", "8", "9"], "a": "8" },
+      { "q": "The father of modern chemistry is?", "options": ["Newton", "Lavoisier", "Dalton", "Mendeleev"], "a": "Lavoisier" },
+      { "q": "Avogadro’s number is?", "options": ["6.022 × 10²³", "3.14", "9.8", "1.6 × 10⁻¹⁹"], "a": "6.022 × 10²³" },
+      { "q": "Which gas is known as laughing gas?", "options": ["CO₂", "N₂O", "O₂", "CH₄"], "a": "N₂O" },
+      { "q": "The SI unit of pressure is?", "options": ["Pascal", "Joule", "Newton", "Watt"], "a": "Pascal" },
+      { "q": "Which bond is present in H₂O molecule?", "options": ["Ionic bond", "Covalent bond", "Metallic bond", "Hydrogen bond"], "a": "Covalent bond" },
+      { "q": "pH of pure water at 25°C is?", "options": ["0", "7", "14", "1"], "a": "7" },
+      { "q": "The element used in making pencil lead is?", "options": ["Carbon", "Silicon", "Sulphur", "Calcium"], "a": "Carbon" },
+      { "q": "Which is the lightest element?", "options": ["Hydrogen", "Helium", "Oxygen", "Nitrogen"], "a": "Hydrogen" },
+      { "q": "The most electronegative element is?", "options": ["Oxygen", "Fluorine", "Chlorine", "Nitrogen"], "a": "Fluorine" },
+      { "q": "Formula of common salt is?", "options": ["NaCl", "KCl", "Na₂CO₃", "CaCl₂"], "a": "NaCl" },
+      { "q": "In periodic table, group 18 elements are called?", "options": ["Halogens", "Noble gases", "Alkali metals", "Metalloids"], "a": "Noble gases" }
+    ],
+    "ta": [
+      { "q": "ஆக்சிஜனின் அணு எண்?", "options": ["6", "7", "8", "9"], "a": "8" },
+      { "q": "நவீன இரசாயனத்தின் தந்தை?", "options": ["நியூட்டன்", "லாவோசியே", "டால்டன்", "மென்டிலீவ்"], "a": "லாவோசியே" },
+      { "q": "ஆவோகாட்ரோ எண்?", "options": ["6.022 × 10²³", "3.14", "9.8", "1.6 × 10⁻¹⁹"], "a": "6.022 × 10²³" },
+      { "q": "சிரிக்கும் வாயு என்று அழைக்கப்படும் வாயு?", "options": ["CO₂", "N₂O", "O₂", "CH₄"], "a": "N₂O" },
+      { "q": "அழுத்தத்தின் SI அலகு?", "options": ["பாஸ்கல்", "ஜூல்", "நியூட்டன்", "வாட்"], "a": "பாஸ்கல்" },
+      { "q": "H₂O மூலக்கூறில் உள்ள பிணைப்பு?", "options": ["ஆயோனிக்", "கோவாலென்ட்", "உலோக", "ஹைட்ரஜன்"], "a": "கோவாலென்ட்" },
+      { "q": "25°C இல் தூய நீரின் pH?", "options": ["0", "7", "14", "1"], "a": "7" },
+      { "q": "பென்சில் சிசை தயாரிக்க பயன்படுத்தப்படும் தனிமம்?", "options": ["கார்பன்", "சிலிகான்", "சல்பர்", "கால்சியம்"], "a": "கார்பன்" },
+      { "q": "அதிகம் எளிதான தனிமம்?", "options": ["ஹைட்ரஜன்", "ஹீலியம்", "ஆக்சிஜன்", "நைட்ரஜன்"], "a": "ஹைட்ரஜன்" },
+      { "q": "மிகவும் மின்வேதனையுள்ள தனிமம்?", "options": ["ஆக்சிஜன்", "புளோரின்", "குளோரின்", "நைட்ரஜன்"], "a": "புளோரின்" },
+      { "q": "பொது உப்பின் மூலக்கூறு?", "options": ["NaCl", "KCl", "Na₂CO₃", "CaCl₂"], "a": "NaCl" },
+      { "q": "அட்டவணையில் 18வது குழு தனிமங்கள் அழைக்கப்படுவது?", "options": ["ஹாலஜன்கள்", "உயர்ந்த வாயுக்கள்", "அல்கலி உலோகங்கள்", "மெட்டலாய்ட்கள்"], "a": "உயர்ந்த வாயுக்கள்" }
+    ]
+  },
+  {
+    "grade": "12",
+    "subject": "Chemistry",
+    "en": [
+      { "q": "The IUPAC name of CH₃–CH₂–OH is?", "options": ["Methanol", "Ethanol", "Propanol", "Butanol"], "a": "Ethanol" },
+      { "q": "Which of the following is an example of a strong electrolyte?", "options": ["CH₃COOH", "NH₄OH", "NaCl", "H₂O"], "a": "NaCl" },
+      { "q": "The rate of reaction depends on?", "options": ["Concentration", "Temperature", "Catalyst", "All of these"], "a": "All of these" },
+      { "q": "In electrochemistry, the standard electrode potential of hydrogen is taken as?", "options": ["0 V", "1 V", "2.3 V", "−1 V"], "a": "0 V" },
+      { "q": "Which type of bond is present in diamond?", "options": ["Ionic", "Covalent", "Metallic", "Hydrogen"], "a": "Covalent" },
+      { "q": "The ore of aluminium is?", "options": ["Hematite", "Bauxite", "Galena", "Magnetite"], "a": "Bauxite" },
+      { "q": "Which law relates pressure and volume at constant temperature?", "options": ["Boyle’s Law", "Charles’ Law", "Avogadro’s Law", "Dalton’s Law"], "a": "Boyle’s Law" },
+      { "q": "The shape of ammonia (NH₃) molecule is?", "options": ["Tetrahedral", "Linear", "Trigonal pyramidal", "Square planar"], "a": "Trigonal pyramidal" },
+      { "q": "The hybridization of carbon in ethene (C₂H₄) is?", "options": ["sp³", "sp²", "sp", "sp³d"], "a": "sp²" },
+      { "q": "Which vitamin contains cobalt?", "options": ["Vitamin A", "Vitamin B₁₂", "Vitamin C", "Vitamin D"], "a": "Vitamin B₁₂" },
+      { "q": "Which compound is used in the preparation of explosives?", "options": ["Glycerol", "Nitroglycerin", "Methane", "Benzene"], "a": "Nitroglycerin" },
+      { "q": "Which type of isomerism is shown by C₂H₆O?", "options": ["Chain isomerism", "Functional isomerism", "Geometrical isomerism", "Optical isomerism"], "a": "Functional isomerism" }
+    ],
+    "ta": [
+      { "q": "CH₃–CH₂–OH இன் IUPAC பெயர்?", "options": ["மெத்தனோல்", "எத்தனோல்", "ப்ரோபனோல்", "பியூட்டனோல்"], "a": "எத்தனோல்" },
+      { "q": "கீழ்கண்டவற்றில் எது வலுவான எலக்ட்ரோலைட்?", "options": ["CH₃COOH", "NH₄OH", "NaCl", "H₂O"], "a": "NaCl" },
+      { "q": "ஒரு வினையின் வீதி எதன் மீது சார்ந்துள்ளது?", "options": ["திரள்தன்மை", "வெப்பநிலை", "உந்தி", "மேலுள்ள அனைத்தும்"], "a": "மேலுள்ள அனைத்தும்" },
+      { "q": "மின்வினைவேதியியலில் ஹைட்ரஜனின் நிலையான மின்னழுத்தம் எவ்வளவு?", "options": ["0 V", "1 V", "2.3 V", "−1 V"], "a": "0 V" },
+      { "q": "வைரத்தில் உள்ள பிணைப்பு எது?", "options": ["ஆயோனிக்", "கோவாலென்ட்", "உலோக", "ஹைட்ரஜன்"], "a": "கோவாலென்ட்" },
+      { "q": "அலுமினியத்தின் கனிமம்?", "options": ["ஹீமடைட்", "பாக்சைட்", "கேலீனா", "மக்னடைட்"], "a": "பாக்சைட்" },
+      { "q": "மாறாத வெப்பநிலையில் அழுத்தம் மற்றும் பருமனை தொடர்புபடுத்தும் விதி?", "options": ["பாய்ல் விதி", "சார்ல்ஸ் விதி", "ஆவோகாட்ரோ விதி", "டால்டன் விதி"], "a": "பாய்ல் விதி" },
+      { "q": "அமோனியா (NH₃) மூலக்கூறின் வடிவம்?", "options": ["டெட்ராஹெட்ரல்", "நேர்கோடு", "டிரிகோனல் பைரமிடல்", "ஸ்கொயர் பிளேனர்"], "a": "டிரிகோனல் பைரமிடல்" },
+      { "q": "எத்தீன் (C₂H₄) இல் கார்பனின் ஹைப்ரிடைசேஷன்?", "options": ["sp³", "sp²", "sp", "sp³d"], "a": "sp²" },
+      { "q": "கோபால்ட் கொண்டுள்ள வைட்டமின் எது?", "options": ["வைட்டமின் A", "வைட்டமின் B₁₂", "வைட்டமின் C", "வைட்டமின் D"], "a": "வைட்டமின் B₁₂" },
+      { "q": "வெடிபொருள் தயாரிப்பில் பயன்படுத்தப்படும் சேர்மம்?", "options": ["கிளிசரால்", "நைட்ரோகிளிசரின்", "மீத்தேன்", "பென்சீன்"], "a": "நைட்ரோகிளிசரின்" },
+      { "q": "C₂H₆O எது போன்ற ஐசோமரிசத்தை காட்டுகிறது?", "options": ["சங்கிலி ஐசோமரிசம்", "செயல்பாட்டு ஐசோமரிசம்", "ஜியோமெட்ரிக் ஐசோமரிசம்", "ஒளியியல் ஐசோமரிசம்"], "a": "செயல்பாட்டு ஐசோமரிசம்" }
+    ]
+  },
+  {
+  "grade": "11",
+  "subject": "Biology",
+  "en": [
+    { "q": "The functional unit of the kidney is?", "options": ["Neuron", "Nephron", "Alveoli", "Glomerulus"], "a": "Nephron" },
+    { "q": "Which is the powerhouse of the cell?", "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi body"], "a": "Mitochondria" },
+    { "q": "Which plant tissue is responsible for transport of water?", "options": ["Phloem", "Xylem", "Parenchyma", "Collenchyma"], "a": "Xylem" },
+    { "q": "DNA replication is described as?", "options": ["Conservative", "Semi-conservative", "Dispersive", "Random"], "a": "Semi-conservative" },
+    { "q": "The exchange of gases in humans takes place in?", "options": ["Trachea", "Bronchi", "Alveoli", "Lungs"], "a": "Alveoli" },
+    { "q": "The longest phase of the cell cycle is?", "options": ["Prophase", "Metaphase", "Anaphase", "Interphase"], "a": "Interphase" },
+    { "q": "Which vitamin is synthesized by our skin in sunlight?", "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"], "a": "Vitamin D" },
+    { "q": "The structural and functional unit of life is?", "options": ["Tissue", "Cell", "Organ", "Nucleus"], "a": "Cell" },
+    { "q": "Which blood cells are responsible for immunity?", "options": ["RBC", "Platelets", "WBC", "Plasma"], "a": "WBC" },
+    { "q": "C4 pathway in plants helps in?", "options": ["Respiration", "Reducing photorespiration", "Transport", "Protein synthesis"], "a": "Reducing photorespiration" },
+    { "q": "Which part of the brain controls balance and posture?", "options": ["Cerebrum", "Cerebellum", "Medulla", "Pons"], "a": "Cerebellum" },
+    { "q": "Insulin is secreted by which cells of pancreas?", "options": ["Alpha cells", "Beta cells", "Delta cells", "Acinar cells"], "a": "Beta cells" }
+  ],
+  "ta": [
+    { "q": "சிறுநீரகத்தின் செயல்பாட்டு அலகு எது?", "options": ["நியூரான்", "நெஃப்ரான்", "ஆல்வியோலை", "குளோமெருலஸ்"], "a": "நெஃப்ரான்" },
+    { "q": "உயிரணுவின் சக்தி நிலையம் எது?", "options": ["நியூக்ளியஸ்", "மைட்டோகாண்ட்ரியா", "ரைபோசோம்", "கோல்ஜி உடல்"], "a": "மைட்டோகாண்ட்ரியா" },
+    { "q": "தாவரங்களில் நீரை கடத்தும் திசு?", "options": ["ப்ளோயம்", "சைலம்", "பாரென்கைமா", "கொலென்கைமா"], "a": "சைலம்" },
+    { "q": "DNA பிரதி எடுப்பு எவ்வாறு விவரிக்கப்படுகிறது?", "options": ["கன்சர்வேட்டிவ்", "செமி-கன்சர்வேட்டிவ்", "டிஸ்பர்சிவ்", "ரேண்டம்"], "a": "செமி-கன்சர்வேட்டிவ்" },
+    { "q": "மனிதர்களில் வாயுக்களின் பரிமாற்றம் எங்கு நடக்கிறது?", "options": ["ட்ரேகியா", "ப்ரோன்கை", "ஆல்வியோலை", "நுரையீரல்"], "a": "ஆல்வியோலை" },
+    { "q": "உயிரணு சுழற்சியின் மிக நீண்ட நிலை?", "options": ["ப்ரோஃபேஸ்", "மெடஃபேஸ்", "அனஃபேஸ்", "இன்டர்ஃபேஸ்"], "a": "இன்டர்ஃபேஸ்" },
+    { "q": "சூரிய வெளிச்சத்தில் தோலில் உற்பத்தி செய்யப்படும் வைட்டமின்?", "options": ["வைட்டமின் A", "வைட்டமின் C", "வைட்டமின் D", "வைட்டமின் K"], "a": "வைட்டமின் D" },
+    { "q": "உயிரின் அடிப்படை அலகு எது?", "options": ["திசு", "உயிரணு", "உறுப்பு", "நியூக்ளியஸ்"], "a": "உயிரணு" },
+    { "q": "நோய் எதிர்ப்பை வழங்கும் இரத்த அணுக்கள் எவை?", "options": ["RBC", "பிளேட்லெட்ஸ்", "WBC", "பிளாஸ்மா"], "a": "WBC" },
+    { "q": "C4 பாதை தாவரங்களில் எதற்காக உதவுகிறது?", "options": ["சுவாசம்", "போட்டோ ரெஸ்பிரேஷனை குறைப்பது", "கடத்தல்", "புரத உற்பத்தி"], "a": "போட்டோ ரெஸ்பிரேஷனை குறைப்பது" },
+    { "q": "சமநிலை மற்றும் உடல் நிலையை கட்டுப்படுத்தும் மூளையின் பகுதி?", "options": ["செரிப்ரம்", "செரிபெல்லம்", "மெடுலா", "போன்ஸ்"], "a": "செரிபெல்லம்" },
+    { "q": "இன்சுலின் சுரக்கும் பாகப்பகுதி?", "options": ["ஆல்பா செல்கள்", "பீட்டா செல்கள்", "டெல்டா செல்கள்", "அசினார் செல்கள்"], "a": "பீட்டா செல்கள்" }
+  ]
+},
+{
+  "grade": "12",
+  "subject": "Biology",
+  "en": [
+    { "q": "The functional unit of DNA is?", "options": ["Nucleotide", "Gene", "Chromosome", "Histone"], "a": "Gene" },
+    { "q": "Which of the following is a Mendelian disorder?", "options": ["Down’s syndrome", "Klinefelter’s syndrome", "Thalassemia", "Sickle cell anaemia"], "a": "Sickle cell anaemia" },
+    { "q": "Which hormone is known as the birth hormone?", "options": ["Oxytocin", "Progesterone", "Estrogen", "Prolactin"], "a": "Oxytocin" },
+    { "q": "Which organ acts as the master gland?", "options": ["Thyroid", "Pituitary", "Adrenal", "Pancreas"], "a": "Pituitary" },
+    { "q": "The technique used to produce genetically identical organisms is?", "options": ["Mutation", "Hybridization", "Cloning", "Recombination"], "a": "Cloning" },
+    { "q": "Which enzyme is used in PCR (Polymerase Chain Reaction)?", "options": ["Ligase", "Taq polymerase", "Helicase", "DNA polymerase I"], "a": "Taq polymerase" },
+    { "q": "Which part of the nephron is responsible for reabsorption of glucose?", "options": ["Bowman’s capsule", "Loop of Henle", "Proximal convoluted tubule", "Collecting duct"], "a": "Proximal convoluted tubule" },
+    { "q": "The carriers of malaria parasite are?", "options": ["Male Anopheles", "Female Anopheles", "Culex mosquito", "Aedes mosquito"], "a": "Female Anopheles" },
+    { "q": "Which type of immunity is provided by vaccination?", "options": ["Natural passive", "Artificial active", "Artificial passive", "Innate"], "a": "Artificial active" },
+    { "q": "Which of the following is a greenhouse gas?", "options": ["O₂", "CO₂", "N₂", "Ar"], "a": "CO₂" },
+    { "q": "Which method is used to detect genetic disorders in a fetus?", "options": ["Sonography", "Amniocentesis", "Dialysis", "Endoscopy"], "a": "Amniocentesis" },
+    { "q": "The process of synthesis of RNA from DNA is called?", "options": ["Replication", "Translation", "Transcription", "Translocation"], "a": "Transcription" }
+  ],
+  "ta": [
+    { "q": "DNA-வின் செயல்பாட்டு அலகு எது?", "options": ["நியூக்ளியோடைடு", "ஜீன்", "குரோமோசோம்", "ஹிஸ்டோன்"], "a": "ஜீன்" },
+    { "q": "கீழ்கண்டவற்றில் எது மெண்டேலியன் குறைபாடு?", "options": ["டவுன் சிண்ட்ரோம்", "க்ளைன்ஃபெல்ட்டர் சிண்ட்ரோம்", "தலசீமியா", "சிக்கிள் செல்அனீமியா"], "a": "சிக்கிள் செல்அனீமியா" },
+    { "q": "பிறப்பு ஹார்மோன் என அழைக்கப்படும் ஹார்மோன் எது?", "options": ["ஆக்ஸிடோசின்", "ப்ரோஜெஸ்டிரோன்", "எஸ்ட்ரோஜன்", "ப்ரோலாக்டின்"], "a": "ஆக்ஸிடோசின்" },
+    { "q": "மாஸ்டர் சுரப்பி (master gland) எனப்படும் சுரப்பி எது?", "options": ["தைராய்டு", "பிட்யூட்டரி", "அட்ரினல்", "அக்னி"], "a": "பிட்யூட்டரி" },
+    { "q": "இனத்துடன் ஒரே மாதிரியாக உயிரினங்களை உருவாக்கும் நுட்பம்?", "options": ["மியூட்டேஷன்", "ஹைபிரிடைசேஷன்", "க்ளோனிங்", "ரீகாம்பினேஷன்"], "a": "க்ளோனிங்" },
+    { "q": "PCR-இல் பயன்படுத்தப்படும் என்சைம் எது?", "options": ["லைகேஸ்", "டாக் பாலிமரேஸ்", "ஹெலிகேஸ்", "DNA பாலிமரேஸ் I"], "a": "டாக் பாலிமரேஸ்" },
+    { "q": "நெஃப்ரானில் குளுக்கோஸ் மீள் உறிஞ்சல் நடைபெறும் பகுதி?", "options": ["போமனின் காப்சூல்", "ஹென்லே வளைவு", "ப்ராக்ஸிமல் கன்வல்யூட்டெட் டியூப்யூல்", "கலெக்டிங் டக்ட்"], "a": "ப்ராக்ஸிமல் கன்வல்யூட்டெட் டியூப்யூல்" },
+    { "q": "மலேரியா பரவுவதை தாங்கி செல்லும் கொசு?", "options": ["ஆண் அனோஃபிலீஸ்", "பெண் அனோஃபிலீஸ்", "க்யூலெக்ஸ்", "ஏடிஸ்"], "a": "பெண் அனோஃபிலீஸ்" },
+    { "q": "தடுப்பூசி வழங்கும் நோய் எதிர்ப்பு வகை?", "options": ["இயற்கை பாசிவ்", "செயற்கை ஆக்டிவ்", "செயற்கை பாசிவ்", "இனேட்"], "a": "செயற்கை ஆக்டிவ்" },
+    { "q": "கீழ்கண்டவற்றில் எது பசுமைக் வீடு வாயு?", "options": ["O₂", "CO₂", "N₂", "Ar"], "a": "CO₂" },
+    { "q": "கருவில் உள்ள குழந்தையின் மரபியல் குறைபாடுகளை கண்டறியும் முறை?", "options": ["சோனோகிராபி", "அம்னியோசென்டீசிஸ்", "டயாலிசிஸ்", "என்டோஸ்கோபி"], "a": "அம்னியோசென்டீசிஸ்" },
+    { "q": "DNA-இல் இருந்து RNA உருவாகும் செயல்?", "options": ["பிரதி எடுப்பு", "மொழிபெயர்ப்பு", "டிரான்ஸ்கிரிப்ஷன்", "டிரான்ஸ்லொகேஷன்"], "a": "டிரான்ஸ்கிரிப்ஷன்" }
+  ]
+},
+  {
+    "grade": "11",
+    "subject": "Physics",
+    "en": [
+      { "q": "A body is thrown vertically upward with a velocity of 20 m/s. How much time will it take to reach the maximum height? (g = 10 m/s²)", "options": ["1 s", "2 s", "3 s", "4 s"], "a": "2 s" },
+      { "q": "Which of the following is a scalar quantity?", "options": ["Velocity", "Displacement", "Force", "Speed"], "a": "Speed" },
+      { "q": "The SI unit of power is?", "options": ["Joule", "Watt", "Newton", "Pascal"], "a": "Watt" },
+      { "q": "If an object’s mass is doubled while keeping force constant, its acceleration will?", "options": ["Double", "Halve", "Remain same", "Become zero"], "a": "Halve" },
+      { "q": "The slope of a velocity–time graph represents?", "options": ["Velocity", "Acceleration", "Displacement", "Force"], "a": "Acceleration" },
+      { "q": "Which law states that pressure is transmitted equally in all directions?", "options": ["Archimedes’ Principle", "Pascal’s Law", "Boyle’s Law", "Hooke’s Law"], "a": "Pascal’s Law" },
+      { "q": "The unit of gravitational constant G is?", "options": ["N m²/kg²", "N/kg", "m/s²", "kg m/s"], "a": "N m²/kg²" },
+      { "q": "1 horsepower is equal to how many watts?", "options": ["746 W", "1000 W", "500 W", "1 W"], "a": "746 W" },
+      { "q": "Which type of mirror is used in vehicle headlights?", "options": ["Concave mirror", "Convex mirror", "Plane mirror", "Spherical mirror"], "a": "Concave mirror" },
+      { "q": "The frequency of a wave is the reciprocal of?", "options": ["Wavelength", "Time period", "Amplitude", "Velocity"], "a": "Time period" },
+      { "q": "The dimensional formula of momentum is?", "options": ["MLT⁻²", "MLT⁻¹", "M²L²T⁻²", "ML⁻¹T⁻²"], "a": "MLT⁻¹" },
+      { "q": "The escape velocity on Earth is approximately?", "options": ["11.2 km/s", "8.9 km/s", "15 km/s", "5 km/s"], "a": "11.2 km/s" }
+    ],
+    "ta": [
+      { "q": "ஒரு உடல் செங்குத்தாக 20 m/s வேகத்தில் மேலே எறியப்படுகிறது. அது அதிகபட்ச உயரத்தை அடைய எவ்வளவு நேரம் ஆகும்? (g = 10 m/s²)", "options": ["1 வி", "2 வி", "3 வி", "4 வி"], "a": "2 வி" },
+      { "q": "பின்வருவனவற்றில் எது ஒரு ஸ்கேலர் அளவு?", "options": ["வேகம் (Velocity)", "நகர்வு (Displacement)", "வலிமை (Force)", "வேகம் (Speed)"], "a": "வேகம் (Speed)" },
+      { "q": "சக்தியின் SI அலகு எது?", "options": ["ஜூல்", "வாட்", "நியூட்டன்", "பாஸ்கல்"], "a": "வாட்" },
+      { "q": "ஒரு பொருளின் வெகுஜனம் இரண்டு மடங்காக அதிகரிக்கப்படும்போது, வலிமை மாறாமல் இருந்தால், அதின் துரிதம்?", "options": ["இரண்டு மடங்கு", "அரை", "அதேபடி இருக்கும்", "பூஜ்யமாகும்"], "a": "அரை" },
+      { "q": "வேகம்-நேரம் வரைபடத்தின் சாய்வு எதை குறிக்கிறது?", "options": ["வேகம்", "துரிதம்", "நகர்வு", "வலிமை"], "a": "துரிதம்" },
+      { "q": "அழுத்தம் எல்லாத் திசைகளிலும் சமமாக பரவுகிறது என்று கூறும் விதி எது?", "options": ["ஆர்க்கிமிடிஸ் கோட்பாடு", "பாஸ்கல் விதி", "பாய்ல் விதி", "ஹூக் விதி"], "a": "பாஸ்கல் விதி" },
+      { "q": "இயற்பியல் மாறிலி G-வின் அலகு எது?", "options": ["N m²/kg²", "N/kg", "m/s²", "kg m/s"], "a": "N m²/kg²" },
+      { "q": "1 ஹார்ஸ்பவர் எத்தனை வாட் ஆகும்?", "options": ["746 வாட்", "1000 வாட்", "500 வாட்", "1 வாட்"], "a": "746 வாட்" },
+      { "q": "வாகன ஹெட்லைட்களில் பயன்படுத்தப்படும் கண்ணாடி எது?", "options": ["உள்வளைந்த கண்ணாடி", "வெளிவளைந்த கண்ணாடி", "சமதள கண்ணாடி", "உருண்டை கண்ணாடி"], "a": "உள்வளைந்த கண்ணாடி" },
+      { "q": "அலைக்கான அதிர்வெண் எதன் மாறிலோபம்?", "options": ["அலைநீளம்", "காலம்", "அம்பிளிடியூட்", "வேகம்"], "a": "காலம்" },
+      { "q": "நெடுவரிசையின் பரிமாண சூத்திரம் எது?", "options": ["MLT⁻²", "MLT⁻¹", "M²L²T⁻²", "ML⁻¹T⁻²"], "a": "MLT⁻¹" },
+      { "q": "பூமியில் தப்பிச் செல்லும் வேகம் சுமார் எவ்வளவு?", "options": ["11.2 km/s", "8.9 km/s", "15 km/s", "5 km/s"], "a": "11.2 km/s" }
+    ]
+  },
+  {
+    "grade": "11",
+    "subject": "English",
+    "en": [
+      { "q": "Identify the figure of speech: 'The world is a stage.'", "options": ["Simile", "Metaphor", "Personification", "Alliteration"], "a": "Metaphor" },
+      { "q": "Choose the correct passive voice: 'She is writing a letter.'", "options": ["A letter was written by her", "A letter is written by her", "A letter is being written by her", "A letter will be written by her"], "a": "A letter is being written by her" },
+      { "q": "Fill in the blank: He _____ playing cricket since morning.", "options": ["is", "was", "has been", "had been"], "a": "has been" },
+      { "q": "Choose the correct synonym for 'benevolent':", "options": ["Kind", "Cruel", "Angry", "Greedy"], "a": "Kind" },
+      { "q": "Find the antonym of 'prosperity'.", "options": ["Wealth", "Happiness", "Poverty", "Success"], "a": "Poverty" },
+      { "q": "Which tense is used in the sentence: 'She has finished her homework'?", "options": ["Present perfect", "Past perfect", "Future perfect", "Past continuous"], "a": "Present perfect" },
+      { "q": "Choose the correctly spelled word:", "options": ["Accomodation", "Accommodation", "Acommodation", "Accomadation"], "a": "Accommodation" },
+      { "q": "Identify the type of sentence: 'Please close the door.'", "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"], "a": "Imperative" },
+      { "q": "Change into indirect speech: He said, 'I am tired.'", "options": ["He said that he was tired", "He said that I am tired", "He said he will be tired", "He said he had tired"], "a": "He said that he was tired" },
+      { "q": "Which one is a collective noun?", "options": ["Chair", "Team", "Box", "Book"], "a": "Team" },
+      { "q": "Fill in the blank: She is taller _____ her brother.", "options": ["than", "then", "to", "from"], "a": "than" },
+      { "q": "Choose the correct article: He bought _____ orange.", "options": ["a", "an", "the", "no article"], "a": "an" }
+    ],
+    "ta": [
+      { "q": "இந்த வாக்கியத்தில் உள்ள அலங்காரச் சிறப்பு எது: 'உலகம் ஒரு மேடை.'", "options": ["உவமை (Simile)", "உருவகம் (Metaphor)", "மனிதமயமாக்கம் (Personification)", "ஆரம்ப எழுத்திசை (Alliteration)"], "a": "உருவகம் (Metaphor)" },
+      { "q": "சரியான பகுபெயர்ப் பன்மை வாக்கியத்தைத் தேர்வு செய்யவும்: 'She is writing a letter.'", "options": ["A letter was written by her", "A letter is written by her", "A letter is being written by her", "A letter will be written by her"], "a": "A letter is being written by her" },
+      { "q": "வெற்றிடத்தை நிரப்புக: He _____ playing cricket since morning.", "options": ["is", "was", "has been", "had been"], "a": "has been" },
+      { "q": "'benevolent' என்ற சொல்லுக்கு சரியான சமச்சீர் சொல் எது?", "options": ["Kind", "Cruel", "Angry", "Greedy"], "a": "Kind" },
+      { "q": "'prosperity' என்ற சொல்லின் எதிர்சொல் எது?", "options": ["செல்வம்", "மகிழ்ச்சி", "வறுமை", "வெற்றி"], "a": "வறுமை" },
+      { "q": "'She has finished her homework' என்ற வாக்கியத்தில் எந்த காலம் பயன்படுத்தப்பட்டுள்ளது?", "options": ["தற்போதைய நிறைவு", "இறந்த நிறைவு", "எதிர்கால நிறைவு", "இறந்த தொடர்ச்சி"], "a": "தற்போதைய நிறைவு" },
+      { "q": "சரியாக எழுதப்பட்ட சொல் எது?", "options": ["Accomodation", "Accommodation", "Acommodation", "Accomadation"], "a": "Accommodation" },
+      { "q": "'Please close the door.' என்ற வாக்கியம் எந்த வகை?", "options": ["விவரிப்பு", "கேள்வி", "ஆணை", "ஆச்சரியம்"], "a": "ஆணை" },
+      { "q": "மறைமுக உரை: He said, 'I am tired.'", "options": ["அவர் அவர் சோர்வடைந்தார் என்றார்", "அவர் நான் சோர்வடைந்தேன் என்றார்", "அவர் அவர் சோர்வடைவார் என்றார்", "அவர் அவர் சோர்வடைந்துவிட்டார் என்றார்"], "a": "அவர் அவர் சோர்வடைந்தார் என்றார்" },
+      { "q": "பின்வருவனவற்றில் எது ஒரு குழுப் பெயர்ச்சொல்?", "options": ["Chair", "Team", "Box", "Book"], "a": "Team" },
+      { "q": "வெற்றிடத்தை நிரப்புக: She is taller _____ her brother.", "options": ["than", "then", "to", "from"], "a": "than" },
+      { "q": "சரியான article தேர்வு செய்க: He bought _____ orange.", "options": ["a", "an", "the", "no article"], "a": "an" }
+    ]
+  },
+  {
+    "grade": "12",
+    "subject": "Physics",
+    "en": [
+      { "q": "The dimensional formula of Planck’s constant (h) is?", "options": ["ML²T⁻¹", "ML²T⁻²", "ML²T⁻³", "MLT⁻²"], "a": "ML²T⁻¹" },
+      { "q": "In Young’s double-slit experiment, the fringe width is directly proportional to?", "options": ["Wavelength", "Slit separation", "Screen distance", "Both Wavelength and Screen distance"], "a": "Both Wavelength and Screen distance" },
+      { "q": "Which law explains the photoelectric effect?", "options": ["Einstein’s Law", "Planck’s Law", "Newton’s Law", "Hooke’s Law"], "a": "Einstein’s Law" },
+      { "q": "The unit of self-inductance is?", "options": ["Henry", "Tesla", "Weber", "Farad"], "a": "Henry" },
+      { "q": "What is the charge of an alpha particle?", "options": ["+e", "+2e", "−e", "0"], "a": "+2e" },
+      { "q": "Which of the following is not an electromagnetic wave?", "options": ["Gamma rays", "Sound waves", "Microwaves", "X-rays"], "a": "Sound waves" },
+      { "q": "In semiconductors, the forbidden energy gap is?", "options": ["0 eV", "< 3 eV", "> 5 eV", "Infinite"], "a": "< 3 eV" },
+      { "q": "The direction of induced current is given by?", "options": ["Ohm’s Law", "Faraday’s Law", "Lenz’s Law", "Coulomb’s Law"], "a": "Lenz’s Law" },
+      { "q": "The speed of light in vacuum is?", "options": ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁴ m/s", "3 × 10¹⁰ m/s"], "a": "3 × 10⁸ m/s" },
+      { "q": "Which device converts AC into DC?", "options": ["Transformer", "Rectifier", "Inductor", "Oscillator"], "a": "Rectifier" },
+      { "q": "The SI unit of power is?", "options": ["Joule", "Watt", "Newton", "Pascal"], "a": "Watt" },
+      { "q": "The focal length of a convex lens is positive or negative?", "options": ["Positive", "Negative", "Zero", "Depends on medium"], "a": "Positive" }
+    ],
+    "ta": [
+      { "q": "பிளாங்க் மாறிலி (h) யின் பரிமாண சூத்திரம்?", "options": ["ML²T⁻¹", "ML²T⁻²", "ML²T⁻³", "MLT⁻²"], "a": "ML²T⁻¹" },
+      { "q": "யங் இரட்டைச் சிளிட் பரிசோதனையில், கோடு அகலம் நேர்மறை சார்பு எதற்கு?", "options": ["அலைநீளம்", "சிளிட் இடைவெளி", "திரை தூரம்", "அலைநீளம் மற்றும் திரை தூரம்"], "a": "அலைநீளம் மற்றும் திரை தூரம்" },
+      { "q": "ஒளியுத்தேச விளைவை எந்த விதி விளக்குகிறது?", "options": ["ஐன்ஸ்டீன் விதி", "பிளாங்க் விதி", "நியூட்டன் விதி", "ஹூக் விதி"], "a": "ஐன்ஸ்டீன் விதி" },
+      { "q": "சுய தூண்டல் அலகு எது?", "options": ["ஹென்றி", "டெஸ்லா", "வெபர்", "பாரட்"], "a": "ஹென்றி" },
+      { "q": "ஆல்பா துகளின் மின்கட்டணம் எவ்வளவு?", "options": ["+e", "+2e", "−e", "0"], "a": "+2e" },
+      { "q": "கீழ்கண்டவற்றில் எது மின்காந்த அலை அல்ல?", "options": ["காமா கதிர்கள்", "ஒலி அலைகள்", "மைக்ரோஅலைகள்", "எக்ஸ் கதிர்கள்"], "a": "ஒலி அலைகள்" },
+      { "q": "அரைகட்டிகளில் தடை ஆற்றல் இடைவெளி எவ்வளவு?", "options": ["0 eV", "< 3 eV", "> 5 eV", "எல்லையற்றது"], "a": "< 3 eV" },
+      { "q": "தூண்டப்பட்ட மின்னோட்ட திசை எந்த விதியால் கொடுக்கப்படுகிறது?", "options": ["ஓமின் விதி", "பாரடே விதி", "லென்ஸ் விதி", "கூலம்ப் விதி"], "a": "லென்ஸ் விதி" },
+      { "q": "வெற்றிடத்தில் ஒளியின் வேகம்?", "options": ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁴ m/s", "3 × 10¹⁰ m/s"], "a": "3 × 10⁸ m/s" },
+      { "q": "AC-ஐ DC-ஆக மாற்றும் சாதனம் எது?", "options": ["டிரான்ஸ்ஃபார்மர்", "ரெக்டிஃபையர்", "இண்டக்டர்", "ஓசிலேட்டர்"], "a": "ரெக்டிஃபையர்" },
+      { "q": "சக்தியின் SI அலகு எது?", "options": ["ஜூல்", "வாட்", "நியூட்டன்", "பாஸ்கல்"], "a": "வாட்" },
+      { "q": "ஒரு உச்சி லென்ஸின் கேந்திரநீளம் நேர்மறைதானா எதிர்மறைதானா?", "options": ["நேர்மறை", "எதிர்மறை", "பூஜ்யம்", "மூலத்தின் அடிப்படையில்"], "a": "நேர்மறை" }
+    ]
+  },
+  {
+    "grade": "12",
+    "subject": "English",
+    "en": [
+      { "q": "Who is the author of 'The Merchant of Venice'?", "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "John Milton"], "a": "William Shakespeare" },
+      { "q": "Identify the figure of speech: 'The world is a stage.'", "options": ["Metaphor", "Simile", "Personification", "Alliteration"], "a": "Metaphor" },
+      { "q": "What is the synonym of 'Benevolent'?", "options": ["Kind", "Cruel", "Harsh", "Strict"], "a": "Kind" },
+      { "q": "Which tense is used in: 'I will have completed the work.'?", "options": ["Future Simple", "Future Perfect", "Present Perfect", "Past Perfect"], "a": "Future Perfect" },
+      { "q": "Fill in the blank: 'She is good ___ dancing.'", "options": ["in", "at", "on", "with"], "a": "at" },
+      { "q": "Who is the poet of 'An Elementary School Classroom in a Slum'?", "options": ["Stephen Spender", "T.S. Eliot", "Robert Frost", "Sylvia Plath"], "a": "Stephen Spender" },
+      { "q": "Choose the correct passive form: 'They are watching the match.'", "options": ["The match was watched by them.", "The match is watched by them.", "The match is being watched by them.", "The match has been watched by them."], "a": "The match is being watched by them." },
+      { "q": "What is the antonym of 'Expand'?", "options": ["Extend", "Contract", "Increase", "Spread"], "a": "Contract" },
+      { "q": "Identify the correct indirect speech: He said, 'I am tired.'", "options": ["He said that he was tired.", "He said that I was tired.", "He said he is tired.", "He said that he will be tired."], "a": "He said that he was tired." },
+      { "q": "Which literary device is used in: 'He is as brave as a lion.'?", "options": ["Metaphor", "Simile", "Irony", "Hyperbole"], "a": "Simile" },
+      { "q": "Which novel begins with the line: 'It was the best of times, it was the worst of times'?", "options": ["Oliver Twist", "A Tale of Two Cities", "Pride and Prejudice", "Hamlet"], "a": "A Tale of Two Cities" },
+      { "q": "Choose the correct article: 'He is ___ honest man.'", "options": ["a", "an", "the", "no article"], "a": "an" }
+    ],
+    "ta": [
+      { "q": "'தி மெர்சன்ட் ஆஃப் வெனிஸ்' நூலின் ஆசிரியர் யார்?", "options": ["சார்லஸ் டிக்கன்ஸ்", "வில்லியம் ஷேக்ஸ்பியர்", "ஜெயின் ஆஸ்டின்", "ஜான் மில்டன்"], "a": "வில்லியம் ஷேக்ஸ்பியர்" },
+      { "q": "இந்த அலங்காரம் என்ன: 'உலகமே ஒரு மேடை.'", "options": ["உவமை", "உருவகம்", "மனிதரூபம்", "அல்லிடரேஷன்"], "a": "உருவகம்" },
+      { "q": "'Benevolent' என்பதற்கான சமமான சொல்?", "options": ["Kind (இரக்கம்)", "Cruel (கொடுமை)", "Harsh (கடுமை)", "Strict (கடுமையான)"], "a": "Kind (இரக்கம்)" },
+      { "q": "'I will have completed the work.' எந்த காலத்தில் உள்ளது?", "options": ["எதிர்கால எளிமை", "எதிர்கால பூர்ணம்", "நிகழ்கால பூர்ணம்", "இறந்தகால பூர்ணம்"], "a": "எதிர்கால பூர்ணம்" },
+      { "q": "வெற்றிடத்தை நிரப்புக: 'She is good ___ dancing.'", "options": ["in", "at", "on", "with"], "a": "at" },
+      { "q": "'An Elementary School Classroom in a Slum' கவிதையின் ஆசிரியர் யார்?", "options": ["ஸ்டீபன் ஸ்பென்டர்", "டி.எஸ். எலியட்", "ராபர்ட் ஃப்ராஸ்ட்", "சில்வியா பிளாத்"], "a": "ஸ்டீபன் ஸ்பென்டர்" },
+      { "q": "சரியான பாசிவ் வடிவத்தைத் தேர்வு செய்க: 'They are watching the match.'", "options": ["போட்டி அவர்கள் மூலம் பார்க்கப்பட்டது.", "போட்டி அவர்கள் மூலம் பார்க்கப்படுகிறது.", "போட்டி அவர்கள் மூலம் பார்க்கப்பட்டுக் கொண்டிருக்கிறது.", "போட்டி அவர்கள் மூலம் பார்க்கப்பட்டுள்ளது."], "a": "போட்டி அவர்கள் மூலம் பார்க்கப்பட்டுக் கொண்டிருக்கிறது." },
+      { "q": "'Expand' என்பதற்கான எதிர்சொல்?", "options": ["விரிவாக்கம்", "சுருக்கம்", "அதிகரிப்பு", "பரப்பு"], "a": "சுருக்கம்" },
+      { "q": "சரியான பரோட்ச உரையை அடையாளம் காண்க: He said, 'I am tired.'", "options": ["அவர் தன்னை சோர்வாக இருந்ததாகச் சொன்னார்.", "அவர் நான் சோர்வாக இருந்ததாகச் சொன்னார்.", "அவர் தன்னை சோர்வாக இருக்கிறார் என்றார்.", "அவர் சோர்வாக இருப்பேன் என்றார்."], "a": "அவர் தன்னை சோர்வாக இருந்ததாகச் சொன்னார்." },
+      { "q": "இந்த இலக்கிய உத்தி என்ன: 'He is as brave as a lion.'?", "options": ["உருவகம்", "உவமை", "இய்ரனி", "அதிகோத்திப்பு"], "a": "உவமை" },
+      { "q": "இந்த நாவல் எந்த வரியால் தொடங்குகிறது: 'It was the best of times, it was the worst of times'?", "options": ["ஒலிவர் ட்விஸ்ட்", "A Tale of Two Cities", "பிரைடு அண்ட் பிரெஜுடைஸ்", "ஹாம்லெட்"], "a": "A Tale of Two Cities" },
+      { "q": "சரியான கட்டுரை: 'He is ___ honest man.'", "options": ["a", "an", "the", "கட்டுரை இல்லை"], "a": "an" }
+    ]
+  }
+]

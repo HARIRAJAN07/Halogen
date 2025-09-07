@@ -31,8 +31,8 @@ const translations = {
 const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
-  const { classId, subject } = useParams(); // ✅ get params from route
-
+  const { classId,displayName, subject } = useParams(); // ✅ get params from route
+  const classKey = `class${classId}`
   return (
     <div
       className="relative"
@@ -85,7 +85,7 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
           <button
             onClick={(e) => {
               e.stopPropagation(); // ✅ prevent flipping again
-              navigate(`/single/${classId}/${subject}${navigateTo}`);
+              navigate(`/single/${classId}/${displayName}/${subject}${navigateTo}`);
             }}
             className="px-[10%] py-[5%] rounded-xl shadow-lg"
             style={{

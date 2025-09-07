@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import socialData from '../data/social.json';
+import socialData from '../../data/social.json';
 
 const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import cardsJSON from "../data/cardsData.json";
+import cardsJSON from "../../data/cardsData.json";
 import BgImage from "../../assets/BgImage.png";
+
 
 const Cardflipping = () => {
   const [cards, setCards] = useState([]);
@@ -204,4 +205,4 @@ const initializeGame = useCallback(() => {
   );
 };
 
-export default App;
+export default Cardflipping;
