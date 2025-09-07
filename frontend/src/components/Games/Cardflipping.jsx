@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import cardsJSON from "../../data/cardsData.json";
 import BgImage from "../../assets/BgImage.png";
-
+import TablaCelebration from '../utils/Celeb'; // Import your celebration component
 
 const Cardflipping = () => {
   const [cards, setCards] = useState([]);
@@ -11,42 +11,48 @@ const Cardflipping = () => {
   const [isGameActive, setIsGameActive] = useState(true);
   const [gameMode, setGameMode] = useState('antonym');
   const [showAllCardsTemporarily, setShowAllCardsTemporarily] = useState(false);
-  const [timer, setTimer] = useState(90); // 1. New state for the timer, set to 90 seconds
+  const [timer, setTimer] = useState(90); 
+  const [showCelebration, setShowCelebration] = useState(false); // Celebration state
+  const [stopCelebration, setStopCelebration] = useState(false); // Stop celeb on restart
 
-const initializeGame = useCallback(() => {
-  if (!cardsJSON || !cardsJSON.length) return;
+  const initializeGame = useCallback(() => {
+    setStopCelebration(true); // stop previous celebration
+    setTimeout(() => setStopCelebration(false), 50); // reset stop
 
-  const gamePairs = cardsJSON.find(data => data.type === gameMode).pairs;
+    if (!cardsJSON || !cardsJSON.length) return;
 
-  const deck = gamePairs.flatMap(pair => [
-    { id: Math.random(), word: pair[0], match: pair[1] },
-    { id: Math.random(), word: pair[1], match: pair[0] }
-  ]);
+    const gamePairs = cardsJSON.find(data => data.type === gameMode).pairs;
 
-  // Shuffle
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
-  }
+    const deck = gamePairs.flatMap(pair => [
+      { id: Math.random(), word: pair[0], match: pair[1] },
+      { id: Math.random(), word: pair[1], match: pair[0] }
+    ]);
 
-  setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
-  setFlippedCards([]);
-  setMatchedCards([]);
-  setMessage('');
-  setIsGameActive(true);
-  setTimer(90);
+    // Shuffle
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
 
-  // Set a flag to show all cards for 4 seconds
-  setShowAllCardsTemporarily(true);
-  setTimeout(() => {
-    setShowAllCardsTemporarily(false);
-  }, 4000); // Changed from 2000 to 4000
-}, [gameMode]);
+    setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setMessage('');
+    setIsGameActive(true);
+    setTimer(90);
+    setShowCelebration(false);
+
+    setShowAllCardsTemporarily(true);
+    setTimeout(() => {
+      setShowAllCardsTemporarily(false);
+    }, 4000);
+  }, [gameMode]);
+
   useEffect(() => {
     initializeGame();
   }, [initializeGame]);
 
-  // 2. useEffect for the countdown timer
+  // Timer
   useEffect(() => {
     let countdown;
 
@@ -101,7 +107,8 @@ const initializeGame = useCallback(() => {
   useEffect(() => {
     if (matchedCards.length === cards.length && cards.length > 0) {
       setMessage('You have won the game!');
-      setIsGameActive(false); // Stop the timer on win
+      setIsGameActive(false);
+      setShowCelebration(true); // Trigger celebration
     }
   }, [matchedCards, cards]);
 
@@ -119,7 +126,6 @@ const initializeGame = useCallback(() => {
     ? 'Flip the perfect antonyms together!'
     : 'Flip the perfect synonyms together!';
 
-  // Helper function to format the time
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -151,7 +157,7 @@ const initializeGame = useCallback(() => {
         </button>
       </div>
       
-      {/* 3. Display the timer */}
+      {/* Timer */}
       <h2 className="text-xl font-bold mb-4">
         Time Remaining: <span className="text-red-600">{formatTime(timer)}</span>
       </h2>
@@ -201,6 +207,9 @@ const initializeGame = useCallback(() => {
       >
         Restart Game
       </button>
+
+      {/* Celebration Component */}
+      <TablaCelebration show={showCelebration} stop={stopCelebration} />
     </div>
   );
 };
