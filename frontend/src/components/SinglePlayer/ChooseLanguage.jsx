@@ -1,13 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg.jpg";
+import { useNavigate, useParams } from "react-router-dom";
+import bg from "../../assets/bg.jpg";
 
 const ChooseLanguage = () => {
   const navigate = useNavigate();
+  const {classId,displayName,schoolName,subject} = useParams();
 
   const handleLanguageSelect = (language) => {
     // Navigate to the topics page, passing the language as a URL parameter
-    navigate(`/topics/${language}`);
+    navigate(`/single/${classId}/${displayName}/${schoolName}/${subject}/lang/${language}`);
   };
 
   return (

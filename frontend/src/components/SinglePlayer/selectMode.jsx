@@ -143,7 +143,7 @@ const SelectMode = () => {
           backText={t.matchBack}
           image={match}
           proceedText={t.proceed}
-          navigateTo="/match"
+          navigateTo="/lang"
         />
       </div>
     </div>
