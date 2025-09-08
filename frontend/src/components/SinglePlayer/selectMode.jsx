@@ -6,6 +6,7 @@ import match from "../../assets/match.png";
 
 import FloatingBackground from "../utils/FloatingBackground"; // ✅ background
 import Logo from "../utils/logo"; // ✅ logo
+import LanguageToggle from "../utils/LanguageToggle";
 
 // 🌐 Translations
 const translations = {
@@ -35,7 +36,7 @@ const translations = {
 const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
-  const { classId, displayName, subject } = useParams();
+  const { classId, displayName,schoolName, subject } = useParams();
 
   return (
     <div
@@ -97,7 +98,7 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigate(`/single/${classId}/${displayName}/${subject}${navigateTo}`);
+              navigate(`/single/${classId}/${displayName}/${schoolName}/${subject}${navigateTo}`);
             }}
             className="px-[10%] py-[5%] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
             style={{
@@ -119,24 +120,17 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
 const SelectMode = () => {
   const [lang, setLang] = useState("en");
   const t = translations[lang];
-
+  
+  const handleLanguage = () => {
+  setLang((prev) => (prev === "en" ? "ta" : "en"));
+};
   return (
     <FloatingBackground>
       {/* ✅ Logo at top-left */}
       <Logo />
 
       {/* 🌐 Toggle button at bottom-right */}
-      <button
-        onClick={() => setLang(lang === "en" ? "ta" : "en")}
-        className="absolute bottom-5 right-5 px-4 py-2 rounded-xl shadow-lg font-bold"
-        style={{
-          background: "linear-gradient(135deg, #FFB347, #FFCC33)",
-          fontSize: "2vh",
-          boxShadow: "0 0 12px rgba(255, 200, 50, 0.9)", // ✨ glowing
-        }}
-      >
-        {t.toggle}
-      </button>
+      
 
       {/* 🎴 Cards Section (same size & position as before) */}
       <div
@@ -163,9 +157,10 @@ const SelectMode = () => {
           backText={t.matchBack}
           image={match}
           proceedText={t.proceed}
-          navigateTo="/match"
+          navigateTo="/lang"
         />
       </div>
+      <LanguageToggle currentLanguage={lang} onPress={handleLanguage}/>
     </FloatingBackground>
   );
 };

@@ -151,7 +151,7 @@ const ChooseSorM = () => {
           backText={t.multiBack}
           image={multi}
           proceedText={t.proceed}
-          navigateTo="/multi"
+          navigateTo="/multiplayer-input"
           imageStyle={{ width: "35%", height: "35%" }}
         />
       </div>
