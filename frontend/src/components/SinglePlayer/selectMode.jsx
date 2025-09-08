@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"; // ✅ import navigation + params
-import bg from "../../assets/bg.jpg";
-import match from "../../assets/match.png";
-import surprise from "../../assets/surprise.png";
+import { useNavigate, useParams } from "react-router-dom";
 
-// 🔄 Translations for English & Tamil
+import surprise from "../../assets/surprise.png";
+import match from "../../assets/match.png";
+
+import FloatingBackground from "../utils/FloatingBackground"; // ✅ background
+import Logo from "../utils/logo"; // ✅ logo
+
+// 🌐 Translations
 const translations = {
   en: {
     surpriseFront: "Surprise Game",
@@ -28,11 +31,12 @@ const translations = {
   },
 };
 
+// 🎴 FlipCard
 const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
-  const { classId,displayName, schoolName, subject } = useParams(); // ✅ get params from route
-  const classKey = `class${classId}`
+  const { classId, displayName, subject } = useParams();
+
   return (
     <div
       className="relative"
@@ -44,7 +48,7 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
       onClick={() => setFlipped(!flipped)}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-700`}
+        className="relative w-full h-full transition-transform duration-700"
         style={{
           transformStyle: "preserve-3d",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -52,31 +56,39 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
       >
         {/* Front */}
         <div
-          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl shadow-lg text-white cursor-pointer"
+          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl text-white cursor-pointer"
           style={{
             backfaceVisibility: "hidden",
-            background: "linear-gradient(135deg, #8F9FE4, #BACBFE)",
+            background: "linear-gradient(135deg, #BACBFE, #C1ddE8)",
             fontSize: "4vh",
             fontWeight: "700",
             height: "40vh",
+            color: "#265380",
+            boxShadow: "0 0 25px rgba(100, 149, 237, 0.9)", // ✨ glow
           }}
         >
           {frontText}
           <img
             src={image}
             alt=""
-            style={{ width: "30%", height: "30%", margin: "6% 0% 0% 0%" }}
+            style={{
+              width: "30%",
+              height: "30%",
+              margin: "6% 0 0 0",
+            }}
           />
         </div>
 
         {/* Back */}
         <div
-          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl shadow-lg text-white p-4"
+          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl text-white p-4"
           style={{
             backfaceVisibility: "hidden",
-            background: "linear-gradient(135deg, #BCA5D4, #EFE2FA)",
+            background: "linear-gradient(135deg, #A1BCEA, #BCA5D4)",
             transform: "rotateY(180deg)",
             fontSize: "2vh",
+            color: "#265380",
+            boxShadow: "0 0 25px rgba(186, 85, 211, 0.9)", // ✨ glow
           }}
         >
           <p className="mb-[10%] text-center font-bold text-[2.5vh]">
@@ -84,14 +96,15 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
           </p>
           <button
             onClick={(e) => {
-              e.stopPropagation(); // ✅ prevent flipping again
-              navigate(`/single/${classId}/${displayName}/${schoolName}/${subject}${navigateTo}`);
+              e.stopPropagation();
+              navigate(`/single/${classId}/${displayName}/${subject}${navigateTo}`);
             }}
-            className="px-[10%] py-[5%] rounded-xl shadow-lg"
+            className="px-[10%] py-[5%] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
             style={{
-              background: "linear-gradient(135deg, #7164B4, #8F9FE4)",
+              background: "linear-gradient(135deg, #9FD0E4, #DBF8FE)",
               fontSize: "2.2vh",
               fontWeight: "700",
+              boxShadow: "0 0 12px rgba(159, 208, 228, 0.9)", // ✨ glow
             }}
           >
             {proceedText}
@@ -102,33 +115,40 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   );
 };
 
+// 🎯 Main Component
 const SelectMode = () => {
   const [lang, setLang] = useState("en");
   const t = translations[lang];
 
   return (
-    <div
-      className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      {/* 🌐 Language Toggle Button */}
+    <FloatingBackground>
+      {/* ✅ Logo at top-left */}
+      <Logo />
+
+      {/* 🌐 Toggle button at bottom-right */}
       <button
         onClick={() => setLang(lang === "en" ? "ta" : "en")}
-        className="absolute top-5 right-5 px-4 py-2 rounded-xl shadow-lg font-bold"
+        className="absolute bottom-5 right-5 px-4 py-2 rounded-xl shadow-lg font-bold"
         style={{
           background: "linear-gradient(135deg, #FFB347, #FFCC33)",
           fontSize: "2vh",
+          boxShadow: "0 0 12px rgba(255, 200, 50, 0.9)", // ✨ glowing
         }}
       >
         {t.toggle}
       </button>
 
-      {/* Cards */}
+      {/* 🎴 Cards Section (same size & position as before) */}
       <div
         className="flex justify-center items-center"
-        style={{ width: "80%", height: "70%", gap: "10%", textAlign: "center" }}
+        style={{
+          width: "80%",
+          height: "70%",
+          gap: "10%",
+          textAlign: "center",
+        }}
       >
-        {/* Surprise Game → /game */}
+        {/* Surprise Game */}
         <FlipCard
           frontText={t.surpriseFront}
           backText={t.surpriseBack}
@@ -137,16 +157,16 @@ const SelectMode = () => {
           navigateTo="/game"
         />
 
-        {/* Match Game → /match */}
+        {/* Match Game */}
         <FlipCard
           frontText={t.matchFront}
           backText={t.matchBack}
           image={match}
           proceedText={t.proceed}
-          navigateTo="/lang"
+          navigateTo="/match"
         />
       </div>
-    </div>
+    </FloatingBackground>
   );
 };
 

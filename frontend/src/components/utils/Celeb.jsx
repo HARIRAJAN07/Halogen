@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import { Fireworks } from "@fireworks-js/react";
-import tabla from "../../assets/tabla.mp3";
+//import tabla from "../../assets/tabla.mp3";
 
 const TablaCelebration = ({ show, stop }) => {
   const audioRef = useRef(null);
