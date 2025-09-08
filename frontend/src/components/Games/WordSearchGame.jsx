@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import socialData from '../../data/social.json';
-import AppBackground from '../utils/AppBackground';
+import LanguageToggle from "../utils/LanguageToggle";
 import Background from "../utils/FloatingBackground";
-
+import Logo from "../utils/logo";
 const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;
 const REQUIRED_TO_UNLOCK = 10;
@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     clear: "Clear",
     hintsOver: "Your hints are over",
     hintsMsg:
-      "You've used both hints for this question. Try the next question or continue with the letters you already have.",
+      "Out of hints 🔒",
     ok: "OK",
     levelComplete: "Level Complete!",
     currentScore: "Your current score:",
@@ -38,11 +38,11 @@ const TRANSLATIONS = {
     time: "Time",
     timeUp: "OOPS...Time's up! ⏳",
     restartGame: "Restart Game",
-    timeoutMsg: "Time's up! You can restart the game to try again.",
-    congratsTitle: "Congratulations! 🎉",
+    timeoutMsg: "Time’s up! 🔔You can restart the game to try again.",
+    congratsTitle: " 🏆 Congratulations! 🎉",
     congratsMsg: "You have completed all levels! Good job!",
     finalScore: "Your final score:",
-    goToDashboard: "Go to Dashboard"
+    leaderboard: "Leaderboard"
   },
   ta: {
     title: "வார்த்தை தேடல்",
@@ -55,7 +55,7 @@ const TRANSLATIONS = {
     clear: "அழிக்க",
     hintsOver: "உங்கள் குறிப்புகள் முடிந்துவிட்டன",
     hintsMsg:
-      "இந்த கேள்விக்கான இரண்டு குறிப்புகளும் பயன்படுத்தப்பட்டு விட்டன. அடுத்த கேள்வியை முயற்சிக்கவும்.",
+      "குறிப்புகள் முடிந்தது 🔒",
     ok: "சரி",
     levelComplete: "நிலை முடிந்தது!",
     currentScore: "உங்கள் தற்போதைய மதிப்பெண்:",
@@ -67,11 +67,11 @@ const TRANSLATIONS = {
     time: "நேரம்",
     timeUp: "ஐயோ... நேரம் முடிந்துவிட்டது! ⏳",
     restartGame: "விளையாட்டை மீண்டும் தொடங்கு",
-    timeoutMsg: "நேரம் முடிந்துவிட்டது! மீண்டும் முயற்சி செய்ய விளையாட்டை மீண்டும் தொடங்கலாம்.",
-    congratsTitle: "வாழ்த்துக்கள்! 🎉",
+    timeoutMsg: "நேரம் முடிந்துவிட்டது! ",
+    congratsTitle: "🏆 வாழ்த்துக்கள்! 🎉",
     congratsMsg: "அனைத்து நிலைகளையும் முடித்துவிட்டீர்கள்! நல்ல வேலை!",
     finalScore: "உங்கள் இறுதி மதிப்பெண்:",
-    goToDashboard: "டாஷ்போர்டுக்கு செல்லவும்"
+    leaderboard: "புள்ளி பட்டியல்"
   },
 };
 
@@ -195,6 +195,10 @@ export default function WordSearchGame() {
   const T = TRANSLATIONS[language];
   const ALPHABET = language === "en" ? Array.from(ALPHABET_EN) : arrayFromStr(ALPHABET_TA);
 
+ const handleLanguage = () => {
+    setLanguage((l) => (l === "en" ? "ta" : "en"))
+  };
+  
   // State for timer
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
   const [timerActive, setTimerActive] = useState(true);
@@ -720,7 +724,7 @@ export default function WordSearchGame() {
     setInitialLevels([]);
     
     if (goToDashboard) {
-      navigate("/");
+      navigate("/leaderboard");
     }
   }
 
@@ -733,12 +737,13 @@ export default function WordSearchGame() {
   }
 
 return (
-  <Background >
+  <Background>
+    <Logo />
     <div className="min-h-screen w-full flex flex-col items-center relative text-slate-900">
 
       {/* Header & Level selector */}
       <div className="w-[90%] max-w-[80vw] flex flex-col sm:flex-row items-center justify-between mb-[3vh] gap-[1vh]">
-        <div className="text-black text-[3vh] font-bold">
+        <div className="text-black text-[3vh] text-center font-bold w-[35vw]">
           {T.title} — {T.level} {levelIndex + 1}
         </div>
         <div className="flex gap-[1vw] flex-wrap justify-center mt-[2vh]">
@@ -749,8 +754,8 @@ return (
               disabled={!unlocked[i]}
               className={`px-[1.5vw] py-[1.5vh] rounded-[1vh] font-bold ${
                 unlocked[i]
-                  ? "bg-[#EFE2FA] text-black text-[2vh]"
-                  : "bg-[#EFE2FA] text-black/40 text-[2vh] cursor-not-allowed"
+                  ? "bg-[#7FB3E0] text-black text-[2vh]"
+                  : "bg-[#7FB3E0] text-black/40 text-[2vh] cursor-not-allowed"
               }`}
             >
               {T.level} {i + 1}
@@ -766,17 +771,24 @@ return (
         <div className="w-1/2 flex flex-col justify-center items-center">
           {/* Score & Timer */}
 <div className="flex flex-row items-center justify-center gap-[2vw] mb-[2vh]">
-  <div className="bg-[#EFE2FA] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
+  <div className="bg-[#7FB3E0] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
     {T.score}: {score}
   </div>
-  <div className="bg-[#EFE2FA] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
+  <div className="bg-[#7FB3E0] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
     {T.time}: {formatTime(timeLeft)}
   </div>
 </div>
 
 
           {/* Question card */}
-          <div className="w-[90%] bg-[#EFE2FA]/80 backdrop-blur-md rounded-[2vh] p-[3vh] shadow-xl border border-gray-600 text-center" >
+          <div className="w-[90%] bg-[#EFE2FA]/80 backdrop-blur-md rounded-[2vh] p-[3vh] shadow-xl border border-gray-600 text-center" 
+          style={{
+  background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
+  backdropFilter: "blur(2vh)", // 16px ≈ 2vh
+  borderRadius: "3vh",         // 1.5rem ≈ 24px ≈ 3vh
+  boxShadow: "0 5vh 10vh -2vh rgba(0, 0, 0, 0.25)", // 25px ≈ 5vh, 50px ≈ 10vh, 12px ≈ 2vh
+}}
+>
             <div className="text-black/90 text-[2vh] md:text-[2.5vh] font-semibold">
               {T.question} {qIndex + 1} / {levelQuestions.length}
             </div>
@@ -787,13 +799,13 @@ return (
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-[1vw] mt-[2vh] justify-center">
-            <div className="bg-gray-700 text-white rounded-[1vh] px-[2vw] py-[1vh] font-mono text-[2vh] min-h-[5vh] flex items-center">
+            <div className="bg-[#7FB3E0] text-white rounded-[1vh] px-[2vw] py-[1vh] font-mono text-[2vh] min-h-[5vh] flex items-center">
               {selectedPositions.map(([r, c]) => grid[r][c]).join("")}
             </div>
 
             <button
               onClick={handleHint}
-              className="px-[2vw] py-[1vh] rounded-[1vh] bg-blue-600  text-white font-semibold shadow"
+              className="px-[2vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0]  text-white font-semibold shadow"
             >
               {T.hint} ({2 - hintsUsed})
             </button>
@@ -801,14 +813,14 @@ return (
             {status === "playing" ? (
               <button
                 onClick={handleSubmit}
-                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-green-500 text-white font-bold shadow"
+                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-white font-bold shadow"
               >
                 {T.submit}
               </button>
             ) : (
               <button
                 onClick={handleNext}
-                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-yellow-400 text-black font-bold shadow animate-bounce"
+                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-black font-bold shadow animate-bounce"
               >
                 {T.next}
               </button>
@@ -819,7 +831,7 @@ return (
                 setSelectedPositions([]);
                 currentPathRef.current = [];
               }}
-              className="px-[2vw] py-[1vh] rounded-[1vh] bg-gray-600 text-white"
+              className="px-[2vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-white"
             >
               {T.clear}
             </button>
@@ -832,6 +844,13 @@ return (
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
           onTouchEnd={handleMouseUp}
+          style={{
+  background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
+  backdropFilter: "blur(2vh)", // 16px ≈ 2vh
+  borderRadius: "3vh",         // 1.5rem ≈ 24px ≈ 3vh
+  boxShadow: "0 5vh 10vh -2vh rgba(0, 0, 0, 0.25)", // 25px ≈ 5vh, 50px ≈ 10vh, 12px ≈ 2vh
+}}
+
         >
           <div
             className="grid gap-[0.2vh] aspect-ratio"
@@ -887,24 +906,17 @@ return (
       </div>
 
       {/* language toggle bottom-right */}
-      <div className="absolute bottom-[2vh] right-[2vw]">
-        <button
-          onClick={() => setLanguage((l) => (l === "en" ? "ta" : "en"))}
-          className="px-[2vw] py-[1vh] bg-[#EFE2FA] text-black rounded-[1vh]"
-        >
-          {language === "en" ? "தமிழ்" : "English"}
-        </button>
-      </div>
+      
 
       {/* ---- MODALS ---- */}
       {showHintOverModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
-            <h3 className="text-2xl font-bold mb-2">{T.hintsOver}</h3>
-            <p className="mb-4 text-slate-700">{T.hintsMsg}</p>
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
+            <h3 className="text-2xl text-[#2A60A0] font-bold mb-2">{T.hintsOver}</h3>
+            <p className="mb-4 text-[#2A60A0]">{T.hintsMsg}</p>
             <button
               onClick={() => setShowHintOverModal(false)}
-              className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold"
+              className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-bold"
             >
               {T.ok}
             </button>
@@ -914,12 +926,12 @@ return (
 
       {showTimeoutModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-          <div className="bg-white p-6 rounded-2xl shadow-lg text-center text-xl font-bold border-4" style={{ borderColor: "#bca5d4" }}>
-            <h3 className="text-2xl font-bold mb-2">{T.timeUp}</h3>
-            <p className="mb-4 text-slate-700">{T.timeoutMsg}</p>
+          <div className="bg-[#DEEBF7] p-6 rounded-2xl shadow-lg text-center text-xl font-bold ">
+            <h3 className="text-[#2A60A0] text-2xl font-bold mb-2">{T.timeUp}</h3>
+            <p className="mb-4 text-[#2A60A0]">{T.timeoutMsg}</p>
             <div className="flex justify-center gap-3">
-              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
-              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg font-semibold">{T.goToDashboard}</button>
+              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-semibold">{T.restartGame}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-semibold">{T.leaderboard}</button>
             </div>
           </div>
         </div>
@@ -927,10 +939,10 @@ return (
 
       {showLevelCompleteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.levelComplete}</h2>
-            <p className="mb-4">{T.currentScore} <span className="font-mono">{score}</span></p>
-            <p className="mb-4 text-sm text-gray-700">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
+            <h2 className="text-3xl text-[#2A60A0] font-bold mb-2">{T.levelComplete}</h2>
+            <p className="mb-4 text-[#2A60A0]">{T.currentScore} <span className="font-mono">{score}</span></p>
+            <p className="mb-4 text-sm text-[#2A60A0]">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
             <div className="flex gap-3 justify-center">
               <button onClick={() => { 
                 setShowLevelCompleteModal(false); 
@@ -942,8 +954,8 @@ return (
                   setConfettiRunning(true); 
                   setTimeout(() => setConfettiRunning(false), 5000); 
                 } 
-              }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold">{T.next}</button>
-              <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-gray-200 rounded-lg">{T.close}</button>
+              }} className="px-5 py-2 bg-[#2A60A0] rounded-lg font-bold">{T.next}</button>
+              <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-[#2A60A0] rounded-lg">{T.close}</button>
             </div>
           </div>
         </div>
@@ -951,13 +963,13 @@ return (
 
       {showFinalCompletionModal && (
         <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.congratsTitle}</h2>
-            <p className="mb-4 text-lg">{T.congratsMsg}</p>
-            <p className="mb-4 text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+            <h2 className="text-[#2A60A0] text-3xl font-bold mb-2">{T.congratsTitle}</h2>
+            <p className=" text-[#2A60A0] mb-4 text-lg">{T.congratsMsg}</p>
+            <p className="mb-4 text-[#2A60A0] text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
-              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">{T.goToDashboard}</button>
+              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg">{T.playAgain}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg">{T.leaderboard}</button>
             </div>
           </div>
         </div>
@@ -965,13 +977,13 @@ return (
 
       {showFinalModal && (
         <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-          <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-            <h2 className="text-3xl font-bold mb-2">{T.allComplete}</h2>
-            <p className="mb-4 text-lg">{T.finalMotivation}</p>
-            <p className="mb-4 text-xl font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+            <h2 className="text-3xl text-[#2A60A0] font-bold mb-2">{T.allComplete}</h2>
+            <p className="mb-4 text-[#2A60A0] text-lg">{T.finalMotivation}</p>
+            <p className="mb-4 text-xl text-[#2A60A0] font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
             <div className="flex gap-3 justify-center">
               <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
-              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">{T.goToDashboard}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">{T.leaderboard}</button>
             </div>
           </div>
         </div>
@@ -980,7 +992,8 @@ return (
       {/* Confetti */}
       <Confetti running={confettiRunning} />
     </div>
-  </Background >
+    <LanguageToggle currentLanguage={language} onPress={handleLanguage}/>
+  </Background>
 );
 
 

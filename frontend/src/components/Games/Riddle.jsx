@@ -3,6 +3,7 @@ import LanguageToggle from "../utils/LanguageToggle";
 import riddles from "../../data/riddle.json";
 import AppBackground from "../utils/AppBackground";
 import TablaCelebration from '../utils/Celeb';
+import Background from '../utils/FloatingBackground';
 
 // Helper for translations (remains the same)
 const translations = {
@@ -333,7 +334,7 @@ const Riddle = ({ isDarkMode = false }) => {
   };
 
   return (
-    <AppBackground>
+    <Background>
       <KeyframeStyles />
       <div style={styles.mainContainer}>
         <h1 style={styles.title}>{translations[currentLanguage].title}</h1>
@@ -449,7 +450,7 @@ const Riddle = ({ isDarkMode = false }) => {
         </div>
       )}
       <LanguageToggle currentLanguage={currentLanguage} onPress={handleLanguageToggle} />
-    </AppBackground>
+    </Background>
   );
 };
 
