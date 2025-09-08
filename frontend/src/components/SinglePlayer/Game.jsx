@@ -5,6 +5,7 @@ import Cardflipping from '../Games/Cardflipping';
 import SaveTheGirl from '../Games/SaveTheGirl';
 import Riddle from '../Games/Riddle';
 import WordSearchGame from '../Games/WordSearchGame';
+import SaveGirl2 from '../Games/SaveGirl2';
 
 const Game = () => {
   const {classId,subject}=useParams();
@@ -15,7 +16,7 @@ const Game = () => {
       {subject==="math" && <SaveTheGirl />}
       {subject==="science" && <Riddle />}
       {subject==="social studies" && <WordSearchGame /> }
-      {classId>10 && <SaveTheGirl />}
+      {classId>10 && <SaveGirl2 />}
 
     </div>
   )

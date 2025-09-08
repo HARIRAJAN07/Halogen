@@ -8,6 +8,7 @@ import Game from './components/SinglePlayer/Game';
 import TopicSelection from './components/SinglePlayer/TopicSelection';
 import Match from './components/SinglePlayer/Match';
 import MultiplayerInput from './components/MultiPlayer/MultiPlayerInput';
+import ChooseLanguage from './components/SinglePlayer/ChooseLanguage';
 
 const App = () => {
   return (
@@ -20,9 +21,10 @@ const App = () => {
       <Route path="/multiplayer-input" element={<MultiplayerInput />} />
       <Route path="/single/:classId/:displayName/:schoolName" element={<SubjectSelection />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject" element={<SelectMode />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/lang" element={<ChooseLanguage />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject/game" element={<Game />} />
-      <Route path="/single/:classId/:displayName/:schoolName/:subject/match" element={<TopicSelection />} />
-      <Route path="/single/:classId/:displayName/:schoolName/:subject/match/:topic/ma" element={<Match />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/lang/:lang" element={<TopicSelection />} />
+      <Route path="/single/:classId/:displayName/:schoolName/:subject/lang/:lang/:topic/ma" element={<Match />} />
     </Routes >
     </BrowserRouter>
   )
