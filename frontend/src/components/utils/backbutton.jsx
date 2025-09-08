@@ -1,14 +1,18 @@
 import React from "react";
-import { IoArrowBack } from "react-icons/io5"; // Ionicons web version
+import { useNavigate } from "react-router-dom";
+import { IoArrowBack } from "react-icons/io5";
 
-const BackButton = ({ onPress, style = {}, iconStyle = {}, size = "3vh" }) => {
+const BackButton = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1);
+  };
+
   return (
-    <div style={{ ...styles.container }}>
-      <button
-        onClick={onPress}
-        style={{ ...styles.button, ...style }}
-      >
-        <IoArrowBack style={{ ...styles.icon, fontSize: size, ...iconStyle }} />
+    <div style={styles.container}>
+      <button onClick={handleClick} style={styles.button}>
+        <IoArrowBack style={{ ...styles.icon, fontSize: "3vh" }} />
       </button>
     </div>
   );
@@ -17,7 +21,7 @@ const BackButton = ({ onPress, style = {}, iconStyle = {}, size = "3vh" }) => {
 const styles = {
   container: {
     position: "absolute",
-    bottom: "3vh",  // instead of px
+    bottom: "3vh",
     left: "2vw",
     zIndex: 10,
   },

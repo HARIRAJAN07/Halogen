@@ -4,6 +4,8 @@ import socialData from '../../data/social.json';
 import LanguageToggle from "../utils/LanguageToggle";
 import Background from "../utils/FloatingBackground";
 import Logo from "../utils/logo";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
 const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;
 const REQUIRED_TO_UNLOCK = 10;
@@ -992,6 +994,8 @@ return (
       {/* Confetti */}
       <Confetti running={confettiRunning} />
     </div>
+    <Footer />
+    <BackButton />
     <LanguageToggle currentLanguage={language} onPress={handleLanguage}/>
   </Background>
 );

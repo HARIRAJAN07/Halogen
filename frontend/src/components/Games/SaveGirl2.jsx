@@ -5,6 +5,10 @@ import bg from "../../assets/bg.jpg";
 import drownData from "../../data/game-11-12.json";
 import { useParams } from "react-router-dom";
 import TablaCelebration from "../utils/Celeb"; // ✅ your celebration component
+import Background from "../utils/FloatingBackground";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
+import Logo from "../utils/logo";
 
 const SaveGirl2 = () => {
   const { classId, subject } = useParams();
@@ -169,9 +173,11 @@ const SaveGirl2 = () => {
   }
 
   return (
+    <Background>
+      <Logo />
     <div
-      className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bg})` }}
+      className="flex items-center justify-center w-full h-screen relative"
+      
     >
       {!gameOver ? (
         <div className="flex flex-col md:flex-row w-[95%] h-[95%] items-center justify-between">
@@ -286,7 +292,7 @@ const SaveGirl2 = () => {
           <div
             style={{
               width: "100%",
-              height: "70%",
+              height: "85%",
               background: "linear-gradient(135deg, #ffffff, #EFE2FA)",
               display: "flex",
               flexDirection: "column",
@@ -505,7 +511,11 @@ const SaveGirl2 = () => {
       >
         {lang === "en" ? "தமிழ்" : "English"}
       </button>
+       <BackButton />
+    <Footer />
     </div>
+   
+    </Background>
   );
 };
 

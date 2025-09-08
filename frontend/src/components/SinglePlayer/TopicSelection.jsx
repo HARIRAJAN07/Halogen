@@ -3,6 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import topicsEngData from "../../data/topicseng.json";
 import topicsTamData from "../../data/topicstam.json";
 import bg from "../../assets/bg.jpg";
+import Background from "../utils/FloatingBackground";
+import Logo from "../utils/logo";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
 
 const TopicSelection = () => {
   const { classId, displayName, schoolName, subject, lang } = useParams();
@@ -39,11 +43,12 @@ const TopicSelection = () => {
   };
 
   return (
+    <Background >
     <div
-      className="w-full h-screen flex items-center justify-center bg-cover bg-center p-[5%]"
-      style={{ backgroundImage: `url(${bg})` }}
+      className="w-full h-screen flex items-center justify-center  p-[5%]"
     >
-      <div className="bg-[#fbfbfb] opacity-85 rounded-[3vh] shadow-2xl p-[5%] w-full max-w-[70%] relative">
+      <Logo />
+      <div className="bg-gradient-to-br from-[#BACBFE] to-[#C1ddE8] opacity-100 rounded-[3vh] shadow-2xl p-[5%] w-full max-w-[70%] relative">
         {/* Heading */}
         <h1 className="text-[5vh] font-extrabold text-black mb-[2%] text-center drop-shadow-sm">
           {content[language].heading}
@@ -77,6 +82,9 @@ const TopicSelection = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    <BackButton />
+    </Background>
   );
 };
 

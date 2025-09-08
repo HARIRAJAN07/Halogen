@@ -2,8 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import cardsJSON from "../../data/cardsDataT.json";
 import TablaCelebration from '../utils/Celeb';
 import { useNavigate } from 'react-router-dom';
-import AppBackground from '../utils/AppBackground';
+import Background from '../utils/FloatingBackground';
 import logo from '../../assets/logo123.png';
+import BackButton from '../utils/backbutton';
+import Footer from '../utils/Footer';
+import Logo from '../utils/logo';
 
 const CardflippingT = () => {
   const navigate = useNavigate();
@@ -18,6 +21,7 @@ const CardflippingT = () => {
   const [timer, setTimer] = useState(90);
   const [showCelebration, setShowCelebration] = useState(false);
   const [stopCelebration, setStopCelebration] = useState(false);
+  const [score, setScore] = useState(0); // Added score state
 
   const initializeGame = useCallback(() => {
     setStopCelebration(true);
@@ -44,6 +48,7 @@ const CardflippingT = () => {
     setIsGameActive(true);
     setTimer(90);
     setShowCelebration(false);
+    setScore(0); // Reset score on new game
 
     setShowAllCardsTemporarily(true);
     setTimeout(() => {
@@ -65,6 +70,7 @@ const CardflippingT = () => {
             clearInterval(countdown);
             setIsGameActive(false);
             setMessage("நேரம் முடிந்துவிட்டது! விளையாட்டு முடிந்தது.");
+            setScore(0); // No score if time runs out
             return 0;
           }
           return prevTime - 1;
@@ -76,7 +82,6 @@ const CardflippingT = () => {
   }, [showAllCardsTemporarily, isGameActive]);
 
   useEffect(() => {
-    // Corrected the condition from 5 to 2 for flippedCards length
     if (flippedCards.length === 2) {
       const [firstCard, secondCard] = flippedCards;
       const firstCardData = cards.find(card => card.id === firstCard);
@@ -105,6 +110,7 @@ const CardflippingT = () => {
       setMessage('விளையாட்டு வெற்றி!');
       setIsGameActive(false);
       setShowCelebration(true);
+      setScore(50); // Set score to 50 on complete win
     }
   }, [matchedCards, cards]);
 
@@ -137,10 +143,11 @@ const CardflippingT = () => {
   };
 
   return (
-    <AppBackground>
+    <Background>
+      <Logo />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '2vw', fontFamily: 'sans-serif', color: '#4b5563' }}>
         <p style={{ fontSize: '1.5vw', textAlign: 'center', marginBottom: '3vh', marginTop: '3vh' }}>{gameInstructions}</p>
-        
+
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '5vh', gap: '2vw' }}>
           <button
             onClick={() => setGameMode('மொழியியல்')}
@@ -268,8 +275,7 @@ const CardflippingT = () => {
                   justifyContent: 'center',
                   textAlign: 'center',
                   fontWeight: '600',
-                  // Reduced font size for the text inside the card
-                  fontSize: '1.2vw', 
+                  fontSize: '1.2vw',
                   padding: '1vh',
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
@@ -303,7 +309,9 @@ const CardflippingT = () => {
 
         <TablaCelebration show={showCelebration} stop={stopCelebration} />
       </div>
-    </AppBackground>
+      <Footer />
+      <BackButton />
+    </Background>
   );
 };
 

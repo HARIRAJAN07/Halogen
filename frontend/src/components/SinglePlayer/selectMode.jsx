@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import surprise from "../../assets/surprise.png";
@@ -7,6 +7,8 @@ import match from "../../assets/match.png";
 import FloatingBackground from "../utils/FloatingBackground"; // ✅ background
 import Logo from "../utils/logo"; // ✅ logo
 import LanguageToggle from "../utils/LanguageToggle";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
 
 // 🌐 Translations
 const translations = {
@@ -36,7 +38,7 @@ const translations = {
 const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
-  const { classId, displayName,schoolName, subject } = useParams();
+  const { classId, displayName, schoolName, subject } = useParams();
 
   return (
     <div
@@ -65,7 +67,6 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
             fontWeight: "700",
             height: "40vh",
             color: "#265380",
-            boxShadow: "0 0 25px rgba(100, 149, 237, 0.9)", // ✨ glow
           }}
         >
           {frontText}
@@ -89,23 +90,26 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
             transform: "rotateY(180deg)",
             fontSize: "2vh",
             color: "#265380",
-            boxShadow: "0 0 25px rgba(186, 85, 211, 0.9)", // ✨ glow
           }}
         >
-          <p className="mb-[10%] text-center font-bold text-[2.5vh]">
-            {backText}
-          </p>
+          <p className="mb-[10%] text-center font-bold text-[2.5vh]">{backText}</p>
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigate(`/single/${classId}/${displayName}/${schoolName}/${subject}${navigateTo}`);
+              navigate(
+                // If subject is "english" or "tamil", skip language selection page and go directly to topic selection page,
+                // passing subject itself as language input
+                ((subject?.toLowerCase() === "english" || subject?.toLowerCase() === "tamil") && navigateTo==="/lang" )
+                  ? `/single/${classId}/${displayName}/${schoolName}/${subject}/lang/${subject}`
+                  : `/single/${classId}/${displayName}/${schoolName}/${subject}${navigateTo}`
+              );
             }}
             className="px-[10%] py-[5%] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
             style={{
               background: "linear-gradient(135deg, #9FD0E4, #DBF8FE)",
               fontSize: "2.2vh",
               fontWeight: "700",
-              boxShadow: "0 0 12px rgba(159, 208, 228, 0.9)", // ✨ glow
+              boxShadow: "0 0 12px rgba(159, 208, 228, 0.9)",
             }}
           >
             {proceedText}
@@ -120,17 +124,15 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
 const SelectMode = () => {
   const [lang, setLang] = useState("en");
   const t = translations[lang];
-  
+
   const handleLanguage = () => {
-  setLang((prev) => (prev === "en" ? "ta" : "en"));
-};
+    setLang((prev) => (prev === "en" ? "ta" : "en"));
+  };
+
   return (
     <FloatingBackground>
       {/* ✅ Logo at top-left */}
       <Logo />
-
-      {/* 🌐 Toggle button at bottom-right */}
-      
 
       {/* 🎴 Cards Section (same size & position as before) */}
       <div
@@ -160,7 +162,9 @@ const SelectMode = () => {
           navigateTo="/lang"
         />
       </div>
-      <LanguageToggle currentLanguage={lang} onPress={handleLanguage}/>
+      <Footer />
+      <BackButton />
+      <LanguageToggle currentLanguage={lang} onPress={handleLanguage} />
     </FloatingBackground>
   );
 };

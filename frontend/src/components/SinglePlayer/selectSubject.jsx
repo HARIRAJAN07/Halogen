@@ -14,6 +14,8 @@ import chemistryGif from "../../assets/chemistry.gif";
 import biologyGif from "../../assets/biology.gif";
 import csGif from "../../assets/cs.gif";
 import Logo from "../utils/logo";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
 
 const subjectsForGrades6to10 = [
   { en: "Science", ta: "அறிவியல்", gif: scienceGif, color: "bg-[#BCA5D4]" },
@@ -81,7 +83,7 @@ const SubjectSelection = () => {
                 }
               >
                 <div
-                  className={`${item.color} absolute inset-0 rounded-[2vh] shadow-xl flex flex-col items-center justify-center p-[2vh]`}
+                  className={`bg-gradient-to-br from-[#BACBFE] to-[#C1ddE8] absolute inset-0 rounded-[2vh] shadow-xl flex flex-col items-center justify-center p-[2vh]`}
                 >
                   <img src={item.gif} alt={item.en} className="w-[8vw] h-[10vh] mb-[2vh] object-contain" />
                   <h2 className="text-[2.5vh] font-bold text-white text-center drop-shadow-lg">{item[language]}</h2>
@@ -90,6 +92,8 @@ const SubjectSelection = () => {
             ))}
           </div>
         </div>
+        <Footer />
+        <BackButton />
         <LanguageToggle currentLanguage={language} onPress={handleLanguage} />
       </FloatingBackground>
     </div>

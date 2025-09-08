@@ -1,57 +1,104 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import bg from "../../assets/bg.jpg";
+import Background from "../utils/FloatingBackground";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
+import Logo from "../utils/logo";
 
 const ChooseLanguage = () => {
   const navigate = useNavigate();
-  const {classId,displayName,schoolName,subject} = useParams();
+  const { classId, displayName, schoolName, subject } = useParams();
 
   const handleLanguageSelect = (language) => {
-    // Navigate to the topics page, passing the language as a URL parameter
     navigate(`/single/${classId}/${displayName}/${schoolName}/${subject}/lang/${language}`);
   };
 
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      <h1 className="text-white text-5xl font-bold mb-10">Choose a Language 🌍</h1>
-      <div className="flex justify-center items-center w-3/4 h-2/3 gap-10">
-        
-        {/* English Card */}
-        <div
-          className="flex-1 flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg cursor-pointer transition-transform transform hover:scale-105"
+    <Background>
+      <Logo />
+      <div
+        className="min-h-screen flex items-center justify-center w-full"
+        style={{
+          padding: "15%",
+        }}
+      >
+        <div className="bg-gradient-to-br from-[#BACBFE] to-[#C1DDE8]
+"
           style={{
-            background: "linear-gradient(135deg, #8F9FE4, #BACBFE)",
-            height: "55%",
+            width: "100%",
+            maxWidth: "80%",
+            borderRadius: "3%",
+            boxShadow: "0 1.25rem 3rem rgba(0, 0, 0, 0.2)",
+            padding: "12%",
+            textAlign: "center",
           }}
-          onClick={() => handleLanguageSelect("english")}
         >
-          <span className="text-white text-9xl">🇬🇧</span>
-          <h2 className="text-white text-4xl font-bold mt-4">English</h2>
-          <p className="text-white text-center mt-2 px-4">
-            Proceed with English topics.
+          <h1
+            style={{
+              fontSize: "4vh",
+              fontWeight: "800",
+              marginBottom: "4%",
+              color: "black",
+              textShadow: "0 0.125rem 0.125rem rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            🌐 Choose Language
+          </h1>
+          <p
+            style={{
+              fontSize: "2vh",
+              color: "#4B5563",
+              marginBottom: "8%",
+            }}
+          >
+            Do you want the questions in Tamil or English?
           </p>
-        </div>
-
-        {/* Tamil Card */}
-        <div
-          className="flex-1 flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg cursor-pointer transition-transform transform hover:scale-105"
-          style={{
-            background: "linear-gradient(135deg, #BCA5D4, #EFE2FA)",
-            height: "55%",
-          }}
-          onClick={() => handleLanguageSelect("tamil")}
-        >
-          <span className="text-white text-9xl">🇮🇳</span>
-          <h2 className="text-white text-4xl font-bold mt-4">தமிழ்</h2>
-          <p className="text-white text-center mt-2 px-4">
-            தமிழ் தலைப்புகளுடன் தொடரவும்.
-          </p>
+          <div
+            style={{
+              display: "flex",
+             
+              gap: "8%",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              onClick={() => handleLanguageSelect("english")}
+              style={{
+                padding: "6% 16%",
+                backgroundColor: "white", // bg-indigo-600
+                color: "black",
+                borderRadius: "1.25rem",
+                boxShadow: "0 0.25rem 0.75rem rgba(79, 70, 229, 0.4)",
+                fontSize: "4vh",
+                fontWeight: "600",
+                transition: "background-color 0.3s",
+                cursor: "pointer",
+              }}
+            >
+              🇬🇧 English
+            </button>
+            <button
+              onClick={() => handleLanguageSelect("tamil")}
+              style={{
+                 padding: "6% 16%",
+                backgroundColor: "white", // bg-green-600
+                color: "black",
+                borderRadius: "1.25rem",
+                boxShadow: "0 0.25rem 0.75rem rgba(22, 163, 74, 0.4)",
+                fontSize: "4vh",
+                fontWeight: "600",
+                transition: "background-color 0.3s",
+                cursor: "pointer",
+              }}
+              >
+              🇮🇳 Tamil
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+      <BackButton />
+    </Background>
   );
 };
 
