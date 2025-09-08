@@ -12,13 +12,14 @@ const Board = ({ board, onCellClick, turn }) => {
         width: '100%',
         height: '100%',
         padding: '1vw',
-        background: 'white',
+          background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
         borderRadius: '1vw',
         boxShadow: '0 8px 20px rgba(0,0,0,0.2)'
       }}
     >
       {board.map((row, rowIndex) => (
-        <div key={rowIndex} style={{ display: 'flex', flexDirection: 'row' }}>
+        <div key={rowIndex} style={{ 
+          display: 'flex', flexDirection: 'row' }}>
           {row.map((cell, colIndex) => {
             const isEmpty = !cell;
             const highlight = turn && isEmpty;

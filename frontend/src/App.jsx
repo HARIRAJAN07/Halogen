@@ -1,4 +1,4 @@
-import XO from './components/Multiplayer/XO';
+import XO from './components/MultiPlayer/XO';
 import ChooseSorM from './components/chooseSorM';
 import Input from './components/SinglePlayer/input';
 import { BrowserRouter, Route, Routes  } from 'react-router-dom';

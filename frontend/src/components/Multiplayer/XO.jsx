@@ -7,7 +7,8 @@ import ConfettiExplosion from 'react-confetti-explosion';
 import bluebg from '../../assets/blueBG.jpg';
 import cheer from '../../assets/cheer.mp3';
 import { useNavigate, useLocation } from 'react-router-dom'; 
-
+import AppBackground from '../utils/AppBackground'
+import Background from '../utils/FloatingBackground';
 const XO = () => {
   const location = useLocation();
   // Get player data from navigation state or use defaults
@@ -233,6 +234,7 @@ const XO = () => {
   };
 
   return (
+    <Background >
     <div
       style={{
         display: 'flex',
@@ -241,8 +243,8 @@ const XO = () => {
         alignItems: 'flex-start',
         width: '100%',
         height: '100vh',
-        backgroundColor: '#F0F4F8',
-        backgroundImage: `url(${bluebg})`,
+        //backgroundColor: '#F0F4F8',
+        //backgroundImage: `url(${bluebg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         paddingTop: '2vh',
@@ -287,35 +289,75 @@ const XO = () => {
       <audio ref={audioRef} src={cheer} />
 
       {/* Result Dialog */}
-      <Dialog open={showResultDialog} onClose={() => setShowResultDialog(false)}>
-        <DialogTitle>
-          {winner 
-            ? (tamil ? `🎉 வாழ்த்துக்கள்! ${getPlayerName(winner)} வெற்றி பெற்றார்!` : `🎉 Congratulations! ${getPlayerName(winner)} Wins!`)
-            : (tamil ? '🤝 போட்டி சமனாக முடிந்தது!' : '🤝 Match ended in a draw!')
-          }
-        </DialogTitle>
-        <DialogContent>
-          <Typography>
-            {tamil 
-              ? 'மீண்டும் விளையாட விரும்புகிறீர்களா அல்லது டாஷ்போர்டுக்கு செல்ல விரும்புகிறீர்களா?'
-              : 'Would you like to play again or go to dashboard?'
-            }
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={goToDashboard}>
-            {tamil ? 'டாஷ்போர்டுக்கு செல்' : 'Go to Dashboard'}
-          </Button>
-          <Button onClick={restartGame} autoFocus>
-            {tamil ? 'மீண்டும் விளையாடு' : 'Play Again'}
-          </Button>
-        </DialogActions>
-      </Dialog>
+<Dialog
+  open={showResultDialog}
+  onClose={() => setShowResultDialog(false)}
+  PaperProps={{
+    style: {
+      background: "#DEEBF7",       // dialog background
+      color: "#2A60A0",            // default text color
+      borderRadius: "1.5vh",
+      padding: "2vh",
+    },
+  }}
+>
+  <DialogTitle style={{ color: "#2A60A0", fontWeight: "bold" }}>
+    {winner
+      ? (tamil
+          ? `🎉 வாழ்த்துக்கள்! ${getPlayerName(winner)} வெற்றி பெற்றார்!`
+          : `🎉 Congratulations! ${getPlayerName(winner)} Wins!`)
+      : tamil
+      ? "🤝 போட்டி சமனாக முடிந்தது!"
+      : "🤝 Match ended in a draw!"}
+  </DialogTitle>
+
+  <DialogContent>
+    <Typography style={{ color: "#2A60A0" }}>
+      {tamil
+        ? "மீண்டும் விளையாட விரும்புகிறீர்களா அல்லது டாஷ்போர்டுக்கு செல்ல விரும்புகிறீர்களா?"
+        : "Would you like to play again or go to dashboard?"}
+    </Typography>
+  </DialogContent>
+
+  <DialogActions   style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "2vw", 
+  }}>
+    <Button
+      onClick={goToDashboard}
+      style={{
+        backgroundColor: "#2A60A0",
+        color: "white",
+        fontWeight: "bold",
+        borderRadius: "1vh",
+        padding: "0.5vh 2vh",
+      }}
+    >
+      {tamil ? "டாஷ்போர்டுக்கு செல்" : "Go to Dashboard"}
+    </Button>
+
+    <Button
+      onClick={restartGame}
+      autoFocus
+      style={{
+        backgroundColor: "#2A60A0",
+        color: "white",
+        fontWeight: "bold",
+        borderRadius: "1vh",
+        padding: "0.5vh 2vh",
+      }}
+    >
+      {tamil ? "மீண்டும் விளையாடு" : "Play Again"}
+    </Button>
+  </DialogActions>
+</Dialog>
+
 
       {/* Player X */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1vh' }}>
-          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold' }}>
+          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold',marginTop: "5vh" }}>
             Player X
           </Typography>
         </div>
@@ -354,6 +396,7 @@ const XO = () => {
       <div style={{ width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Paper
           style={{
+              background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
             width: '70%',
             marginTop: '12vh',
             padding: '3%',
@@ -378,26 +421,12 @@ const XO = () => {
             {message}
           </Typography>
         </Paper>
-
-        {/* Language toggle button */}
-        <Button
-          variant="contained"
-          onClick={() => setTamil(!tamil)}
-          style={{
-            marginTop: '3vh',
-            fontWeight: 'bold',
-            borderRadius: '1.5vh',
-            background: tamil ? '#1E88E5' : '#D32F2F'
-          }}
-        >
-          {tamil ? 'Switch to English' : 'தமிழ்'}
-        </Button>
       </div>
 
       {/* Player O */}
       <div style={{ width: '25%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1vh' }}>
-          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold' }}>
+          <Typography variant="h6" style={{ marginRight: '1vw', fontWeight: 'bold',marginTop: "5vh" }}>
             Player O
           </Typography>
         </div>
@@ -432,6 +461,7 @@ const XO = () => {
         )}
       </div>
     </div>
+    </Background>
   );
 };
 

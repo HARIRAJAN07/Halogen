@@ -1,32 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import { Fireworks } from "@fireworks-js/react";
-//import tabla from "../../assets/tabla.mp3";
 
 const TablaCelebration = ({ show, stop }) => {
-  const audioRef = useRef(null);
   const [active, setActive] = useState(false);
   const [key, setKey] = useState(0);
   const timerRef = useRef(null); // keep reference to timeout
 
   useEffect(() => {
     if (show) {
-      setKey(prev => prev + 1); // force remount
+      setKey((prev) => prev + 1); // force remount
       setActive(true);
-
-      // Play tabla sound
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
 
       // Auto stop after 8 seconds
       timerRef.current = setTimeout(() => {
         setActive(false);
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-        }
       }, 8000);
     }
 
@@ -37,11 +25,7 @@ const TablaCelebration = ({ show, stop }) => {
     if (stop) {
       // Stop immediately
       setActive(false);
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-      setKey(prev => prev + 1); // reset fireworks/confetti
+      setKey((prev) => prev + 1); // reset fireworks/confetti
       clearTimeout(timerRef.current); // clear any running timer
     }
   }, [stop]);
@@ -58,7 +42,6 @@ const TablaCelebration = ({ show, stop }) => {
         pointerEvents: "none",
       }}
     >
-      <audio ref={audioRef} src={tabla} />
       <Fireworks
         key={`fw-${key}`}
         duration={8000}
@@ -95,3 +78,4 @@ const TablaCelebration = ({ show, stop }) => {
 };
 
 export default TablaCelebration;
+  
