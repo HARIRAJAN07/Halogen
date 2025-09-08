@@ -1,13 +1,12 @@
-// SaveTheGirl.js
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import women from "../../assets/womann.png";
 import bg from "../../assets/bg.jpg";
-import drownData from "../../data/saveGirl.json";
+import drownData from "../../data/game-11-12.json";
 import { useParams } from "react-router-dom";
 import TablaCelebration from "../utils/Celeb"; // ✅ your celebration component
 
-const SaveTheGirl = () => {
+const SaveGirl2 = () => {
   const { classId, subject } = useParams();
   const [lang, setLang] = useState("en");
   const [questions, setQuestions] = useState([]);
@@ -20,7 +19,6 @@ const SaveTheGirl = () => {
   const [score, setScore] = useState(0);
   const [showWrongPopup, setShowWrongPopup] = useState(false);
 
-  // Shuffle helper only for ids
   const getRandomFiveIds = (arr) => {
     const ids = arr.map((q) => q.id);
     for (let i = ids.length - 1; i > 0; i--) {
@@ -30,12 +28,21 @@ const SaveTheGirl = () => {
     return ids.slice(0, 5);
   };
 
+  const getRandomFiveQuestions = (arr) => {
+    return arr
+      .map((q) => q)
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 5);
+  };
+
+  // Load questions on classId or subject change (except lang)
   useEffect(() => {
     if (drownData && classId) {
       let selectedQuestions = [];
       const gradeKey = `class${classId}`;
 
       if (parseInt(classId) >= 6 && parseInt(classId) <= 10) {
+        // Logic same as before for 6 to 10
         const classQuestions = drownData[gradeKey];
         if (classQuestions) {
           const mathQuestions = classQuestions.filter((item) => item.subject === "math");
@@ -53,33 +60,40 @@ const SaveTheGirl = () => {
             }
           }
         }
-      } else if (parseInt(classId) >= 11 && parseInt(classId) <= 12) {
-        // For grades 11-12, find the subject & grade (structure assumed different)
-        const found = Object.values(drownData).flat().find(
-          (item) => item.grade === classId && item.subject.toLowerCase() === subject.toLowerCase()
-        );
-        if (found) {
-          selectedQuestions = getRandomFive(found[lang]);
-          setSelectedIds([]);
+      } else if (parseInt(classId) === 11 || parseInt(classId) === 12) {
+        // New logic for classes 11 and 12
+        const classData = drownData[gradeKey]; // Array of subjects
+        if (classData && subject) {
+          const subData = classData.find(
+            (s) => s.subject.toLowerCase() === subject.toLowerCase()
+          );
+          if (subData && subData.question) {
+            selectedQuestions = getRandomFiveQuestions(subData.question).map((q) => ({
+              id: q.id,
+              en: q.en,
+              ta: q.ta,
+            }));
+            setSelectedIds(selectedQuestions.map((q) => q.id));
+          }
         }
       }
       setQuestions(selectedQuestions);
-      // Reset only if class/subject changes - preserve currentQ on lang toggle
       setCurrentQ(0);
       setAnswer("");
       setGameOver(false);
       setWin(false);
       setScore(0);
       setTimeLeft(60);
+      setShowWrongPopup(false);
     }
   }, [classId, subject]);
 
-  // IMPORTANT: Only lang change should NOT reset currentQ, answer, score, timeLeft, etc.
+  // On language toggle, update questions array keeping same IDs & currentQ for 6-10 and 11-12
   useEffect(() => {
-    // When lang changes, update questions array to reflect new language for same ids (6-10 classes)
     if (drownData && classId) {
+      const gradeKey = `class${classId}`;
+
       if (parseInt(classId) >= 6 && parseInt(classId) <= 10) {
-        const gradeKey = `class${classId}`;
         const classQuestions = drownData[gradeKey];
         if (classQuestions && selectedIds.length > 0) {
           const mathQuestions = classQuestions.filter((item) => item.subject === "math");
@@ -88,21 +102,21 @@ const SaveTheGirl = () => {
             .filter((q) => q && q[lang]);
           setQuestions(updatedQuestions);
         }
-      } else if (parseInt(classId) >= 11 && parseInt(classId) <= 12) {
-        const found = Object.values(drownData).flat().find(
-          (item) => item.grade === classId && item.subject.toLowerCase() === subject.toLowerCase()
-        );
-        if (found) {
-          const updatedQuestions = getRandomFive(found[lang]);
-          setQuestions(updatedQuestions);
-          setCurrentQ(0);
-          setAnswer("");
-          setGameOver(false);
-          setWin(false);
-          setScore(0);
-          setTimeLeft(60);
+      } else if (parseInt(classId) === 11 || parseInt(classId) === 12) {
+        const classData = drownData[gradeKey];
+        if (classData && subject && selectedIds.length > 0) {
+          const subData = classData.find(
+            (s) => s.subject.toLowerCase() === subject.toLowerCase()
+          );
+          if (subData && subData.question) {
+            const updatedQuestions = selectedIds
+              .map((id) => subData.question.find((q) => q.id === id))
+              .filter((q) => q && q[lang]);
+            setQuestions(updatedQuestions);
+          }
         }
       }
+      // DO NOT reset currentQ etc on lang toggle
     }
   }, [lang]);
 
@@ -116,29 +130,31 @@ const SaveTheGirl = () => {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
+  // Retry popup handler to dismiss popup and reset answer
+  const handleRetry = () => {
+    setShowWrongPopup(false);
+    setAnswer("");
+  };
+
   // Answer submit handler
   const handleSubmit = () => {
-  if (
-    answer.trim().toLowerCase() ===
-    (lang === "en" ? questions[currentQ].en.a : questions[currentQ].ta.a).toLowerCase()
-  ) {
-    setScore(score + 100);
-    if (currentQ === questions.length - 1) {
-      setWin(true);
-      setGameOver(true);
+    if (
+      answer.trim().toLowerCase() ===
+      (lang === "en" ? questions[currentQ].en.a : questions[currentQ].ta.a).toLowerCase()
+    ) {
+      setScore(score + 100);
+      if (currentQ === questions.length - 1) {
+        setWin(true);
+        setGameOver(true);
+      } else {
+        setCurrentQ(currentQ + 1);
+        setAnswer("");
+      }
     } else {
-      setCurrentQ(currentQ + 1);
-      setAnswer("");
+      // Show popup instead of alert
+      setShowWrongPopup(true);
     }
-  } else {
-    // Instead of alert, show popup
-    setShowWrongPopup(true);
-  }
-};
-const handleRetry = () => {
-  setShowWrongPopup(false);
-  setAnswer(""); // Optional: reset answer input when retrying
-};
+  };
 
   const waterLevel = ((60 - timeLeft) / 60) * 100;
   const levelProgress = ((currentQ + 1) / (questions.length || 1)) * 100;
@@ -157,55 +173,6 @@ const handleRetry = () => {
       className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      {showWrongPopup && (
-  <div
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100vw",
-      height: "100vh",
-      backgroundColor: "rgba(0,0,0,0.6)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      zIndex: 9999,
-    }}
-  >
-    <div
-      style={{
-        backgroundColor: "white",
-        padding: "2rem",
-        borderRadius: "1rem",
-        textAlign: "center",
-        width: "80%",
-        maxWidth: "400px",
-        boxShadow: "0 0 15px rgba(0,0,0,0.3)"
-      }}
-    >
-      <h2 style={{ fontSize: "2.5rem", color: "#e53e3e", marginBottom: "1rem" }}>❌ Wrong</h2>
-      <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>
-        {lang === "en" ? "Please try again!" : " தயவு செய்து மீண்டும் முயற்சி செய்யவும்!"}
-      </p>
-      <button
-        onClick={handleRetry}
-        style={{
-          backgroundColor: "#BCA5D4",
-          color: "white",
-          border: "none",
-          borderRadius: "0.5rem",
-          padding: "0.5rem 2rem",
-          fontSize: "1.2rem",
-          cursor: "pointer",
-          boxShadow: "0 4px 10px rgba(188,165,212,0.7)"
-        }}
-      >
-        {lang === "en" ? "Retry" : "மீண்டும்"}
-      </button>
-    </div>
-  </div>
-)}
-
       {!gameOver ? (
         <div className="flex flex-col md:flex-row w-[95%] h-[95%] items-center justify-between">
           {/* LEFT SIDE */}
@@ -474,6 +441,59 @@ const handleRetry = () => {
         </div>
       )}
 
+      {/* Wrong answer popup */}
+      {showWrongPopup && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.6)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "2rem",
+              borderRadius: "1rem",
+              textAlign: "center",
+              width: "80%",
+              maxWidth: "400px",
+              boxShadow: "0 0 15px rgba(0,0,0,0.3)",
+            }}
+          >
+            <h2 style={{ fontSize: "2.5rem", color: "#e53e3e", marginBottom: "1rem" }}>❌ Wrong</h2>
+            <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>
+              {lang === "en" ? "Please try again!" : " தயவு செய்து மீண்டும் முயற்சி செய்யவும்!"}
+            </p>
+            <button
+              onClick={() => {
+                setShowWrongPopup(false);
+                setAnswer("");
+              }}
+              style={{
+                backgroundColor: "#BCA5D4",
+                color: "white",
+                border: "none",
+                borderRadius: "0.5rem",
+                padding: "0.5rem 2rem",
+                fontSize: "1.2rem",
+                cursor: "pointer",
+                boxShadow: "0 4px 10px rgba(188,165,212,0.7)",
+              }}
+            >
+              {lang === "en" ? "Retry" : "மீண்டும்"}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* 🔘 Toggle Language */}
       <button
         onClick={() => setLang(lang === "en" ? "ta" : "en")}
@@ -489,4 +509,4 @@ const handleRetry = () => {
   );
 };
 
-export default SaveTheGirl;
+export default SaveGirl2;
