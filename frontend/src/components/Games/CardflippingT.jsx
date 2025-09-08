@@ -1,231 +1,310 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import cardsJSON from "../../data/cardsDataT.json";
-import BgImage from "../../assets/BgImage.png";
 import TablaCelebration from '../utils/Celeb';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate } from 'react-router-dom';
+import AppBackground from '../utils/AppBackground';
+import logo from '../../assets/logo123.png';
 
 const CardflippingT = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
-  const [cards, setCards] = useState([]);
-  const [flippedCards, setFlippedCards] = useState([]);
-  const [matchedCards, setMatchedCards] = useState([]);
-  const [message, setMessage] = useState('');
-  const [isGameActive, setIsGameActive] = useState(true);
-  const [gameMode, setGameMode] = useState('மொழியியல்');
-  const [showAllCardsTemporarily, setShowAllCardsTemporarily] = useState(false);
-  const [timer, setTimer] = useState(90);
-  const [showCelebration, setShowCelebration] = useState(false);
-  const [stopCelebration, setStopCelebration] = useState(false);
-  const tamil = true; // Added a flag for language toggle, since your example uses it
+  const [cards, setCards] = useState([]);
+  const [flippedCards, setFlippedCards] = useState([]);
+  const [matchedCards, setMatchedCards] = useState([]);
+  const [message, setMessage] = useState('');
+  const [isGameActive, setIsGameActive] = useState(true);
+  const [gameMode, setGameMode] = useState('மொழியியல்');
+  const [showAllCardsTemporarily, setShowAllCardsTemporarily] = useState(false);
+  const [timer, setTimer] = useState(90);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [stopCelebration, setStopCelebration] = useState(false);
 
-  const initializeGame = useCallback(() => {
-    setStopCelebration(true);
-    setTimeout(() => setStopCelebration(false), 50);
+  const initializeGame = useCallback(() => {
+    setStopCelebration(true);
+    setTimeout(() => setStopCelebration(false), 50);
 
-    if (!cardsJSON || !cardsJSON.length) return;
+    if (!cardsJSON || !cardsJSON.length) return;
 
-    const gamePairs = cardsJSON.find(data => data.type === gameMode)?.pairs || [];
+    const gamePairs = cardsJSON.find(data => data.type === gameMode)?.pairs || [];
 
-    const deck = gamePairs.flatMap(pair => [
-      { id: Math.random(), word: pair[0], match: pair[1] },
-      { id: Math.random(), word: pair[1], match: pair[0] }
-    ]);
+    const deck = gamePairs.flatMap(pair => [
+      { id: Math.random(), word: pair[0], match: pair[1] },
+      { id: Math.random(), word: pair[1], match: pair[0] }
+    ]);
 
-    // Shuffle deck
-    for (let i = deck.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [deck[i], deck[j]] = [deck[j], deck[i]];
-    }
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
 
-    setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
-    setFlippedCards([]);
-    setMatchedCards([]);
-    setMessage('');
-    setIsGameActive(true);
-    setTimer(90);
-    setShowCelebration(false);
+    setCards(deck.map(card => ({ ...card, isFlipped: false, isMatched: false })));
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setMessage('');
+    setIsGameActive(true);
+    setTimer(90);
+    setShowCelebration(false);
 
-    setShowAllCardsTemporarily(true);
-    setTimeout(() => setShowAllCardsTemporarily(false), 4000);
-  }, [gameMode]);
+    setShowAllCardsTemporarily(true);
+    setTimeout(() => {
+      setShowAllCardsTemporarily(false);
+    }, 4000);
+  }, [gameMode]);
 
-  useEffect(() => {
-    initializeGame();
-  }, [initializeGame]);
+  useEffect(() => {
+    initializeGame();
+  }, [initializeGame]);
 
-  // Timer
-  useEffect(() => {
-    let countdown;
-    if (!showAllCardsTemporarily && isGameActive) {
-      countdown = setInterval(() => {
-        setTimer(prevTime => {
-          if (prevTime <= 1) {
-            clearInterval(countdown);
-            setIsGameActive(false);
-            setMessage("நேரம் முடிந்துவிட்டது! விளையாட்டு முடிந்தது.");
-            return 0;
-          }
-          return prevTime - 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(countdown);
-  }, [showAllCardsTemporarily, isGameActive]);
+  useEffect(() => {
+    let countdown;
 
-  // Handle card flips and matching
-  useEffect(() => {
-    if (flippedCards.length === 2) {
-      const [firstCard, secondCard] = flippedCards;
-      const firstCardData = cards.find(card => card.id === firstCard);
-      const secondCardData = cards.find(card => card.id === secondCard);
+    if (!showAllCardsTemporarily && isGameActive) {
+      countdown = setInterval(() => {
+        setTimer(prevTime => {
+          if (prevTime <= 1) {
+            clearInterval(countdown);
+            setIsGameActive(false);
+            setMessage("நேரம் முடிந்துவிட்டது! விளையாட்டு முடிந்தது.");
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
+    }
 
-      if (firstCardData.match === secondCardData.word) {
-        setMatchedCards(prev => [...prev, firstCard, secondCard]);
-        setFlippedCards([]);
-      } else {
-        setTimeout(() => {
-          setCards(prevCards =>
-            prevCards.map(card =>
-              card.id === firstCard || card.id === secondCard
-                ? { ...card, isFlipped: false }
-                : card
-            )
-          );
-          setFlippedCards([]);
-        }, 1000);
-      }
-    }
-  }, [flippedCards, cards]);
+    return () => clearInterval(countdown);
+  }, [showAllCardsTemporarily, isGameActive]);
 
-  // Check for win
-  useEffect(() => {
-    if (matchedCards.length === cards.length && cards.length > 0) {
-      setMessage('விளையாட்டு வெற்றி!');
-      setIsGameActive(false);
-      setShowCelebration(true);
-    }
-  }, [matchedCards, cards]);
+  useEffect(() => {
+    // Corrected the condition from 5 to 2 for flippedCards length
+    if (flippedCards.length === 2) {
+      const [firstCard, secondCard] = flippedCards;
+      const firstCardData = cards.find(card => card.id === firstCard);
+      const secondCardData = cards.find(card => card.id === secondCard);
 
-  const handleCardClick = (id) => {
-    const card = cards.find(c => c.id === id);
-    if (!isGameActive || card.isFlipped || flippedCards.length === 2 || showAllCardsTemporarily) return;
+      if (firstCardData.match === secondCardData.word) {
+        setMatchedCards(prev => [...prev, firstCard, secondCard]);
+        setFlippedCards([]);
+      } else {
+        setTimeout(() => {
+          setCards(prevCards =>
+            prevCards.map(card =>
+              card.id === firstCard || card.id === secondCard
+                ? { ...card, isFlipped: false }
+                : card
+            )
+          );
+          setFlippedCards([]);
+        }, 1000);
+      }
+    }
+  }, [flippedCards, cards]);
 
-    setCards(prevCards =>
-      prevCards.map(c => (c.id === id ? { ...c, isFlipped: true } : c))
-    );
-    setFlippedCards(prev => [...prev, id]);
-  };
+  useEffect(() => {
+    if (matchedCards.length === cards.length && cards.length > 0) {
+      setMessage('விளையாட்டு வெற்றி!');
+      setIsGameActive(false);
+      setShowCelebration(true);
+    }
+  }, [matchedCards, cards]);
 
-  const gameInstructions = gameMode === 'மொழியியல்'
-    ? 'சரியான பொருத்தங்களை இணைக்கவும்!'
-    : 'சரியான கவிதை-கவிஞர் இணைப்புகளை கண்டுபிடிக்கவும்!';
+  const handleCardClick = (id) => {
+    const card = cards.find(c => c.id === id);
+    if (!isGameActive || card.isFlipped || flippedCards.length === 2 || showAllCardsTemporarily) return;
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-  };
+    setCards(prevCards =>
+      prevCards.map(c => (c.id === id ? { ...c, isFlipped: true } : c))
+    );
+    setFlippedCards(prev => [...prev, id]);
+  };
 
-  const restartGame = () => {
-    initializeGame();
-  };
+  const gameInstructions = gameMode === 'மொழியியல்'
+    ? 'சரியான பொருத்தங்களை இணைக்கவும்!'
+    : 'சரியான கவிதை-கவிஞர் இணைப்புகளை கண்டுபிடிக்கவும்!';
 
-  const goToDashboard = () => {
-    navigate('/'); // Navigates to the root URL (your dashboard)
-  };
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  };
 
-  return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-start p-4 font-sans text-gray-800 bg-cover bg-center"
-      style={{ backgroundImage: `url(${BgImage})` }}
-    >
-      {/* Mode Buttons */}
-      <div className="flex justify-center mb-6 mt-4">
-        <button
-          onClick={() => setGameMode('மொழியியல்')}
-          className={`px-4 py-2 mx-2 rounded-full font-bold transition-colors
-            ${gameMode === 'மொழியியல்' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
-        >
-          மொழியியல்
-        </button>
-        <button
-          onClick={() => setGameMode('கவிதை_கவிஞர்')}
-          className={`px-4 py-2 mx-2 rounded-full font-bold transition-colors
-            ${gameMode === 'கவிதை_கவிஞர்' ? 'bg-[#bca5d4] text-white shadow-lg' : 'bg-gray-200 text-gray-700'}`}
-        >
-          கவிதை_கவிஞர்
-        </button>
-      </div>
+  const restartGame = () => {
+    initializeGame();
+  };
 
-      <h2 className="text-xl font-bold mb-4">
-        காலம் மீதமுள்ளது: <span className="text-red-600">{formatTime(timer)}</span>
-      </h2>
+  const goToDashboard = () => {
+    navigate('/');
+  };
 
-      <p className="text-lg text-center mb-8">{gameInstructions}</p>
+  return (
+    <AppBackground>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '2vw', fontFamily: 'sans-serif', color: '#4b5563' }}>
+        <p style={{ fontSize: '1.5vw', textAlign: 'center', marginBottom: '3vh', marginTop: '3vh' }}>{gameInstructions}</p>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '5vh', gap: '2vw' }}>
+          <button
+            onClick={() => setGameMode('மொழியியல்')}
+            style={{
+              padding: '1vh 2vw',
+              borderRadius: '9999px',
+              fontWeight: 'bold',
+              transitionProperty: 'background-color',
+              transitionDuration: '150ms',
+              backgroundColor: gameMode === 'மொழியியல்' ? '#bca5d4' : '#e5e7eb',
+              color: gameMode === 'மொழியியல்' ? '#ffffff' : '#4b5563',
+              boxShadow: gameMode === 'மொழியியல்' ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none',
+              fontSize: '1.2vw'
+            }}
+          >
+            மொழியியல்
+          </button>
+          <button
+            onClick={() => setGameMode('கவிதை_கவிஞர்')}
+            style={{
+              padding: '1vh 2vw',
+              borderRadius: '9999px',
+              fontWeight: 'bold',
+              transitionProperty: 'background-color',
+              transitionDuration: '150ms',
+              backgroundColor: gameMode === 'கவிதை_கவிஞர்' ? '#bca5d4' : '#e5e7eb',
+              color: gameMode === 'கவிதை_கவிஞர்' ? '#ffffff' : '#4b5563',
+              boxShadow: gameMode === 'கவிதை_கவிஞர்' ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none',
+              fontSize: '1.2vw'
+            }}
+          >
+            கவிதை_கவிஞர்
+          </button>
+          <h2 style={{ fontSize: '1.8vw', fontWeight: 'bold' }}>
+            காலம் மீதமுள்ளது: <span style={{ color: '#dc2626' }}>{formatTime(timer)}</span>
+          </h2>
+        </div>
 
-      {message && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50">
-          <div className="bg-white p-12 rounded-xl shadow-lg border-4 text-center text-2xl font-bold transition-all duration-300 transform scale-105 relative" style={{ borderColor: '#bca5d4' }}>
-            {message}
-            <div className="mt-8 flex justify-center space-x-4">
-              <button
-                onClick={goToDashboard}
-                className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors"
-                style={{ backgroundColor: '#7164b4' }}
-              >
-                {tamil ? 'டாஷ்போர்டுக்கு செல்' : 'Go to Dashboard'}
-              </button>
-              <button
-                onClick={restartGame}
-                autoFocus
-                className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors"
-                style={{ backgroundColor: '#bca5d4' }}
-              >
-                {tamil ? 'மீண்டும் விளையாடு' : 'Play Again'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+        {message && (
+          <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(4px)', zIndex: 50 }}>
+            <div style={{ backgroundColor: '#ffffff', padding: '5vh 5vw', borderRadius: '1.5vw', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', border: '4px solid #bca5d4', textAlign: 'center', fontSize: '2vw', fontWeight: 'bold', transitionProperty: 'all', transitionDuration: '300ms', transform: 'scale(1.05)', position: 'relative' }}>
+              {message}
+              <div style={{ marginTop: '3vh', display: 'flex', justifyContent: 'center', gap: '2vw' }}>
+                <button
+                  onClick={goToDashboard}
+                  style={{
+                    padding: '1.5vh 3vw',
+                    color: '#ffffff',
+                    fontWeight: 'bold',
+                    borderRadius: '9999px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    transitionProperty: 'background-color',
+                    transitionDuration: '150ms',
+                    backgroundColor: '#7164b4',
+                    fontSize: '1.5vw'
+                  }}
+                >
+                  டாஷ்போர்டுக்கு செல்
+                </button>
+                <button
+                  onClick={restartGame}
+                  autoFocus
+                  style={{
+                    padding: '1.5vh 3vw',
+                    color: '#ffffff',
+                    fontWeight: 'bold',
+                    borderRadius: '9999px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    transitionProperty: 'background-color',
+                    transitionDuration: '150ms',
+                    backgroundColor: '#bca5d4',
+                    fontSize: '1.5vw'
+                  }}
+                >
+                  மீண்டும் விளையாடு
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
-      {/* Card Grid */}
-      <div className="grid grid-cols-4 gap-6 w-full max-w-4xl p-4 mb-8" style={{ perspective: '1000px' }}>
-        {cards.map(card => (
-          <div
-            key={card.id}
-            className={`relative bg-transparent rounded-xl shadow-lg aspect-[3/2] cursor-pointer transform transition-transform duration-700
-              ${card.isFlipped || card.isMatched || showAllCardsTemporarily ? 'rotate-y-180' : ''}`}
-            style={{ transformStyle: 'preserve-3d', minHeight: '120px' }}
-            onClick={() => handleCardClick(card.id)}
-          >
-            {/* Front */}
-            <div className="absolute inset-0 backface-hidden rounded-xl flex items-center justify-center border-4 text-white text-3xl font-bold" style={{ backgroundColor: '#7164b4', borderColor: '#7164b4' }}>
-              <span className="text-4xl">🃏</span>
-            </div>
-            {/* Back */}
-            <div
-              className="absolute inset-0 rounded-xl flex items-center justify-center text-center font-semibold text-xl p-2 backface-hidden rotate-y-180"
-              style={{ backgroundColor: '#ffffff', color: '#7164b4' }}
-            >
-              {card.word}
-            </div>
-          </div>
-        ))}
-      </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2vw', width: '100%', maxWidth: '90vw', padding: '2vw', marginBottom: '5vh', perspective: '1000px' }}>
+          {cards.map(card => (
+            <div
+              key={card.id}
+              style={{
+                position: 'relative',
+                backgroundColor: 'transparent',
+                borderRadius: '1vw',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                aspectRatio: '3 / 2',
+                cursor: 'pointer',
+                transformStyle: 'preserve-3d',
+                transform: (card.isFlipped || card.isMatched || showAllCardsTemporarily) ? 'rotateY(180deg)' : 'none',
+                transition: 'transform 700ms',
+                minHeight: '15vh'
+              }}
+              onClick={() => handleCardClick(card.id)}
+            >
+              {/* Card back with logo */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                backfaceVisibility: 'hidden',
+                borderRadius: '1vw',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1vh solid #7164b4',
+                color: '#ffffff',
+                fontSize: '4vw',
+                fontWeight: 'bold',
+                backgroundColor: '#7164b4'
+              }}>
+                <img src={logo} alt="Application Logo" style={{ width: '60%', height: 'auto', opacity: 0.8 }} />
+              </div>
+              {/* Card front with word */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: '1vw',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  fontWeight: '600',
+                  // Reduced font size for the text inside the card
+                  fontSize: '1.2vw', 
+                  padding: '1vh',
+                  backfaceVisibility: 'hidden',
+                  transform: 'rotateY(180deg)',
+                  backgroundColor: '#ffffff',
+                  color: '#7164b4'
+                }}
+              >
+                {card.word}
+              </div>
+            </div>
+          ))}
+        </div>
 
-      <button
-        onClick={initializeGame}
-        className="px-6 py-3 text-white font-bold rounded-full shadow-lg transition-colors mb-4"
-        style={{ backgroundColor: '#7164b4' }}
-      >
-        விளையாட்டை மீண்டும் தொடங்கவும்
-      </button>
+        <button
+          onClick={initializeGame}
+          style={{
+            padding: '1vh 2vw',
+            color: '#ffffff',
+            fontWeight: 'bold',
+            borderRadius: '9999px',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            transitionProperty: 'background-color',
+            transitionDuration: '150ms',
+            marginBottom: '2vh',
+            backgroundColor: '#7164b4',
+            fontSize: '1.2vw'
+          }}
+        >
+          விளையாட்டை மீண்டும் தொடங்கவும்
+        </button>
 
-      {/* Celebration Component */}
-      <TablaCelebration show={showCelebration} stop={stopCelebration} />
-    </div>
-  );
+        <TablaCelebration show={showCelebration} stop={stopCelebration} />
+      </div>
+    </AppBackground>
+  );
 };
 
 export default CardflippingT;
