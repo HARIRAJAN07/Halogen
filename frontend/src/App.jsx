@@ -9,6 +9,7 @@ import TopicSelection from './components/SinglePlayer/TopicSelection';
 import Match from './components/SinglePlayer/Match';
 import MultiplayerInput from './components/MultiPlayer/MultiPlayerInput';
 import ChooseLanguage from './components/SinglePlayer/ChooseLanguage';
+import Leaderboard from './components/SinglePlayer/leaderBoard';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Route path="/single/:classId/:displayName/:schoolName/:subject/game" element={<Game />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject/lang/:lang" element={<TopicSelection />} />
       <Route path="/single/:classId/:displayName/:schoolName/:subject/lang/:lang/:topic/ma" element={<Match />} />
+      <Route path="/leaderboard" element={<Leaderboard />} />
     </Routes >
     </BrowserRouter>
   )

@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { useNavigate, useParams } from "react-router-dom";
+import FloatingBackground from "../utils/FloatingBackground";
+import LanguageToggle from "../utils/LanguageToggle";
+
 import scienceGif from "../../assets/science.gif";
 import mathGif from "../../assets/math.gif";
 import socialGif from "../../assets/social.gif";
 import tamilGif from "../../assets/tamil.gif";
 import englishGif from "../../assets/english.gif";
-import physicsGif from "../../assets/physics.gif"; 
-import chemistryGif from "../../assets/chemistry.gif"; 
-import biologyGif from "../../assets/biology.gif"; 
-import csGif from "../../assets/cs.gif"; 
+import physicsGif from "../../assets/physics.gif";
+import chemistryGif from "../../assets/chemistry.gif";
+import biologyGif from "../../assets/biology.gif";
+import csGif from "../../assets/cs.gif";
+import Logo from "../utils/logo";
 
 const subjectsForGrades6to10 = [
   { en: "Science", ta: "அறிவியல்", gif: scienceGif, color: "bg-[#BCA5D4]" },
@@ -23,105 +28,70 @@ const subjectsForHigherGrades = [
   { en: "Chemistry", ta: "வேதியியல்", gif: chemistryGif, color: "bg-[#BCA5D4]" },
   { en: "Biology", ta: "உயிரியல்", gif: biologyGif, color: "bg-[#BCA5D4]" },
   { en: "Computer Science", ta: "கணினி அறிவியல்", gif: csGif, color: "bg-[#BCA5D4]" },
-  { en: "Math", ta: "கணிதம்", gif: englishGif, color: "bg-[#BCA5D4]" },
+  { en: "Math", ta: "கணிதம்", gif: mathGif, color: "bg-[#BCA5D4]" },
 ];
 
 const SubjectSelection = () => {
-  const [flipped, setFlipped] = useState({});
   const [language, setLanguage] = useState("en");
   const navigate = useNavigate();
-  const { classId, displayName,schoolName } = useParams();
+  const { classId, displayName, schoolName } = useParams();
 
-  // 📝 Select the correct subject list based on classId
-  const isHigherGrade = parseInt(classId) >= 11;
+  // Determine if the class is higher grade (11 or 12)
+  const classNumber = parseInt(classId, 10);
+  const isHigherGrade = classNumber >= 11 && classNumber <= 12;
+
+  // Select appropriate subject array
   const subjectsToDisplay = isHigherGrade ? subjectsForHigherGrades : subjectsForGrades6to10;
 
-  const toggleFlip = (subjectName) => {
-    setFlipped((prev) => ({
-      ...prev,
-      [subjectName]: !prev[subjectName],
-    }));
+  const handleLanguage = () => {
+    setLanguage((prev) => (prev === "en" ? "ta" : "en"));
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 relative"
-      style={{ backgroundColor: "#EFE2FA" }}
-    >
-      {/* Language Toggle Button */}
-      <button
-        onClick={() => setLanguage(language === "en" ? "ta" : "en")}
-        className="absolute top-6 left-6 px-6 py-3 text-lg rounded-lg bg-purple-600 text-white font-semibold shadow-lg hover:bg-purple-700 transition"
-      >
-        {language === "en" ? "தமிழ்" : "English"}
-      </button>
+    <div className="min-h-screen flex items-center justify-center relative" style={{ backgroundColor: "#EFE2FA" }}>
+      {/* Background Layer */}
+      <FloatingBackground>
+        <Logo />
+        {/* Foreground Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center w-full px-[2vw]">
+          {/* Language Toggle Button */}
+          {/* (Assuming LanguageToggle renders toggle and calls handleLanguage) */}
 
-      {/* Heading */}
-      <h1 className="text-6xl sm:text-6xl 4xl:text-10xl font-extrabold text-center text-black mb-2 sm:mb-4 drop-shadow-sm">
-        {language === "en" ? "Choose Your Subject" : "உங்கள் பாடத்தைத் தேர்வு செய்யுங்கள்"}
-      </h1>
-      <p className="text-md sm:text-xl 2xl:text-3xl text-gray-700 text-center mb-8 sm:mb-12">
-        {language === "en"
-          ? "Select a subject to Start your Game!"
-          : "விளையாட்டைத் தொடங்க ஒரு பாடத்தைத் தேர்ந்தெடுக்கவும்!"}
-      </p>
+          {/* Heading */}
+          <h1 className="text-[7vh] font-extrabold text-center text-black mb-[1vh] sm:mb-[1vh] drop-shadow-sm">
+            {language === "en" ? "Choose Your Subject" : "உங்கள் பாடத்தைத் தேர்வு செய்யுங்கள்"}
+          </h1>
+          <p className="text-[4vh] text-gray-700 text-center mb-[5vh] sm:mb-[10vh]">
+            {language === "en" ? "Click any card to begin!" : "தொடங்க எந்த கார்டையும் கிளிக் செய்யவும்!"}
+          </p>
 
-      {/* Flip Cards Row */}
-      <div className="flex gap-6 sm:gap-10 overflow-x-auto px-4 w-full justify-center">
-        {subjectsToDisplay.map((subject) => (
-          <div
-            key={subject.en}
-            className="relative w-48 h-64 sm:w-64 sm:h-80 md:w-72 md:h-96 2xl:w-[18vw] 2xl:h-[40vh] [perspective:1000px] flex-shrink-0"
-            onClick={() => toggleFlip(subject.en)}
-          >
-            <div
-              className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
-                flipped[subject.en] ? "[transform:rotateY(180deg)]" : ""
-              }`}
-            >
-              {/* Front */}
-              <div
-                className={`${subject.color} absolute inset-0 rounded-3xl shadow-xl flex flex-col items-center justify-center [backface-visibility:hidden] p-4 sm:p-6`}
+          {/* Subjects */}
+          <div className="flex flex-row justify-center gap-[3vw] w-full max-w-[95vw] flex-wrap mb-[7vh]">
+            {subjectsToDisplay.map((item, index) => (
+              <motion.div
+                key={index}
+                className="relative flex flex-col items-center justify-center rounded-[2vh] overflow-hidden cursor-pointer"
+                style={{ width: "15vw", height: "30vh", marginBottom: "12vh" }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                onClick={() =>
+                  navigate(`/single/${classId}/${displayName}/${schoolName}/${item.en.toLowerCase()}`, {
+                    state: { subject: item.en },
+                  })
+                }
               >
-                <img
-                  src={subject.gif}
-                  alt={subject.en}
-                  className="w-24 h-24 sm:w-32 sm:h-32 2xl:w-[8vw] 2xl:h-[8vh] mb-2 sm:mb-4 object-contain"
-                />
-                <h2 className="text-2xl sm:text-4xl 2xl:text-5xl text-white font-bold text-center drop-shadow-lg">
-                  {subject[language]}
-                </h2>
-              </div>
-
-              {/* Back */}
-              <div className="absolute inset-0 rounded-3xl shadow-xl flex flex-col items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden] p-4 sm:p-6 text-gray-800 bg-gradient-to-br from-[#e8f9ff] via-[#c4d9ff] to-[#c5baff]">
-                <h3 className="text-lg sm:text-2xl 2xl:text-3xl font-bold text-center mb-2 sm:mb-4">
-                  {language === "en"
-                    ? `Go to ${subject.en}`
-                    : `${subject.ta} க்கு செல்லுங்கள்`}
-                </h3>
-                <p className="text-sm sm:text-lg 2xl:text-xl text-center mb-4 sm:mb-6">
-                  {language === "en"
-                    ? `Click below to continue with ${subject.en}.`
-                    : `${subject.ta} கொண்டு தொடர கீழே கிளிக் செய்யவும்.`}
-                </p>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(`/single/${classId}/${displayName}/${schoolName}/${subject.en.toLowerCase()}`, {
-                      state: { subject: subject.en },
-                    });
-                  }}
-                  className="px-6 py-2 sm:px-8 sm:py-3 bg-white font-bold rounded-full shadow-md hover:bg-gray-100 transition-all transform hover:scale-105 2xl:text-xl"
-                  style={{ color: "#2c2c2c" }}
+                <div
+                  className={`${item.color} absolute inset-0 rounded-[2vh] shadow-xl flex flex-col items-center justify-center p-[2vh]`}
                 >
-                  {language === "en" ? "Play" : "விளையாடு"}
-                </button>
-              </div>
-            </div>
+                  <img src={item.gif} alt={item.en} className="w-[8vw] h-[10vh] mb-[2vh] object-contain" />
+                  <h2 className="text-[2.5vh] font-bold text-white text-center drop-shadow-lg">{item[language]}</h2>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+        <LanguageToggle currentLanguage={language} onPress={handleLanguage} />
+      </FloatingBackground>
     </div>
   );
 };

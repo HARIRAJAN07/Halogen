@@ -6,6 +6,9 @@ import bg from "../../assets/bg.jpg";
 import drownData from "../../data/saveGirl.json";
 import { useParams } from "react-router-dom";
 import TablaCelebration from "../utils/Celeb"; // ✅ your celebration component
+import LanguageToggle from "../utils/LanguageToggle";
+import Background from "../utils/FloatingBackground";
+import Logo from "../utils/logo";
 
 const SaveTheGirl = () => {
   const { classId, subject } = useParams();
@@ -140,6 +143,10 @@ const handleRetry = () => {
   setAnswer(""); // Optional: reset answer input when retrying
 };
 
+const handleLanguage = () => {
+  setLang((prev) => (prev === "en" ? "ta" : "en"));
+};
+
   const waterLevel = ((60 - timeLeft) / 60) * 100;
   const levelProgress = ((currentQ + 1) / (questions.length || 1)) * 100;
   const timerColor = timeLeft > 30 ? "#BCA5D4" : timeLeft > 15 ? "#EFE2FA" : "red";
@@ -153,10 +160,12 @@ const handleRetry = () => {
   }
 
   return (
+    <Background>
     <div
-      className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bg})` }}
+      className="flex items-center justify-center w-full h-screen relative"
+      
     >
+      <Logo />
       {showWrongPopup && (
   <div
     style={{
@@ -473,19 +482,11 @@ const handleRetry = () => {
           )}
         </div>
       )}
-
+    
       {/* 🔘 Toggle Language */}
-      <button
-        onClick={() => setLang(lang === "en" ? "ta" : "en")}
-        className="absolute bottom-5 right-5 px-5 py-3 rounded-[2vh] text-[2.5vh] font-bold text-white"
-        style={{
-          background: "linear-gradient(90deg,#BCA5D4,#EFE2FA)",
-          boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
-        }}
-      >
-        {lang === "en" ? "தமிழ்" : "English"}
-      </button>
+      <LanguageToggle  currentLanguage={lang} onPress={handleLanguage}/>
     </div>
+    </Background>
   );
 };
 

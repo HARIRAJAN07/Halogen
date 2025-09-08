@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import { useNavigate , useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import socialData from '../../data/social.json';
-
+import LanguageToggle from "../utils/LanguageToggle";
+import Background from "../utils/FloatingBackground";
+import Logo from "../utils/logo";
 const GRID_SIZE = 8;
 const POINTS_PER_CORRECT = 10;
 const REQUIRED_TO_UNLOCK = 10;
@@ -23,7 +25,7 @@ const TRANSLATIONS = {
     clear: "Clear",
     hintsOver: "Your hints are over",
     hintsMsg:
-      "You've used both hints for this question. Try the next question or continue with the letters you already have.",
+      "Out of hints 🔒",
     ok: "OK",
     levelComplete: "Level Complete!",
     currentScore: "Your current score:",
@@ -36,11 +38,11 @@ const TRANSLATIONS = {
     time: "Time",
     timeUp: "OOPS...Time's up! ⏳",
     restartGame: "Restart Game",
-    timeoutMsg: "Time's up! You can restart the game to try again.",
-    congratsTitle: "Congratulations! 🎉",
+    timeoutMsg: "Time’s up! 🔔You can restart the game to try again.",
+    congratsTitle: " 🏆 Congratulations! 🎉",
     congratsMsg: "You have completed all levels! Good job!",
     finalScore: "Your final score:",
-    goToDashboard: "Go to Dashboard"
+    leaderboard: "Leaderboard"
   },
   ta: {
     title: "வார்த்தை தேடல்",
@@ -53,7 +55,7 @@ const TRANSLATIONS = {
     clear: "அழிக்க",
     hintsOver: "உங்கள் குறிப்புகள் முடிந்துவிட்டன",
     hintsMsg:
-      "இந்த கேள்விக்கான இரண்டு குறிப்புகளும் பயன்படுத்தப்பட்டு விட்டன. அடுத்த கேள்வியை முயற்சிக்கவும்.",
+      "குறிப்புகள் முடிந்தது 🔒",
     ok: "சரி",
     levelComplete: "நிலை முடிந்தது!",
     currentScore: "உங்கள் தற்போதைய மதிப்பெண்:",
@@ -65,11 +67,11 @@ const TRANSLATIONS = {
     time: "நேரம்",
     timeUp: "ஐயோ... நேரம் முடிந்துவிட்டது! ⏳",
     restartGame: "விளையாட்டை மீண்டும் தொடங்கு",
-    timeoutMsg: "நேரம் முடிந்துவிட்டது! மீண்டும் முயற்சி செய்ய விளையாட்டை மீண்டும் தொடங்கலாம்.",
-    congratsTitle: "வாழ்த்துக்கள்! 🎉",
+    timeoutMsg: "நேரம் முடிந்துவிட்டது! ",
+    congratsTitle: "🏆 வாழ்த்துக்கள்! 🎉",
     congratsMsg: "அனைத்து நிலைகளையும் முடித்துவிட்டீர்கள்! நல்ல வேலை!",
     finalScore: "உங்கள் இறுதி மதிப்பெண்:",
-    goToDashboard: "டாஷ்போர்டுக்கு செல்லவும்"
+    leaderboard: "புள்ளி பட்டியல்"
   },
 };
 
@@ -193,42 +195,81 @@ export default function WordSearchGame() {
   const T = TRANSLATIONS[language];
   const ALPHABET = language === "en" ? Array.from(ALPHABET_EN) : arrayFromStr(ALPHABET_TA);
 
+ const handleLanguage = () => {
+    setLanguage((l) => (l === "en" ? "ta" : "en"))
+  };
+  
   // State for timer
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
   const [timerActive, setTimerActive] = useState(true);
 
-  // Get questions based on selected grade and level
- const getQuestionsForLevel = (levelIndex, lang = language) => {
-    // 📝 Logic to select the next class's questions
-    const targetClass = parseInt(classId);
-    const questionsGrade = `grade${targetClass + 1}`; // ✅ Select questions from the next class
+  // Store original questions with all language data
+  const [originalQuestions, setOriginalQuestions] = useState({
+    easy: [],
+    medium: [],
+    hard: []
+  });
 
+  // Store initial questions
+  const [initialLevels, setInitialLevels] = useState([]);
+  const prevLanguageRef = useRef(language);
+
+  // Get questions based on selected grade and level
+  const getQuestionsForLevel = (levelIndex, lang = language) => {
+    const targetClass = parseInt(classId);
+    const questionsGrade = `grade${targetClass}`;
+    
     const levelKeys = ["easy", "medium", "hard"];
     const levelKey = levelKeys[levelIndex];
 
+    // Check if the requested grade exists in the data
     if (!socialData[questionsGrade] || !socialData[questionsGrade][levelKey]) {
-      console.warn(`No data found for grade ${targetClass + 1} and level ${levelKey}. Using default 'grade6'.`);
-      // Fallback to a default if the data is not found
-      if (!socialData.grade6 || !socialData.grade6[levelKey]) {
-          return [];
+      console.warn(`No data found for grade ${targetClass} and level ${levelKey}. Using default 'grade6'.`);
+      // Fallback to grade6 if the requested grade doesn't exist
+      const fallbackGrade = "grade6";
+      if (!socialData[fallbackGrade] || !socialData[fallbackGrade][levelKey]) {
+        return [];
       }
-      const allQuestions = socialData.grade6[levelKey];
-      // ... (rest of the function logic to select random questions)
+      
+      const allQuestions = socialData[fallbackGrade][levelKey];
+      const selectedQuestions = [];
+      const usedIndices = new Set();
+      
+      while (selectedQuestions.length < QUESTIONS_PER_LEVEL && selectedQuestions.length < allQuestions.length) {
+        const randomIndex = Math.floor(Math.random() * allQuestions.length);
+        if (!usedIndices.has(randomIndex)) {
+          usedIndices.add(randomIndex);
+          const questionObj = allQuestions[randomIndex];
+          const selectedQuestion = {
+            q: questionObj[lang]?.q || questionObj.en.q,
+            a: questionObj[lang]?.a || questionObj.en.a,
+            originalQ: questionObj.en.q,
+            originalA: questionObj.en.a,
+            // Store the full question object for language switching
+            fullData: questionObj
+          };
+          selectedQuestions.push(selectedQuestion);
+        }
+      }
+      return selectedQuestions;
     }
 
     const allQuestions = socialData[questionsGrade][levelKey];
     const selectedQuestions = [];
     const usedIndices = new Set();
+    
     while (selectedQuestions.length < QUESTIONS_PER_LEVEL && selectedQuestions.length < allQuestions.length) {
       const randomIndex = Math.floor(Math.random() * allQuestions.length);
       if (!usedIndices.has(randomIndex)) {
         usedIndices.add(randomIndex);
         const questionObj = allQuestions[randomIndex];
         const selectedQuestion = {
-          q: questionObj.q[lang] || questionObj.q.en,
-          a: questionObj.a[lang] || questionObj.a.en,
-          originalQ: questionObj.q.en,
-          originalA: questionObj.a.en
+          q: questionObj[lang]?.q || questionObj.en.q,
+          a: questionObj[lang]?.a || questionObj.en.a,
+          originalQ: questionObj.en.q,
+          originalA: questionObj.en.a,
+          // Store the full question object for language switching
+          fullData: questionObj
         };
         selectedQuestions.push(selectedQuestion);
       }
@@ -236,46 +277,45 @@ export default function WordSearchGame() {
     return selectedQuestions;
   };
 
-  // Store initial questions in English
-  const [initialLevels, setInitialLevels] = useState([]);
-
-  useEffect(() => {
-    // Only generate new questions when the component first mounts
-    if (initialLevels.length === 0) {
-      const newLevels = [
-        getQuestionsForLevel(0, "en"),
-        getQuestionsForLevel(1, "en"),
-        getQuestionsForLevel(2, "en")
-      ];
-      setInitialLevels(newLevels);
-    }
-  }, []);
-
-  // This will translate the questions when language changes but maintain progress
-  const LEVELS = useMemo(() => {
-    if (initialLevels.length === 0) return [[], [], []];
-
-    return initialLevels.map(level => {
-      return level.map(questionObj => {
-        // For each question, find its translation in the current language
-        const levelKey = level === initialLevels[0] ? "easy" :
-                         level === initialLevels[1] ? "medium" : "hard";
-
-        // Find the matching question in the JSON data using the original English text
-        const allQuestions = socialData.grade6?.[levelKey] || [];
-        const translatedQuestion = allQuestions.find(q =>
-          q.q.en === questionObj.originalQ
-        );
-
+  // Function to update questions when language changes
+  const updateQuestionsForLanguage = (lang) => {
+    const updatedLevels = initialLevels.map(level => {
+      return level.map(question => {
         return {
-          q: translatedQuestion?.q[language] || questionObj.q,
-          a: translatedQuestion?.a[language] || questionObj.a,
-          originalQ: questionObj.originalQ, // Keep reference to original English text
-          originalA: questionObj.originalA  // Keep reference to original English answer
+          ...question,
+          q: question.fullData[lang]?.q || question.fullData.en.q,
+          a: question.fullData[lang]?.a || question.fullData.en.a
         };
       });
     });
-  }, [language, initialLevels]);
+    
+    return updatedLevels;
+  };
+
+  useEffect(() => {
+    // Only load questions initially or when classId changes
+    if (initialLevels.length === 0) {
+      const newLevels = [
+        getQuestionsForLevel(0, language),
+        getQuestionsForLevel(1, language),
+        getQuestionsForLevel(2, language)
+      ];
+      setInitialLevels(newLevels);
+    } else if (prevLanguageRef.current !== language) {
+      // Update language without changing questions
+      const updatedLevels = updateQuestionsForLanguage(language);
+      setInitialLevels(updatedLevels);
+      prevLanguageRef.current = language;
+      
+      // Rebuild grid with new language
+      buildLevelGrid();
+    }
+  }, [language, classId]);
+
+  // This will use the initial levels directly
+  const LEVELS = useMemo(() => {
+    return initialLevels;
+  }, [initialLevels]);
 
   const [levelIndex, setLevelIndex] = useState(0);
   const [qIndex, setQIndex] = useState(0);
@@ -298,7 +338,6 @@ export default function WordSearchGame() {
   const [isDragging, setIsDragging] = useState(false);
   const startPosRef = useRef(null); // Stores the starting cell of the drag
   const currentPathRef = useRef([]); // Stores the path of the current drag
-
 
   const levelQuestions = LEVELS[levelIndex] || [];
   const currentObj = levelQuestions[qIndex] || null;
@@ -420,12 +459,13 @@ export default function WordSearchGame() {
 
   // Effect to build the level grid and reset state
   useEffect(() => {
-    buildLevelGrid();
-    // Don't reset qIndex here - we want to maintain our progress
-    setSelectedPositions([]);
-    setHintsUsed(0);
-    setStatus("playing");
-    setFoundAnswers([]);
+    if (initialLevels.length > 0) {
+      buildLevelGrid();
+      setSelectedPositions([]);
+      setHintsUsed(0);
+      setStatus("playing");
+      setFoundAnswers([]);
+    }
   }, [levelIndex, language, LEVELS]);
 
   function posEq(a, b) {
@@ -498,8 +538,6 @@ export default function WordSearchGame() {
     if (!isDragging) return;
     setIsDragging(false);
     startPosRef.current = null;
-    // Don't clear selectedPositions here, it will be used by handleSubmit
-    // currentPathRef.current will be cleared on next drag start
   };
 
   useEffect(() => {
@@ -512,7 +550,6 @@ export default function WordSearchGame() {
       window.removeEventListener('touchend', handleMouseUp);
     };
   }, [isDragging]);
-
 
   function handleHint() {
     if (!currentObj) return;
@@ -647,239 +684,317 @@ export default function WordSearchGame() {
     return {};
   }
 
-// Add a loading state
-const [isLoading, setIsLoading] = useState(true);
+  // Add a loading state
+  const [isLoading, setIsLoading] = useState(true);
 
-// Update the useEffect that loads questions
-useEffect(() => {
-  // Only generate new questions when the component first mounts or after restart
-  if (initialLevels.length === 0) {
+  // Update the useEffect that loads questions
+  useEffect(() => {
+    // Only generate new questions when the component first mounts
+    if (initialLevels.length === 0) {
+      setIsLoading(true);
+      const newLevels = [
+        getQuestionsForLevel(0, language),
+        getQuestionsForLevel(1, language),
+        getQuestionsForLevel(2, language)
+      ];
+      setInitialLevels(newLevels);
+      setIsLoading(false);
+    }
+  }, [initialLevels]);
+
+  // Update the restart function
+  function restartAll(goToDashboard = false) {
     setIsLoading(true);
-    const newLevels = [
-      getQuestionsForLevel(0, "en"),
-      getQuestionsForLevel(1, "en"),
-      getQuestionsForLevel(2, "en")
-    ];
-    setInitialLevels(newLevels);
-    setIsLoading(false);
-  }
-}, [initialLevels]);
-
-// Update the restart function
-function restartAll(goToDashboard = false) {
-  setIsLoading(true);
-  setLevelIndex(0);
-  setQIndex(0);
-  setScore(0);
-  setUnlocked([true, false, false]);
-  setShowFinalModal(false);
-  setShowTimeoutModal(false);
-  setShowFinalCompletionModal(false);
-  setStatus("playing");
-  setSelectedPositions([]);
-  currentPathRef.current = [];
-  setHintsUsed(0);
-  setTimeLeft(TIMER_DURATION);
-  setTimerActive(true);
-  setFoundAnswers([]);
-  
-  // Reset initial levels to trigger new question generation
-  setInitialLevels([]);
-  
-  if (goToDashboard) {
-    navigate("/");
-  }
-}
-
-  return (
-  <div className="min-h-screen p-4 bg-[#BCA5D4] text-slate-900 flex flex-col items-center relative">
-    {/* language toggle top-left */}
-    <div className="absolute top-4 left-4">
-      <button
-        onClick={() => setLanguage((l) => (l === "en" ? "ta" : "en"))}
-        className="px-3 py-1 bg-[#EFE2FA] text-black rounded-lg"
-      >
-        {language === "en" ? "தமிழ்" : "English"}
-      </button>
-    </div>
-
-    {/* Score and Timer top-right */}
-    <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
-      <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
-        {T.score}: {score}
-      </div>
-      <div className="bg-[#EFE2FA] text-black px-4 py-2 rounded-md shadow-lg font-semibold">
-        {T.time}: {formatTime(timeLeft)}
-      </div>
-    </div>
-
-    {/* header & level selector */}
-    <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-      <div className="text-white text-2xl font-bold">{T.title} — {T.level} {levelIndex + 1}</div>
-      <div className="flex gap-2">
-        {LEVELS.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => chooseLevel(i)}
-            disabled={!unlocked[i]}
-            className={`px-3 py-1 rounded-lg font-semibold ${unlocked[i] ? "bg-[#EFE2FA] text-black" : "bg-[#EFE2FA] text-black/40 cursor-not-allowed"}`}
-          >
-            {T.level} {i + 1}
-          </button>
-        ))}
-      </div>
-    </div>
+    setLevelIndex(0);
+    setQIndex(0);
+    setScore(0);
+    setUnlocked([true, false, false]);
+    setShowFinalModal(false);
+    setShowTimeoutModal(false);
+    setShowFinalCompletionModal(false);
+    setStatus("playing");
+    setSelectedPositions([]);
+    currentPathRef.current = [];
+    setHintsUsed(0);
+    setTimeLeft(TIMER_DURATION);
+    setTimerActive(true);
+    setFoundAnswers([]);
     
-    {/* Main content container: Question Card on left, Grid on right */}
-    <div className="flex flex-col md:flex-row items-start justify-center w-full max-w-4xl gap-4">
+    // Reset initial levels to trigger new question generation
+    setInitialLevels([]);
+    
+    if (goToDashboard) {
+      navigate("/leaderboard");
+    }
+  }
 
-      {/* question card (moved to the left) */}
-      <div className="w-full md:w-1/2 bg-[#EFE2FA]/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-gray-600 mb-4 md:mb-0">
-        <div className="text-black/90 text-lg md:text-xl font-semibold">{T.question} {qIndex + 1} / {levelQuestions.length}</div>
-        <div className="text-xl md:text-2xl text-black font-bold mt-2">{currentObj?.q}</div>
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#BCA5D4]">
+        <div className="text-white text-2xl">Loading...</div>
       </div>
+    );
+  }
 
-      {/* grid (moved to the right) */}
-      <div
-        className="bg-[#EFE2FA]/50 p-4 rounded-xl shadow-lg"
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onTouchEnd={handleMouseUp}
-      >
-        <div className="grid gap-5" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, minmax(0, 1fr))` }}>
-          {grid.map((row, r) => row.map((ch, c) => (
-            <div
-              key={`${r}-${c}`}
-              onMouseDown={() => handleMouseDown(r, c)}
-              onMouseEnter={() => handleMouseEnter(r, c)}
-              onTouchStart={(e) => { e.preventDefault(); handleMouseDown(r, c); }}
-              onTouchMove={(e) => {
-                e.preventDefault();
-                const touch = e.touches[0];
-                const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
-                if (targetElement && targetElement.dataset.row && targetElement.dataset.col) {
-                  const targetR = parseInt(targetElement.dataset.row);
-                  const targetC = parseInt(targetElement.dataset.col);
-                  handleMouseEnter(targetR, targetC);
-                }
-              }}
-              className={getCellClass(r, c)}
-              style={getCellStyle(r, c)}
-              data-row={r}
-              data-col={c}
+return (
+  <Background>
+    <Logo />
+    <div className="min-h-screen w-full flex flex-col items-center relative text-slate-900">
+
+      {/* Header & Level selector */}
+      <div className="w-[90%] max-w-[80vw] flex flex-col sm:flex-row items-center justify-between mb-[3vh] gap-[1vh]">
+        <div className="text-black text-[3vh] text-center font-bold w-[35vw]">
+          {T.title} — {T.level} {levelIndex + 1}
+        </div>
+        <div className="flex gap-[1vw] flex-wrap justify-center mt-[2vh]">
+          {LEVELS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => chooseLevel(i)}
+              disabled={!unlocked[i]}
+              className={`px-[1.5vw] py-[1.5vh] rounded-[1vh] font-bold ${
+                unlocked[i]
+                  ? "bg-[#7FB3E0] text-black text-[2vh]"
+                  : "bg-[#7FB3E0] text-black/40 text-[2vh] cursor-not-allowed"
+              }`}
             >
-              <span className="flex items-center justify-center h-full">{ch}</span>
-            </div>
-          )))}
+              {T.level} {i + 1}
+            </button>
+          ))}
         </div>
       </div>
-      
-    </div>
 
-    {/* answer preview + controls (kept below the main content) */}
-    <div className="flex flex-wrap items-center gap-3 mt-4 justify-center">
-      <div className="bg-gray-700 text-white rounded-lg px-4 py-2 font-mono text-xl min-h-[3rem] flex items-center">
-        {selectedPositions.map(([r, c]) => grid[r][c]).join("")}
+      {/* Split Screen */}
+      <div className="flex flex-row w-full max-w-[90vw] h-[75vh] gap-[2vw]">
+
+        {/* Left side */}
+        <div className="w-1/2 flex flex-col justify-center items-center">
+          {/* Score & Timer */}
+<div className="flex flex-row items-center justify-center gap-[2vw] mb-[2vh]">
+  <div className="bg-[#7FB3E0] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
+    {T.score}: {score}
+  </div>
+  <div className="bg-[#7FB3E0] text-black text-[2vh] px-[3vw] py-[2vh] rounded-[1.5vh] shadow-lg font-bold">
+    {T.time}: {formatTime(timeLeft)}
+  </div>
+</div>
+
+
+          {/* Question card */}
+          <div className="w-[90%] bg-[#EFE2FA]/80 backdrop-blur-md rounded-[2vh] p-[3vh] shadow-xl border border-gray-600 text-center" 
+          style={{
+  background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
+  backdropFilter: "blur(2vh)", // 16px ≈ 2vh
+  borderRadius: "3vh",         // 1.5rem ≈ 24px ≈ 3vh
+  boxShadow: "0 5vh 10vh -2vh rgba(0, 0, 0, 0.25)", // 25px ≈ 5vh, 50px ≈ 10vh, 12px ≈ 2vh
+}}
+>
+            <div className="text-black/90 text-[2vh] md:text-[2.5vh] font-semibold">
+              {T.question} {qIndex + 1} / {levelQuestions.length}
+            </div>
+            <div className="text-[2.5vh] md:text-[3vh] text-black font-bold mt-[1vh]">
+              {currentObj?.q}
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap items-center gap-[1vw] mt-[2vh] justify-center">
+            <div className="bg-[#7FB3E0] text-white rounded-[1vh] px-[2vw] py-[1vh] font-mono text-[2vh] min-h-[5vh] flex items-center">
+              {selectedPositions.map(([r, c]) => grid[r][c]).join("")}
+            </div>
+
+            <button
+              onClick={handleHint}
+              className="px-[2vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0]  text-white font-semibold shadow"
+            >
+              {T.hint} ({2 - hintsUsed})
+            </button>
+
+            {status === "playing" ? (
+              <button
+                onClick={handleSubmit}
+                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-white font-bold shadow"
+              >
+                {T.submit}
+              </button>
+            ) : (
+              <button
+                onClick={handleNext}
+                className="px-[2.5vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-black font-bold shadow animate-bounce"
+              >
+                {T.next}
+              </button>
+            )}
+
+            <button
+              onClick={() => {
+                setSelectedPositions([]);
+                currentPathRef.current = [];
+              }}
+              className="px-[2vw] py-[1vh] rounded-[1vh] bg-[#7FB3E0] text-white"
+            >
+              {T.clear}
+            </button>
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div
+          className="w-1/2 flex justify-center items-center bg-[#EFE2FA]/50 pl-[3vh] pt-[3vh] pb-[1vh] pr-[1.5vh] rounded-[1vh] shadow-lg h-[80vh]"
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchEnd={handleMouseUp}
+          style={{
+  background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
+  backdropFilter: "blur(2vh)", // 16px ≈ 2vh
+  borderRadius: "3vh",         // 1.5rem ≈ 24px ≈ 3vh
+  boxShadow: "0 5vh 10vh -2vh rgba(0, 0, 0, 0.25)", // 25px ≈ 5vh, 50px ≈ 10vh, 12px ≈ 2vh
+}}
+
+        >
+          <div
+            className="grid gap-[0.2vh] aspect-ratio"
+            style={{
+              gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            {grid.map((row, r) =>
+              row.map((ch, c) => (
+                <div
+                  key={`${r}-${c}`}
+                  onMouseDown={() => handleMouseDown(r, c)}
+                  onMouseEnter={() => handleMouseEnter(r, c)}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    handleMouseDown(r, c);
+                  }}
+                  onTouchMove={(e) => {
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    const targetElement = document.elementFromPoint(
+                      touch.clientX,
+                      touch.clientY
+                    );
+                    if (
+                      targetElement &&
+                      targetElement.dataset.row &&
+                      targetElement.dataset.col
+                    ) {
+                      const targetR = parseInt(targetElement.dataset.row);
+                      const targetC = parseInt(targetElement.dataset.col);
+                      handleMouseEnter(targetR, targetC);
+                    }
+                  }}
+                  className={`${getCellClass(r, c)} flex items-center justify-center border rounded-lg cursor-pointer`}
+                  style={{
+                    ...getCellStyle(r, c),
+                    width: "8vh",
+                    height: "8vh",
+                    fontSize: "3vh",
+                  }}
+                  data-row={r}
+                  data-col={c}
+                >
+                  <span>{ch}</span>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
       </div>
 
-      <button onClick={handleHint} className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow">
-        {T.hint} ({2 - hintsUsed})
-      </button>
+      {/* language toggle bottom-right */}
+      
 
-      {status === "playing" ? (
-        <button onClick={handleSubmit} className="px-5 py-2 rounded-lg bg-green-500 text-white font-bold shadow"> {T.submit} </button>
-      ) : (
-        <button onClick={handleNext} className="px-5 py-2 rounded-lg bg-yellow-400 text-black font-bold shadow animate-bounce"> {T.next} </button>
+      {/* ---- MODALS ---- */}
+      {showHintOverModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
+            <h3 className="text-2xl text-[#2A60A0] font-bold mb-2">{T.hintsOver}</h3>
+            <p className="mb-4 text-[#2A60A0]">{T.hintsMsg}</p>
+            <button
+              onClick={() => setShowHintOverModal(false)}
+              className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-bold"
+            >
+              {T.ok}
+            </button>
+          </div>
+        </div>
       )}
 
-      <button onClick={() => { setSelectedPositions([]); currentPathRef.current = []; }} className="px-4 py-2 rounded-lg bg-gray-600 text-white">{T.clear}</button>
+      {showTimeoutModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+          <div className="bg-[#DEEBF7] p-6 rounded-2xl shadow-lg text-center text-xl font-bold ">
+            <h3 className="text-[#2A60A0] text-2xl font-bold mb-2">{T.timeUp}</h3>
+            <p className="mb-4 text-[#2A60A0]">{T.timeoutMsg}</p>
+            <div className="flex justify-center gap-3">
+              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-semibold">{T.restartGame}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg font-semibold">{T.leaderboard}</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showLevelCompleteModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
+            <h2 className="text-3xl text-[#2A60A0] font-bold mb-2">{T.levelComplete}</h2>
+            <p className="mb-4 text-[#2A60A0]">{T.currentScore} <span className="font-mono">{score}</span></p>
+            <p className="mb-4 text-sm text-[#2A60A0]">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
+            <div className="flex gap-3 justify-center">
+              <button onClick={() => { 
+                setShowLevelCompleteModal(false); 
+                if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { 
+                  handleNext(); 
+                } else if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 >= LEVELS.length) { 
+                  setShowFinalCompletionModal(true); 
+                  playVictorySound(); 
+                  setConfettiRunning(true); 
+                  setTimeout(() => setConfettiRunning(false), 5000); 
+                } 
+              }} className="px-5 py-2 bg-[#2A60A0] rounded-lg font-bold">{T.next}</button>
+              <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-[#2A60A0] rounded-lg">{T.close}</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showFinalCompletionModal && (
+        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+            <h2 className="text-[#2A60A0] text-3xl font-bold mb-2">{T.congratsTitle}</h2>
+            <p className=" text-[#2A60A0] mb-4 text-lg">{T.congratsMsg}</p>
+            <p className="mb-4 text-[#2A60A0] text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
+            <div className="flex gap-3 justify-center">
+              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg">{T.playAgain}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-[#2A60A0] text-white rounded-lg">{T.leaderboard}</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showFinalModal && (
+        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
+          <div className="bg-[#DEEBF7] rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
+            <h2 className="text-3xl text-[#2A60A0] font-bold mb-2">{T.allComplete}</h2>
+            <p className="mb-4 text-[#2A60A0] text-lg">{T.finalMotivation}</p>
+            <p className="mb-4 text-xl text-[#2A60A0] font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
+            <div className="flex gap-3 justify-center">
+              <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">{T.playAgain}</button>
+              <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">{T.leaderboard}</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Confetti */}
+      <Confetti running={confettiRunning} />
     </div>
-
-    {/* Modals are kept the same */}
-    {showHintOverModal && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-        <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
-          <h3 className="text-2xl font-bold mb-2">{T.hintsOver}</h3>
-          <p className="mb-4 text-slate-700">{T.hintsMsg}</p>
-          <button onClick={() => setShowHintOverModal(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.ok}</button>
-        </div>
-      </div>
-    )}
-
-    {showTimeoutModal && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-        <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md text-center shadow-2xl">
-          <h3 className="text-2xl font-bold mb-2">{T.timeUp}</h3>
-          <p className="mb-4 text-slate-700">{T.timeoutMsg}</p>
-          <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold">{T.restartGame}</button>
-        </div>
-      </div>
-    )}
-
-    {showLevelCompleteModal && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-lg text-center shadow-2xl">
-          <h2 className="text-3xl font-bold mb-2">{T.levelComplete}</h2>
-          <p className="mb-4">{T.currentScore} <span className="font-mono">{score}</span></p>
-          <p className="mb-4 text-sm text-gray-700">{score >= REQUIRED_TO_UNLOCK ? "Next level unlocked!" : T.notEnough}</p>
-          <div className="flex gap-3 justify-center">
-            <button onClick={() => { 
-              setShowLevelCompleteModal(false); 
-              if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 < LEVELS.length) { 
-                handleNext(); 
-              } else if (score >= REQUIRED_TO_UNLOCK && levelIndex + 1 >= LEVELS.length) { 
-                setShowFinalCompletionModal(true); 
-                playVictorySound(); 
-                setConfettiRunning(true); 
-                setTimeout(() => setConfettiRunning(false), 5000); 
-              } 
-            }} className="px-5 py-2 bg-yellow-400 rounded-lg font-bold"> 
-              {T.next} 
-            </button>
-            <button onClick={() => setShowLevelCompleteModal(false)} className="px-5 py-2 bg-gray-200 rounded-lg">{T.close}</button>
-          </div>
-        </div>
-      </div>
-    )}
-
-    {showFinalCompletionModal && (
-      <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-          <h2 className="text-3xl font-bold mb-2">{T.congratsTitle}</h2>
-          <p className="mb-4 text-lg">{T.congratsMsg}</p>
-          <p className="mb-4 text-xl font-semibold">{T.finalScore} <span className="font-mono">{score}</span></p>
-          <div className="flex gap-3 justify-center">
-            <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">
-              {T.playAgain}
-            </button>
-            <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">
-              {T.goToDashboard}
-            </button>
-          </div>
-        </div>
-      </div>
-    )}
-
-    {showFinalModal && (
-      <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70">
-        <div className="bg-white rounded-2xl p-6 w-[92%] max-w-md text-center shadow-2xl">
-          <h2 className="text-3xl font-bold mb-2">{T.allComplete}</h2>
-          <p className="mb-4 text-lg">{T.finalMotivation}</p>
-          <p className="mb-4 text-xl font-semibold">{T.currentScore} <span className="font-mono">{score}</span></p>
-          <div className="flex gap-3 justify-center">
-            <button onClick={() => restartAll(false)} className="px-5 py-2 bg-indigo-600 text-white rounded-lg">
-              {T.playAgain}
-            </button>
-            <button onClick={() => restartAll(true)} className="px-5 py-2 bg-green-600 text-white rounded-lg">
-              {T.goToDashboard}
-            </button>
-          </div>
-        </div>
-      </div>
-    )}
-
-    {/* confetti */}
-    <Confetti running={confettiRunning} />
-  </div>
+    <LanguageToggle currentLanguage={language} onPress={handleLanguage}/>
+  </Background>
 );
+
+
 }

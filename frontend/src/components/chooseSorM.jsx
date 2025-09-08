@@ -1,33 +1,41 @@
 import React, { useState } from "react";
-import bg from "../assets/bg.jpg";
 import single from "../assets/single.png";
 import multi from "../assets/multi.png";
 import { useNavigate } from "react-router-dom";
+import FloatingBackground from "./utils/FloatingBackground";
+import Logo from "./utils/logo"; // logo component
+import LanguageToggle from "./utils/LanguageToggle";
 
+// 🌐 Language translations
 const translations = {
   en: {
-    singleFront: "Single Player",
-    singleBack:
-      "Challenge yourself, beat the clock, and celebrate victory with fun confetti",
-    multiFront: "Multi Player",
-    multiBack:
-      "Compete with friends, race through questions, and enjoy exciting celebrations together.",
+    singleFront: "SOLO🕹️",
+    singleBack: "Challenge yourself, race the clock, and celebrate your win!",
+    multiFront: "BATTLE⚔️",
+    multiBack: "Compete with friends, answer fast, and celebrate together!",
     proceed: "Proceed",
     toggle: "தமிழ்", // Button shows opposite language
   },
   ta: {
-    singleFront: "ஒரே வீரர்",
+    singleFront: "ஒரே வீரர்🕹️",
     singleBack:
-      "உங்களை சவால் செய்யுங்கள், நேரத்தை வெல்லுங்கள், மற்றும் கொண்டாட்ட கான்பெட்டியுடன் வெற்றியை கொண்டாடுங்கள்",
-    multiFront: "பல வீரர்கள்",
-    multiBack:
-      "நண்பர்களுடன் போட்டியிடுங்கள், கேள்விகளை விரைவாக முடிக்கவும், சுவாரஸ்யமான கொண்டாட்டங்களை அனுபவிக்கவும்.",
+      "உங்களை சவாலில் ஈடுபடுத்தி, நேரத்தை வென்று, வெற்றியை கொண்டாடுங்கள்!",
+    multiFront: "நீயா⚔️நானா",
+    multiBack: "நண்பர்களுடன் போட்டியிட்டு, வெற்றி கொண்டாடுங்கள்",
     proceed: "தொடரவும்",
     toggle: "English",
   },
 };
 
-const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
+// 🎴 Flip Card Component
+const FlipCard = ({
+  frontText,
+  backText,
+  image,
+  proceedText,
+  navigateTo,
+  imageStyle, // 👈 new prop for custom image size
+}) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
 
@@ -48,33 +56,42 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* Front */}
+        {/* Front Side */}
         <div
-          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl shadow-lg text-white cursor-pointer"
+          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl text-white cursor-pointer transition-all duration-500"
           style={{
             backfaceVisibility: "hidden",
-            background: "linear-gradient(135deg, #8F9FE4, #BACBFE)",
+            background: "linear-gradient(135deg, #BACBFE, #C1ddE8)",
             fontSize: "4vh",
             fontWeight: "700",
             height: "40vh",
+            color: "#265380",
+            boxShadow: "0 0 25px rgba(100, 149, 237, 0.9)", // ✨ constant glow
           }}
         >
           {frontText}
           <img
             src={image}
             alt=""
-            style={{ width: "30%", height: "30%", margin: "6% 0% 0% 0%" }}
+            style={{
+              width: "30%",
+              height: "30%",
+              margin: "6% 0 0 0",
+              ...imageStyle, // 👈 override if provided
+            }}
           />
         </div>
 
-        {/* Back */}
+        {/* Back Side */}
         <div
-          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl shadow-lg text-white p-4"
+          className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl text-white p-4 transition-all duration-500"
           style={{
             backfaceVisibility: "hidden",
-            background: "linear-gradient(135deg, #BCA5D4, #EFE2FA)",
+            background: "linear-gradient(135deg, #A1BCEA, #BCA5D4)",
             transform: "rotateY(180deg)",
             fontSize: "2vh",
+            color: "#265380",
+            boxShadow: "0 0 25px rgba(186, 85, 211, 0.9)", // ✨ constant glow
           }}
         >
           <p className="mb-[10%] text-center font-bold text-[2.5vh]">
@@ -82,14 +99,15 @@ const FlipCard = ({ frontText, backText, image, proceedText, navigateTo }) => {
           </p>
           <button
             onClick={(e) => {
-              e.stopPropagation(); // prevent flip on button click
+              e.stopPropagation(); // stop flipping
               navigate(navigateTo);
             }}
-            className="px-[10%] py-[5%] rounded-xl shadow-lg"
+            className="px-[10%] py-[5%] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
             style={{
-              background: "linear-gradient(135deg, #7164B4, #8F9FE4)",
+              background: "linear-gradient(135deg, #9FD0E4, #DBF8FE)",
               fontSize: "2.2vh",
               fontWeight: "700",
+              boxShadow: "0 0 12px rgba(159, 208, 228, 0.9)", // ✨ glowing button
             }}
           >
             {proceedText}
@@ -104,26 +122,18 @@ const ChooseSorM = () => {
   const [lang, setLang] = useState("en");
   const t = translations[lang];
 
-  return (
-    <div
-      className="flex items-center justify-center w-full h-screen bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      {/* Language Toggle Button */}
-      <button
-        onClick={() => setLang(lang === "en" ? "ta" : "en")}
-        className="absolute top-5 right-5 px-4 py-2 rounded-xl shadow-lg font-bold"
-        style={{
-          background: "linear-gradient(135deg, #FFB347, #FFCC33)",
-          fontSize: "2vh",
-        }}
-      >
-        {t.toggle}
-      </button>
+  const handleLanguageToggle = () => {
+    setLang((prev) => (prev === "en" ? "ta" : "en"));
+  };
 
-      {/* Cards */}
+  return (
+    <FloatingBackground>
+      {/* ✅ Logo at top-left */}
+      <Logo />
+
+      {/* 🎴 Cards Section */}
       <div
-        className="flex justify-center items-center"
+        className="flex justify-center items-center -translate-y-[2%]"
         style={{ width: "80%", height: "70%", gap: "10%" }}
       >
         {/* Single Player → Subject Selection */}
@@ -135,17 +145,22 @@ const ChooseSorM = () => {
           navigateTo="/single"
         />
 
-        {/* Multi Player → XO Game */}
+        {/* Multi Player → XO Game (zoomed image) */}
         <FlipCard
           frontText={t.multiFront}
           backText={t.multiBack}
           image={multi}
           proceedText={t.proceed}
           navigateTo="/multiplayer-input"
+          imageStyle={{ width: "35%", height: "35%" }}
         />
       </div>
-    </div>
+
+      {/* 🌐 Language Toggle */}
+      <LanguageToggle currentLanguage={lang} onPress={handleLanguageToggle} />
+    </FloatingBackground>
   );
 };
+
 
 export default ChooseSorM;

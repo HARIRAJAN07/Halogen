@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import bgImage from "../../assets/bg.jpg";
 import adjectives from "../../data/alliterations.json";
 import { useNavigate } from "react-router-dom";
+import Background from "../utils/FloatingBackground";
 
 const classOptions = [
   { value: "", label: "Choose class" },
@@ -264,13 +265,10 @@ export default function MultiplayerInput() {
   };
 
   return (
+    <Background>
     <div className="relative w-screen h-screen">
       {/* Background image */}
-      <img
-        src={bgImage}
-        alt="Background"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
+      
 
       {/* Card container */}
       <div
@@ -319,5 +317,6 @@ export default function MultiplayerInput() {
         </div> */}
       </div>
     </div>
+    </Background>
   );
 }
