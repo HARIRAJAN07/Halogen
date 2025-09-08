@@ -122,6 +122,8 @@ const Questions = ({ player = "X", playerName = "", onCorrectAnswer = () => {}, 
   const disp = currentQ[language];
   const isTurn = activeTurn === player;
 
+
+
   return (
     <Paper
       style={{
@@ -130,8 +132,12 @@ const Questions = ({ player = "X", playerName = "", onCorrectAnswer = () => {}, 
         padding: "3vh 3vw",
         marginTop: "22vh",
         borderRadius: "2vh",
-        background: "linear-gradient(180deg, #FFF3E0, #FFE0B2)",
+        background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
         textAlign: "center",
+        background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
+        backdropFilter: "blur(2vh)", 
+        borderRadius: "3vh",        
+        boxShadow: "0 5vh 10vh -2vh rgba(0, 0, 0, 0.25)", 
       }}
     >
       <Typography
@@ -154,6 +160,7 @@ const Questions = ({ player = "X", playerName = "", onCorrectAnswer = () => {}, 
           variant="contained"
           fullWidth
           style={{
+            background : "#2A60A0",
             marginBottom: "2vh",
             fontSize: "1.8vh",
             padding: "1.5vh 0",
