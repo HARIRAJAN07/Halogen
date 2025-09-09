@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import LanguageToggle from "../utils/LanguageToggle";
 import riddles from "../../data/riddle.json";
-import AppBackground from "../utils/AppBackground";
 import TablaCelebration from '../utils/Celeb';
 import Background from '../utils/FloatingBackground';
-
+import Logo from '../utils/logo'
+import BackButton from '../utils/backbutton';
+import Footer from '../utils/Footer';
 // Helper for translations (remains the same)
 const translations = {
   en: {
@@ -15,7 +16,7 @@ const translations = {
     next: "Next 👉",
     correct: "Correct!",
     incorrect: "Incorrect!",
-    tryAgain: "Try Again 🧐",
+    tryAgain: "Try Again ",
     quizComplete: "Quiz Completed!",
     yourScore: "Your Score:",
     restart: "Restart Game 🔄",
@@ -32,7 +33,7 @@ const translations = {
     next: "அடுத்து 👉",
     correct: "சரி!",
     incorrect: "தவறு!",
-    tryAgain: "மீண்டும் முயற்சிக்கவும் 🧐",
+    tryAgain: "மீண்டும் முயற்சிக்கவும் ",
     quizComplete: "விடுகதை முடிந்தது!",
     yourScore: "உங்கள் மதிப்பெண்:",
     restart: "விளையாட்டை மீண்டும் தொடங்கு 🔄",
@@ -64,19 +65,6 @@ const KeyframeStyles = () => (
   </style>
 );
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({ width: undefined });
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({ width: window.innerWidth });
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
-};
-
 const Riddle = ({ isDarkMode = false }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -96,10 +84,11 @@ const Riddle = ({ isDarkMode = false }) => {
   const [optionButtonHover, setOptionButtonHover] = useState({});
   const [submitHover, setSubmitHover] = useState(false);
 
-  const { width } = useWindowSize();
-  const isSmallScreen = width < 640;
-  const isTablet = width >= 640 && width < 1024;
-  const isDesktop = width >= 1024;
+  const PRIMARY_BLUE = '#2A60A0';
+  const SECONDARY_BLUE = '#7FB3E0';
+  const CARD_BG_LIGHT = '#DEEBF7';
+  const HOVER_LIGHT_BLUE = '#EAF2F9';
+  const PAGE_BG_LIGHT = '#F0F7FF';
 
   const getRandomQuestions = () => {
     const shuffled = [...riddles].sort(() => 0.5 - Math.random());
@@ -198,52 +187,47 @@ const Riddle = ({ isDarkMode = false }) => {
     };
   }, [questions, currentQuestionIndex, currentLanguage]);
 
-  const PRIMARY_BLUE = '#2A60A0';
-  const SECONDARY_BLUE = '#7FB3E0';
-  const CARD_BG_LIGHT = '#DEEBF7';
-  const HOVER_LIGHT_BLUE = '#EAF2F9';
-  const PAGE_BG_LIGHT = '#F0F7FF';
-
   const getStyles = useCallback(() => ({
     mainContainer: {
       position: 'relative',
       zIndex: 10,
-      width: isSmallScreen ? '95%' : (isTablet ? '80%' : '42rem'),
-      maxWidth: '42rem',
-      padding: isSmallScreen ? '1.5rem' : '2.5rem',
+      width: '42vw',
+      maxWidth: '42vw',
+      padding: '2.5vh',
       background: "linear-gradient(135deg, #BACBFE, #C1DDE8)",
       backdropFilter: 'blur(16px)',
-      borderRadius: '1.5rem',
+      borderRadius: '1.5vh',
       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: isSmallScreen ? '1rem' : '1.5rem',
-      minHeight: '80vh',
+      gap: '1.5vh',
+      minHeight: '70vh',
       transition: 'all 0.3s',
       border: '1px solid',
       borderColor: isDarkMode ? `rgba(127, 179, 224, 0.3)` : `rgba(127, 179, 224, 0.5)`,
     },
     title: {
-      fontSize: isSmallScreen ? '2rem' : '2.5rem',
+      fontSize: '6vh',
       fontWeight: '800',
       color: isDarkMode ? '#FFFFFF' : PRIMARY_BLUE,
-      marginBottom: isSmallScreen ? '0.5rem' : '1rem',
+      marginBottom: '1vh',
       textAlign: 'center',
     },
     levelAndTimerContainer: {
       display: 'flex',
-      flexDirection: isSmallScreen ? 'column' : 'row',
+      flexDirection: 'row',
       justifyContent: 'space-between',
       width: '100%',
-      fontWeight: '600',
-      alignItems: isSmallScreen ? 'center' : 'flex-start',
-      gap: isSmallScreen ? '0.5rem' : '1rem',
+      fontWeight: '800',
+      fontSize : '2vh',
+      alignItems: 'flex-start',
+      gap: '1vh',
     },
     levelBadge: (isActive) => ({
-      padding: '0.25rem 0.75rem',
+      padding: '0.25vh 0.75vh',
       borderRadius: '9999px',
-      fontSize: isSmallScreen ? '0.875rem' : '1rem',
+      fontSize: '1.5vh',
       transition: 'all 0.3s',
       backgroundColor: isActive ? PRIMARY_BLUE : (isDarkMode ? `rgba(127, 179, 224, 0.4)` : `rgba(127, 179, 224, 0.5)`),
       color: '#FFFFFF',
@@ -252,25 +236,25 @@ const Riddle = ({ isDarkMode = false }) => {
       animation: isActive ? 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none'
     }),
     timer: {
-      fontSize: isSmallScreen ? '1.25rem' : '1.5rem',
+      fontSize: '2vh',
       fontWeight: 'bold',
       color: isDarkMode ? '#FFFFFF' : PRIMARY_BLUE,
     },
     hintText: {
-      marginBottom: '0.5rem',
+      marginBottom: '0.5vh',
       fontStyle: 'italic',
       fontWeight: '600',
       color: isDarkMode ? HOVER_LIGHT_BLUE : PRIMARY_BLUE,
-      fontSize: isSmallScreen ? '1rem' : '1.125rem',
+      fontSize: '3vh',
     },
     hintButton: (idx, isUsed) => ({
       flex: '1',
-      minWidth: isSmallScreen ? '70px' : '80px',
-      maxWidth: '120px',
-      padding: isSmallScreen ? '0.5rem' : '0.5rem 0.75rem',
+      minWidth: '8vw',
+      maxWidth: '12vw',
+      padding: '0.5vh 0.75vh',
       borderRadius: '9999px',
       fontWeight: 'bold',
-      fontSize: isSmallScreen ? '0.75rem' : '1rem',
+      fontSize: '1.5vh',
       color: '#FFFFFF',
       transition: 'all 0.2s',
       boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
@@ -280,9 +264,10 @@ const Riddle = ({ isDarkMode = false }) => {
     }),
     optionButton: (isSelected, isHovered, isDisabled) => ({
       width: '100%',
-      padding: isSmallScreen ? '0.5rem' : '0.75rem 1rem',
-      borderRadius: '0.75rem',
+      padding: '0.75vh 1vh',
+      borderRadius: '0.75vh',
       border: '2px solid',
+      fontSize : '2vh',
       fontWeight: 'bold',
       transition: 'all 0.2s',
       cursor: isDisabled ? 'not-allowed' : 'pointer',
@@ -296,32 +281,32 @@ const Riddle = ({ isDarkMode = false }) => {
     optionsGrid: {
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: isSmallScreen ? '0.75rem' : '1rem',
+        gap: '1vh',
         width: '100%',
     },
     submitButton: (isDisabled) => ({
       width: '100%',
-      padding: isSmallScreen ? '0.75rem 1.5rem' : '0.75rem 2rem',
-      borderRadius: '0.75rem',
+      padding: '0.75vh 2vh',
+      borderRadius: '0.75vh',
       fontWeight: 'bold',
       color: '#FFFFFF',
       border: 'none',
       backgroundColor: submitHover ? SECONDARY_BLUE : PRIMARY_BLUE,
-      fontSize: isSmallScreen ? '1rem' : '1.125rem',
+      fontSize: '2vh',
       opacity: isDisabled ? 0.5 : 1,
       cursor: isDisabled ? 'not-allowed' : 'pointer',
       transition: 'background-color 0.2s'
     })
-  }), [isSmallScreen, isDarkMode, isTablet, hintButtonHover, submitHover]);
+  }), [isDarkMode, hintButtonHover, submitHover]);
 
   const styles = getStyles();
 
   if (!currentQuestion) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: PAGE_BG_LIGHT, color: PRIMARY_BLUE }}>
-        <div style={{ padding: '2rem', borderRadius: '0.5rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', backgroundColor: CARD_BG_LIGHT, textAlign: 'center' }}>
-          <div style={{ animation: 'spin 1s linear infinite', borderRadius: '9999px', height: '3rem', width: '3rem', borderBottom: '2px solid', borderColor: PRIMARY_BLUE, margin: '0 auto' }}></div>
-          <p style={{ marginTop: '1rem', fontSize: '1.125rem', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>Loading questions...</p>
+        <div style={{ padding: '2vh', borderRadius: '0.5vh', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', backgroundColor: CARD_BG_LIGHT, textAlign: 'center' }}>
+          <div style={{ animation: 'spin 1s linear infinite', borderRadius: '9999px', height: '3vh', width: '3vh', borderBottom: '2px solid', borderColor: PRIMARY_BLUE, margin: '0 auto' }}></div>
+          <p style={{ marginTop: '1vh', fontSize: '1.5vh', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>Loading questions...</p>
         </div>
       </div>
     );
@@ -335,11 +320,12 @@ const Riddle = ({ isDarkMode = false }) => {
 
   return (
     <Background>
+      <Logo />
       <KeyframeStyles />
       <div style={styles.mainContainer}>
         <h1 style={styles.title}>{translations[currentLanguage].title}</h1>
         <div style={styles.levelAndTimerContainer}>
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', gap: '3vh', flexWrap: 'wrap', justifyContent: 'center' }}>
             {[0, 1, 2].map(level => (
               <span key={level} style={styles.levelBadge(currentQuestionIndex === level)}>
                 {translations[currentLanguage].level} {level + 1} 🧠
@@ -353,12 +339,12 @@ const Riddle = ({ isDarkMode = false }) => {
             </span>
           </div>
         </div>
-        <div style={{ width: '100%', textAlign: 'center', minHeight: '6rem', marginBottom: '1rem' }}>
+        <div style={{ width: '100%', textAlign: 'center', minHeight: '6vh', marginBottom: '1vh' }}>
           {revealedHints.map((show, idx) =>
             show ? <p key={idx} style={styles.hintText} className="animate-fade-in">"{currentQuestion.hints[idx]}"</p> : null
           )}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1vh', marginBottom: '1.5vh', width: '100%' }}>
           {['Hint 1', 'Hint 2', 'Hint 3'].map((label, idx) => (
             <button
               key={idx}
@@ -372,7 +358,7 @@ const Riddle = ({ isDarkMode = false }) => {
             </button>
           ))}
         </div>
-        <form onSubmit={handleGuess} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+        <form onSubmit={handleGuess} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1vh' }}>
           <div style={styles.optionsGrid}>
             {currentQuestion.options.map((option, idx) => (
               <button
@@ -400,31 +386,31 @@ const Riddle = ({ isDarkMode = false }) => {
         </form>
       </div>
       {correctAnswer && (
-        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1rem' }}>
-          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: isSmallScreen ? '1rem' : '2rem', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24rem', width: '90%' }}>
-            <div style={{ fontSize: isSmallScreen ? '3rem' : '3.75rem', marginBottom: '1rem', animation: 'bounce 1s infinite' }}>🎉</div>
-            <h2 style={{ fontSize: isSmallScreen ? '1.5rem' : '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', color: PRIMARY_BLUE }}>{translations[currentLanguage].correct}</h2>
-            <p style={{ fontSize: isSmallScreen ? '1rem' : '1.125rem', color: PRIMARY_BLUE }}>
+        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1vh' }}>
+          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: '2vh', borderRadius: '1.5vh', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24vw', width: '90%' }}>
+            <div style={{ fontSize: '3.75vh', marginBottom: '1vh', animation: 'bounce 1s infinite' }}>🎉</div>
+            <h2 style={{ fontSize: '1.875vh', fontWeight: 'bold', marginBottom: '0.5vh', color: PRIMARY_BLUE }}>{translations[currentLanguage].correct}</h2>
+            <p style={{ fontSize: '2vh', color: PRIMARY_BLUE }}>
               {translations[currentLanguage].theWordWas}{" "}
               <span style={{ fontWeight: '600' }}>{currentQuestion.answer}</span>
             </p>
-            <button onClick={handleNextFromPopup} style={{ ...styles.submitButton(false), marginTop: '1.5rem' }}>
+            <button onClick={handleNextFromPopup} style={{ ...styles.submitButton(false), marginTop: '1.5vh' }}>
               {translations[currentLanguage].next}
             </button>
           </div>
         </div>
       )}
       {isIncorrectPopupVisible && (
-        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1rem' }}>
-          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: isSmallScreen ? '1rem' : '2rem', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24rem', width: '90%' }}>
-            <div style={{ fontSize: isSmallScreen ? '3rem' : '3.75rem', marginBottom: '1rem' }}>❌</div>
-            <h2 style={{ fontSize: isSmallScreen ? '1.5rem' : '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'red' }}>{translations[currentLanguage].incorrect}</h2>
-            <p style={{ fontSize: isSmallScreen ? '1rem' : '1.125rem', color: PRIMARY_BLUE }}>{translations[currentLanguage].tryAgain}</p>
-            <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-              <button onClick={handleTryAgain} style={{ padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 'bold', color: 'white', backgroundColor: SECONDARY_BLUE, border: 'none', fontSize: isSmallScreen ? '0.875rem' : '1rem' }}>
-                {translations[currentLanguage].tryAgain.split(' ')[0]} 🧐
+        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1vh' }}>
+          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: '2vh', borderRadius: '1.5vh', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24vw', width: '90%' }}>
+            <div style={{ fontSize: '3.75vh', marginBottom: '1vh' }}>❌</div>
+            <h2 style={{ fontSize: '1.875vh', fontWeight: 'bold', marginBottom: '0.5vh', color: 'red' }}>{translations[currentLanguage].incorrect}</h2>
+            <p style={{ fontSize: '2vh', color: PRIMARY_BLUE }}>{translations[currentLanguage].tryAgain}</p>
+            <div style={{ marginTop: '1.5vh', display: 'flex', justifyContent: 'center', gap: '1vh' }}>
+              <button onClick={handleTryAgain} style={{ padding: '0.75vh 1.5vh', borderRadius: '0.75vh', fontWeight: 'bold', color: 'white', backgroundColor: SECONDARY_BLUE, border: 'none', fontSize: '1.5vh' }}>
+                {translations[currentLanguage].tryAgain.split(' ')[0]} 
               </button>
-              <button onClick={handleNextFromPopup} style={{ padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 'bold', color: 'white', backgroundColor: PRIMARY_BLUE, border: 'none', fontSize: isSmallScreen ? '0.875rem' : '1rem' }}>
+              <button onClick={handleNextFromPopup} style={{ padding: '0.75vh 1.5vh', borderRadius: '0.75vh', fontWeight: 'bold', color: 'white', backgroundColor: PRIMARY_BLUE, border: 'none', fontSize: '1.5vh' }}>
                 {translations[currentLanguage].next}
               </button>
             </div>
@@ -432,23 +418,25 @@ const Riddle = ({ isDarkMode = false }) => {
         </div>
       )}
       {gameOver && (
-        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1rem' }}>
-          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: isSmallScreen ? '1.5rem' : '2rem', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24rem', width: '90%' }}>
-            <div style={{ fontSize: isSmallScreen ? '3rem' : '3.75rem', marginBottom: '1rem' }}>🏆</div>
-            <h2 style={{ fontSize: isSmallScreen ? '1.5rem' : '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', color: PRIMARY_BLUE }}>{translations[currentLanguage].quizComplete}</h2>
-            <p style={{ fontSize: isSmallScreen ? '1.125rem' : '1.25rem', marginBottom: '1rem', color: PRIMARY_BLUE }}>{translations[currentLanguage].yourScore} {score}/3</p>
-            <div style={{ fontSize: isSmallScreen ? '1.875rem' : '2.25rem', marginBottom: '1.5rem' }}>{renderStars()}</div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexDirection: isSmallScreen ? 'column' : 'row' }}>
-              <button onClick={startGame} style={{ ...styles.submitButton(false), flex: '1 1 45%', minWidth: '100px' }}>
+        <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 50, padding: '1vh' }}>
+          <div style={{ backgroundColor: CARD_BG_LIGHT, padding: '2vh', borderRadius: '1.5vh', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', textAlign: 'center', maxWidth: '24vw', width: '90%' }}>
+            <div style={{ fontSize: '3.75vh', marginBottom: '1vh' }}>🏆</div>
+            <h2 style={{ fontSize: '1.875vh', fontWeight: 'bold', marginBottom: '0.5vh', color: PRIMARY_BLUE }}>{translations[currentLanguage].quizComplete}</h2>
+            <p style={{ fontSize: '2.5vh', marginBottom: '1vh', color: PRIMARY_BLUE }}>{translations[currentLanguage].yourScore} {score}/3</p>
+            <div style={{ fontSize: '2.25vh', marginBottom: '1.5vh' }}>{renderStars()}</div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1vh', flexDirection: 'row' }}>
+              <button onClick={startGame} style={{ ...styles.submitButton(false), flex: '1 1 45%', minWidth: '10vw' }}>
                 {translations[currentLanguage].restart}
               </button>
-              <button onClick={() => window.location.href = '/leaderboard'} style={{ ...styles.submitButton(false), flex: '1 1 45%', minWidth: '100px' }}>
+              <button onClick={() => window.location.href = '/leaderboard'} style={{ ...styles.submitButton(false), flex: '1 1 45%', minWidth: '10vw' }}>
                 {translations[currentLanguage].leaderboard}
               </button>
             </div>
           </div>
         </div>
       )}
+      <Footer/>
+      <BackButton />
       <LanguageToggle currentLanguage={currentLanguage} onPress={handleLanguageToggle} />
     </Background>
   );

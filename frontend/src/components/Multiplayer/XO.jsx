@@ -9,6 +9,9 @@ import cheer from '../../assets/cheer.mp3';
 import { useNavigate, useLocation } from 'react-router-dom'; 
 import AppBackground from '../utils/AppBackground'
 import Background from '../utils/FloatingBackground';
+import BackButton from '../utils/backbutton';
+import Footer from '../utils/Footer';
+import Logo from '../utils/logo';
 const XO = () => {
   const location = useLocation();
   // Get player data from navigation state or use defaults
@@ -235,6 +238,7 @@ const XO = () => {
 
   return (
     <Background >
+      <Logo />
     <div
       style={{
         display: 'flex',
@@ -461,6 +465,8 @@ const XO = () => {
         )}
       </div>
     </div>
+    <Footer />
+    <BackButton />
     </Background>
   );
 };

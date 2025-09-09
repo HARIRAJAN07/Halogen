@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import FloatingBackground from "./utils/FloatingBackground";
 import Logo from "./utils/logo"; // logo component
 import LanguageToggle from "./utils/LanguageToggle";
+import Footer from "./utils/Footer";
 
 // 🌐 Language translations
 const translations = {
@@ -155,7 +156,7 @@ const ChooseSorM = () => {
           imageStyle={{ width: "35%", height: "35%" }}
         />
       </div>
-
+      <Footer />
       {/* 🌐 Language Toggle */}
       <LanguageToggle currentLanguage={lang} onPress={handleLanguageToggle} />
     </FloatingBackground>

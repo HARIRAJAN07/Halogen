@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
 
 // Add this in index.html inside <head>
 // <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
@@ -163,6 +165,8 @@ export default function Leaderboard() {
           </div>
         </motion.div>
       </div>
+      <Footer />
+      <BackButton />
     </div>
   );
 }

@@ -1,8 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
-import bgImage from "../../assets/bg.jpg"; // your background image
-import adjectives from "../../data/alliterations.json"; // ✅ import alliterations
+import bgImage from "../../assets/bg.jpg";
 import { useNavigate } from "react-router-dom";
 import Background from "../utils/FloatingBackground";
+
+import avatar1 from '../../assets/Avatar/avatar1.png';
+import avatar2 from '../../assets/Avatar/avatar2.png';
+import avatar3 from '../../assets/Avatar/avatar3.png';
+import avatar4 from '../../assets/Avatar/avatar4.png';
+import avatar5 from '../../assets/Avatar/avatar5.png';
+import avatar6 from '../../assets/Avatar/avatar6.png';
+import BackButton from "../utils/backbutton";
+import Footer from "../utils/Footer";
+import Logo from "../utils/logo";
+
+const avatarImages = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 
 const classOptions = [
   { value: "", label: "Choose class" },
@@ -15,12 +26,11 @@ const classOptions = [
   { value: "12", label: "Class 12" }
 ];
 
-// Custom dropdown component
+// Custom dropdown component stays unchanged
 function CustomClassDropdown({ value, onChange }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClick(e) {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
@@ -73,9 +83,9 @@ function CustomClassDropdown({ value, onChange }) {
 export default function Input() {
   const [step, setStep] = useState(1);
   const [nickname, setNickname] = useState("");
-  const [displayName, setDisplayName] = useState(""); // ✅ actual display name with alliteration
-  const [schoolName, setSchoolName] = useState(""); // ✅ new school name state
+  const [schoolName, setSchoolName] = useState("");
   const [avatar, setAvatar] = useState("");
+  const [avatarIndex, setAvatarIndex] = useState(0);
   const [className, setClassName] = useState("");
   const navigate = useNavigate();
 
@@ -87,30 +97,17 @@ export default function Input() {
     if (step > 1) setStep(step - 1);
   };
 
-  // ✅ Generate nickname with alliteration
-  const generateAlliteration = (name) => {
-    if (!name) return "";
-    const firstLetter = name.charAt(0).toUpperCase();
-    const wordList = adjectives[firstLetter] || [];
-    if (wordList.length === 0) return name;
-
-    const adjective = wordList[Math.floor(Math.random() * wordList.length)];
-    return `${adjective} ${name}`;
-  };
-
   return (
-    <Background >
+    <Background>
+      <Logo />
     <div className="relative w-screen h-screen">
-      {/* Background image */}
-    
-
       {/* Card container */}
       <div
         className="absolute backdrop-blur-lg bg-gradient-to-br from-[#e3e2f7]/80 to-[#cbcdda]/80 p-8 rounded-3xl shadow-2xl flex flex-col justify-between"
         style={{
           width: "44%",
           height: "50%",
-          top: "20%",
+          top: "25%",
           left: "28%"
         }}
       >
@@ -128,6 +125,7 @@ export default function Input() {
 
         {/* Step content */}
         <div className="flex-grow flex flex-col justify-center">
+          {/* Step 1: Nickname */}
           {step === 1 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-2xl font-bold mb-6" style={{ color: "#351D6B" }}>
@@ -148,16 +146,13 @@ export default function Input() {
                       const cleanName =
                         raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase();
                       setNickname(cleanName);
-                      setDisplayName(generateAlliteration(cleanName)); // ✅ update alliteration
                     } else {
                       setNickname("");
-                      setDisplayName("");
                     }
                   }}
                   placeholder="Enter your nick name"
                   className="flex-grow py-3 px-5 rounded-l-full border-none text-[#351D6B] text-base outline-none"
                 />
-
                 <button
                   onClick={nextStep}
                   disabled={!nickname}
@@ -172,18 +167,13 @@ export default function Input() {
                   Next
                 </button>
               </div>
-              {displayName && (
-                <div className="text-sm text-[#351D6B] mt-3 font-medium">
-                  Suggested: {displayName}
-                </div>
-              )}
               <div className="text-xs text-[#878B9A] mt-2 text-center">
                 Maximum of 10 characters. Space not allowed.
               </div>
             </div>
           )}
 
-          {/* ✅ New School Name Step */}
+          {/* Step 2: School Name */}
           {step === 2 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-xl font-bold text-[#202345] mb-4">
@@ -206,23 +196,34 @@ export default function Input() {
             </div>
           )}
 
+          {/* Step 3: Avatar Carousel */}
           {step === 3 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-xl font-bold text-[#202345] mb-4">
                 Choose your Avatar
               </h2>
-              <div className="flex justify-center gap-4">
-                {["👨‍🔬", "👩‍🔬", "🧑‍🚀"].map((av) => (
-                  <button
-                    key={av}
-                    onClick={() => setAvatar(av)}
-                    className={`text-4xl p-2 rounded-full ${
-                      avatar === av ? "bg-[#eceaff]" : "bg-[#f2f1f7]"
-                    }`}
-                  >
-                    {av}
-                  </button>
-                ))}
+              <div className="flex items-center justify-center gap-4">
+                <button
+                  onClick={() => setAvatarIndex(i => (i === 0 ? avatarImages.length - 1 : i - 1))}
+                  className="p-2 text-2xl focus:outline-none"
+                  aria-label="Previous Avatar"
+                >
+                  &#8592;
+                </button>
+                <img
+                  src={avatarImages[avatarIndex]}
+                  alt={`Avatar ${avatarIndex + 1}`}
+                  className={`w-24 h-24 rounded-full border-4 transition ${avatar !== avatarImages[avatarIndex] ? 'border-[#C6CBF2]' : 'border-[#A18CD1]'}`}
+                  onClick={() => setAvatar(avatarImages[avatarIndex])}
+                  style={{ cursor: 'pointer' }}
+                />
+                <button
+                  onClick={() => setAvatarIndex(i => (i === avatarImages.length - 1 ? 0 : i + 1))}
+                  className="p-2 text-2xl focus:outline-none"
+                  aria-label="Next Avatar"
+                >
+                  &#8594;
+                </button>
               </div>
               <button
                 onClick={nextStep}
@@ -234,6 +235,7 @@ export default function Input() {
             </div>
           )}
 
+          {/* Step 4: Select Class */}
           {step === 4 && (
             <div className="text-center flex flex-col items-center">
               <h2 className="text-xl font-bold text-[#202345] mb-4">
@@ -242,8 +244,8 @@ export default function Input() {
               <CustomClassDropdown value={className} onChange={setClassName} />
               <button
                 onClick={() =>
-                  navigate(`/single/${className}/${displayName}/${schoolName}`, {
-                    state: { nickname: displayName, avatar, schoolName }, // ✅ pass schoolName too
+                  navigate(`/single/${className}/${nickname}/${schoolName}`, {
+                    state: { nickname, avatar, schoolName },
                   })
                 }
                 disabled={!className}
@@ -269,6 +271,8 @@ export default function Input() {
         </div>
       </div>
     </div>
+    <Footer />
+    <BackButton />
     </Background>
   );
 }

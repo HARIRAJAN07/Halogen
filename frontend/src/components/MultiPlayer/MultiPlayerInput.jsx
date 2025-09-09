@@ -1,11 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
-import bgImage from "../../assets/bg.jpg";
 import adjectives from "../../data/alliterations.json";
 import { useNavigate } from "react-router-dom";
 import Background from "../utils/FloatingBackground";
+import Logo from '../utils/logo';
+import avatar1 from '../../assets/Avatar/avatar1.png';
+import avatar2 from '../../assets/Avatar/avatar2.png';
+import avatar3 from '../../assets/Avatar/avatar3.png';
+import avatar4 from '../../assets/Avatar/avatar4.png';
+import avatar5 from '../../assets/Avatar/avatar5.png';
+import avatar6 from '../../assets/Avatar/avatar6.png';
+import BackButton from "../utils/backbutton";
+
+const avatarImages = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 
 const classOptions = [
-  { value: "", label: "Choose class" },
+// { value: "", label: "Choose class" },
   { value: "6", label: "Class 6" },
   { value: "7", label: "Class 7" },
   { value: "8", label: "Class 8" },
@@ -71,162 +80,203 @@ function CustomClassDropdown({ value, onChange }) {
 
 // Player form component
 function PlayerForm({ playerNumber, playerData, onUpdate, onNext, isLastPlayer }) {
-  const [step, setStep] = useState(1);
-  const [nickname, setNickname] = useState(playerData.nickname || "");
-  const [displayName, setDisplayName] = useState(playerData.displayName || "");
-  const [avatar, setAvatar] = useState(playerData.avatar || "");
-  const [className, setClassName] = useState(playerData.className || "");
+  const [step, setStep] = useState(1);
+  const [nickname, setNickname] = useState(playerData.nickname || "");
+  const [displayName, setDisplayName] = useState(playerData.displayName || "");
+  const [avatar, setAvatar] = useState(playerData.avatar || "");
+  const [avatarIndex, setAvatarIndex] = useState(0);
+  const [className, setClassName] = useState(playerData.className || "");
 
-  // This useEffect hook will reset the form when the player changes
-  useEffect(() => {
-    setStep(1);
-  }, [playerNumber]); // This dependency array tells the hook to run whenever playerNumber changes
+  // This useEffect hook will reset the form when the player changes
+  useEffect(() => {
+    setStep(1);
+  }, [playerNumber]);
 
-  const generateAlliteration = (name) => {
-    if (!name) return "";
-    const firstLetter = name.charAt(0).toUpperCase();
-    const wordList = adjectives[firstLetter] || [];
-    if (wordList.length === 0) return name;
+  const generateAlliteration = (name) => {
+    if (!name) return "";
+    const firstLetter = name.charAt(0).toUpperCase();
+    const wordList = adjectives[firstLetter] || [];
+    if (wordList.length === 0) return name;
 
-    const adjective = wordList[Math.floor(Math.random() * wordList.length)];
-    return `${adjective} ${name}`;
-  };
+    const adjective = wordList[Math.floor(Math.random() * wordList.length)];
+    return `${adjective} ${name}`;
+  };
 
-  const handleNicknameChange = (value) => {
-    const cleanName = value.replace(/\s/g, "");
-    if (cleanName.length > 0) {
-      const formattedName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
-      setNickname(formattedName);
-      const newDisplayName = generateAlliteration(formattedName);
-      setDisplayName(newDisplayName);
-      onUpdate(playerNumber, {
-        nickname: formattedName,
-        displayName: newDisplayName,
-        avatar,
-        className
-      });
-    } else {
-      setNickname("");
-      setDisplayName("");
-      onUpdate(playerNumber, {
-        nickname: "",
-        displayName: "",
-        avatar,
-        className
-      });
-    }
-  };
+  const handleNicknameChange = (value) => {
+    const cleanName = value.replace(/\s/g, "");
+    if (cleanName.length > 0) {
+      const formattedName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
+      setNickname(formattedName);
+      const newDisplayName = generateAlliteration(formattedName);
+      setDisplayName(newDisplayName);
+      onUpdate(playerNumber, {
+        nickname: formattedName,
+        displayName: newDisplayName,
+        avatar,
+        className
+      });
+    } else {
+      setNickname("");
+      setDisplayName("");
+      onUpdate(playerNumber, {
+        nickname: "",
+        displayName: "",
+        avatar,
+        className
+      });
+    }
+  };
 
-  const handleAvatarChange = (value) => {
-    setAvatar(value);
-    onUpdate(playerNumber, {
-      nickname,
-      displayName,
-      avatar: value,
-      className
-    });
-  };
+  const handleAvatarChange = (value) => {
+    setAvatar(value);
+    onUpdate(playerNumber, {
+      nickname,
+      displayName,
+      avatar: value,
+      className
+    });
+  };
 
-  const handleClassChange = (value) => {
-    setClassName(value);
-    onUpdate(playerNumber, {
-      nickname,
-      displayName,
-      avatar,
-      className: value
-    });
-  };
+  const handleClassChange = (value) => {
+    setClassName(value);
+    onUpdate(playerNumber, {
+      nickname,
+      displayName,
+      avatar,
+      className: value
+    });
+  };
 
-  const handleNextStep = () => {
-    if (step < 3) {
-      setStep(prev => prev + 1);
-    } else {
-      onNext();
-    }
-  };
+  const handleNextStep = () => {
+    if (step < 3) {
+      setStep(prev => prev + 1);
+    } else {
+      onNext();
+    }
+  };
 
-  const handleBackStep = () => {
-    if (step > 1) {
-      setStep(prev => prev - 1);
-    }
-  };
+  const handleBackStep = () => {
+    if (step > 1) {
+      setStep(prev => prev - 1);
+    }
+  };
 
-  return (
-    <div className="text-center flex flex-col items-center">
-      <h2 className="text-2xl font-bold mb-6" style={{ color: "#351D6B" }}>
-        Player {playerNumber} Details
-      </h2>
-     
-      {/* Conditional rendering based on step */}
-      {step === 1 && (
-        <div className="w-full mb-6">
-          <div className="w-full flex items-center rounded-full border" style={{ borderColor: "#351D6B", borderWidth: 1 }}>
-            <input
-              type="text"
-              maxLength={10}
-              value={nickname}
-              onChange={(e) => handleNicknameChange(e.target.value)}
-              placeholder={`Enter Player ${playerNumber} nickname`}
-              className="flex-grow py-3 px-5 rounded-l-full border-none text-[#351D6B] text-base outline-none"
-            />
-          </div>
-          {displayName && (
-            <div className="text-sm text-[#351D6B] mt-3 font-medium">
-              Suggested: {displayName}
-            </div>
-          )}
-          <div className="text-xs text-[#878B9A] mt-2 text-center">
-            Maximum of 10 characters. Space not allowed.
-          </div>
-        </div>
-      )}
+  return (
+    <div className="text-center flex flex-col items-center">
+      <h2 className="text-[4vh] font-bold mb-6" style={{ color: "#351D6B" }}>
+        Player {playerNumber} Details
+      </h2>
+    
+      {/* Conditional rendering based on step */}
+      {step === 1 && (
+        <div className="w-full mb-6">
+          <h2 className="text-[3vh] font-bold text-[#202345] mb-4">
+            What's your nickname?
+          </h2>
+          <div className="w-full flex items-center rounded-full border" style={{ borderColor: "#351D6B", borderWidth: 3 ,width: "100%"}}>
+            <input
+              type="text"
+              maxLength={10}
+              value={nickname}
+              onChange={(e) => handleNicknameChange(e.target.value)}
+              placeholder={`Enter Player ${playerNumber} nickname`}
+             className="flex-grow py-[2vh] px-[2vw] rounded-l-full border-none text-[#351D6B] text-[2.2vh] outline-none" // 👈 increased padding & font size
+              style={{ height: "7vh", border: "none" }}
+            />
+            <button
+              onClick={handleNextStep}
+              disabled={!nickname}
+              className="rounded-r-full px-[2vw] py-[2vh] font-semibold text-lg transition disabled:opacity-50"
+              style={{
+                height: "7vh", 
+                color: "#351D6B",
+                background: "linear-gradient(90deg, #A18CD1 0%, #FBC2EB 100%)",
+                border: "none"
+              }}
+            >
+              Next
+            </button>
+          </div>
+          {displayName && (
+            <div className="text-sm text-[#351D6B] mt-3 font-medium">
+              Suggested: {displayName}
+            </div>
+          )}
+          <div className="text-[2vh] text-[#878B9A] mt-2 text-center">
+            Maximum of 10 characters. Space not allowed.
+          </div>
+        </div>
+      )}
 
-      {step === 2 && (
-        <div className="w-full mb-6">
-          <h3 className="text-xl font-bold text-[#202345] mb-4">Choose Avatar</h3>
-          <div className="flex justify-center gap-4">
-            {["👨‍🔬", "👩‍🔬", "🧑‍🚀"].map((av) => (
-              <button
-                key={av}
-                onClick={() => handleAvatarChange(av)}
-                className={`text-4xl p-2 rounded-full ${
-                  avatar === av ? "bg-[#eceaff]" : "bg-[#f2f1f7]"
-                }`}
-              >
-                {av}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      {step === 2 && (
+        <div className="w-full mb-6">
+          <h2 className="text-xl font-bold text-[#202345] mb-4">
+            Choose your Avatar
+          </h2>
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={() => setAvatarIndex(i => (i === 0 ? avatarImages.length - 1 : i - 1))}
+              className="p-2 text-2xl focus:outline-none"
+              aria-label="Previous Avatar"
+            >
+              &#8592;
+            </button>
+            <img
+              src={avatarImages[avatarIndex]}
+              alt={`Avatar ${avatarIndex + 1}`}
+              className={`w-24 h-24 rounded-full border-4 transition ${avatar !== avatarImages[avatarIndex] ? 'border-[#C6CBF2]' : 'border-[#A18CD1]'}`}
+              onClick={() => handleAvatarChange(avatarImages[avatarIndex])}
+              style={{ cursor: 'pointer' }}
+            />
+            <button
+              onClick={() => setAvatarIndex(i => (i === avatarImages.length - 1 ? 0 : i + 1))}
+              className="p-2 text-2xl focus:outline-none"
+              aria-label="Next Avatar"
+            >
+              &#8594;
+            </button>
+          </div>
+          <button
+            onClick={handleNextStep}
+            disabled={!avatar}
+          className="w-[60%] mx-auto mt-8 py-5 rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      )}
 
-      {step === 3 && (
-        <div className="w-full mb-6">
-          <h3 className="text-xl font-bold text-[#202345] mb-4">Select Class</h3>
-          <CustomClassDropdown value={className} onChange={handleClassChange} />
-        </div>
-      )}
+      {step === 3 && (
+        <div className="w-full mb-6">
+          <h2 className="text-[2vh] font-bold text-[#202345] mb-4">
+            Select your Class
+          </h2>
+          <CustomClassDropdown value={className} onChange={handleClassChange} className="w-full h-[7vh] text-lg" />
+          <button
+  onClick={handleNextStep}
+  disabled={!className}
+  className="w-full mt-8 py-[1.5vh] rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50"
+>
+  {isLastPlayer ? "Start Game" : "Next Player"}
+</button>
 
-      {/* Navigation Buttons */}
-      <div className="w-full flex justify-between items-center mt-auto">
-        {step > 1 && (
-          <button
-            onClick={handleBackStep}
-            className="py-3 px-6 rounded-full bg-[#ECEAFF] text-[#351D6B] font-semibold text-lg transition"
-          >
-            Back
-          </button>
-        )}
-        <button
-          onClick={handleNextStep}
-          disabled={(step === 1 && !nickname) || (step === 2 && !avatar) || (step === 3 && !className)}
-          className={`py-3 px-6 rounded-full bg-gradient-to-r from-[#A18CD1] to-[#FBC2EB] text-white font-semibold text-lg transition disabled:opacity-50 ${step === 1 ? 'ml-auto' : ''}`}
-        >
-          {step === 3 ? (isLastPlayer ? "Start Game" : "Next Player") : "Next"}
-        </button>
-      </div>
-    </div>
-  );
+        </div>
+      )}
+
+      {/* Navigation Buttons */}
+      <div className="w-full flex justify-start mt-4">
+        {step > 1 && (
+          <button
+            onClick={handleBackStep}
+            className="text-[#878B9A] text-base underline hover:text-[#7C58E5] transition"
+            style={{ background: "none", border: "none" }}
+          >
+            Back
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function MultiplayerInput() {
@@ -266,18 +316,16 @@ export default function MultiplayerInput() {
 
   return (
     <Background>
+      <Logo />
     <div className="relative w-screen h-screen">
-      {/* Background image */}
-      
-
       {/* Card container */}
       <div
         className="absolute backdrop-blur-lg bg-gradient-to-br from-[#e3e2f7]/80 to-[#cbcdda]/80 p-8 rounded-3xl shadow-2xl flex flex-col justify-between"
         style={{
-          width: "44%",
-          height: "60%",
-          top: "20%",
-          left: "28%"
+         width: "44%",
+         minHeight: "40%", 
+        top: "20%",
+        left: "28%"
         }}
       >
         {/* Step indicators */}
@@ -285,7 +333,7 @@ export default function MultiplayerInput() {
           {[1, 2].map((s) => (
             <div
               key={s}
-              className={`h-2 w-12 rounded-full ${
+              className={`h-[2vh] w-[12vw] rounded-full ${
                 currentPlayer === s ? "bg-[#9083D2]" : "bg-[#d1c9fa]"
               }`}
             />
@@ -302,21 +350,9 @@ export default function MultiplayerInput() {
             isLastPlayer={currentPlayer === 2}
           />
         </div>
-
-        {/* This back button is now redundant. We handle back navigation within the PlayerForm. */}
-        {/* <div className="flex justify-start h-8">
-          {currentPlayer > 1 && (
-            <button
-              onClick={() => setCurrentPlayer(1)}
-              className="text-[#878B9A] text-base underline hover:text-[#7C58E5] transition"
-              style={{ background: "none", border: "none" }}
-            >
-              Back to Player 1
-            </button>
-          )}
-        </div> */}
       </div>
     </div>
+    <BackButton />
     </Background>
   );
 }
